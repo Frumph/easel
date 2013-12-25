@@ -37,7 +37,6 @@ function easel_admin_options() { ?>
 	</p>
 	<div class="clear"></div>
 	<?php
-	$tab = (easel_themeinfo('first_run')) ? $tab = 'help' : $tab = '';
 	if (isset($_GET['tab'])) $tab = wp_filter_nohtml_kses($_GET['tab']);
 
 	if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'easel_reset') {
@@ -196,8 +195,7 @@ function easel_admin_options() { ?>
 				'layout' => __('Layout', 'easel'),
 		  		'general' => __('General', 'easel'),
 				'menubar' => __('Menubar', 'easel'),
-				'debug' => __('Debug', 'easel'),
-				'help' => __('Help', 'easel')
+				'debug' => __('Debug', 'easel')
 		  	);
 
 		  	if (empty($tab)) { $tab = array_shift(array_keys($tab_info)); }
