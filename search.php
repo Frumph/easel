@@ -30,7 +30,7 @@ if (have_posts()) :
 	<div class="clear"></div>
 	<?php easel_pagination();
 	else : ?>
-		<div class="post post-search type-page">
+		<div class="post post-search uentry type-page">
 			<div class="post-head"></div>
 			<div class="post-content">
 				<div class="entry">
