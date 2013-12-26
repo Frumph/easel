@@ -312,7 +312,7 @@ function easel_infinite_scroll_loop() {
 
 function easel_load_options() {
 
-	$easel_options = get_option('cp-options');
+	$easel_options = get_option('easel-options');
 	if (empty($easel_options)) {
 		
 		foreach (array(
@@ -373,7 +373,7 @@ function easel_load_options() {
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
-		update_option('cp-options', $easel_options);
+		update_option('easel-options', $easel_options);
 	}
 	return $easel_options;
 }
@@ -386,7 +386,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '4.0.4',
+			'version' => '4.0',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -407,4 +407,10 @@ function easel_themeinfo($whichinfo = null) {
 		else
 			return false;
 	return $easel_themeinfo;
+}
+
+
+// Dashboard Menu Options
+if (is_admin()) {
+	@require_once(easel_themeinfo('themepath').'/options.php');
 }
