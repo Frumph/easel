@@ -40,7 +40,7 @@ function easel_admin_options() { ?>
 	if (isset($_GET['tab'])) $tab = wp_filter_nohtml_kses($_GET['tab']);
 
 	if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'easel_reset') {
-		delete_option('cp-options');
+		delete_option('easel-options');
 		global $easel_themeinfo; $easel_themeinfo = '';
 	?>
 		<div id="message" class="updated"><p><strong><?php _e('Easel Settings RESET!','easel'); ?></strong></p></div>
@@ -54,13 +54,13 @@ function easel_admin_options() { ?>
 	if (empty($easel_options)) { 
 		easel_themeinfo('reset');
 	}
-	$easel_options = get_option('cp-options');
+	$easel_options = get_option('easel-options');
 	if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-options') ) {
 		
 		if ($_REQUEST['action'] == 'easel_save_help') {
 			$easel_options['first_run'] = false;
 			$tab = 'layout';
-			update_option('cp-options', $easel_options);
+			update_option('easel-options', $easel_options);
 		}
 		
 		if ($_REQUEST['action'] == 'easel_save_layout') {
@@ -80,7 +80,7 @@ function easel_admin_options() { ?>
 			}
 			
 			$tab = 'layout';
-			update_option('cp-options', $easel_options);
+			update_option('easel-options', $easel_options);
 		}
 		
 		if ($_REQUEST['action'] == 'easel_save_debug') {
@@ -92,7 +92,7 @@ function easel_admin_options() { ?>
 				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
 			}
 			$tab = 'debug';
-			update_option('cp-options', $easel_options);
+			update_option('easel-options', $easel_options);
 		}
 		
 		if ($_REQUEST['action'] == 'easel_save_menubar') {
@@ -130,7 +130,7 @@ function easel_admin_options() { ?>
 							}
 			}
 			$tab = 'menubar';
-			update_option('cp-options', $easel_options);
+			update_option('easel-options', $easel_options);
 		}
 		
 		if ($_REQUEST['action'] == 'easel_save_general') {
@@ -178,7 +178,7 @@ function easel_admin_options() { ?>
 								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
 			}
 			$tab = 'general';
-			update_option('cp-options', $easel_options);
+			update_option('easel-options', $easel_options);
 		}
 		if ($tab) { ?>
 			<div id="message" class="updated"><p><strong><?php _e('Easel Settings SAVED!','easel'); ?></strong></p></div>
@@ -186,7 +186,7 @@ function easel_admin_options() { ?>
 		<?php }
 	} 
 	$version = easel_themeinfo('version');
-	$easel_options = get_option('cp-options');
+	$easel_options = get_option('easel-options');
 	?>
 	<div id="poststuff" class="metabox-holder">
 		<div id="eadmin">
