@@ -6,7 +6,7 @@ add_action('wp_head', 'easel_customize_wp_head', 19);
 add_filter('body_class', 'easel_customize_body_class');
 
 function easel_customize_body_class($classes = array()){
-	$classes[] = 'scheme-'.get_theme_mod('easel-customize-select-scheme', 'none');
+	$classes[] = 'scheme-'.get_theme_mod('easel-customize-select-scheme', 'mecha');
 	if (get_theme_mod('easel-customize-checkbox-rounded', false)) $classes[] = 'rounded-posts';
 	if (function_exists('ceo_pluginfo') && get_theme_mod('easel-customize-comic-in-column', false)) $classes[] = 'cnc';
 	return $classes;
