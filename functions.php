@@ -232,10 +232,17 @@ if (!function_exists('easel_sidebars_disabled')) {
 
 global $content_width;
 if ( ! isset( $content_width ) ) {
-	if (easel_sidebars_disabled()) { 
-		$content_width = 720; 
+	$scheme = get_theme_mod('easel-customize-select-scheme', 'mecha');
+	if (easel_sidebars_disabled()) {
+		if ($scheme == 'ceasel') {
+			$content_width = 710;
+		} else 
+			$content_width = 720; 
 	} else {
-		$content_width = 520;
+		if ($scheme == 'ceasel') {
+			$content_width = 510;
+		} else
+			$content_width = 520;
 	}
 }
 
