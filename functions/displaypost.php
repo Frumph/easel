@@ -40,18 +40,17 @@ if (!function_exists('easel_display_post_title')) {
 	function easel_display_post_title() {
 		global $post, $wp_query;
 		$get_post_title = '';
-		if (($post->post_type == 'page') && is_front_page()) return; // don't display the title on static home pages
 		if ((easel_themeinfo('disable_page_titles') && is_page()) || (easel_themeinfo('disable_post_titles') && !is_page()) || (is_page('chat') || is_page('forum'))) return;
 		if (is_page()) {
 			$post_title = "<h2 class=\"page-title\">";
 		} else {
 			$post_title = "<h2 class=\"post-title\">";
 		}
-		if (is_page_template('blog.php') || is_home() || is_front_page() || is_archive() || is_search())  $post_title .= "<a href=\"".get_permalink()."\">";
+		if ((is_page_template('blog.php') || is_home() || is_front_page() || is_archive() || is_search()) && ($post->post_type != 'page'))  $post_title .= "<a href=\"".get_permalink()."\">";
 		$get_post_title .= get_the_title();
 		if (!$get_post_title) $get_post_title = '( No Title )';
 		$post_title .= $get_post_title;
-		if (is_page_template('blog.php') || is_home() || is_front_page() || is_archive() || is_search()) $post_title .= "</a>";
+		if ((is_page_template('blog.php') || is_home() || is_front_page() || is_archive() || is_search()) && ($post->post_type != 'page')) $post_title .= "</a>";
 		$post_title .= "</h2>\r\n";
 		echo apply_filters('easel_display_post_title',$post_title);
 	}
