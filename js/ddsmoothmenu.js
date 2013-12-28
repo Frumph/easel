@@ -64,8 +64,7 @@ var ddsmoothmenu = {
 			this.istopheader = $curobj.parents("ul").length == 1 ? true : false //is top level header?
 			$subul.css({ top: this.istopheader && setting.orientation != 'v' ? this._dimensions.h + "px" : 0 })
 			$curobj.children("a:eq(0)").css(this.istopheader ? { paddingRight: smoothmenu.arrowimages.down[2]} : {}).append( //add arrow images
-			'<span class="arrowclass">' + (this.istopheader && setting.orientation != 'v' ? '&darr;' : '&rarr;')
-			+ '</span>'
+			'<span class="menubar-arrow ' + (this.istopheader && setting.orientation != 'v' ? 'menubar-down' : 'menubar-right') + '-arrow">' + (this.istopheader && setting.orientation != 'v' ? '&darr;' : '&rarr;') + '</span>'
 		)
 			if (smoothmenu.shadow.enable) {
 				this._shadowoffset = { x: (this.istopheader ? $subul.offset().left + smoothmenu.shadow.offsetx : this._dimensions.w), y: (this.istopheader ? $subul.offset().top + smoothmenu.shadow.offsety : $curobj.position().top)} //store this shadow's offsets
