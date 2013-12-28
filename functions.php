@@ -1,12 +1,5 @@
 <?php
 
-function easel_child_modify_post_link( $url, $bleah ) {
-	$url = str_replace('comic/', '', $url);
-	return $url;
-}
-
-add_filter( 'sharing_permalink', 'easel_child_modify_post_link', 10, 2 );
-
 add_action('after_setup_theme', 'easel_setup');
 add_action('wp_enqueue_scripts', 'easel_enqueue_theme_scripts');
 add_action('widgets_init', 'easel_register_sidebars');
