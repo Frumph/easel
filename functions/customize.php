@@ -12,12 +12,6 @@ function easel_customize_body_class($classes = array()){
 	return $classes;
 }
 
-/*
-			<span class="customize-control-title" style="font-size: 14px; color: #21759B;"><?php echo esc_html( $this->label ); ?></span>
-			<?php if (isset( $this->description)) { ?>
-			<span class="customize-control-title" style="line-height: 16px; font-size: 11px; font-weight: 400;"><?php echo esc_html( $this->description); ?></span>
-*/
-
 function easel_customize_register( $wp_customize ) {
 	global $css_array;
 
@@ -59,6 +53,7 @@ function easel_customize_register( $wp_customize ) {
 			array('slug' => 'pagetitle_textcolor', 'description' => 'h2.page-title', 'section' => 'easel-text-colors', 'label' => 'Page Titles'),
 			array('slug' => 'postinfo_textcolor', 'description' => '.post-info', 'section' => 'easel-text-colors', 'label' => ''),
 			array('slug' => 'post_page_navigation_textcolor', 'description' => '.uentry, #comment-wrapper, #wp-paginav', 'section' => 'easel-text-colors', 'label' => 'Post/Page Comments'),
+			array('slug' => 'footer_textcolor', 'description' => '#footer', 'section' => 'easel-text-colors', 'label' => 'Footer'),
 			array('slug' => 'footer_copyright_textcolor', 'description' => '.copyright-info', 'section' => 'easel-text-colors', 'label' => 'Copyright'),
 			// Link Colors
 			array('slug' => 'content_link_acolor', 'description' => 'body a:link', 'section' => 'easel-link-colors', 'label' => ''),
@@ -75,6 +70,8 @@ function easel_customize_register( $wp_customize ) {
 			array('slug' => 'sidebar_hcolor', 'description' => '.sidebar .widget a:hover', 'section' => 'easel-link-colors', 'label' => ''),
 			array('slug' => 'postpagenav_acolor', 'description' => '.entry a, .blognav a, #paginav a, #pagenav a', 'section' => 'easel-link-colors', 'label' => ''),
 			array('slug' => 'postpagenav_hcolor', 'description' => '.entry a:hover, .blognav a:hover, #paginav a:hover, #pagenav a:hover', 'section' => 'easel-link-colors', 'label' => ''),
+			array('slug' => 'footer_acolor', 'description' => '#footer a', 'section' => 'easel-link-colors', 'label' => ''),
+			array('slug' => 'footer_hcolor', 'description' => '#footer a:hover', 'section' => 'easel-link-colors', 'label' => ''),
 			array('slug' => 'footer_copyright_acolor', 'description' => '.copyright-info a', 'section' => 'easel-link-colors', 'label' => 'Copyright'),
 			array('slug' => 'footer_copyright_hcolor', 'description' => '.copyright-info a:hover', 'section' => 'easel-link-colors', 'label' => ''),
 			);
@@ -98,7 +95,7 @@ function easel_customize_register( $wp_customize ) {
 		$priority_value++;
 	}
 	
-	$wp_customize->add_setting( 'easel-customize-select-scheme', array('default' => 'mecha'));
+	$wp_customize->add_setting( 'easel-customize-select-scheme', array('default' => 'boxed'));
 	$wp_customize->add_control( 'easel-customize-select-scheme-control' , array(
 				'label' => __('Choose a default scheme.','easel'),
 				'settings' => 'easel-customize-select-scheme',
@@ -122,7 +119,7 @@ function easel_customize_register( $wp_customize ) {
 				'type'     => 'checkbox'
 				));
 				
-	$wp_customize->add_setting( 'easel-customize-checkbox-header-hotspot', array('default' => true));
+	$wp_customize->add_setting( 'easel-customize-checkbox-header-hotspot', array('default' => false));
 	$wp_customize->add_control( 'easel-customize-checkbox-header-hotspot-control', array(
 				'settings' => 'easel-customize-checkbox-header-hotspot',
 				'label'    => __( 'Make the header title and description become a clickable hotspot for the entire header? (If you do the logo will not display right)','easel'),
@@ -193,32 +190,35 @@ function easel_customize_wp_head() {
 			array('slug' => 'content_text_color', 'element' => 'body', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'header_textcolor', 'element' => '#header', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'header_description_textcolor', 'element' => '.header-info', 'style' => 'color', 'default' => '',  'important' => false),
-			array('slug' => 'breadcrumb_textcolor', 'element' => '#breadcrumb-wrapper', 'style' => 'color', 'default' => '',  'important' => false),
+			array('slug' => 'breadcrumb_textcolor', 'element' => '#breadcrumb-wrapper', 'style' => 'color', 'default' => '#fff',  'important' => false),
 			array('slug' => 'lrsidebar_widgettitle_textcolor', 'element' => 'h2.widget-title', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'lrsidebar_textcolor', 'element' => '.sidebar', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'posttitle_textcolor', 'element' => 'h2.post-title', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'pagetitle_textcolor', 'element' => 'h2.page-title', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'postinfo_textcolor', 'element' => '.post-info', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'post_page_navigation_textcolor', 'element' => '.uentry, #comment-wrapper, #wp-paginav', 'style' => 'color', 'default' => '',  'important' => false),
-			array('slug' => 'footer_copyright_textcolor', 'element' => '.copyright-info', 'style' => 'color', 'default' => '',  'important' => false),
+			array('slug' => 'footer_text', 'element' => '#footer', 'style' => 'color', 'default' => '#FFFFFF',  'important' => false),
+			array('slug' => 'footer_copyright_textcolor', 'element' => '.copyright-info', 'style' => 'color', 'default' => '#CCC',  'important' => false),
 			// link colors
 			array('slug' => 'content_link_acolor', 'element' => 'a:link, a:visited', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'content_link_vcolor', 'element' => 'a:visited', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'content_link_hcolor', 'element' => 'a:hover', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'content_link_vcolor', 'element' => 'a:visited', 'style' => 'color', 'default' => '',  'important' => false),
-			array('slug' => 'header_title_acolor', 'element' => '#header h1 a:link, #header h1 a:visited', 'style' => 'color', 'default' => '',  'important' => false),
+			array('slug' => 'header_title_acolor', 'element' => '#header h1 a:link, #header h1 a:visited', 'style' => 'color', 'default' => '#fcff00',  'important' => false),
 			array('slug' => 'header_title_hcolor', 'element' => '#header h1 a:hover', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'menubar_top_acolor', 'element' => '.menu ul li a:link, .menu ul li a:visited, .mininav-prev a, .mininav-next a', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'menubar_hcolor', 'element' => '.menu ul li a:hover, .menu ul li a.selected, .menu ul li ul li a:hover', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'menubar_sub_acolor', 'element' => '.menu ul li ul li a:link, .menu ul li ul li a:visited', 'style' => 'color', 'default' => '',  'important' => false),
-			array('slug' => 'breadcrumb_acolor', 'element' => '.breadcrumbs a', 'style' => 'color', 'default' => '',  'important' => false),
-			array('slug' => 'breadcrumb_hcolor', 'element' => '.breadcrumbs a:hover', 'style' => 'color', 'default' => '',  'important' => false),
+			array('slug' => 'breadcrumb_acolor', 'element' => '.breadcrumbs a', 'style' => 'color', 'default' => '#fcff00',  'important' => false),
+			array('slug' => 'breadcrumb_hcolor', 'element' => '.breadcrumbs a:hover', 'style' => 'color', 'default' => '#f00',  'important' => false),
 			array('slug' => 'sidebar_acolor', 'element' => '.sidebar .widget a', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'sidebar_hcolor', 'element' => '.sidebar .widget a:hover', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'postpagenav_acolor', 'element' => '.entry a, .blognav a, #paginav a, #pagenav a', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'postpagenav_hcolor', 'element' => '.entry a:hover, .blognav a:hover, #paginav a:hover, #pagenav a:hover', 'style' => 'color', 'default' => '',  'important' => false),
-			array('slug' => 'footer_copyright_acolor', 'element' => '.copyright-info a', 'style' => 'color', 'default' => '',  'important' => false),
-			array('slug' => 'footer_copyright_hcolor', 'element' => '.copyright-info a:hover, .blognav a:hover, #paginav a:hover', 'style' => 'color', 'default' => '',  'important' => false),
+			array('slug' => 'footer_acolor', 'element' => '#footer a', 'style' => 'color', 'default' => '#ffdf00',  'important' => false),
+			array('slug' => 'footer_hcolor', 'element' => '#footer a:hover', 'style' => 'color', 'default' => '#F00',  'important' => false),
+			array('slug' => 'footer_copyright_acolor', 'element' => '.copyright-info a', 'style' => 'color', 'default' => '#FFFFFF',  'important' => false),
+			array('slug' => 'footer_copyright_hcolor', 'element' => '.copyright-info a:hover, .blognav a:hover, #paginav a:hover', 'style' => 'color', 'default' => '#F00',  'important' => false),
 			);
 	if (function_exists('ceo_pluginfo')) {
 		$settings_array[] = array('slug' => 'comic_wrap_background', 'element' => '#comic-wrap', 'style' => 'background-color', 'default' => '',  'important' => true);
@@ -227,13 +227,23 @@ function easel_customize_wp_head() {
 	}
 	$output = '';
 	$style_output = '';
+	$default_settings = false;
 	$customize = get_theme_mod('easel-customize');
 	if (!empty($customize)) {
 		foreach ($settings_array as $setting) {
 			if (isset($customize[$setting['slug']])) $content = $customize[$setting['slug']];
-			if (empty($content)) $content = $setting['default'];
 			$important = ($setting['important']) ? '!important' : '';
 			if (!empty($content)) $style_output .= $setting['element'].' { '.$setting['style'].': '.$content.$important.'; } ';
+		}
+	} else {
+		// if no theme mod value, set defaults (new install)
+		$default_settings = true;
+ 		foreach ($settings_array as $setting) {
+			$content = $setting['default'];
+			$important = ($setting['important']) ? '!important' : '';
+			if (!empty($content)) {
+				$style_output .= $setting['element'].' { '.$setting['style'].': '.$content.$important.'; } ';
+			}
 		}
 	}
 	if (isset($customize['logo']) && !empty($customize['logo'])) {
@@ -243,8 +253,10 @@ function easel_customize_wp_head() {
 		$style_output .= '.header-info .description { display: none!important; }';
 	}
 	if (!empty($style_output)) {
-		$output = '<style type="text/css">'."\r\n";
+		$output .= '<style type="text/css">'."\r\n";
 		$output .= $style_output;
+		if (!empty($customize))
+			$output .= 'body { background-position: fixed; }';
 		$output .= "\r\n</style>\r\n";
 		echo $output;
 	}

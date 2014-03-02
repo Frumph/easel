@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	<meta name="Easel" content="<?php echo easel_themeinfo('version'); ?>" />
-	<?php wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -27,3 +27,4 @@ if (!easel_themeinfo('disable_default_menubar') && function_exists('easel_menuba
 if (easel_themeinfo('enable_breadcrumbs')) easel_breadcrumbs();
 easel_get_sidebar('menubar');
 get_template_part('layout', 'head');
+?>

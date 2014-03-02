@@ -40,6 +40,7 @@ if (!function_exists('easel_display_post_title')) {
 	function easel_display_post_title() {
 		global $post, $wp_query;
 		$get_post_title = '';
+		if (($post->post_type == 'page') && is_front_page()) return; // don't display the title on static home pages
 		if ((easel_themeinfo('disable_page_titles') && is_page()) || (easel_themeinfo('disable_post_titles') && !is_page()) || (is_page('chat') || is_page('forum'))) return;
 		if (is_page()) {
 			$post_title = "<h2 class=\"page-title\">";
@@ -50,7 +51,7 @@ if (!function_exists('easel_display_post_title')) {
 		$get_post_title .= get_the_title();
 		if (!$get_post_title) $get_post_title = '( No Title )';
 		$post_title .= $get_post_title;
-		if ((is_page_template('blog.php') || is_home() || is_front_page() || is_archive() || is_search()) && ($post->post_type != 'page')) $post_title .= "</a>";
+		if ((is_page_template('blog.php') || is_home() || is_front_page() || is_archive() || is_search()) && ($post->post_type != 'page'))  $post_title .= "</a>";
 		$post_title .= "</h2>\r\n";
 		echo apply_filters('easel_display_post_title',$post_title);
 	}
@@ -59,7 +60,7 @@ if (!function_exists('easel_display_post_title')) {
 if (!function_exists('easel_display_post_thumbnail')) {
 	function easel_display_post_thumbnail($size = 'thumbnail') {
 		global $post, $wp_query;
-		if ($post->post_type == 'post') {
+		if ($post->post_type !== 'comic') {
 			$post_thumbnail = '';
 			$link = get_post_meta( $post->ID, 'link', true );
 			if (empty($link)) $link = get_permalink();
@@ -105,7 +106,7 @@ if (!function_exists('easel_display_post_author')) {
 	function easel_display_post_author() {
 		global $post, $authordata;
 		if (!easel_themeinfo('disable_author_info_in_posts')) {
-			$post_author = "<span class=\"post-author\">".__('by','easel')." <a href=\"".get_author_posts_url( $authordata->ID, $authordata->user_nicename )."\">".get_the_author()."</a></span>\r\n";
+			$post_author = '<span class="post-author">'.__('by','easel').' <a href="'.get_author_posts_url( $authordata->ID, $authordata->user_nicename ).'" rel="author">'.get_the_author().'</a></span>'."\r\n";
 			echo apply_filters('easel_display_post_author',$post_author);
 		}
 	}

@@ -30,16 +30,15 @@ get_header();
 			$authorname = $curauth->user_login;
 	?>
 							<h2><?php echo $authorname; ?></h2><br />
-							<?php _e('Registered on','easel'); ?> <?php echo date('l \\t\h\e jS \o\f M, Y',strtotime($curauth->user_registered)); ?><br />
+							<?php if (current_user_can('manage_options')) { ?>
+								<strong><?php _e('Registered on','easel'); ?></strong> <?php echo date('F d, Y', strtotime($curauth->user_registered)); ?><br />
+								<strong><?php _e('Email:','easel'); ?></strong> <a href="mailto://<?php echo $curauth->user_email; ?>" target="_blank"><?php echo $curauth->user_email; ?></a><br />
 							<br />
-							<?php if (!empty($curauth->user_url)) { ?><?php _e('Website:','easel'); ?> <a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a><br /><?php } ?>
-							<?php if (!empty($curauth->aim)) { ?><?php _e('AIM:','easel'); ?> <?php echo $curauth->aim; ?><br /><?php } ?>
-							<?php if (!empty($curauth->jabber)) { ?><?php _e('Jabber/Google Talk:','easel'); ?> <?php echo $curauth->jabber; ?><br /><?php } ?>
-							<?php if (!empty($curauth->yim)) { ?><?php _e('Yahoo IM:','easel'); ?> <?php echo $curauth->yim; ?><br /><?php } ?>
-							<?php if (!empty($curauth->twitter)) { ?><?php _e('Twitter:','easel'); ?> <a href="http://www.twitter.com/<?php echo $curauth->twitter; ?>" target="_blank"><?php echo $curauth->twitter; ?></a><br /><?php } ?>
-							<?php if (!empty($curauth->facebook)) { ?><?php _e('Facebook:','easel'); ?> <a href="http://www.facebook.com/<?php echo $curauth->facebook; ?>" target="_blank"><?php echo $curauth->facebook; ?></a><br /><?php } ?>
-							<?php if (!empty($curauth->msn)) { ?><?php _e('MSN:','easel'); ?> <?php echo $curauth->msn; ?><br /><?php } ?>
-
+							<?php } ?>
+							<?php if (!empty($curauth->user_url)) { ?><strong><?php _e('Website:','easel'); ?></strong> <a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a><br /><?php } ?>
+							<?php if (!empty($curauth->twitter)) { ?><strong><?php _e('Twitter:','easel'); ?></strong> <a href="<?php echo $curauth->twitter; ?>" target="_blank"><?php echo $curauth->twitter; ?></a><br /><?php } ?>
+							<?php if (!empty($curauth->facebook)) { ?><strong><?php _e('Facebook :','easel'); ?></strong> <a href="<?php echo $curauth->facebook; ?>" target="_blank"><?php echo $curauth->facebook; ?></a><br /><?php } ?>
+							<?php if (!empty($curauth->googleplus)) { ?><strong><?php _e('Google+ :','easel'); ?></strong> <a href="<?php echo $curauth->googleplus; ?>" target="_blank" rel="me"><?php echo $curauth->googleplus; ?></a><br /><?php } ?>
 						</div>
 						<?php if (!empty($curauth->description)) { ?>
 						<div class="userpage-desc">
@@ -55,9 +54,14 @@ get_header();
 					<div class="userpage-posts">
 						<h3><?php _e('Posts by','easel'); ?> <?php echo $authorname; ?> &not;</h3>
 						<ol>
+						<table class="author-posts">
 						<?php while (have_posts()) : the_post(); ?>
-							<li><span class="author-archive-date" align="right"><?php the_time('M j, Y') ?></span><span class="author-archive-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></span></li>		
+							<tr>
+								<td class="author-archive-date" align="right"><?php the_time('M j, Y') ?></td>
+								<td class="author-archive-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></td>
+							</tr>
 						<?php endwhile; ?>
+						</table>
 						</ol>
 					</div>
 <?php } ?>

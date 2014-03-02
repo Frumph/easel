@@ -1,5 +1,12 @@
 <?php
+/*
+function easel_child_modify_post_link( $url, $bleah ) {
+	$url = str_replace('comic/', '', $url);
+	return $url;
+}
 
+add_filter( 'sharing_permalink', 'easel_child_modify_post_link', 10, 2 );
+*/
 add_action('after_setup_theme', 'easel_setup');
 add_action('wp_enqueue_scripts', 'easel_enqueue_theme_scripts');
 add_action('widgets_init', 'easel_register_sidebars');
@@ -12,7 +19,7 @@ if (easel_themeinfo('force_active_connection_close'))
 	add_action('shutdown_action_hook','easel_close_up_shop');
 if (easel_themeinfo('menubar_social_icons')) 
 	add_action('easel-menubar-menunav', 'easel_display_social_icons');
-
+add_action( 'tgmpa_register', 'easel_register_required_plugins' );
 if (!is_admin())
 	add_action('init', 'easel_init');
 
@@ -27,7 +34,7 @@ if (class_exists('MultiPostThumbnails')) {
 }
 
 // These autoload
-foreach (glob(easel_themeinfo('themepath') . "/functions/*.php") as $funcfile) {
+foreach (glob(easel_themeinfo('themepath') . '/functions/*.php') as $funcfile) {
 	@require_once($funcfile);
 }
 
@@ -55,7 +62,11 @@ function easel_setup() {
 		'Primary' => __('Primary', 'easel'),
 		'Footer' => __('Footer', 'easel')
 	));
-	add_theme_support('custom-background');
+	$args = array(
+			'default-color' => '000000',
+			'default-image' => get_template_directory_uri() . '/images/background-tile.jpg'
+		);
+	add_theme_support('custom-background', $args);
 	add_theme_support('post-thumbnails');
 	if (class_exists( 'Jetpack' ) && Jetpack::init()->is_module_active('infinite-scroll')) {
 		add_theme_support('infinite-scroll', array(
@@ -211,32 +222,20 @@ function easel_is_bbpress() {
 	return false;
 }
 
-if (!function_exists('easel_sidebars_disabled')) {
-	function easel_sidebars_disabled() {
-		global $post;
-		if (!is_404() && is_page() && !empty($post)) {
-			$sidebars_disabled = get_post_meta($post->ID, 'disable-sidebars', true);
-			if ($sidebars_disabled) return true;
-		}
-//		if (easel_is_bbpress()) return true;
-		return false;
+function easel_sidebars_disabled() {
+	global $wp_query, $post;
+	if (!empty($post) && (is_single() || is_page()) && !is_404()) {
+		$sidebars_disabled = get_post_meta($post->ID, 'disable-sidebars', true);
+		if ($sidebars_disabled) return true;
 	}
+//		if (easel_is_bbpress()) return true;
+	return false;
 }
 
 global $content_width;
-if ( ! isset( $content_width ) ) {
-	$scheme = get_theme_mod('easel-customize-select-scheme', 'mecha');
-	if (easel_sidebars_disabled()) {
-		if ($scheme == 'ceasel') {
-			$content_width = 710;
-		} else 
-			$content_width = 720; 
-	} else {
-		if ($scheme == 'ceasel') {
-			$content_width = 510;
-		} else
-			$content_width = 520;
-	}
+if (!isset($content_width)) {
+	$content_width = easel_themeinfo('content_width');		
+	if (!$content_width) $content_width = 500;
 }
 
 if (!function_exists('easel_display_social_icons')) {
@@ -261,9 +260,9 @@ if (!function_exists('easel_display_social_icons')) {
 		if (!empty($twitter)) $output .= '<a href="'.$twitter.'" target="_blank" title="'.__('Follow me on Twitter','easel').'" class="menunav-social menunav-twitter">'.__('Twitter','easel').'</a>'."\r\n";
 		if (!empty($flickr)) $output .= '<a href="'.$flickr.'" target="_blank" title="'.__('Gaze at my Flickr','easel').'" class="menunav-social menunav-flickr">'.__('Flickr','easel').'</a>'."\r\n";		
 		if (!empty($email)) $output .= '<a href="'.$email.'" target="_blank" title="'.__('Email me','easel').'" class="menunav-social menunav-email">'.__('Email','easel').'</a>'."\r\n";
-		if (!empty($googleplus)) $output .= '<a href="'.$googleplus.'" target="_blank" title="'.__('Check me out on Google+','easel').'" class="menunav-social menunav-googleplus">'.__('Google+','easel').'</a>'."\r\n";
+		if (!empty($googleplus)) $output .= '<a href="'.$googleplus.'" target="_blank" title="'.__('"Circle me on Google+','easel').'" class="menunav-social menunav-googleplus">'.__('Google+','easel').'</a>'."\r\n";
 		if (!empty($pinterest)) $output .= '<a href="'.$pinterest.'" target="_blank" title="'.__('Peruse my Pinterests','easel').'" class="menunav-social menunav-pinterest">'.__('pinterest','easel').'</a>'."\r\n";
-		if (!empty($youtube)) $output .= '<a href="'.$youtube.'" target="_blank" title="'.__('View my YouTube','easel').'" class="menunav-social menunav-youtube">'.__('YouTube','easel').'</a>'."\r\n";
+		if (!empty($youtube)) $output .= '<a href="'.$youtube.'" target="_blank" title="'.__('View my YouTube-Channel','easel').'" class="menunav-social menunav-youtube">'.__('YouTube','easel').'</a>'."\r\n";
 		if (easel_themeinfo('enable_rss_in_menubar')) $output .= '<a href="'.get_bloginfo('rss2_url').'" target="_blank" title="'.__('RSS Feed','easel').'" class="menunav-social menunav-rss2">'.__('RSS','easel').'</a>'."\r\n";
 		$output .= '<div class="clear"></div>';
 		$output .= '</div>'."\r\n";
@@ -369,7 +368,9 @@ function easel_load_options() {
 			'menubar_social_deviantart' => '',
 			'menubar_social_myspace' => '',
 			'menubar_social_email' => '',
-			'enable_jetpack_infinite_scrolling' => false
+			'enable_jetpack_infinite_scrolling' => false,
+			'content_width' => 500,
+			'content_width_disabled_sidebars' => 700
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
@@ -386,7 +387,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
 			'upload_path' => get_option('upload_path'),
-			'version' => '4.0',
+			'version' => '4.1',
 			'themepath' => get_template_directory(),
 			'themeurl' => get_template_directory_uri(), 
 			'stylepath' => get_stylesheet_directory(), 
@@ -409,8 +410,11 @@ function easel_themeinfo($whichinfo = null) {
 	return $easel_themeinfo;
 }
 
-
-// Dashboard Menu Options
+// Dashboard Menu Options -- last thing to load so it can redirect
 if (is_admin()) {
 	@require_once(easel_themeinfo('themepath').'/options.php');
+    global $pagenow;
+	if (('themes.php' == $pagenow) && isset($_GET['activated']) && easel_themeinfo('first_run')) {
+		header( 'Location: '.admin_url().'themes.php?page=easel-options' ) ;
+	}
 }

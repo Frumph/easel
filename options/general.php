@@ -31,6 +31,7 @@
 				</tr>
 			</table>
 			
+			
 			<table class="widefat">
 				<thead>
 					<tr>
@@ -45,6 +46,34 @@
 						<?php _e('Modify the height and width of the custom header *if* you use Appearance - Header','easel'); ?><br />
 						<?php _e('3 Column Layouts are 980px width while 2 Column Layouts are 780px width as default.','easel'); ?><br />
 						<strong><?php _e('NOTE: This should only be used if the appearance - header section is not displaying your header dimensions correctly.', 'easel'); ?></strong>
+					</td>
+				</tr>
+			</table>
+
+			<table class="widefat">
+				<thead>
+					<tr>
+						<th colspan="3"><?php _e('Content Width','easel'); ?></th>
+					</tr>
+				</thead>
+				<tr>
+					<?php if (!isset($easel_options['content_width'])) $easel_options['content_width'] = 500; ?>
+					<th scope="row"><label for="content_width"><?php _e('Media and images width on posts and pages?','easel'); ?></label></th>
+					<td>
+						<input type="text" size="4" name="content_width" id="content_width" value="<?php echo $easel_options['content_width']; ?>" />px
+					</td>
+					<td>
+						<?php _e('This sets a specific width for WordPress to use for media content within your posts and pages.  Default = 500','easel'); ?>
+					</td>
+				</tr>
+				<tr class="alternate">
+					<?php if (!isset($easel_options['content_width_disabled_sidebars'])) $easel_options['content_width_disabled_sidebars'] = 700; ?>
+					<th scope="row"><label for="content_width_disabled_sidebars"><?php _e('Media and images width when sidebars are disabled on pages?','easel'); ?></label></th>
+					<td>
+						<input type="text" size="4" name="content_width_disabled_sidebars" id="content_width" value="<?php echo $easel_options['content_width_disabled_sidebars']; ?>" />px
+					</td>
+					<td>
+						<?php _e('When the sidebars are disabled on pages?  Default = 700','easel'); ?>
 					</td>
 				</tr>
 			</table>
@@ -144,7 +173,7 @@
 						<?php _e('Checkmarking this will make it so that posted on date information will not appear in posts.','easel'); ?>
 					</td>
 				</tr>
-				<tr>
+				<tr class="alternate">
 					<th scope="row"><label for="disable_posted_at_time_in_posts"><?php _e('Disable the display of the posted at time in posts','easel'); ?></label></th>
 					<td>
 						<input id="disable_posted_at_time_in_posts" name="disable_posted_at_time_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['disable_posted_at_time_in_posts']); ?> />
@@ -306,36 +335,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 						<?php _e('If enabled will show the post thumbnail of the post in the RSS feed.','easel'); ?>
 					</td>
 				</tr>
-			</table>
-<?php
-/*
-			<table class="widefat">
-				<thead>
-					<tr>
-						<th colspan="3"><?php _e('Facebook','easel'); ?></th>
-					</tr>
-				</thead>
-				<tr class="alternate">
-					<th scope="row"><label for="facebook_like_blog_post"><?php _e('Enable the Facebook Like button in Blog Posts?','easel'); ?></label></th>
-					<td>
-						<input id="facebook_like_blog_post" name="facebook_like_blog_post" type="checkbox" value="1" <?php checked(true, $easel_options['facebook_like_blog_post']); ?> />
-					</td>
-					<td>
-						<?php _e('When enabled this option will allow the Facebook like button to appear at the bottom of regular blog posts.','easel'); ?>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row"><label for="facebook_meta"><?php _e('Enable the Facebook Meta?','easel'); ?></label></th>
-					<td>
-						<input id="facebook_meta" name="facebook_meta" type="checkbox" value="1" <?php checked(true, $easel_options['facebook_meta']); ?> />
-					</td>
-					<td>
-						<?php _e('When setting this option, it will add meta information to the head area of each page so that facebook will recognize the content within.','easel'); ?>
-					</td>
-				</tr>
-			</table>
-*/
-?>			
+			</table>		
 			<table class="widefat">
 				<thead>
 					<tr>

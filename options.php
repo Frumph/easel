@@ -32,11 +32,12 @@ function easel_admin_options() { ?>
 	<div id="eadmin-headericon" style="background: url('<?php echo easel_themeinfo('themeurl') ?>/images/easel-rascal.png') no-repeat;"></div>
 	<p class="alignleft">
 		<h2><?php _e('Easel Options','easel'); ?></h2>
-		<?php _e('Easel is a modular theme that has an abundant of hooks and actions placed in it for additional usability.  Ref: Comic Easel', 'easel'); ?><br />
-		<?php _e('While Easel is an excellent stand-alone theme, it can be enhanced in usability with the associated plugins that have been built to utilize it\'s functionality.','easel'); ?><br />
+		<?php _e('Easel is a modular theme that has an abundance of hooks and actions placed in it for additional usability. Ref: Comic Easel', 'easel'); ?><br />
+		<?php _e('While Easel is an excellent stand-alone theme, it can be enhanced in usability with the associated plugins that have been built to utilize its functionality.','easel'); ?><br />
 	</p>
 	<div class="clear"></div>
 	<?php
+	$tab = (easel_themeinfo('first_run')) ? $tab = 'help' : $tab = '';
 	if (isset($_GET['tab'])) $tab = wp_filter_nohtml_kses($_GET['tab']);
 
 	if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'easel_reset') {
@@ -172,7 +173,9 @@ function easel_admin_options() { ?>
 				'custom_image_header_width',
 				'custom_image_header_height',
 				'archive_display_order',
-				'excerpt_or_content_in_archive'
+				'excerpt_or_content_in_archive',
+				'content_width',
+				'content_width_disabled_sidebars'
 						) as $key) {
 							if (isset($_REQUEST[$key])) 
 								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
@@ -195,7 +198,8 @@ function easel_admin_options() { ?>
 				'layout' => __('Layout', 'easel'),
 		  		'general' => __('General', 'easel'),
 				'menubar' => __('Menubar', 'easel'),
-				'debug' => __('Debug', 'easel')
+				'debug' => __('Debug', 'easel'),
+				'help' => __('Help', 'easel')
 		  	);
 
 		  	if (empty($tab)) { $tab = array_shift(array_keys($tab_info)); }
@@ -237,7 +241,7 @@ function easel_admin_options() { ?>
 	<div class="eadmin-footer">
 		<div id="easel-version-title"><a href="http://frumph.net/">Easel <?php echo easel_themeinfo('version'); ?></a></div>
 		<br />
-		<?php _e('Developed and maintained by','easel'); ?> <a href="http://frumph.net/">Philip M. Hofer</a> <small>(<a href="http://frumph.net/">Frumph</a>)</small>, <?php _e('Originally created by','easel'); ?> <a href="http://mindfaucet.com/">Tyler Martin</a><br />
+		<?php _e('Created, Developed and maintained by','easel'); ?> <a href="http://frumph.net/">Philip M. Hofer</a> <small>(<a href="http://frumph.net/">Frumph</a>)</small><br />
 		<?php _e('If you like the Easel theme, please donate.  It will help in developing new features and versions.','easel'); ?>
 		<table style="margin:0 auto;">
 			<tr>

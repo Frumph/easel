@@ -24,12 +24,19 @@ function easel_avatar() {
 	if ($comment_type != 'pingback' && $comment_type != 'trackback') {
 		
 		echo '<div class="comment-avatar">';
-		if($url == true && $url != 'http://')
-			echo '<a href="' . $url . '" rel="external nofollow" title="' . esc_html(get_comment_author(), 1) . '">';
+		if($url == true && $url != 'http://') 
+			echo '<a href="' . $url . '" rel="external nofollow" title="' . esc_html(get_comment_author()) . '">';
 		$id_or_email = get_comment_author_email();
 		if (empty($id_or_email)) $id_or_email = get_comment_author();
-			$return_str = str_replace('photo', 'photo instant nocorner itxtalt', get_avatar($id_or_email, 64, easel_random_default_avatar($id_or_email), esc_html(get_comment_author(), 1)));
-			echo $return_str;
+		
+		$current_avatar_directory = easel_themeinfo('avatar_directory');
+		if (!empty($current_avatar_directory) && ($current_avatar_directory !== 'none')) {
+			$avatar_str = get_avatar($id_or_email, 64, easel_random_default_avatar($id_or_email), esc_html(get_comment_author()));
+		} else
+			$avatar_str = get_avatar($id_or_email, 64);
+		$return_str = str_replace('photo', 'photo instant nocorner itxtalt', $avatar_str);
+		$return_str = str_replace('alt=', 'title="'.esc_html(get_comment_author()).'" alt=', $return_str);
+		echo $return_str;
 		if($url == true && $url != 'http://')
 			echo '</a>';
 		echo '</div>';
@@ -62,7 +69,7 @@ function easel_comment_author() {
 	* Bug with bbPress 0.9 series and WP 2.5 (no later testing)
 	* 'Anonymous' should be localized according to WP, not the theme
 	*/
-	if($comment->user_id > 0) :
+	if(($comment->user_id > 0) && !$author) :
 		$user = get_userdata($comment->user_id);
 		if($user->display_name)
 			$author = $user->display_name;

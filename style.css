@@ -2,11 +2,11 @@
 Theme Name: Easel
 Contributors: Frumph
 Theme URI: http://frumph.net/easel
-Description: A very dynamic static theme with customization options
+Description: Publish a WebComic with the Easel theme and the Comic Easel plugin.
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready, flexible-header, featured-images
-Version: 4.0
+Version: 4.1
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
 */
@@ -369,11 +369,10 @@ body.layout-2cl #page, body.layout-2cr #page{
 	font-size: 11px;
 }
 
-.menubar-down-arrow {
-}
+/* classes that can be used to override the down/right arrows with images of your own */
+.menubar-down-arrow {}
 
-.menubar-right-arrow {	
-}
+.menubar-right-arrow {}
 
 /* home icon */
 /*
@@ -390,6 +389,7 @@ body.layout-2cl #page, body.layout-2cr #page{
 	background: #000 url('images/home.png') top center no-repeat!important;
 }
 */
+
 /* Content-Wrapper */
 
 #content-wrapper {
@@ -416,8 +416,6 @@ body.layout-2clw #content-column, body.layout-2cl #content-column, body.layout-3
 
 #content {
 	overflow: hidden;
-	padding: 2px;
-	margin: 0px 2px 5px 2px;
 }
 
 body.layout-2cl #content-column, body.layout-2cr #content-column {
@@ -426,7 +424,27 @@ body.layout-2cl #content-column, body.layout-2cr #content-column {
 
 body.layout-2clw #content-column, 
 body.layout-2crw #content-column {
-	width: 760px;
+	width: 762px;
+}
+
+body.layout-3clgn #content-column,
+body.layout-3crgn #content-column {
+	width: 762px;
+}
+
+body.layout-3clgn #content {
+	width: 538px;
+	float: left;
+}
+
+body.layout-3crgn #content {
+	width: 538px;
+	float: right;
+}
+
+body.wide #content,
+body.wide #content-column {
+	width: 100%;
 }
 
 body.wide #content-column, body.signup #content-column {
@@ -792,6 +810,13 @@ body.layout-3cr #sidebar-right {
 body.layout-3cl #sidebar-right {
 	float: left;
 }
+
+/*
+body.layout-2clw #sidebar-left,
+body.layout-2crw #sidebar-right {
+	width: 308px;
+}
+*/
 
 .sidebar-basic ul, .sidebar-basic li {
 	margin: 0;
@@ -1277,9 +1302,9 @@ table#wp-calendar td {
 
 /* Archive Year Template */
 
-span.author-archive-date {
+.author-archive-date {
 	text-align: right;
-	width: 120px;
+	width: 140px;
 	margin-right: 20px;
 	display: inline-block;
 }

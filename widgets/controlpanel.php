@@ -10,7 +10,7 @@ class easel_control_panel_widget extends WP_Widget {
 
 	function easel_control_panel_widget($skip_widget_init = false) {
 		if (!$skip_widget_init) {
-			$widget_ops = array('classname' => __CLASS__, 'description' => __('Login/Logoff menu with register/lost password links if not logged on. (use only if registrations are enabled.','easel') );
+			$widget_ops = array('classname' => __CLASS__, 'description' => __('Login/Logoff menu with register/lost password links if not logged on. (use only if registrations are enabled).','easel') );
 			$this->WP_Widget(__CLASS__, __('Control Panel','easel'), $widget_ops);
 		}
 	}
@@ -71,4 +71,3 @@ class easel_control_panel_widget extends WP_Widget {
 }
 register_widget('easel_control_panel_widget');
 
-?>

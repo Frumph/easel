@@ -2,9 +2,9 @@
 
 $custom_header_args = array(
 			'flex-width' => true,
-			'width' => 980,
+			'width' => easel_themeinfo('custom_image_header_width'),
 			'flex-height' => true,
-			'height' => 120,
+			'height' => easel_themeinfo('custom_image_header_height'),
 			'wp-head-callback' => 'easel_header_style',
 			'admin-head-callback' => 'easel_admin_header_style',
 			'admin-preview-callback' => 'easel_admin_header_style'	
