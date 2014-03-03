@@ -198,8 +198,7 @@ function easel_admin_options() { ?>
 				'layout' => __('Layout', 'easel'),
 		  		'general' => __('General', 'easel'),
 				'menubar' => __('Menubar', 'easel'),
-				'debug' => __('Debug', 'easel'),
-				'help' => __('Help', 'easel')
+				'debug' => __('Debug', 'easel')
 		  	);
 
 		  	if (empty($tab)) { $tab = array_shift(array_keys($tab_info)); }
