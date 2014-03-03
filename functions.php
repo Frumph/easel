@@ -260,7 +260,7 @@ if (!function_exists('easel_display_social_icons')) {
 		if (!empty($twitter)) $output .= '<a href="'.$twitter.'" target="_blank" title="'.__('Follow me on Twitter','easel').'" class="menunav-social menunav-twitter">'.__('Twitter','easel').'</a>'."\r\n";
 		if (!empty($flickr)) $output .= '<a href="'.$flickr.'" target="_blank" title="'.__('Gaze at my Flickr','easel').'" class="menunav-social menunav-flickr">'.__('Flickr','easel').'</a>'."\r\n";		
 		if (!empty($email)) $output .= '<a href="'.$email.'" target="_blank" title="'.__('Email me','easel').'" class="menunav-social menunav-email">'.__('Email','easel').'</a>'."\r\n";
-		if (!empty($googleplus)) $output .= '<a href="'.$googleplus.'" target="_blank" title="'.__('"Circle me on Google+','easel').'" class="menunav-social menunav-googleplus">'.__('Google+','easel').'</a>'."\r\n";
+		if (!empty($googleplus)) $output .= '<a href="'.$googleplus.'" target="_blank" title="'.__('Circle me on Google+','easel').'" class="menunav-social menunav-googleplus">'.__('Google+','easel').'</a>'."\r\n";
 		if (!empty($pinterest)) $output .= '<a href="'.$pinterest.'" target="_blank" title="'.__('Peruse my Pinterests','easel').'" class="menunav-social menunav-pinterest">'.__('pinterest','easel').'</a>'."\r\n";
 		if (!empty($youtube)) $output .= '<a href="'.$youtube.'" target="_blank" title="'.__('View my YouTube-Channel','easel').'" class="menunav-social menunav-youtube">'.__('YouTube','easel').'</a>'."\r\n";
 		if (easel_themeinfo('enable_rss_in_menubar')) $output .= '<a href="'.get_bloginfo('rss2_url').'" target="_blank" title="'.__('RSS Feed','easel').'" class="menunav-social menunav-rss2">'.__('RSS','easel').'</a>'."\r\n";
