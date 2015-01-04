@@ -29,10 +29,10 @@ function easel_admin_page_head() { ?>
 
 function easel_admin_options() { ?>
 <div class="wrap">
-	<div id="eadmin-headericon" style="background: url('<?php echo easel_themeinfo('themeurl') ?>/images/easel-rascal.png') no-repeat;"></div>
+	<div id="eadmin-headericon" style="background: url('<?php echo easel_themeinfo('themeurl') ?>/images/easel_small.png.png') no-repeat;"></div>
 	<p class="alignleft">
 		<h2><?php _e('Easel Options','easel'); ?></h2>
-		<?php _e('Easel is a modular theme that has an abundance of hooks and actions placed in it for additional usability. Ref: Comic Easel', 'easel'); ?><br />
+		<?php _e('Easel is a modular theme that has an abundance of hooks and actions placed in it for additional usability.', 'easel'); ?><br />
 		<?php _e('While Easel is an excellent stand-alone theme, it can be enhanced in usability with the associated plugins that have been built to utilize its functionality.','easel'); ?><br />
 	</p>
 	<div class="clear"></div>
