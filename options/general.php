@@ -17,7 +17,7 @@
 						<input type="text" size="2" name="home_post_count" id="home_post_count" value="<?php echo $easel_options['home_post_count']; ?>" />
 					</td>
 					<td>
-						<?php _e('How many blog posts you would like displayed on the index page at one time.  This is different then the one in the wp-admin - settings, the one in the settings will control how many show up on search and archive pages.','easel'); ?>
+						<?php _e('How many blog posts you would like displayed on the index page at one time. This is different then the one in the wp-admin - settings, the one in the settings will control how many show up on search and archive pages.','easel'); ?>
 					</td>
 				</tr>
 				<tr class="alternate">
@@ -63,7 +63,7 @@
 						<input type="text" size="4" name="content_width" id="content_width" value="<?php echo $easel_options['content_width']; ?>" />px
 					</td>
 					<td>
-						<?php _e('This sets a specific width for WordPress to use for media content within your posts and pages.  Default = 500','easel'); ?>
+						<?php _e('This sets a specific width for WordPress to use for media content within your posts and pages. Default = 500','easel'); ?>
 					</td>
 				</tr>
 				<tr class="alternate">
@@ -73,7 +73,7 @@
 						<input type="text" size="4" name="content_width_disabled_sidebars" id="content_width" value="<?php echo $easel_options['content_width_disabled_sidebars']; ?>" />px
 					</td>
 					<td>
-						<?php _e('When the sidebars are disabled on pages?  Default = 700','easel'); ?>
+						<?php _e('When the sidebars are disabled on pages? Default = 700','easel'); ?>
 					</td>
 				</tr>
 			</table>
@@ -107,7 +107,7 @@
 						<input id="disable_post_titles" name="disable_post_titles" type="checkbox" value="1" <?php checked(true, $easel_options['disable_post_titles']); ?> />
 					</td>
 					<td>
-						<?php _e('Post titles will be turned off.  If you disable the titles on posts can still add a post-image in the post editor.','easel'); ?>
+						<?php _e('Post titles will be turned off. If you disable the titles on posts can still add a post-image in the post editor.','easel'); ?>
 					</td>
 				</tr>
 				<tr>
@@ -223,7 +223,7 @@
 						<input id="enable_comments_on_homepage" name="enable_comments_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['enable_comments_on_homepage']); ?> />
 					</td>
 					<td>
-						<?php _e('Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them, This will ONLY work if you have it set to only display 1 post on the home page.  The post count and this must be set to work.','easel'); ?>
+						<?php _e('Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them, This will ONLY work if you have it set to only display 1 post on the home page. The post count and this must be set to work.','easel'); ?>
 					</td>
 				</tr>
 <?php
@@ -256,7 +256,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 						</select>
 					</th>
 					<td>
-						<?php _e('Choose a directory to get the avatars for default gravatars if someone does not have one.  You will have to make these images yourself, or download them from avatar providers. Then make a new directory on your site server to upload them to and select that directory here. <strong>Setting this to \'none\' will disable it from using any special avatar sets.</strong>','easel'); ?><br />
+						<?php _e('Choose a directory to get the avatars for default gravatars if someone does not have one. You will have to make these images yourself, or download them from avatar providers. Then make a new directory on your site server to upload them to and select that directory here. Setting this to <strong>none</strong> will disable it from using any special avatar sets.','easel'); ?><br />
 					</td>
 				</tr>
 			</table>
@@ -360,7 +360,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 						</select>
 					</th>
 					<td>
-						<?php _e('If Display archives results as list is disabled, decide how much is seen in the archive display. ','easel'); ?>
+						<?php _e('If Display archives results as list is disabled, decide how much is seen in the archive display.','easel'); ?>
 					</td>
 				</tr>				
 				<tr class="alternate">
@@ -372,7 +372,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 						</select>
 					</th>
 					<td>
-						<?php _e('Sets the display order of your archives. Newest to Oldest will display your posts starting with the most recent. Oldest to Newest will start with the first entry in the category, tag, or date range (e.g., Selecting May 20XX will start with May 1, not May 31st.)','easel'); ?>
+						<?php _e('Sets the display order of your archives. Newest to Oldest will display your posts starting with the most recent. Oldest to Newest will start with the first entry in the category, tag, or date range (e.g. Selecting May 20XX will start with May 1, not May 31st.)','easel'); ?>
 					</td>
 				</tr>
 			</table>
