@@ -11,7 +11,7 @@
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_default_menubar"><?php _e('Disable default Menubar','easel'); ?></label></th>
+					<th scope="row"><label for="disable_default_menubar"><?php _e('Disable default Menubar?','easel'); ?></label></th>
 					<td>
 						<input id="disable_default_menubar" name="disable_default_menubar" type="checkbox" value="1" <?php checked(true, $easel_options['disable_default_menubar']); ?> />
 					</td>
@@ -20,7 +20,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="enable_search_in_menubar"><?php _e('Enable Search Form','easel'); ?></label></th>
+					<th scope="row"><label for="enable_search_in_menubar"><?php _e('Enable Search Form?','easel'); ?></label></th>
 					<td>
 						<input id="enable_search_in_menubar" name="enable_search_in_menubar" type="checkbox" value="1" <?php checked(true, $easel_options['enable_search_in_menubar']); ?> />
 					</td>
@@ -29,7 +29,7 @@
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="enable_rss_in_menubar"><?php _e('Enable RSS Link','easel'); ?></label></th>
+					<th scope="row"><label for="enable_rss_in_menubar"><?php _e('Enable RSS Link?','easel'); ?></label></th>
 					<td>
 						<input id="enable_rss_in_menubar" name="enable_rss_in_menubar" type="checkbox" value="1" <?php checked(true, $easel_options['enable_rss_in_menubar']); ?> />
 					</td>
@@ -111,7 +111,7 @@
 		<div class="easel-options-save">
 			<div class="easel-major-publishing-actions">
 				<div class="easel-publishing-action">
-					<input name="easel_save_menubar" type="submit" class="button-primary" value="Save Settings" />
+					<input name="easel_save_menubar" type="submit" class="button-primary" value="<?php _e('Save Settings','easel'); ?>" />
 					<input type="hidden" name="action" value="easel_save_menubar" />
 				</div>
 				<div class="clear"></div>

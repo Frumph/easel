@@ -21,7 +21,7 @@
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_blog_on_homepage"><?php _e('Disable Blog Loop','easel'); ?></label></th>
+					<th scope="row"><label for="disable_blog_on_homepage"><?php _e('Disable Blog Loop?','easel'); ?></label></th>
 					<td>
 						<input id="disable_blog_on_homepage" name="disable_blog_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['disable_blog_on_homepage']); ?> />
 					</td>
@@ -85,12 +85,12 @@
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_page_titles"><?php _e('Disable the titles on pages','easel'); ?></label></th>
+					<th scope="row"><label for="disable_page_titles"><?php _e('Disable the titles on pages?','easel'); ?></label></th>
 					<td>
 						<input id="disable_page_titles" name="disable_page_titles" type="checkbox" value="1" <?php checked(true, $easel_options['disable_page_titles']); ?> />
 					</td>
 					<td>
-						<?php _e('Page titles will be turned off.  If you disable the titles no pages you can still add a post-image in the page editor.','easel'); ?>
+						<?php _e('Page titles will be turned off. If you disable the titles no pages you can still add a post-image in the page editor.','easel'); ?>
 					</td>
 				</tr>			
 			</table>
@@ -102,7 +102,7 @@
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_post_titles"><?php _e('Disable the titles on posts','easel'); ?></label></th>
+					<th scope="row"><label for="disable_post_titles"><?php _e('Disable the titles on posts?','easel'); ?></label></th>
 					<td>
 						<input id="disable_post_titles" name="disable_post_titles" type="checkbox" value="1" <?php checked(true, $easel_options['disable_post_titles']); ?> />
 					</td>
@@ -111,7 +111,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="enable_post_calendar"><?php _e('Add graphic calendar to blog posts','easel'); ?></label></th>
+					<th scope="row"><label for="enable_post_calendar"><?php _e('Add graphic calendar to blog posts?','easel'); ?></label></th>
 					<td>
 						<input id="enable_post_calendar" name="enable_post_calendar" type="checkbox" value="1" <?php checked(true, $easel_options['enable_post_calendar']); ?> />
 					</td>
@@ -120,16 +120,16 @@
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="enable_post_author_gravatar"><?php _e('Enable Author Gravatar','easel'); ?></label></th>
+					<th scope="row"><label for="enable_post_author_gravatar"><?php _e('Enable Author Gravatar?','easel'); ?></label></th>
 					<td>
 						<input id="enable_post_author_gravatar" name="enable_post_author_gravatar" type="checkbox" value="1" <?php checked(true, $easel_options['enable_post_author_gravatar']); ?> />
 					</td>
 					<td>
-						<?php _e('Enabling this option will show a gravatar of the post author based on the author email address.  Gravatars are associated by your email address and you can create them at','easel'); ?> <a href="http://gravatar.com/">http://gravatar.com</a>.
+						<?php _e('Enabling this option will show a gravatar of the post author based on the author email address. Gravatars are associated by your email address and you can create them at','easel'); ?> <a href="http://gravatar.com/">http://gravatar.com</a>.
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="enable_avatar_trick"><?php _e('Enable Avatar Mod','easel'); ?></label></th>
+					<th scope="row"><label for="enable_avatar_trick"><?php _e('Enable Avatar Mod?','easel'); ?></label></th>
 					<td>
 						<input id="enable_avatar_trick" name="enable_avatar_trick" type="checkbox" value="1" <?php checked(true, $easel_options['enable_avatar_trick']); ?> />
 					</td>
@@ -138,7 +138,7 @@
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_tags_in_posts"><?php _e('Disable display of <strong>tags</strong> in posts','easel'); ?></label></th>
+					<th scope="row"><label for="disable_tags_in_posts"><?php _e('Disable display of <strong>tags</strong> in posts?','easel'); ?></label></th>
 					<td>
 						<input id="disable_tags_in_posts" name="disable_tags_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['disable_tags_in_posts']); ?> />
 					</td>
@@ -147,7 +147,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="disable_categories_in_posts"><?php _e('Disable display of <strong>categories</strong> in posts','easel'); ?></label></th>
+					<th scope="row"><label for="disable_categories_in_posts"><?php _e('Disable display of <strong>categories</strong> in posts?','easel'); ?></label></th>
 					<td>
 						<input id="disable_categories_in_posts" name="disable_categories_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['disable_categories_in_posts']); ?> />
 					</td>
@@ -156,7 +156,7 @@
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_author_info_in_posts"><?php _e('Disable display of <strong>by Author</strong> in post information.','easel'); ?></label></th>
+					<th scope="row"><label for="disable_author_info_in_posts"><?php _e('Disable display of <strong>by Author</strong> in post information?','easel'); ?></label></th>
 					<td>
 						<input id="disable_author_info_in_posts" name="disable_author_info_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['disable_author_info_in_posts']); ?> />
 					</td>
@@ -165,7 +165,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="disable_date_info_in_posts"><?php _e('Disable display of the posted on date in posts','easel'); ?></label></th>
+					<th scope="row"><label for="disable_date_info_in_posts"><?php _e('Disable display of the posted on date in posts?','easel'); ?></label></th>
 					<td>
 						<input id="disable_date_info_in_posts" name="disable_date_info_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['disable_date_info_in_posts']); ?> />
 					</td>
@@ -174,7 +174,7 @@
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_posted_at_time_in_posts"><?php _e('Disable the display of the posted at time in posts','easel'); ?></label></th>
+					<th scope="row"><label for="disable_posted_at_time_in_posts"><?php _e('Disable the display of the posted at time in posts?','easel'); ?></label></th>
 					<td>
 						<input id="disable_posted_at_time_in_posts" name="disable_posted_at_time_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['disable_posted_at_time_in_posts']); ?> />
 					</td>
@@ -183,7 +183,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="enable_last_modified_in_posts"><?php _e('Enable the display of last modified information in posts.','easel'); ?></label></th>
+					<th scope="row"><label for="enable_last_modified_in_posts"><?php _e('Enable the display of last modified information in posts?','easel'); ?></label></th>
 					<td>
 						<input id="enable_last_modified_in_posts" name="enable_last_modified_in_posts" type="checkbox" value="1" <?php checked(true, $easel_options['enable_last_modified_in_posts']); ?> />
 					</td>
@@ -200,7 +200,7 @@
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_comment_note"><?php _e('Disable the comment notes','easel'); ?></label></th>
+					<th scope="row"><label for="disable_comment_note"><?php _e('Disable the comment notes?','easel'); ?></label></th>
 					<td>
 						<input id="disable_comment_note" name="disable_comment_note" type="checkbox" value="1" <?php checked(true, $easel_options['disable_comment_note']); ?> />
 					</td>
@@ -209,7 +209,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="disable_comment_javascript"><?php _e('Disable Comment Javascript','easel'); ?></label></th>
+					<th scope="row"><label for="disable_comment_javascript"><?php _e('Disable Comment Javascript?','easel'); ?></label></th>
 					<td>
 						<input id="disable_comment_javascript" name="disable_comment_javascript" type="checkbox" value="1" <?php checked(true, $easel_options['disable_comment_javascript']); ?> />
 					</td>
@@ -218,7 +218,7 @@
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="enable_comments_on_homepage"><?php _e('Enable Comments on Home Page','easel'); ?></label></th>
+					<th scope="row"><label for="enable_comments_on_homepage"><?php _e('Enable Comments on Home Page?','easel'); ?></label></th>
 					<td>
 						<input id="enable_comments_on_homepage" name="enable_comments_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['enable_comments_on_homepage']); ?> />
 					</td>
@@ -268,7 +268,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="enable_numbered_pagination"><?php _e('Enable numbered pagination','easel'); ?></label></th>
+					<th scope="row"><label for="enable_numbered_pagination"><?php _e('Enable numbered pagination?','easel'); ?></label></th>
 					<td>
 						<input id="enable_numbered_pagination" name="enable_numbered_pagination" type="checkbox" value="1" <?php checked(true, $easel_options['enable_numbered_pagination']); ?> />
 					</td>
@@ -285,7 +285,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_footer_text"><?php _e('Disable the default text in the footer','easel'); ?></label></th>
+					<th scope="row"><label for="disable_footer_text"><?php _e('Disable the default text in the footer?','easel'); ?></label></th>
 					<td>
 						<input id="disable_footer_text" name="disable_footer_text" type="checkbox" value="1" <?php checked(true, $easel_options['disable_footer_text']); ?> />
 					</td>
@@ -353,10 +353,10 @@ foreach ($avatar_directories as $avatar_dirs) {
 				</tr>
 				<tr>
 					<th scope="row" colspan="2">
-						<label for="excerpt_or_content_in_archive"><?php _e('Excerpt or Full Content in archive and search.','easel'); ?></label>
+						<label for="excerpt_or_content_in_archive"><?php _e('Excerpt or Full Content in archive and search?','easel'); ?></label>
 						<select name="excerpt_or_content_in_archive" id="excerpt_or_content_in_archive">
-							<option class="level-0" value="excerpt" <?php selected($easel_options['excerpt_or_content_in_archive'], 'excerpt'); ?>>Excerpt</option>
-							<option class="level-0" value="content" <?php selected($easel_options['excerpt_or_content_in_archive'], 'content'); ?>>Full Content</option>
+							<option class="level-0" value="excerpt" <?php selected($easel_options['excerpt_or_content_in_archive'], 'excerpt'); ?>><?php _e('Excerpt','easel'); ?></option>
+							<option class="level-0" value="content" <?php selected($easel_options['excerpt_or_content_in_archive'], 'content'); ?>><?php _e('Full Content','easel'); ?></option>
 						</select>
 					</th>
 					<td>
@@ -367,8 +367,8 @@ foreach ($avatar_directories as $avatar_dirs) {
 					<th scope="row" colspan="2">
 						<label for="archive_display_order"><?php _e('Archive Display Order','easel'); ?></label>
 						<select name="archive_display_order" id="archive_display_order">
-							<option class="level-0" value="asc" <?php if ($easel_options['archive_display_order'] == "asc") { ?>selected="selected"<?php } ?>>Oldest to Newest - Ascending</option>
-							<option class="level-0" value="desc" <?php if ($easel_options['archive_display_order'] == "desc") { ?>selected="selected"<?php } ?>>Newest to Oldest - Descending</option>
+							<option class="level-0" value="asc" <?php if ($easel_options['archive_display_order'] == "asc") { ?>selected="selected"<?php } ?>><?php _e('Oldest to Newest - Ascending','easel'); ?></option>
+							<option class="level-0" value="desc" <?php if ($easel_options['archive_display_order'] == "desc") { ?>selected="selected"<?php } ?>><?php _e('Newest to Oldest - Descending','easel'); ?></option>
 						</select>
 					</th>
 					<td>
@@ -382,7 +382,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 		<div class="easel-options-save">
 			<div class="easel-major-publishing-actions">
 				<div class="easel-publishing-action">
-					<input name="easel_save_general" type="submit" class="button-primary" value="Save Settings" />
+					<input name="easel_save_general" type="submit" class="button-primary" value="<?php _e('Save Settings','easel'); ?>" />
 					<input type="hidden" name="action" value="easel_save_general" />
 				</div>
 				<div class="clear"></div>
