@@ -413,8 +413,6 @@ function easel_themeinfo($whichinfo = null) {
 // Dashboard Menu Options -- last thing to load so it can redirect
 if (is_admin()) {
 	@require_once(easel_themeinfo('themepath').'/options.php');
-    global $pagenow;
-	if (('themes.php' == $pagenow) && isset($_GET['activated']) && easel_themeinfo('first_run')) {
-		header( 'Location: '.admin_url().'themes.php?page=easel-options' ) ;
-	}
+    /* translators: theme discription for wp-admin */
+    $bogus_translation = __('Publish a WebComic with the Easel theme and the Comic Easel plugin.','easel');
 }
