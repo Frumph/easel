@@ -45,7 +45,7 @@
 		<table class="widefat" style="width: 100%">
 		<tr>
 			<td colspan="5">
-				Technical Support is available on the <a href="https://github.com/Frumph/easel/issues">github repository</a> or use the Contact form on <a href="http://frumph.net" target="_blank">Frumph.NET</a>
+				<?php _e('Technical Support is available on the <a href="https://github.com/Frumph/easel/issues" target="_blank">github repository</a> or use the Contact form on <a href="http://frumph.net" target="_blank">Frumph.NET</a>.','easel'); ?>
 			</td>
 		<tr>
 			<td>
