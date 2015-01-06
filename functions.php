@@ -101,8 +101,6 @@ function easel_enqueue_theme_scripts() {
 			wp_enqueue_script('themetricks_historic1', easel_themeinfo('themeurl').'/js/cvi_text_lib.js', null, null, true);
 			wp_enqueue_script('themetricks_historic2', easel_themeinfo('themeurl').'/js/instant.js', null, null, true);
 		}
-		if (easel_themeinfo('facebook_like_blog_post'))
-			wp_enqueue_script('easel-facebook', 'http://connect.facebook.net/en_US/all.js#xfbml=1'); // force to the header instead of footer
 	}
 }
 
