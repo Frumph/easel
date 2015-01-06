@@ -33,7 +33,7 @@
 		<div class="easel-options-save">
 			<div class="easel-major-publishing-actions">
 				<div class="easel-publishing-action">
-					<input name="easel_save_debug" type="submit" class="button-primary" value="Save Settings" />
+					<input name="easel_save_debug" type="submit" class="button-primary" value="<?php _e('Save Settings','easel'); ?>" />
 					<input type="hidden" name="action" value="easel_save_debug" />
 				</div>
 				<div class="clear"></div>
