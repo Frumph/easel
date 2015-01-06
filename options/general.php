@@ -125,7 +125,7 @@
 						<input id="enable_post_author_gravatar" name="enable_post_author_gravatar" type="checkbox" value="1" <?php checked(true, $easel_options['enable_post_author_gravatar']); ?> />
 					</td>
 					<td>
-						<?php _e('Enabling this option will show a gravatar of the post author based on the author email address. Gravatars are associated by your email address and you can create them at','easel'); ?> <a href="http://gravatar.com/">http://gravatar.com</a>.
+						<?php _e('Enabling this option will show a gravatar of the post author based on the author email address. Gravatars are associated by your email address and you can create them at','easel'); ?> <a href="https://gravatar.com/" target="_blank">https://gravatar.com</a>.
 					</td>
 				</tr>
 				<tr>
