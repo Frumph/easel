@@ -255,14 +255,14 @@ function easel_admin_options() { ?>
 				<td style="width:200px;">
 					<form method="post" id="myForm" name="template" enctype="multipart/form-data" action="">
 						<?php wp_nonce_field('update-options') ?>
-						<input name="easel_reset" type="submit" class="button" value="Reset All Settings" />
+						<input name="easel_reset" type="submit" class="button" value="<?php _e('Reset All Settings','easel'); ?>" />
 						<input type="hidden" name="action" value="easel_reset" />
 					</form>
 				</td>
 				<td style="width:200px;">
 					<form method="post" id="myForm" name="template" enctype="multipart/form-data" action="">
 						<?php wp_nonce_field('update-options') ?>
-						<input name="easel_reset_customize" type="submit" class="button" value="Reset Customizer Colors" />
+						<input name="easel_reset_customize" type="submit" class="button" value="<?php _e('Reset Customizer Colors','easel'); ?>" />
 						<input type="hidden" name="action" value="easel_reset_customize" />
 					</form>
 				</td>
