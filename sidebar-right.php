@@ -8,15 +8,16 @@
 			<br />
 			<?php _e('Once you add widgets to this sidebar, this default information will go away.','easel'); ?><br />
 			<br />
-			<?php _e('This theme also uses the WordPress 3.0 Menu system.  You probably see the default stuff you have in the menubar.  Go to Appearance -> Menu in the wp-admin (dashboard) and create a new menu.','easel'); ?><br />
+			<?php _e('This theme also uses the WordPress 3.0 Menu system. You probably see the default stuff you have in the menubar. Go to Appearance -> Menu in the wp-admin (dashboard) and create a new menu.','easel'); ?><br />
 		</div>
 			<h2><?php _e('Recommended Plugins','easel'); ?></h2>
 			<ol>
-				<li><a href="http://wordpress.org/extend/plugins/comic-easel/">Comic Easel</a></li>
+				<li><a href="https://wordpress.org/extend/plugins/comic-easel/">Comic Easel</a></li>
+				<li><a href="https://wordpress.org/plugins/broken-link-checker/">Broken Link Checker</a></li>
 				<li><a href="http://wordpress.org/extend/plugins/vipers-video-quicktags/">Viper's Video Quicktags</a></li>
 				<li><a href="http://wordpress.org/extend/plugins/audio-player/">Audio Player</a></li>
 				<li><a href="http://wordpress.org/extend/plugins/easel-companion/">Theme Companion</a></li>
-			</ol>						
+			</ol>
 		<?php }
 	?>
 	</div>
