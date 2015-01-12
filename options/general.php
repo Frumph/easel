@@ -17,7 +17,7 @@
 						<input type="text" size="2" name="home_post_count" id="home_post_count" value="<?php echo $easel_options['home_post_count']; ?>" />
 					</td>
 					<td>
-						<?php _e('How many blog posts you would like displayed on the index page at one time. This is different then the one in the wp-admin - settings, the one in the settings will control how many show up on search and archive pages.','easel'); ?>
+						<?php _e('How many blog posts you would like displayed on the index page at one time. This is different then the one in the wp-admin &#10132; settings, the one in the settings will control how many show up on search and archive pages.','easel'); ?>
 					</td>
 				</tr>
 				<tr class="alternate">
@@ -26,7 +26,7 @@
 						<input id="disable_blog_on_homepage" name="disable_blog_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['disable_blog_on_homepage']); ?> />
 					</td>
 					<td>
-						<?php _e('Enabling this option, will DISABLE the blog from appearing on the home page AND any pages set as the blog posts page in the settings - reading.','easel'); ?>
+						<?php _e('Enabling this option, will DISABLE the blog from appearing on the home page AND any pages set as the blog posts page in the settings &#10132; reading.','easel'); ?>
 					</td>
 				</tr>
 			</table>
@@ -43,9 +43,9 @@
 					<td>
 						<?php _e('Width:','easel'); ?> <input type="text" size="5" name="custom_image_header_width" id="custom_image_header_width" value="<?php echo $easel_options['custom_image_header_width']; ?>" />px &nbsp;
 						<?php _e('Height:','easel'); ?> <input type="text" size="5" name="custom_image_header_height" id="custom_image_header_height" value="<?php echo $easel_options['custom_image_header_height']; ?>" />px<br />
-						<?php _e('Modify the height and width of the custom header *if* you use Appearance - Header','easel'); ?><br />
+						<?php _e('Modify the height and width of the custom header *if* you use Appearance &#10132; Header','easel'); ?><br />
 						<?php _e('3 Column Layouts are 980px width while 2 Column Layouts are 780px width as default.','easel'); ?><br />
-						<strong><?php _e('NOTE: This should only be used if the appearance - header section is not displaying your header dimensions correctly.', 'easel'); ?></strong>
+						<strong><?php _e('NOTE: This should only be used if the appearance &#10132; header section is not displaying your header dimensions correctly.', 'easel'); ?></strong>
 					</td>
 				</tr>
 			</table>
@@ -290,7 +290,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 						<input id="disable_footer_text" name="disable_footer_text" type="checkbox" value="1" <?php checked(true, $easel_options['disable_footer_text']); ?> />
 					</td>
 					<td>
-						<?php _e('Default text in the footer will not display. Enable this if you do not want any text in the footer. If you wish to add you own custom content, you may do so via Appearance -> Widgets-> Footer.', 'easel'); ?>
+						<?php _e('Default text in the footer will not display. Enable this if you do not want any text in the footer. If you wish to add you own custom content, you may do so via Appearance &#10132; Widgets &#10132; Footer.', 'easel'); ?>
 					</td>
 				</tr>
 				<tr>

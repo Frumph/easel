@@ -48,7 +48,7 @@
 				</tr>
 			</table>
 			<br />
-			<strong><?php _e('Schemes and customization can be modified in the appearance - customize section of the wp-admin','easel'); ?></strong>
+			<strong><?php _e('Schemes and customization can be modified in the appearance &#10132; customize section of the wp-admin','easel'); ?></strong>
 			<br />
 		</div>
 		<div class="easel-options-save">
