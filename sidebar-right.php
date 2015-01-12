@@ -12,11 +12,8 @@
 		</div>
 			<h2><?php _e('Recommended Plugins','easel'); ?></h2>
 			<ol>
-				<li><a href="https://wordpress.org/extend/plugins/comic-easel/">Comic Easel</a></li>
-				<li><a href="https://wordpress.org/plugins/broken-link-checker/">Broken Link Checker</a></li>
-				<li><a href="http://wordpress.org/extend/plugins/vipers-video-quicktags/">Viper's Video Quicktags</a></li>
-				<li><a href="http://wordpress.org/extend/plugins/audio-player/">Audio Player</a></li>
-				<li><a href="http://wordpress.org/extend/plugins/easel-companion/">Theme Companion</a></li>
+				<li><a href="https://wordpress.org/plugins/comic-easel/">Comic Easel</a></li>
+				<li><a href="https://wordpress.org/plugins/vipers-video-quicktags/">Viper's Video Quicktags</a></li>
 			</ol>
 		<?php }
 	?>
