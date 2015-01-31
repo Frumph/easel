@@ -314,15 +314,15 @@ foreach ($avatar_directories as $avatar_dirs) {
 						<input type="text" size="20" name="copyright_name" id="copyright_name" value="<?php echo stripcslashes($easel_options['copyright_name']); ?>" /><br />
 					</th>
 					<td colspan="2">
-						<?php _e('Set the name to which this site is &copy; Copyright to, leave blank to have the site name.', 'easel'); ?>
+						<?php _e('Set the name to which this site is &copy; Copyright to. Leave blank to have the site name.', 'easel'); ?>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="copyright_url"><?php _e('Copyright Holder URL', 'easel'); ?></label>
+					<th scope="row"><label for="copyright_url"><?php _e('&copy; Copyright Holder URL', 'easel'); ?></label>
 						<input type="text" size="30" name="copyright_url" id="copyright_url" value="<?php echo stripcslashes($easel_options['copyright_url']); ?>" /><br />
 					</th>
 					<td colspan="2">
-						<?php _e('Set the URL to the owner of the &copy; Copyright if different then this website, leave blank for sites link.', 'easel'); ?>
+						<?php _e('Set the URL to the owner of the &copy; Copyright if different then this website. Leave blank for sites link.', 'easel'); ?>
 					</td>
 				</tr>
 			</table>
@@ -374,8 +374,8 @@ foreach ($avatar_directories as $avatar_dirs) {
 					<th scope="row" colspan="2">
 						<label for="archive_display_order"><?php _e('Archive Display Order', 'easel'); ?></label>
 						<select name="archive_display_order" id="archive_display_order">
-							<option class="level-0" value="asc" <?php if ($easel_options['archive_display_order'] == "asc") { ?>selected="selected"<?php } ?>><?php _e('Oldest to Newest - Ascending', 'easel'); ?></option>
-							<option class="level-0" value="desc" <?php if ($easel_options['archive_display_order'] == "desc") { ?>selected="selected"<?php } ?>><?php _e('Newest to Oldest - Descending', 'easel'); ?></option>
+							<option class="level-0" value="asc" <?php if ($easel_options['archive_display_order'] == "asc") { ?>selected="selected"<?php } ?>><?php _e('Oldest to Newest &mdash; Ascending', 'easel'); ?></option>
+							<option class="level-0" value="desc" <?php if ($easel_options['archive_display_order'] == "desc") { ?>selected="selected"<?php } ?>><?php _e('Newest to Oldest &mdash; Descending', 'easel'); ?></option>
 						</select>
 					</th>
 					<td>
