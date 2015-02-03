@@ -3,7 +3,7 @@
 add_action('admin_menu', 'easel_options_setup');
 
 function easel_options_setup() {
-	$options_title = __('Options','easel');
+	$options_title = __('Options', 'easel');
 	$admin_title = __('Easel Options', 'easel');
 	$pagehook = add_theme_page($admin_title, $admin_title, 'edit_theme_options', 'easel-options', 'easel_admin_options');
 	add_action('admin_head-' . $pagehook, 'easel_admin_page_head');
@@ -31,9 +31,9 @@ function easel_admin_options() { ?>
 <div class="wrap">
 	<div id="eadmin-headericon" style="background: url('<?php echo easel_themeinfo('themeurl') ?>/images/easel_small.png') no-repeat;"></div>
 	<p class="alignleft">
-		<h2><?php _e('Easel Options','easel'); ?></h2>
+		<h2><?php _e('Easel Options', 'easel'); ?></h2>
 		<?php _e('Easel is a modular theme that has an abundance of hooks and actions placed in it for additional usability.', 'easel'); ?><br />
-		<?php _e('While Easel is an excellent stand-alone theme, it can be enhanced in usability with the associated plugins that have been built to utilize its functionality.','easel'); ?><br />
+		<?php _e('While Easel is an excellent stand-alone theme, it can be enhanced in usability with the associated plugins that have been built to utilize its functionality.', 'easel'); ?><br />
 	</p>
 	<div class="clear"></div>
 	<?php
@@ -44,13 +44,13 @@ function easel_admin_options() { ?>
 		delete_option('easel-options');
 		global $easel_themeinfo; $easel_themeinfo = '';
 	?>
-		<div id="message" class="updated"><p><strong><?php _e('Easel Settings RESET!','easel'); ?></strong></p></div>
+		<div id="message" class="updated"><p><strong><?php _e('Easel Settings RESET!', 'easel'); ?></strong></p></div>
 	<?php } 
 	if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'easel_reset_customize') {
 		remove_theme_mod('easel-customize');
 		global $easel_themeinfo; $easel_themeinfo = '';
 	?>
-		<div id="message" class="updated"><p><strong><?php _e('Easel Customizer Colors RESET!','easel'); ?></strong></p></div>
+		<div id="message" class="updated"><p><strong><?php _e('Easel Customizer Colors RESET!', 'easel'); ?></strong></p></div>
 	<?php }
 	if (empty($easel_options)) { 
 		easel_themeinfo('reset');
@@ -182,7 +182,7 @@ function easel_admin_options() { ?>
 			update_option('easel-options', $easel_options);
 		}
 		if ($tab) { ?>
-			<div id="message" class="updated"><p><strong><?php _e('Easel Settings SAVED!','easel'); ?></strong></p></div>
+			<div id="message" class="updated"><p><strong><?php _e('Easel Settings SAVED!', 'easel'); ?></strong></p></div>
 			<script>function hidemessage() { document.getElementById('message').style.display = 'none'; }</script>
 		<?php }
 	} 
@@ -238,8 +238,8 @@ function easel_admin_options() { ?>
 	<div class="eadmin-footer">
 		<div id="easel-version-title"><a href="http://frumph.net/">Easel <?php echo easel_themeinfo('version'); ?></a></div>
 		<br />
-		<?php _e('Created, Developed and maintained by','easel'); ?> <a href="http://frumph.net/">Philip M. Hofer</a> <small>(<a href="http://frumph.net/">Frumph</a>)</small><br />
-		<?php _e('If you like the Easel theme, please donate.  It will help in developing new features and versions.','easel'); ?>
+		<?php _e('Created, Developed and maintained by', 'easel'); ?> <a href="http://frumph.net/">Philip M. Hofer</a> <small>(<a href="http://frumph.net/">Frumph</a>)</small><br />
+		<?php _e('If you like the Easel theme, please donate.  It will help in developing new features and versions.', 'easel'); ?>
 		<table style="margin:0 auto;">
 			<tr>
 				<td style="width:200px;">
@@ -253,14 +253,14 @@ function easel_admin_options() { ?>
 				<td style="width:200px;">
 					<form method="post" id="myForm" name="template" enctype="multipart/form-data" action="">
 						<?php wp_nonce_field('update-options') ?>
-						<input name="easel_reset" type="submit" class="button" value="<?php _e('Reset All Settings','easel'); ?>" />
+						<input name="easel_reset" type="submit" class="button" value="<?php _e('Reset All Settings', 'easel'); ?>" />
 						<input type="hidden" name="action" value="easel_reset" />
 					</form>
 				</td>
 				<td style="width:200px;">
 					<form method="post" id="myForm" name="template" enctype="multipart/form-data" action="">
 						<?php wp_nonce_field('update-options') ?>
-						<input name="easel_reset_customize" type="submit" class="button" value="<?php _e('Reset Customizer Colors','easel'); ?>" />
+						<input name="easel_reset_customize" type="submit" class="button" value="<?php _e('Reset Customizer Colors', 'easel'); ?>" />
 						<input type="hidden" name="action" value="easel_reset_customize" />
 					</form>
 				</td>

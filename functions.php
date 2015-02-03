@@ -126,19 +126,19 @@ function easel_pre_parser($query) {
 if (!function_exists('easel_register_sidebars')) {
 	function easel_register_sidebars() {
 		$widgets_list = array(
-			array('id' => 'left-sidebar', 'name' => __('Left Sidebar', 'easel'), 'description' => __('The sidebar that appears to the left of the content.','easel')),
-			array('id' => 'right-sidebar', 'name' => __('Right Sidebar', 'easel'), 'description' => __('The sidebar that appears to the right of the content.','easel')),
-			array('id' => 'above-header', 'name' => __('Above Header', 'easel'), 'description' => __('This sidebar appears to above all of the site information.  This sidebar is not encased in CSS, you will need to create CSS for it.','easel')),
-			array('id' => 'header', 'name' => __('Header', 'easel'), 'description' => __('This sidebar appears inside the #header block.','easel')),
-			array('id' => 'menubar', 'name' => __('Menubar', 'easel'), 'description' => __('This sidebar is under the header and above the content-wrapper block','easel')),
-			array('id' => 'over-blog', 'name' => __('Over Blog', 'easel'), 'description' => __('This sidebar appears over the blog within the #column .narrowcolumn','easel')),
-			array('id' => 'under-blog', 'name' => __('Under Blog', 'easel'), 'description' => __('This sidebar appears under the blog within the #column .narrowocolumn','easel')),
-			array('id' => 'footer', 'name' => __('Footer', 'easel'), 'description' => __('This sidebar is at the bottom of the page and is the center of the 3 footer sidebars.','easel')),
-			array('id' => 'footer-left', 'name' => __('Footer Left', 'easel'), 'description' => __('This sidebar is at the bottom of the page, the left one.','easel')),
-			array('id' => 'footer-right', 'name' => __('Footer Right', 'easel'), 'description' => __('This sidebar is at the bottom of the page, the right one.','easel')),
+			array('id' => 'left-sidebar', 'name' => __('Left Sidebar', 'easel'), 'description' => __('The sidebar that appears to the left of the content.', 'easel')),
+			array('id' => 'right-sidebar', 'name' => __('Right Sidebar', 'easel'), 'description' => __('The sidebar that appears to the right of the content.', 'easel')),
+			array('id' => 'above-header', 'name' => __('Above Header', 'easel'), 'description' => __('This sidebar appears to above all of the site information.  This sidebar is not encased in CSS, you will need to create CSS for it.', 'easel')),
+			array('id' => 'header', 'name' => __('Header', 'easel'), 'description' => __('This sidebar appears inside the #header block.', 'easel')),
+			array('id' => 'menubar', 'name' => __('Menubar', 'easel'), 'description' => __('This sidebar is under the header and above the content-wrapper block', 'easel')),
+			array('id' => 'over-blog', 'name' => __('Over Blog', 'easel'), 'description' => __('This sidebar appears over the blog within the #column .narrowcolumn',' easel')),
+			array('id' => 'under-blog', 'name' => __('Under Blog', 'easel'), 'description' => __('This sidebar appears under the blog within the #column .narrowocolumn', 'easel')),
+			array('id' => 'footer', 'name' => __('Footer', 'easel'), 'description' => __('This sidebar is at the bottom of the page and is the center of the 3 footer sidebars.', 'easel')),
+			array('id' => 'footer-left', 'name' => __('Footer Left', 'easel'), 'description' => __('This sidebar is at the bottom of the page, the left one.', 'easel')),
+			array('id' => 'footer-right', 'name' => __('Footer Right', 'easel'), 'description' => __('This sidebar is at the bottom of the page, the right one.', 'easel')),
 		);
 		if (class_exists('Jetpack') && Jetpack::init()->is_module_active('minileven')) { 
-			$widgets_list[] = array('id' => '1', 'name' => __('Jetpack Mobile Sidebar', 'easel'), 'description' => __('Jetpack Mobile Sidebar','easel'));
+			$widgets_list[] = array('id' => '1', 'name' => __('Jetpack Mobile Sidebar', 'easel'), 'description' => __('Jetpack Mobile Sidebar', 'easel'));
 		}
 		foreach ($widgets_list as $widget_info) {
 			register_sidebar(array(
@@ -182,7 +182,7 @@ function easel_excerpt_length($length) {
 
 if (!function_exists('easel_auto_excerpt_more')) {
 	function easel_auto_excerpt_more( $more ) {
-		return __(' [&hellip;]','easel') . ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...','easel') . '</a>';
+		return __(' [&hellip;]', 'easel') . ' <a class="more-link" href="'. get_permalink() . '">' . __('&darr; Read the rest of this entry...', 'easel') . '</a>';
 	}
 }
 
@@ -253,18 +253,18 @@ if (!function_exists('easel_display_social_icons')) {
 		$myspace = easel_themeinfo('menubar_social_myspace');
 		$email = easel_themeinfo('menubar_social_email');
 		$output = '<div class="menunav-social-wrapper">';
-		if (!empty($deviantart)) $output .= '<a href="'.$deviantart.'" target="_blank" title="'.__(' my DeviantART','easel').'" class="menunav-social menunav-deviantart">'.__('DeviantART','easel').'</a>'."\r\n";
-		if (!empty($tumblr)) $output .= '<a href="'.$tumblr.'" target="_blank" title="'.__('Examine my Tumblr','easel').'" class="menunav-social menunav-tumblr">'.__('Tumblr','easel').'</a>'."\r\n";
-		if (!empty($facebook)) $output .= '<a href="'.$facebook.'" target="_blank" title="'.__('Friend on Facebook','easel').'" class="menunav-social menunav-facebook">'.__('Facebook','easel').'</a>'."\r\n";
-		if (!empty($myspace)) $output .= '<a href="'.$myspace.'" target="_blank" title="'.__('Make use of MySpace','easel').'" class="menunav-social menunav-myspace">'.__('MySpace','easel').'</a>'."\r\n";		
-		if (!empty($linkedin)) $output .= '<a href="'.$linkedin.'" target="_blank" title="'.__('Look at my LinkedIn','easel').'" class="menunav-social menunav-linkedin">'.__('LinkedIn','easel').'</a>'."\r\n";
-		if (!empty($twitter)) $output .= '<a href="'.$twitter.'" target="_blank" title="'.__('Follow me on Twitter','easel').'" class="menunav-social menunav-twitter">'.__('Twitter','easel').'</a>'."\r\n";
-		if (!empty($flickr)) $output .= '<a href="'.$flickr.'" target="_blank" title="'.__('Gaze at my Flickr','easel').'" class="menunav-social menunav-flickr">'.__('Flickr','easel').'</a>'."\r\n";		
-		if (!empty($email)) $output .= '<a href="'.$email.'" target="_blank" title="'.__('Email me','easel').'" class="menunav-social menunav-email">'.__('Email','easel').'</a>'."\r\n";
-		if (!empty($googleplus)) $output .= '<a href="'.$googleplus.'" target="_blank" title="'.__('Circle me on Google+','easel').'" class="menunav-social menunav-googleplus">'.__('Google+','easel').'</a>'."\r\n";
-		if (!empty($pinterest)) $output .= '<a href="'.$pinterest.'" target="_blank" title="'.__('Peruse my Pinterests','easel').'" class="menunav-social menunav-pinterest">'.__('pinterest','easel').'</a>'."\r\n";
-		if (!empty($youtube)) $output .= '<a href="'.$youtube.'" target="_blank" title="'.__('My Channel on YouTube','easel').'" class="menunav-social menunav-youtube">'.__('YouTube','easel').'</a>'."\r\n";
-		if (easel_themeinfo('enable_rss_in_menubar')) $output .= '<a href="'.get_bloginfo('rss2_url').'" target="_blank" title="'.__('RSS Feed','easel').'" class="menunav-social menunav-rss2">'.__('RSS','easel').'</a>'."\r\n";
+		if (!empty($deviantart)) $output .= '<a href="'.$deviantart.'" target="_blank" title="'.__(' my DeviantART',' easel').'" class="menunav-social menunav-deviantart">'.__('DeviantART', 'easel').'</a>'."\r\n";
+		if (!empty($tumblr)) $output .= '<a href="'.$tumblr.'" target="_blank" title="'.__('Examine my Tumblr', 'easel').'" class="menunav-social menunav-tumblr">'.__('Tumblr', 'easel').'</a>'."\r\n";
+		if (!empty($facebook)) $output .= '<a href="'.$facebook.'" target="_blank" title="'.__('Friend on Facebook', 'easel').'" class="menunav-social menunav-facebook">'.__('Facebook', 'easel').'</a>'."\r\n";
+		if (!empty($myspace)) $output .= '<a href="'.$myspace.'" target="_blank" title="'.__('Make use of MySpace', 'easel').'" class="menunav-social menunav-myspace">'.__('MySpace', 'easel').'</a>'."\r\n";		
+		if (!empty($linkedin)) $output .= '<a href="'.$linkedin.'" target="_blank" title="'.__('Look at my LinkedIn', 'easel').'" class="menunav-social menunav-linkedin">'.__('LinkedIn', 'easel').'</a>'."\r\n";
+		if (!empty($twitter)) $output .= '<a href="'.$twitter.'" target="_blank" title="'.__('Follow me on Twitter', 'easel').'" class="menunav-social menunav-twitter">'.__('Twitter', 'easel').'</a>'."\r\n";
+		if (!empty($flickr)) $output .= '<a href="'.$flickr.'" target="_blank" title="'.__('Gaze at my Flickr', 'easel').'" class="menunav-social menunav-flickr">'.__('Flickr', 'easel').'</a>'."\r\n";		
+		if (!empty($email)) $output .= '<a href="'.$email.'" target="_blank" title="'.__('Email me', 'easel').'" class="menunav-social menunav-email">'.__('Email', 'easel').'</a>'."\r\n";
+		if (!empty($googleplus)) $output .= '<a href="'.$googleplus.'" target="_blank" title="'.__('Circle me on Google+', 'easel').'" class="menunav-social menunav-googleplus">'.__('Google+', 'easel').'</a>'."\r\n";
+		if (!empty($pinterest)) $output .= '<a href="'.$pinterest.'" target="_blank" title="'.__('Peruse my Pinterests', 'easel').'" class="menunav-social menunav-pinterest">'.__('pinterest', 'easel').'</a>'."\r\n";
+		if (!empty($youtube)) $output .= '<a href="'.$youtube.'" target="_blank" title="'.__('My Channel on YouTube', 'easel').'" class="menunav-social menunav-youtube">'.__('YouTube', 'easel').'</a>'."\r\n";
+		if (easel_themeinfo('enable_rss_in_menubar')) $output .= '<a href="'.get_bloginfo('rss2_url').'" target="_blank" title="'.__('RSS Feed', 'easel').'" class="menunav-social menunav-rss2">'.__('RSS', 'easel').'</a>'."\r\n";
 		$output .= '<div class="clear"></div>';
 		$output .= '</div>'."\r\n";
 		echo $output;
@@ -285,7 +285,7 @@ function easel_clean_filename($filename) {
 function easel_filter_wp_title( $title ) {
 	global $wp_query, $s, $paged, $page;
 	if (!is_feed()) {
-		$sep = __('&raquo;','easel');
+		$sep = __('&raquo;', 'easel');
 		$new_title = get_bloginfo('name').' ';
 		$bloginfo_description = get_bloginfo('description');	
 		if ((is_home () || is_front_page()) && !empty($bloginfo_description) && !$paged && !$page) {
@@ -293,11 +293,11 @@ function easel_filter_wp_title( $title ) {
 		} elseif (is_single() || is_page()) { 
 			$new_title .= $sep.' '.single_post_title('', false);		
 		} elseif (is_search() ) { 
-			$new_title .= $sep.' '.sprintf(__('Search Results: %s','easel'), esc_html($s));
+			$new_title .= $sep.' '.sprintf(__('Search Results: %s', 'easel'), esc_html($s));
 		} else
 			$new_title .= $title;
 		if ( $paged || $page ) {
-			$new_title .= ' '.$sep.' '.sprintf(__('Page: %s','easel'),max( $paged, $page ));
+			$new_title .= ' '.$sep.' '.sprintf(__('Page: %s', 'easel'),max( $paged, $page ));
 		}
 		$title = $new_title;
 	}
@@ -415,5 +415,5 @@ function easel_themeinfo($whichinfo = null) {
 if (is_admin()) {
 	@require_once(easel_themeinfo('themepath').'/options.php');
     /* translators: theme discription for wp-admin */
-    $bogus_translation = __('Publish a WebComic with the Easel theme and the Comic Easel plugin.','easel');
+    $bogus_translation = __('Publish a WebComic with the Easel theme and the Comic Easel plugin.', 'easel');
 }

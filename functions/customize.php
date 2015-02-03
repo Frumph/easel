@@ -17,12 +17,12 @@ function easel_customize_register( $wp_customize ) {
 
 	$wp_customize->remove_section('colors');
 	$wp_customize->remove_section('title_tagline');
-	$wp_customize->add_section('easel-scheme-options' , array('title' => __('Options','easel'), 'priority' => 10));	
-//	$wp_customize->add_section('easel-background-colors' , array('title' => __('Background Colors','easel')));
-	$wp_customize->add_section('colors' , array('title' => __('Background Colors','easel'), 'description' => __('some description here','easel'), 'priority' => 20));
-	$wp_customize->add_section('easel-text-colors' , array('title' => __('Text Colors','easel'), 'priority' => 30));	
-	$wp_customize->add_section('easel-link-colors' , array('title' => __('Link Colors','easel'), 'priority' => 40));
-	$wp_customize->add_section('easel-logo-options', array('title' => __('Logo','easel'), 'priority' => 50));
+	$wp_customize->add_section('easel-scheme-options' , array('title' => __('Options', 'easel'), 'priority' => 10));	
+//	$wp_customize->add_section('easel-background-colors' , array('title' => __('Background Colors', 'easel')));
+	$wp_customize->add_section('colors' , array('title' => __('Background Colors', 'easel'), 'description' => __('some description here', 'easel'), 'priority' => 20));
+	$wp_customize->add_section('easel-text-colors' , array('title' => __('Text Colors', 'easel'), 'priority' => 30));	
+	$wp_customize->add_section('easel-link-colors' , array('title' => __('Link Colors', 'easel'), 'priority' => 40));
+	$wp_customize->add_section('easel-logo-options', array('title' => __('Logo', 'easel'), 'priority' => 50));
 	
 	$css_array = array(
 			// Background Colors	
@@ -97,7 +97,7 @@ function easel_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'easel-customize-select-scheme', array('default' => 'boxed'));
 	$wp_customize->add_control( 'easel-customize-select-scheme-control' , array(
-				'label' => __('Choose a default scheme.','easel'),
+				'label' => __('Choose a default scheme.', 'easel'),
 				'settings' => 'easel-customize-select-scheme',
 				'section' => 'easel-scheme-options',
 				'type' => 'select',
@@ -114,7 +114,7 @@ function easel_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'easel-customize-checkbox-rounded', array('default' => false));
 	$wp_customize->add_control( 'easel-customize-checkbox-rounded-control', array(
 				'settings' => 'easel-customize-checkbox-rounded',
-				'label'    => __( 'Rounded corners on Post/Page Navigation Sections','easel'),
+				'label'    => __( 'Rounded corners on Post/Page Navigation Sections', 'easel'),
 				'section'  => 'easel-scheme-options',
 				'type'     => 'checkbox'
 				));
@@ -122,7 +122,7 @@ function easel_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'easel-customize-checkbox-header-hotspot', array('default' => false));
 	$wp_customize->add_control( 'easel-customize-checkbox-header-hotspot-control', array(
 				'settings' => 'easel-customize-checkbox-header-hotspot',
-				'label'    => __( 'Make the header title and description become a clickable hotspot for the entire header? (If you do the logo will not display right)','easel'),
+				'label'    => __( 'Make the header title and description become a clickable hotspot for the entire header? (If you do the logo will not display right)', 'easel'),
 				'section'  => 'header_image',
 				'type'     => 'checkbox'
 				));
@@ -134,7 +134,7 @@ function easel_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'easel-customize-comic-in-column', array('default' => false));
 		$wp_customize->add_control( 'easel-customize-comic-in-column-control', array(
 					'settings' => 'easel-customize-comic-in-column',
-					'label'    => __('Put the Comic in the content column?','easel'),
+					'label'    => __('Put the Comic in the content column?', 'easel'),
 					'section'  => 'easel-scheme-options',
 					'type'     => 'checkbox'
 					));

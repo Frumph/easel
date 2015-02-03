@@ -17,34 +17,34 @@ $title_string = '';
 
 if ($count > 0) {
 	if (is_category()) { /* Category */
-		$title_string = __('Archive for ','easel').single_cat_title('',false);
+		$title_string = __('Archive for ', 'easel').single_cat_title('',false);
 	} elseif(is_tag()) { /* Tag */
-		$title_string = __('Posts Tagged ','easel').single_tag_title('',false);
+		$title_string = __('Posts Tagged ', 'easel').single_tag_title('',false);
 	} elseif (is_day()) {
-		$title_string = __('Archive for ','easel').get_the_time('F jS, Y');
+		$title_string = __('Archive for ', 'easel').get_the_time('F jS, Y');
 	} elseif (is_month()) {
-		$title_string = __('Archive for ','easel').get_the_time('F, Y');
+		$title_string = __('Archive for ', 'easel').get_the_time('F, Y');
 	} elseif (is_year()) {
-		$title_string = __('Archive for ','easel').get_the_time('Y');
+		$title_string = __('Archive for ', 'easel').get_the_time('Y');
 	} elseif (is_author()) {
-		$title_string = __('Author Archive ','easel').get_the_time('Y');
+		$title_string = __('Author Archive ', 'easel').get_the_time('Y');
 	} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-		$title_string = __('Archives','easel');
+		$title_string = __('Archives', 'easel');
 	} elseif (isset($wp_query->query_vars['taxonomy']) && taxonomy_exists($wp_query->query_vars['taxonomy'])) {
 		if (term_exists($wp_query->query_vars['term'])) {
-			$title_string = __('Archive for ','easel').$wp_query->query_vars['term'];
+			$title_string = __('Archive for ', 'easel').$wp_query->query_vars['term'];
 		} else {
-			$title_string = __('Archive for ','easel').$wp_query->query_vars['taxonomy'];
+			$title_string = __('Archive for ', 'easel').$wp_query->query_vars['taxonomy'];
 		}
 	} elseif ($wp_query->query_vars['post_type'] !== 'post') {
-		$title_string = __('Archive for ','easel').$wp_query->query_vars['post_type'];
+		$title_string = __('Archive for ', 'easel').$wp_query->query_vars['post_type'];
 	} else {
-		$title_string = __('Archive is unable to be found.','easel');
+		$title_string = __('Archive is unable to be found.', 'easel');
 	}
-} else $title_string = __('No Archive Found.','easel');
+} else $title_string = __('No Archive Found.', 'easel');
 if (have_posts()) { ?>
 	<h2 class="page-title"><?php echo $title_string; ?></h2>
-	<div class="archiveresults"><?php printf(_n("%d result.", "%d results.", $count,'easel'),$count); ?></div>
+	<div class="archiveresults"><?php printf(_n("%d result.", "%d results.", $count, 'easel'),$count); ?></div>
 	<div class="clear"></div>
 	<?php if (function_exists('ceo_pluginfo') && (isset($wp_query->query_vars['chapters']) || isset($wp_query->query_vars['characters']) || isset($wp_query->query_vars['locations']) || ($wp_query->query_vars['post_type'] == 'comic')) && (easel_themeinfo('display_archive_as_links') && !easel_is_bbpress())) { ?>
 		<?php while (have_posts()) : the_post(); ?>
@@ -53,7 +53,7 @@ if (have_posts()) { ?>
 				<div class="archivecomicframe">
 			<?php 
 			$thumbnail = ceo_display_comic_thumbnail('thumbnail', $post);
-			$thumbnail = (!$thumbnail) ? __('No Thumbnail or Featured Image Found','easel') : $thumbnail; ?>
+			$thumbnail = (!$thumbnail) ? __('No Thumbnail or Featured Image Found', 'easel') : $thumbnail; ?>
 					<a href="<?php the_permalink() ?>" title="<?php echo the_title(); ?>"><?php echo $thumbnail; ?></a><br />
 				</div>
 			</div>
@@ -64,7 +64,7 @@ if (have_posts()) { ?>
 		<div class="entry">
 		<table class="archive-table">
 			<?php while (have_posts()) : the_post(); ?>
-			<tr><td class="archive-date"><span class="archive-date-month-day"><?php the_time('M d, ') ?></span><span class="archive-date-year"><?php the_time('Y'); ?></span></td><td class="archive-title"><a href="<?php echo get_permalink($post->ID) ?>" rel="bookmark" title="<?php _e('Permanent Link:','easel'); ?> <?php the_title() ?>"><?php the_title() ?></a></td></tr>
+			<tr><td class="archive-date"><span class="archive-date-month-day"><?php the_time('M d, ') ?></span><span class="archive-date-year"><?php the_time('Y'); ?></span></td><td class="archive-title"><a href="<?php echo get_permalink($post->ID) ?>" rel="bookmark" title="<?php _e('Permanent Link:', 'easel'); ?> <?php the_title() ?>"><?php the_title() ?></a></td></tr>
 			<?php endwhile; ?>
 		</table>
 		</div>
@@ -82,7 +82,7 @@ if (have_posts()) { ?>
 	
 <?php } else { ?>
 	<h2 class="page-title"><?php echo $title_string; ?></h2>
-	<div class="archiveresults"><?php printf(_n("%d result.", "%d results.", $count,'easel'),$count); ?></div>
+	<div class="archiveresults"><?php printf(_n("%d result.", "%d results.", $count, 'easel'),$count); ?></div>
 	<div class="clear"></div>
 <?php } ?>
 
