@@ -7,38 +7,38 @@
 			<table class="widefat">
 				<thead>
 					<tr>
-						<th colspan="3"><?php _e('Menubar', 'easel'); ?></th>
+						<th colspan="3"><?php _e( 'Menubar', 'easel' ); ?></th>
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_default_menubar"><?php _e('Disable default Menubar?', 'easel'); ?></label></th>
+					<th scope="row"><label for="disable_default_menubar"><?php _e( 'Disable default Menubar?', 'easel' ); ?></label></th>
 					<td>
 						<input id="disable_default_menubar" name="disable_default_menubar" type="checkbox" value="1" <?php checked(true, $easel_options['disable_default_menubar']); ?> />
 					</td>
 					<td>
-						<?php _e('Allows you to customize the location of the Menubar via Widgets or, just not have it.', 'easel'); ?>
+						<?php _e( 'Allows you to customize the location of the Menubar via Widgets or, just not have it.', 'easel' ); ?>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="enable_search_in_menubar"><?php _e('Enable Search Form?', 'easel'); ?></label></th>
+					<th scope="row"><label for="enable_search_in_menubar"><?php _e( 'Enable Search Form?', 'easel' ); ?></label></th>
 					<td>
 						<input id="enable_search_in_menubar" name="enable_search_in_menubar" type="checkbox" value="1" <?php checked(true, $easel_options['enable_search_in_menubar']); ?> />
 					</td>
 					<td>
-						<?php _e('Searchforms can be fun when you have something to search for.', 'easel'); ?>
+						<?php _e( 'Searchforms can be fun when you have something to search for.', 'easel' ); ?>
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="enable_rss_in_menubar"><?php _e('Enable RSS Link?', 'easel'); ?></label></th>
+					<th scope="row"><label for="enable_rss_in_menubar"><?php _e( 'Enable RSS Link?', 'easel' ); ?></label></th>
 					<td>
 						<input id="enable_rss_in_menubar" name="enable_rss_in_menubar" type="checkbox" value="1" <?php checked(true, $easel_options['enable_rss_in_menubar']); ?> />
 					</td>
 					<td>
-					<?php _e('Adds an RSS link icon to your menubar on the right side.', 'easel'); ?>
+					<?php _e( 'Adds an RSS link icon to your menubar on the right side.', 'easel' ); ?>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="disable_jquery_menu_code"><?php _e('Disable the menubar jQuery?', 'easel'); ?></label></th>
+					<th scope="row"><label for="disable_jquery_menu_code"><?php _e( 'Disable the menubar jQuery?', 'easel' ); ?></label></th>
 					<td>
 						<input id="disable_jquery_menu_code" name="disable_jquery_menu_code" type="checkbox" value="1" <?php checked(true, $easel_options['disable_jquery_menu_code']); ?> />
 					</td>

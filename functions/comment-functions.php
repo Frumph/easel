@@ -125,21 +125,21 @@ function easel_comments_callback($comment, $args, $depth) {
 	
 			<div class="comment-meta-data">
 						
-				<span class="comment-time" title="<?php comment_date(__('l, F jS Y, g:ia', 'easel')); ?>">
+				<span class="comment-time" title="<?php comment_date(__( 'l, F jS Y, g:ia', 'easel' )); ?>">
 					<?php 
 					/* translators: date and time in comments */
-					printf(__('%1$s, %2$s', 'easel'), get_comment_date(), get_comment_time()); ?>
+					printf(__( '%1$s, %2$s', 'easel' ), get_comment_date(), get_comment_time()); ?>
 				</span> 
 		
 				<span class="comment-permalink">
-					<span class="separator">|</span> <a href="#comment-<?php echo str_replace('&', '&amp;', get_comment_ID()); ?>" title="<?php _e('Permalink to comment', 'easel'); ?>"><?php _e('#', 'easel'); ?></a>
+					<span class="separator">|</span> <a href="#comment-<?php echo str_replace('&', '&amp;', get_comment_ID()); ?>" title="<?php _e( 'Permalink to comment', 'easel' ); ?>"><?php _e( '#', 'easel' ); ?></a>
 				</span>
 				
 				<?php if((get_option('thread_comments')) && ($args['type'] == 'all' || get_comment_type() == 'comment')) :
 					$max_depth = get_option('thread_comments_depth');
 					echo comment_reply_link(array(
-						'reply_text' => __('Reply', 'easel'), 
-						'login_text' => __('Login to Reply', 'easel'),
+						'reply_text' => __( 'Reply', 'easel' ), 
+						'login_text' => __( 'Login to Reply', 'easel' ),
 						'depth' => $depth,
 						'max_depth' => $max_depth, 
 						'before' => '<span class="comment-reply-link"><span class="separator">|</span> ', 
@@ -147,10 +147,10 @@ function easel_comments_callback($comment, $args, $depth) {
 					));
 				endif; ?>
 					
-				<?php edit_comment_link('<span class="comment-edit">'.__('Edit', 'easel').'</span>',' <span class="separator">|</span> ',''); ?> 
+				<?php edit_comment_link('<span class="comment-edit">'.__( 'Edit', 'easel' ).'</span>',' <span class="separator">|</span> ',''); ?> 
 				
 				<?php if($comment->comment_approved == '0') : ?>
-				<div class="comment-moderated"><?php _e('Your comment is awaiting moderation.', 'easel'); ?></div>
+				<div class="comment-moderated"><?php _e( 'Your comment is awaiting moderation.', 'easel' ); ?></div>
 				<?php endif; ?>
 			
 			</div>
