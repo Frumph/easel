@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Easel Dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-31 18:35+0100\n"
-"PO-Revision-Date: 2015-01-31 18:54+0100\n"
+"POT-Creation-Date: 2015-02-06 10:30+0100\n"
+"PO-Revision-Date: 2015-02-06 10:31+0100\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -298,8 +298,8 @@ msgid "&darr; Read the rest of this entry..."
 msgstr "&darr; Lese den Rest dieses Eintrags ..."
 
 #: functions.php:256
-msgid " my DeviantART"
-msgstr "Mein DeviantART"
+msgid "my DeviantART"
+msgstr "mein DevianArt"
 
 #: functions.php:256 options/menubar.php:115
 msgid "DeviantART"
@@ -986,8 +986,8 @@ msgid ""
 "Checkmarking this will make it so that it will show when the last time that "
 "the post was modified in the post date information."
 msgstr ""
-"Wenn aktiv, wird angezeigt, ob ein Artikel noch mal geändert wurde - und "
-"auch wann."
+"Wenn aktiv, wird in den Beitrags Datums Informationen angezeigt, wann ein "
+"Artikel noch mal geändert wurde."
 
 #: options/general.php:205
 msgid "Comments"
@@ -1279,12 +1279,12 @@ msgstr "Deaktiviere Menüleisten jQuery?"
 
 #: options/menubar.php:46
 msgid ""
-"Disable the loading of the menubar jQuery.  If you do not want the "
-"ddsmoother menu code to load. (will not do drop downs without it)"
+"Disable the loading of the menubar jQuery. If you do not want the ddsmoother "
+"menu code to load. (Will not do drop downs without it.)"
 msgstr ""
-"Verhindert das Laden der jQuery für die Menüleiste - wenn du z.B. keinen "
-"ddsmoother Menücode laden möchtest. Ohne diesen Code kannst du allerdings "
-"auch keine Dropdowns erzeugen."
+"Verhindert das Laden der jQuery für die Menüleiste. Wenn du nicht den "
+"ddsmoother Menücode laden möchtest. (Ohne diesen Code kannst du allerdings "
+"auch keine Dropdowns erzeugen.)"
 
 #: options/menubar.php:51
 msgid "Enable Breadcrumbs?"
@@ -1308,9 +1308,9 @@ msgstr "Aktiviere Social Icons in der Menüleiste?"
 
 #: options/menubar.php:73
 msgid ""
-"Adds additional social icons in the menubar on in the menunav area.  Put the "
+"Adds additional social icons in the menubar on in the menunav area. Put the "
 "entire http:// url in the input box that leads to your account on those "
-"sites.  Leave field empty if you do not have one and it will not show."
+"sites. Leave field empty if you do not have one and it will not show."
 msgstr ""
 "Fügt ein paar kleine Social Icons in die Menüleiste ein, wo auch die "
 "Navigation zu finden ist. Bitte füge in die jeweiligen Fenster die komplette "
@@ -1348,14 +1348,14 @@ msgstr ""
 "Momentan sind für die linke Sidebar keine Widgets festgelegt. Füge welche "
 "hinzu!"
 
-#: sidebar-left.php:9 sidebar-right.php:9
+#: sidebar-left.php:10 sidebar-right.php:10
 msgid ""
 "Once you add widgets to this sidebar, this default information will go away."
 msgstr ""
 "Sobald du in diese Sidebar ein Widget platzierst, verschwindet dieser "
 "Hinweis."
 
-#: sidebar-left.php:11
+#: sidebar-left.php:13 sidebar-right.php:13
 msgid ""
 "Widgets can be added by going to your dashboard (wp-admin) &#10132; "
 "Appearance &#10132; Widgets, drag a widget you want to see into one of the "
@@ -1370,21 +1370,6 @@ msgid ""
 msgstr ""
 "Momentan sind für die rechte Sidebar keine Widgets festgelegt. Füge welche "
 "hinzu!"
-
-#: sidebar-right.php:11
-msgid ""
-"This theme also uses the WordPress 3.0 Menu system. You probably see the "
-"default stuff you have in the menubar. Go to Appearance &#10132; Menu in the "
-"wp-admin (dashboard) and create a new menu."
-msgstr ""
-"Dieses Theme benutzt auch das WordPress 3.0 Menüsystem. Du siehst "
-"möglicherweise die Standardangaben, die dir vorliegen, in der Menüleiste. "
-"Gehe zu  Design &#10132;  Menü im Dashboard (wp-admin) und erstelle ein "
-"neues Menü."
-
-#: sidebar-right.php:13
-msgid "Recommended Plugins"
-msgstr "Empfohlene Plugins"
 
 #: single.php:23
 msgid "Sorry, post is not found."
