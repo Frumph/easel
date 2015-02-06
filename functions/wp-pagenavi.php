@@ -160,8 +160,8 @@ if (easel_themeinfo('enable_numbered_pagination')) {
 		$pagenavi_options['pages_text'] = __( 'Page %CURRENT_PAGE% of %TOTAL_PAGES%', 'easel' );
 		$pagenavi_options['current_text'] = '%PAGE_NUMBER%';
 		$pagenavi_options['page_text'] = '%PAGE_NUMBER%';
-		$pagenavi_options['first_text'] = __( '&laquo; First', 'easel');
-		$pagenavi_options['last_text'] = __( 'Last &raquo;', 'easel');
+		$pagenavi_options['first_text'] = __( '&laquo; First', 'easel' );
+		$pagenavi_options['last_text'] = __( 'Last &raquo;', 'easel' );
 		$pagenavi_options['next_text'] = __( '&raquo;', 'easel' );
 		$pagenavi_options['prev_text'] = __( '&laquo;', 'easel' );
 		$pagenavi_options['dotright_text'] = __( '...', 'easel' );

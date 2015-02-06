@@ -7,21 +7,21 @@
 			<table class="widefat">
 				<thead>
 					<tr>
-						<th colspan="3"><?php _e('General', 'easel'); ?></th>
+						<th colspan="3"><?php _e( 'General', 'easel' ); ?></th>
 					</tr>
 				</thead>
 
 				<tr>
-					<th scope="row"><label for="home_post_count"><?php _e('How many blog posts would you like to display on the home page?', 'easel'); ?></label></th>
+					<th scope="row"><label for="home_post_count"><?php _e( 'How many blog posts would you like to display on the home page?', 'easel' ); ?></label></th>
 					<td>
 						<input type="text" size="2" name="home_post_count" id="home_post_count" value="<?php echo $easel_options['home_post_count']; ?>" />
 					</td>
 					<td>
-						<?php _e('How many blog posts you would like displayed on the index page at one time. This is different then the one in the wp-admin &#10132; settings, the one in the settings will control how many show up on search and archive pages.', 'easel'); ?>
+						<?php _e( 'How many blog posts you would like displayed on the index page at one time. This is different then the one in the wp-admin &#10132; settings, the one in the settings will control how many show up on search and archive pages.', 'easel' ); ?>
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_blog_on_homepage"><?php _e('Disable Blog Loop?', 'easel'); ?></label></th>
+					<th scope="row"><label for="disable_blog_on_homepage"><?php _e( 'Disable Blog Loop?', 'easel' ); ?></label></th>
 					<td>
 						<input id="disable_blog_on_homepage" name="disable_blog_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['disable_blog_on_homepage']); ?> />
 					</td>
@@ -288,41 +288,41 @@ foreach ($avatar_directories as $avatar_dirs) {
 			<table class="widefat">
 				<thead>
 					<tr>
-						<th colspan="3"><?php _e('Footer', 'easel'); ?></th>
+						<th colspan="3"><?php _e( 'Footer', 'easel' ); ?></th>
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="disable_footer_text"><?php _e('Disable the default text in the footer?', 'easel'); ?></label></th>
+					<th scope="row"><label for="disable_footer_text"><?php _e( 'Disable the default text in the footer?', 'easel' ); ?></label></th>
 					<td>
 						<input id="disable_footer_text" name="disable_footer_text" type="checkbox" value="1" <?php checked(true, $easel_options['disable_footer_text']); ?> />
 					</td>
 					<td>
-						<?php _e('Default text in the footer will not display. Enable this if you do not want any text in the footer. If you wish to add you own custom content, you may do so via Appearance &#10132; Widgets &#10132; Footer.', 'easel'); ?>
+						<?php _e('Default text in the footer will not display. Enable this if you do not want any text in the footer. If you wish to add you own custom content, you may do so via Appearance &#10132; Widgets &#10132; Footer.', 'easel' ); ?>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="disable_scroll_to_top"><?php _e('Disable the scroll to top link in the footer?', 'easel'); ?></label></th>
+					<th scope="row"><label for="disable_scroll_to_top"><?php _e( 'Disable the scroll to top link in the footer?', 'easel' ); ?></label></th>
 					<td>
 						<input id="disable_scroll_to_top" name="disable_scroll_to_top" type="checkbox" value="1" <?php checked(true, $easel_options['disable_scroll_to_top']); ?> />
 					</td>
 					<td>
-						<?php _e('When this link is clicked on long pages it will scroll back to the top.', 'easel'); ?>
+						<?php _e( 'When this link is clicked on long pages it will scroll back to the top.', 'easel' ); ?>
 					</td>
 				</tr>
 				<tr class="alternate">
-					<th scope="row"><label for="copyright_name"><?php _e('&copy; Copyright Name', 'easel'); ?></label>
+					<th scope="row"><label for="copyright_name"><?php _e( '&copy; Copyright Name', 'easel' ); ?></label>
 						<input type="text" size="20" name="copyright_name" id="copyright_name" value="<?php echo stripcslashes($easel_options['copyright_name']); ?>" /><br />
 					</th>
 					<td colspan="2">
-						<?php _e('Set the name to which this site is &copy; Copyright to. Leave blank to have the site name.', 'easel'); ?>
+						<?php _e( 'Set the name to which this site is &copy; Copyright to. Leave blank to have the site name.', 'easel' ); ?>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row"><label for="copyright_url"><?php _e('&copy; Copyright Holder URL', 'easel'); ?></label>
+					<th scope="row"><label for="copyright_url"><?php _e( '&copy; Copyright Holder URL', 'easel' ); ?></label>
 						<input type="text" size="30" name="copyright_url" id="copyright_url" value="<?php echo stripcslashes($easel_options['copyright_url']); ?>" /><br />
 					</th>
 					<td colspan="2">
-						<?php _e('Set the URL to the owner of the &copy; Copyright if different then this website. Leave blank for sites link.', 'easel'); ?>
+						<?php _e( 'Set the URL to the owner of the &copy; Copyright if different then this website. Leave blank for sites link.', 'easel' ); ?>
 					</td>
 				</tr>
 			</table>
@@ -330,52 +330,52 @@ foreach ($avatar_directories as $avatar_dirs) {
 			<table class="widefat">
 				<thead>
 					<tr>
-						<th colspan="3"><?php _e('RSS', 'easel'); ?></th>
+						<th colspan="3"><?php _e( 'RSS', 'easel' ); ?></th>
 					</tr>
 				</thead>			
 				<tr class="alternate">
-					<th scope="row"><label for="enable_post_thumbnail_rss"><?php _e('Enable the post thumbnails in the RSS feed?', 'easel'); ?></label></th>
+					<th scope="row"><label for="enable_post_thumbnail_rss"><?php _e( 'Enable the post thumbnails in the RSS feed?', 'easel' ); ?></label></th>
 					<td>
 						<input id="enable_post_thumbnail_rss" name="enable_post_thumbnail_rss" type="checkbox" value="1" <?php checked(true, $easel_options['enable_post_thumbnail_rss']); ?> />		
 					</td>
 					<td>
-						<?php _e('If enabled will show the post thumbnail of the post in the RSS feed.', 'easel'); ?>
+						<?php _e( 'If enabled will show the post thumbnail of the post in the RSS feed.', 'easel' ); ?>
 					</td>
 				</tr>
 			</table>		
 			<table class="widefat">
 				<thead>
 					<tr>
-						<th colspan="3"><?php _e('Archive & Search', 'easel'); ?></th>
+						<th colspan="3"><?php _e( 'Archive & Search', 'easel' ); ?></th>
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row"><label for="display_archive_as_links"><?php _e('Display archive results as a list of links?', 'easel'); ?></label></th>
+					<th scope="row"><label for="display_archive_as_links"><?php _e( 'Display archive results as a list of links?', 'easel' ); ?></label></th>
 					<td>
 						<input id="display_archive_as_links" name="display_archive_as_links" type="checkbox" value="1" <?php checked(true, $easel_options['display_archive_as_links']); ?> />
 					</td>
 					<td>
-						<?php _e('Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts.', 'easel'); ?>
+						<?php _e( 'Enabling this will make the archive pages by date/category/term display as a list of links instead of full posts.', 'easel' ); ?>
 					</td>
 				</tr>
 				<tr>
 					<th scope="row" colspan="2">
 						<label for="excerpt_or_content_in_archive"><?php _e('Excerpt or Full Content in archive and search?', 'easel'); ?></label>
 						<select name="excerpt_or_content_in_archive" id="excerpt_or_content_in_archive">
-							<option class="level-0" value="excerpt" <?php selected($easel_options['excerpt_or_content_in_archive'], 'excerpt'); ?>><?php _e('Excerpt', 'easel'); ?></option>
-							<option class="level-0" value="content" <?php selected($easel_options['excerpt_or_content_in_archive'], 'content'); ?>><?php _e('Full Content', 'easel'); ?></option>
+							<option class="level-0" value="excerpt" <?php selected($easel_options['excerpt_or_content_in_archive'], 'excerpt'); ?>><?php _e( 'Excerpt', 'easel' ); ?></option>
+							<option class="level-0" value="content" <?php selected($easel_options['excerpt_or_content_in_archive'], 'content'); ?>><?php _e( 'Full Content', 'easel' ); ?></option>
 						</select>
 					</th>
 					<td>
-						<?php _e('If Display archives results as list is disabled, decide how much is seen in the archive display.', 'easel'); ?>
+						<?php _e( 'If Display archives results as list is disabled, decide how much is seen in the archive display.', 'easel' ); ?>
 					</td>
 				</tr>				
 				<tr class="alternate">
 					<th scope="row" colspan="2">
-						<label for="archive_display_order"><?php _e('Archive Display Order', 'easel'); ?></label>
+						<label for="archive_display_order"><?php _e( 'Archive Display Order', 'easel' ); ?></label>
 						<select name="archive_display_order" id="archive_display_order">
-							<option class="level-0" value="asc" <?php if ($easel_options['archive_display_order'] == "asc") { ?>selected="selected"<?php } ?>><?php _e('Oldest to Newest &mdash; Ascending', 'easel'); ?></option>
-							<option class="level-0" value="desc" <?php if ($easel_options['archive_display_order'] == "desc") { ?>selected="selected"<?php } ?>><?php _e('Newest to Oldest &mdash; Descending', 'easel'); ?></option>
+							<option class="level-0" value="asc" <?php if ($easel_options['archive_display_order'] == "asc") { ?>selected="selected"<?php } ?>><?php _e( 'Oldest to Newest &mdash; Ascending', 'easel' ); ?></option>
+							<option class="level-0" value="desc" <?php if ($easel_options['archive_display_order'] == "desc") { ?>selected="selected"<?php } ?>><?php _e( 'Newest to Oldest &mdash; Descending', 'easel' ); ?></option>
 						</select>
 					</th>
 					<td>
@@ -389,7 +389,7 @@ foreach ($avatar_directories as $avatar_dirs) {
 		<div class="easel-options-save">
 			<div class="easel-major-publishing-actions">
 				<div class="easel-publishing-action">
-					<input name="easel_save_general" type="submit" class="button-primary" value="<?php _e('Save Settings', 'easel'); ?>" />
+					<input name="easel_save_general" type="submit" class="button-primary" value="<?php _e( 'Save Settings', 'easel' ); ?>" />
 					<input type="hidden" name="action" value="easel_save_general" />
 				</div>
 				<div class="clear"></div>

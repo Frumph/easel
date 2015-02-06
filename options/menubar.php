@@ -65,66 +65,66 @@
 					</tr>
 				</thead>
 				<tr class="alternate">
-					<th scope="row" align="top" valign="top"><label for="menubar_social_icons"><?php _e('Enable Social Icons in Menubar?', 'easel'); ?></label></th>
+					<th scope="row" align="top" valign="top"><label for="menubar_social_icons"><?php _e( 'Enable Social Icons in Menubar?', 'easel' ); ?></label></th>
 					<td align="top" valign="top">
 						<input id="menubar_social_icons" name="menubar_social_icons" type="checkbox" value="1" <?php checked(true, $easel_options['menubar_social_icons']); ?> />
 					</td>
 					<td>
-					<?php _e('Adds additional social icons in the menubar on in the menunav area.  Put the entire http:// url in the input box that leads to your account on those sites.  Leave field empty if you do not have one and it will not show.', 'easel'); ?><br />
+					<?php _e( 'Adds additional social icons in the menubar on in the menunav area. Put the entire http:// url in the input box that leads to your account on those sites. Leave field empty if you do not have one and it will not show.', 'easel' ); ?><br />
 					<br />
-					<strong><?php _e('Twitter', 'easel'); ?></strong><br />
+					<strong><?php _e( 'Twitter', 'easel' ); ?></strong><br />
 					<input type="text" size="60" name="menubar_social_twitter" id="menubar_social_twitter" value="<?php echo $easel_options['menubar_social_twitter']; ?>" /><br />
-					<strong><?php _e('Facebook', 'easel'); ?></strong><br />
+					<strong><?php _e( 'Facebook', 'easel' ); ?></strong><br />
 					<input type="text" size="60" name="menubar_social_facebook" id="menubar_social_facebook" value="<?php echo $easel_options['menubar_social_facebook']; ?>" /><br />
-					<strong><?php _e('Google+', 'easel'); ?></strong><br />
+					<strong><?php _e( 'Google+', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_googleplus']))
                             $easel_options['menubar_social_googleplus'] = '';
  ?>					
 					<input type="text" size="60" name="menubar_social_googleplus" id="menubar_social_googleplus" value="<?php echo $easel_options['menubar_social_googleplus']; ?>" /><br />
-					<strong><?php _e('LinkedIn', 'easel'); ?></strong><br />
+					<strong><?php _e( 'LinkedIn', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_linkedin']))
                             $easel_options['menubar_social_linkedin'] = '';
  ?>					
 					<input type="text" size="60" name="menubar_social_linkedin" id="menubar_social_linkedin" value="<?php echo $easel_options['menubar_social_linkedin']; ?>" /><br />					
-					<strong><?php _e('pinterest', 'easel'); ?></strong><br />
+					<strong><?php _e( 'pinterest', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_pinterest']))
                             $easel_options['menubar_social_pinterest'] = '';
  ?>
 					<input type="text" size="60" name="menubar_social_pinterest" id="menubar_social_pinterest" value="<?php echo $easel_options['menubar_social_pinterest']; ?>" /><br />
-					<strong><?php _e('YouTube', 'easel'); ?></strong><br />
+					<strong><?php _e( 'YouTube', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_youtube']))
                             $easel_options['menubar_social_youtube'] = '';
  ?>
 					<input type="text" size="60" name="menubar_social_youtube" id="menubar_social_youtube" value="<?php echo $easel_options['menubar_social_youtube']; ?>" /><br />
-					<strong><?php _e('Flickr', 'easel'); ?></strong><br />
+					<strong><?php _e( 'Flickr', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_flickr']))
                             $easel_options['menubar_social_flickr'] = '';
  ?>
 					<input type="text" size="60" name="menubar_social_flickr" id="menubar_social_flickr" value="<?php echo $easel_options['menubar_social_flickr']; ?>" /><br />
-					<strong><?php _e('Tumblr', 'easel'); ?></strong><br />
+					<strong><?php _e( 'Tumblr', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_tumblr']))
                             $easel_options['menubar_social_tumblr'] = '';
  ?>
 					<input type="text" size="60" name="menubar_social_tumblr" id="menubar_social_tumblr" value="<?php echo $easel_options['menubar_social_tumblr']; ?>" /><br />
-					<strong><?php _e('DeviantART', 'easel'); ?></strong><br />
+					<strong><?php _e( 'DeviantART', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_deviantart']))
                             $easel_options['menubar_social_deviantart'] = '';
  ?>
 					<input type="text" size="60" name="menubar_social_deviantart" id="menubar_social_deviantart" value="<?php echo $easel_options['menubar_social_deviantart']; ?>" /><br />
-					<strong><?php _e('MySpace', 'easel'); ?></strong><br />
+					<strong><?php _e( 'MySpace', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_myspace']))
                             $easel_options['menubar_social_myspace'] = '';
  ?>
 					<input type="text" size="60" name="menubar_social_myspace" id="menubar_social_myspace" value="<?php echo $easel_options['menubar_social_myspace']; ?>" /><br />
-					<strong><?php _e('Email &mdash; use mailto://your@email.com', 'easel'); ?></strong><br />
+					<strong><?php _e( 'Email &mdash; use mailto://your@email.com', 'easel' ); ?></strong><br />
 					<?php
                         if (!isset($easel_options['menubar_social_email']))
                             $easel_options['menubar_social_email'] = '';
@@ -138,7 +138,7 @@
 		<div class="easel-options-save">
 			<div class="easel-major-publishing-actions">
 				<div class="easel-publishing-action">
-					<input name="easel_save_menubar" type="submit" class="button-primary" value="<?php _e('Save Settings', 'easel'); ?>" />
+					<input name="easel_save_menubar" type="submit" class="button-primary" value="<?php _e( 'Save Settings', 'easel' ); ?>" />
 					<input type="hidden" name="action" value="easel_save_menubar" />
 				</div>
 				<div class="clear"></div>

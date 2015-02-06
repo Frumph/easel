@@ -173,7 +173,7 @@ if (!function_exists('easel_display_comment_link')) {
 		global $post;
 		if ($post->comment_status == 'open' && !is_singular()) { ?>
 			<div class="comment-link">
-				<?php comments_popup_link('<span class="comment-balloon comment-balloon-empty">&nbsp;</span>'.__( 'Comment&nbsp;', 'easel' ), '<span class="comment-balloon">1</span> '.__('Comment ', 'easel'), '<span class="comment-balloon">%</span> '.__('Comments ', 'easel')); ?>
+				<?php comments_popup_link('<span class="comment-balloon comment-balloon-empty">&nbsp;</span>'.__( 'Comment&nbsp;', 'easel' ), '<span class="comment-balloon">1</span> '.__( 'Comment ', 'easel' ), '<span class="comment-balloon">%</span> '.__( 'Comments ', 'easel' )); ?>
 			</div>
 			<?php
 		}
@@ -189,7 +189,7 @@ if (!function_exists('easel_display_blog_navigation')) {
 		}
 		if (is_single() && !is_page() && !is_archive() && !is_search() && ($post->post_type == 'post')) { ?>
 			<div class="blognav">
-				<?php previous_post_link('<span class="blognav-prev">%link</span>',__( '&lsaquo; Prev', 'easel'), false); ?>
+				<?php previous_post_link('<span class="blognav-prev">%link</span>',__( '&lsaquo; Prev', 'easel' ), false); ?>
 				<?php next_post_link('<span class="blognav-next">%link</span>',__( 'Next &rsaquo;', 'easel' ), false); ?>
 				<div class="clear"></div>
 			</div>
