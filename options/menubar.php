@@ -43,17 +43,17 @@
 						<input id="disable_jquery_menu_code" name="disable_jquery_menu_code" type="checkbox" value="1" <?php checked(true, $easel_options['disable_jquery_menu_code']); ?> />
 					</td>
 					<td>
-						<?php _e('Disable the loading of the menubar jQuery. If you do not want the ddsmoother menu code to load. (Will not do drop downs without it.)', 'easel'); ?>
+						<?php _e( 'Disable the loading of the menubar jQuery. If you do not want the ddsmoother menu code to load. (Will not do drop downs without it.)', 'easel' ); ?>
 					</td>
 				</tr>
 
 				<tr>
-					<th scope="row"><label for="enable_breadcrumbs"><?php _e('Enable Breadcrumbs?', 'easel'); ?></label></th>
+					<th scope="row"><label for="enable_breadcrumbs"><?php _e( 'Enable Breadcrumbs?', 'easel' ); ?></label></th>
 					<td>
 						<input id="enable_breadcrumbs" name="enable_breadcrumbs" type="checkbox" value="1" <?php checked(true, $easel_options['enable_breadcrumbs']); ?> />
 					</td>
 					<td>
-						<?php _e('This will create a pathable breathcrumbs beneith the menubar underneith the default menubar location.', 'easel'); ?>
+						<?php _e( 'This will create a pathable breathcrumbs beneith the menubar underneith the default menubar location.', 'easel' ); ?>
 					</td>
 				</tr>
 			</table>
@@ -61,7 +61,7 @@
 			<table class="widefat">
 				<thead>
 					<tr>
-						<th colspan="3"><?php _e('Menubar &mdash; Social Icons', 'easel'); ?></th>
+						<th colspan="3"><?php _e( 'Menubar &mdash; Social Icons', 'easel' ); ?></th>
 					</tr>
 				</thead>
 				<tr class="alternate">
