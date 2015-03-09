@@ -1,5 +1,5 @@
 /**
- * instant.js 2.21 (18-Mar-2009)
+ * instant.js 2.4 (10-Aug-2010)
  * (c) by Christian Effenberger 
  * All Rights Reserved
  * Source: instant.netzgesta.de
@@ -11,7 +11,7 @@
 **/
 
 var tmp = navigator.appName == 'Microsoft Internet Explorer' && navigator.userAgent.indexOf('Opera') < 1 ? 1 : 0;
-if(tmp) var isIE = document.namespaces ? 1 : 0;
+if(tmp) var isIE = document.namespaces && ( !document.documentMode || document.documentMode < 9 ) ? 1 : 0;
 
 if(isIE) {
 	if(document.namespaces['v']==null) {
@@ -41,7 +41,7 @@ function getClasses(classes,string){
 	for (var j=0;j<classes.length;j++) {
 		if (classes[j] != string) {
 			if (temp) {
-				temp += ' '
+				temp += ' ';
 			}
 			temp += classes[j];
 		}
@@ -392,7 +392,7 @@ function addInstant() {
 				context.drawImage(image,border-xo,border-yo,ww,hh);
 				context.restore();
 			}
-			if(typeof set_textRenderContext=='function' && text!='') {				set_textRenderContext(context);
+			if(typeof set_textRenderContext=='function' && text!='') {				set_textRenderContext(context);
 				if(check_textRenderContext(context)) {
 					context.save();
 					context.beginPath(); context.rect(1,canvas.height-(border*3),canvas.width-2,(border*3)); context.closePath(); context.fillStyle = color; context.fill();
@@ -412,5 +412,5 @@ function addInstant() {
 	}
 }
 
-var instantOnload = window.onload;
-window.onload = function () { if(instantOnload) instantOnload(); if(isIE){addIEInstant(); }else {addInstant();}}
+if(window.addEventListener) window.addEventListener("load",addInstant,false);
+else window.attachEvent("onload",addIEInstant);
