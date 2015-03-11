@@ -1,12 +1,4 @@
 <?php
-/*
-function easel_child_modify_post_link( $url, $bleah ) {
-	$url = str_replace('comic/', '', $url);
-	return $url;
-}
-
-add_filter( 'sharing_permalink', 'easel_child_modify_post_link', 10, 2 );
-*/
 add_action('after_setup_theme', 'easel_setup');
 add_action('wp_enqueue_scripts', 'easel_enqueue_theme_scripts');
 add_action('widgets_init', 'easel_register_sidebars');
@@ -19,7 +11,7 @@ if (easel_themeinfo('force_active_connection_close'))
 	add_action('shutdown_action_hook','easel_close_up_shop');
 if (easel_themeinfo('menubar_social_icons')) 
 	add_action('easel-menubar-menunav', 'easel_display_social_icons');
-add_action( 'tgmpa_register', 'easel_register_required_plugins' );
+
 if (!is_admin())
 	add_action('init', 'easel_init');
 
@@ -35,15 +27,16 @@ if (class_exists('MultiPostThumbnails')) {
 
 // These autoload
 foreach (glob(easel_themeinfo('themepath') . '/functions/*.php') as $funcfile) {
-	@require_once($funcfile);
+	get_template_part('functions/'.basename($funcfile,'.php'));
 }
 
 // Load all the widgets.
 function easel_widgets_init() {
-foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
-	@require_once($widgefile);
+    foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
+	   get_template_part('widgets/'.basename($widgefile,'.php'));
+    }
 }
-}
+
 add_action( 'widgets_init', 'easel_widgets_init' );
 
 function easel_setup() {
@@ -65,20 +58,10 @@ function easel_setup() {
 		'Primary' => __( 'Primary', 'easel' ),
 		'Footer' => __( 'Footer', 'easel' )
 	));
-	$args = array(
-			'default-color' => '000000',
-			'default-image' => get_template_directory_uri() . '/images/background-tile.jpg'
-		);
-	add_theme_support('custom-background', $args);
+	add_theme_support('custom-background');
 	add_theme_support('post-thumbnails');
-	if (class_exists( 'Jetpack' ) && Jetpack::init()->is_module_active('infinite-scroll')) {
-		add_theme_support('infinite-scroll', array(
-		 	'type'           => 'scroll',
-			'container'      => 'content',
-			'posts_per_page' => easel_themeinfo('home_post_count')
-		) );
-	}
-	add_theme_support( 'woocommerce' ); // PMH
+	add_theme_support('title-tag');
+	add_theme_support('woocommerce'); // PMH
 }
 
 function easel_enqueue_theme_scripts() {
@@ -131,7 +114,7 @@ if (!function_exists('easel_register_sidebars')) {
 			array('id' => 'above-header', 'name' => __( 'Above Header', 'easel' ), 'description' => __( 'This sidebar appears to above all of the site information.  This sidebar is not encased in CSS, you will need to create CSS for it.', 'easel' )),
 			array('id' => 'header', 'name' => __( 'Header', 'easel' ), 'description' => __( 'This sidebar appears inside the #header block.', 'easel' )),
 			array('id' => 'menubar', 'name' => __( 'Menubar', 'easel' ), 'description' => __( 'This sidebar is under the header and above the content-wrapper block', 'easel' )),
-			array('id' => 'over-blog', 'name' => __( 'Over Blog', 'easel' ), 'description' => __( 'This sidebar appears over the blog within the #column .narrowcolumn',' easel')),
+			array('id' => 'over-blog', 'name' => __( 'Over Blog', 'easel' ), 'description' => __( 'This sidebar appears over the blog within the #column .narrowcolumn', 'easel')),
 			array('id' => 'under-blog', 'name' => __( 'Under Blog', 'easel' ), 'description' => __( 'This sidebar appears under the blog within the #column .narrowocolumn', 'easel' )),
 			array('id' => 'footer', 'name' => __( 'Footer', 'easel' ), 'description' => __( 'This sidebar is at the bottom of the page and is the center of the 3 footer sidebars.', 'easel' )),
 			array('id' => 'footer-left', 'name' => __( 'Footer Left', 'easel' ), 'description' => __( 'This sidebar is at the bottom of the page, the left one.', 'easel' )),
@@ -253,7 +236,7 @@ if (!function_exists('easel_display_social_icons')) {
 		$myspace = easel_themeinfo('menubar_social_myspace');
 		$email = easel_themeinfo('menubar_social_email');
 		$output = '<div class="menunav-social-wrapper">';
-		if (!empty($deviantart)) $output .= '<a href="'.$deviantart.'" target="_blank" title="'.__( 'my DeviantART',' easel' ).'" class="menunav-social menunav-deviantart">'.__( 'DeviantART', 'easel' ).'</a>'."\r\n";
+		if (!empty($deviantart)) $output .= '<a href="'.$deviantart.'" target="_blank" title="'.__( 'my DeviantART', 'easel' ).'" class="menunav-social menunav-deviantart">'.__( 'DeviantART', 'easel' ).'</a>'."\r\n";
 		if (!empty($tumblr)) $output .= '<a href="'.$tumblr.'" target="_blank" title="'.__( 'Examine my Tumblr', 'easel' ).'" class="menunav-social menunav-tumblr">'.__( 'Tumblr', 'easel' ).'</a>'."\r\n";
 		if (!empty($facebook)) $output .= '<a href="'.$facebook.'" target="_blank" title="'.__( 'Friend on Facebook', 'easel' ).'" class="menunav-social menunav-facebook">'.__( 'Facebook', 'easel' ).'</a>'."\r\n";
 		if (!empty($myspace)) $output .= '<a href="'.$myspace.'" target="_blank" title="'.__( 'Make use of MySpace', 'easel' ).'" class="menunav-social menunav-myspace">'.__( 'MySpace', 'easel' ).'</a>'."\r\n";		
@@ -350,7 +333,7 @@ function easel_load_options() {
 			'display_archive_as_links' => false,
 			'archive_display_order' => 'DESC',
 			'layout' => '3c',
-			'first_run' => true,
+			'first_run' => true, /* no longer used */
 			'force_active_connection_close' => false,
 			'removed_option' => true,
 			'menubar_social_icons' => false,
@@ -371,11 +354,12 @@ function easel_load_options() {
 			'menubar_social_email' => '',
 			'enable_jetpack_infinite_scrolling' => false,
 			'content_width' => 500,
-			'content_width_disabled_sidebars' => 700
+			'content_width_disabled_sidebars' => 700,
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}
-		update_option('easel-options', $easel_options);
+//		update_option('easel-options', $easel_options);
+//		Cannot save to the database unless you click the save button in options
 	}
 	return $easel_options;
 }
@@ -411,7 +395,7 @@ function easel_themeinfo($whichinfo = null) {
 	return $easel_themeinfo;
 }
 
-// Dashboard Menu Options -- last thing to load so it can redirect
+// Dashboard Menu Options - Only run in the wp-admin area
 if (is_admin()) {
 	@require_once(easel_themeinfo('themepath').'/options.php');
     /* translators: theme discription for wp-admin */
