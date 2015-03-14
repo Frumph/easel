@@ -239,7 +239,7 @@ function easel_admin_options() { ?>
 		<div id="easel-version-title"><a href="http://frumph.net/">Easel <?php echo easel_themeinfo('version'); ?></a></div>
 		<br />
 		<?php _e( 'Created, Developed and maintained by', 'easel' ); ?> <a href="http://frumph.net/">Philip M. Hofer</a> <small>(<a href="http://frumph.net/">Frumph</a>)</small><br />
-		<?php _e( 'If you like the Easel theme, please donate.  It will help in developing new features and versions.', 'easel' ); ?>
+		<?php _e( 'If you like the Easel theme, please donate. It will help in developing new features and versions.', 'easel' ); ?>
 		<table style="margin:0 auto;">
 			<tr>
 				<td style="width:200px;">

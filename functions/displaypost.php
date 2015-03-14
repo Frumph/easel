@@ -173,7 +173,7 @@ if (!function_exists('easel_display_comment_link')) {
 		global $post;
 		if ($post->comment_status == 'open' && !is_singular()) { ?>
 			<div class="comment-link">
-				<?php comments_popup_link('<span class="comment-balloon comment-balloon-empty">&nbsp;</span>'.__( 'Comment&nbsp;', 'easel' ), '<span class="comment-balloon">1</span> '.__( 'Comment ', 'easel' ), '<span class="comment-balloon">%</span> '.__( 'Comments ', 'easel' )); ?>
+				<?php comments_popup_link('<span class="comment-balloon comment-balloon-empty">&nbsp;</span>'.__( 'Comment&nbsp;', 'easel' ), '<span class="comment-balloon">1</span> '.__( 'Comment', 'easel' ), '<span class="comment-balloon">%</span> '.__( 'Comments', 'easel' )); ?>
 			</div>
 			<?php
 		}

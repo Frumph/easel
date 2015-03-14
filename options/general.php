@@ -229,7 +229,7 @@
 						<input id="enable_comments_on_homepage" name="enable_comments_on_homepage" type="checkbox" value="1" <?php checked(true, $easel_options['enable_comments_on_homepage']); ?> />
 					</td>
 					<td>
-						<?php _e( 'Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them, This will ONLY work if you have it set to only display 1 post on the home page. The post count and this must be set to work.', 'easel' ); ?>
+						<?php _e( 'Checkmarking this option will make it so that the post(s) on the home page will also display the comments under them. This will ONLY work if you have it set to only display 1 post on the home page. The post count and this must be set to work.', 'easel' ); ?>
 					</td>
 				</tr>
 <?php
