@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Easel Dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-06 10:30+0100\n"
-"PO-Revision-Date: 2015-02-06 10:31+0100\n"
+"POT-Creation-Date: 2015-03-14 07:17+0100\n"
+"PO-Revision-Date: 2015-03-14 07:24+0100\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
@@ -190,35 +190,36 @@ msgstr "Diesen Beitrag bearbeiten."
 msgid "Edit this comic."
 msgstr "Diesen Comic bearbeiten."
 
-#: functions.php:65
+#: functions.php:58
 msgid "Primary"
 msgstr "Primär"
 
-#: functions.php:66 functions.php:136 options/general.php:291
+#: functions.php:59 functions.php:119 functions/customize.php:108
+#: functions/customize.php:120 options/general.php:291
 msgid "Footer"
 msgstr "Footer"
 
-#: functions.php:129
+#: functions.php:112
 msgid "Left Sidebar"
 msgstr "Linke Sidebar"
 
-#: functions.php:129
+#: functions.php:112
 msgid "The sidebar that appears to the left of the content."
 msgstr "Diese Sidebar erscheint links der Inhalte."
 
-#: functions.php:130
+#: functions.php:113
 msgid "Right Sidebar"
 msgstr "Rechte Sidebar"
 
-#: functions.php:130
+#: functions.php:113
 msgid "The sidebar that appears to the right of the content."
 msgstr "Diese Sidebar erscheint rechts der Inhalte."
 
-#: functions.php:131
+#: functions.php:114
 msgid "Above Header"
 msgstr "Über dem Header"
 
-#: functions.php:131
+#: functions.php:114
 msgid ""
 "This sidebar appears to above all of the site information.  This sidebar is "
 "not encased in CSS, you will need to create CSS for it."
@@ -226,42 +227,43 @@ msgstr ""
 "Diese Sidebar erscheint über allem, vor den den Seiteninformationen. Diese "
 "Sidebar ist nicht im CSS eingeschlossen, Du musst das CSS dafür anlegen."
 
-#: functions.php:132
+#: functions.php:115 functions/customize.php:94
 msgid "Header"
 msgstr "Header"
 
-#: functions.php:132
+#: functions.php:115
 msgid "This sidebar appears inside the #header block."
 msgstr "Diese Sidebar erscheint innerhalb des #header Blocks."
 
-#: functions.php:133 options.php:198 options/menubar.php:10
+#: functions.php:116 functions/customize.php:95 options.php:198
+#: options/menubar.php:10
 msgid "Menubar"
 msgstr "Menüleiste"
 
-#: functions.php:133
+#: functions.php:116
 msgid "This sidebar is under the header and above the content-wrapper block"
 msgstr ""
 "Diese Sidebar erscheint unter dem Header und über dem content-wrapper Block"
 
-#: functions.php:134
+#: functions.php:117
 msgid "Over Blog"
 msgstr "Über dem Blog"
 
-#: functions.php:134
+#: functions.php:117
 msgid "This sidebar appears over the blog within the #column .narrowcolumn"
 msgstr ""
 "Diese Sidebar erscheint über dem Blog innerhalb von #column .narrowcolumn"
 
-#: functions.php:135
+#: functions.php:118
 msgid "Under Blog"
 msgstr "Unter dem Blog"
 
-#: functions.php:135
+#: functions.php:118
 msgid "This sidebar appears under the blog within the #column .narrowocolumn"
 msgstr ""
 "Diese Sidebar erscheint unter dem Blog innerhalb von #column .narrowcolumn"
 
-#: functions.php:136
+#: functions.php:119
 msgid ""
 "This sidebar is at the bottom of the page and is the center of the 3 footer "
 "sidebars."
@@ -269,147 +271,147 @@ msgstr ""
 "Diese Sidebar ist am unteren Rand von der Seite und ist die Mitte von den 3 "
 "Footer Sidebars."
 
-#: functions.php:137
+#: functions.php:120
 msgid "Footer Left"
 msgstr "Footer Links"
 
-#: functions.php:137
+#: functions.php:120
 msgid "This sidebar is at the bottom of the page, the left one."
 msgstr "Diese Sidebar ist am unteren Rand von der Seite, die Linke. "
 
-#: functions.php:138
+#: functions.php:121
 msgid "Footer Right"
 msgstr "Footer Rechts"
 
-#: functions.php:138
+#: functions.php:121
 msgid "This sidebar is at the bottom of the page, the right one."
 msgstr "Diese Sidebar ist am unteren Rand von der Seite, die Rechte."
 
-#: functions.php:141
+#: functions.php:124
 msgid "Jetpack Mobile Sidebar"
 msgstr "Jetpack Mobile Sidebar"
 
-#: functions.php:185
+#: functions.php:168
 msgid " [&hellip;]"
 msgstr " [&hellip;]"
 
-#: functions.php:185 functions/displaypost.php:213
+#: functions.php:168 functions/displaypost.php:213
 msgid "&darr; Read the rest of this entry..."
 msgstr "&darr; Lese den Rest dieses Eintrags ..."
 
-#: functions.php:256
+#: functions.php:239
 msgid "my DeviantART"
-msgstr "mein DevianArt"
+msgstr "mein DeviantART"
 
-#: functions.php:256 options/menubar.php:115
+#: functions.php:239 options/menubar.php:115
 msgid "DeviantART"
 msgstr "DeviantART"
 
-#: functions.php:257
+#: functions.php:240
 msgid "Examine my Tumblr"
-msgstr "Überprüfe meinTumblr"
+msgstr "Überprüfe mein Tumblr"
 
-#: functions.php:257 options/menubar.php:109
+#: functions.php:240 options/menubar.php:109
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: functions.php:258
+#: functions.php:241
 msgid "Friend on Facebook"
 msgstr "Freund auf Facebook"
 
-#: functions.php:258 options/menubar.php:77
+#: functions.php:241 options/menubar.php:77
 msgid "Facebook"
 msgstr "Facebook"
 
-#: functions.php:259
+#: functions.php:242
 msgid "Make use of MySpace"
 msgstr "Mache Gebrauch von MySpace"
 
-#: functions.php:259 options/menubar.php:121
+#: functions.php:242 options/menubar.php:121
 msgid "MySpace"
 msgstr "MySpace"
 
-#: functions.php:260
+#: functions.php:243
 msgid "Look at my LinkedIn"
 msgstr "Betrachte mein LinkedIn"
 
-#: functions.php:260 options/menubar.php:85
+#: functions.php:243 options/menubar.php:85
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: functions.php:261
+#: functions.php:244
 msgid "Follow me on Twitter"
 msgstr "Folge mir auf Twitter"
 
-#: functions.php:261 options/menubar.php:75
+#: functions.php:244 options/menubar.php:75
 msgid "Twitter"
 msgstr "Twitter"
 
-#: functions.php:262
+#: functions.php:245
 msgid "Gaze at my Flickr"
 msgstr "Besuche mich bei Flickr"
 
-#: functions.php:262 options/menubar.php:103
+#: functions.php:245 options/menubar.php:103
 msgid "Flickr"
 msgstr "Flickr"
 
-#: functions.php:263
+#: functions.php:246
 msgid "Email me"
 msgstr "Maile mir"
 
-#: functions.php:263
+#: functions.php:246
 msgid "Email"
 msgstr "Email"
 
-#: functions.php:264
+#: functions.php:247
 msgid "Circle me on Google+"
 msgstr "Circle mich auf Google+"
 
-#: functions.php:264 options/menubar.php:79
+#: functions.php:247 options/menubar.php:79
 msgid "Google+"
 msgstr "Google+"
 
-#: functions.php:265
+#: functions.php:248
 msgid "Peruse my Pinterests"
 msgstr "Durchstöbere mein Pinterests"
 
-#: functions.php:265 options/menubar.php:91
+#: functions.php:248 options/menubar.php:91
 msgid "pinterest"
 msgstr "Pinterest"
 
-#: functions.php:266
+#: functions.php:249
 msgid "My Channel on YouTube"
 msgstr "Mein Channel auf YouTube"
 
-#: functions.php:266 options/menubar.php:97
+#: functions.php:249 options/menubar.php:97
 msgid "YouTube"
 msgstr "YouTube"
 
-#: functions.php:267
+#: functions.php:250
 msgid "RSS Feed"
 msgstr "RSS-Feed"
 
-#: functions.php:267 options/general.php:333
+#: functions.php:250 options/general.php:333
 msgid "RSS"
 msgstr "RSS"
 
-#: functions.php:288 functions/breadcrumbs.php:11
+#: functions.php:271 functions/breadcrumbs.php:11
 #: functions/wp-pagenavi.php:165
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: functions.php:296
+#: functions.php:279
 #, php-format
 msgid "Search Results: %s"
 msgstr "Suchergebnisse: %s"
 
-#: functions.php:300
+#: functions.php:283
 #, php-format
 msgid "Page: %s"
 msgstr "Seite: %s"
 
 #. translators: theme discription for wp-admin
-#: functions.php:418
+#: functions.php:402
 msgid "Publish a WebComic with the Easel theme and the Comic Easel plugin."
 msgstr ""
 "Publiziere ein Webcomic mit dem Easel Theme und dem Comic Easel Plugin."
@@ -437,7 +439,7 @@ msgstr "Beiträge getaggt"
 
 #: functions/breadcrumbs.php:105
 msgid "Articles posted by"
-msgstr "Beiträge geschrieben von"
+msgstr "Artikel geschrieben von"
 
 #: functions/breadcrumbs.php:108
 msgid "Error 404"
@@ -501,39 +503,43 @@ msgstr "Gehostet auf"
 msgid "&copy;"
 msgstr "&copy;"
 
-#: functions/customize.php:20 options.php:6
-msgid "Options"
-msgstr "Optionen"
+#: functions/customize.php:39
+msgid "Layout Options"
+msgstr "Layout Optionen"
 
-#: functions/customize.php:22
+#: functions/customize.php:39
+msgid "Allows you to customize layout settings for Easel."
+msgstr "Ermöglicht dir das Anpassen der Layouteinstellungen für Easel."
+
+#: functions/customize.php:41
 msgid "Background Colors"
 msgstr "Hintergrundfarben"
 
-#: functions/customize.php:22
-msgid "some description here"
-msgstr "Hier einige Beschreibungen"
+#: functions/customize.php:41
+msgid "Colors that are in the background of each of the sections."
+msgstr "Diese Farben sind im Hintergrund jeder Sektion zu sehen."
 
-#: functions/customize.php:23
+#: functions/customize.php:42
 msgid "Text Colors"
 msgstr "Textfarben"
 
-#: functions/customize.php:24
+#: functions/customize.php:43
 msgid "Link Colors"
 msgstr "Link Farben"
 
-#: functions/customize.php:25
+#: functions/customize.php:44
 msgid "Logo"
 msgstr "Logo"
 
-#: functions/customize.php:100
+#: functions/customize.php:48
 msgid "Choose a default scheme."
 msgstr "Wähle ein Standard-Schema."
 
-#: functions/customize.php:117
+#: functions/customize.php:65
 msgid "Rounded corners on Post/Page Navigation Sections"
 msgstr "Abgerundete Ecken bei Beitrags/Seiten Navigationsbereichen"
 
-#: functions/customize.php:125
+#: functions/customize.php:73
 msgid ""
 "Make the header title and description become a clickable hotspot for the "
 "entire header? (If you do the logo will not display right)"
@@ -541,13 +547,117 @@ msgstr ""
 "Macht den Header Titel und Beschreibung zu einem einen anklickbaren Hotspot "
 "für den gesamten Header? (Wenn das Logo nicht richtig angezeigt wird)"
 
-#: functions/customize.php:131
+#: functions/customize.php:79
 msgid "Logo, 120px height x 160px width"
-msgstr "Logo, 120px hoch x 160px breit"
+msgstr "Logo, 120px Höhe x 160px Breite"
 
-#: functions/customize.php:137
+#: functions/customize.php:85
 msgid "Put the Comic in the content column?"
 msgstr "Setze das Comic in die content column?"
+
+#: functions/customize.php:93
+msgid "Entire Content Area"
+msgstr "Gesamten Inhaltsbereich"
+
+#: functions/customize.php:96
+msgid "Menubar Dropdown"
+msgstr "Menüleiste Dropdown"
+
+#: functions/customize.php:97
+msgid "Menubar When Mouseover"
+msgstr "Menüleiste bei Mouseover"
+
+#: functions/customize.php:98
+msgid "Breadcrumbs"
+msgstr "Breadcrumbs"
+
+#: functions/customize.php:99
+msgid "Content Area Below Menubar"
+msgstr "Inhaltsbereich unterhalb der Menüleiste"
+
+#: functions/customize.php:100
+msgid "Content Area Below Comic"
+msgstr "Inhaltsbereich unterhalb vom Comic"
+
+#: functions/customize.php:101
+msgid "Content Column"
+msgstr "Inhaltsspalte"
+
+#: functions/customize.php:102
+msgid "Entire Post Area"
+msgstr "Gesamten Beitragsbereich"
+
+#: functions/customize.php:103
+msgid "Top Section of a Post"
+msgstr "Oberer Abschnitt von einem Beitrag"
+
+#: functions/customize.php:104
+msgid "Comment Section"
+msgstr "Kommentar Abschnitt"
+
+#: functions/customize.php:105
+msgid "Comment Info. Line"
+msgstr "Kommentar Info. Linie"
+
+#: functions/customize.php:106
+msgid "Comments Made By Post Author"
+msgstr "Kommentare gemacht vom Beitragsautor"
+
+#: functions/customize.php:107
+msgid "Info. Line Of Post Author"
+msgstr "Info. Linie von dem Beitragsautor"
+
+#: functions/customize.php:110
+msgid "Sitewide Textcolor"
+msgstr "Seitenbreite Textfarbe"
+
+#: functions/customize.php:112
+msgid "Site Tagline"
+msgstr "Website Untertitel"
+
+#: functions/customize.php:114
+msgid "Widget Titles"
+msgstr "Widget Titel"
+
+#: functions/customize.php:115
+msgid "Sidebar Textcolor"
+msgstr "Sidebar Textfarbe"
+
+#: functions/customize.php:116
+msgid "Non-Link Post Titles"
+msgstr "Nicht verlinkte Beitragstitel"
+
+#: functions/customize.php:117
+msgid "Page Titles"
+msgstr "Seitentitel"
+
+#: functions/customize.php:119
+msgid "Post/Page Comments"
+msgstr "Beitrag/Seiten Kommentare"
+
+#: functions/customize.php:121 functions/customize.php:139
+msgid "Copyright"
+msgstr "Copyright"
+
+#: functions/customize.php:145
+msgid "Comic Area"
+msgstr "Comic Bereich"
+
+#: functions/customize.php:147
+msgid "Default Comic Navigation"
+msgstr "Standard Comic Navigation"
+
+#: functions/customize.php:148
+msgid "Default Nav Normal Text Color"
+msgstr "Standard Nav Normal Textfarbe"
+
+#: functions/customize.php:149
+msgid "Default Navigation Link"
+msgstr "Standard Navigation Link"
+
+#: functions/customize.php:150
+msgid "Default Navigation Hover"
+msgstr "Standar Navigation Hover"
 
 #: functions/displaypost.php:109
 msgid "by"
@@ -582,12 +692,12 @@ msgid "Comment&nbsp;"
 msgstr "Kommentar&nbsp;"
 
 #: functions/displaypost.php:176
-msgid "Comment "
-msgstr "Kommentar "
+msgid "Comment"
+msgstr "Kommentar"
 
-#: functions/displaypost.php:176
-msgid "Comments "
-msgstr "Kommentare "
+#: functions/displaypost.php:176 options/general.php:205
+msgid "Comments"
+msgstr "Kommentare"
 
 #: functions/displaypost.php:192
 msgid "&lsaquo; Prev"
@@ -649,6 +759,10 @@ msgstr "Bearbeite diesen Anhang."
 msgid "Sorry, no image matched your criteria."
 msgstr "Tut uns leid, kein Bild entsprach deinen Suchkriterien."
 
+#: options.php:6
+msgid "Options"
+msgstr "Optionen"
+
 #: options.php:7 options.php:34
 msgid "Easel Options"
 msgstr "Easel Optionen"
@@ -667,9 +781,9 @@ msgid ""
 "usability with the associated plugins that have been built to utilize its "
 "functionality."
 msgstr ""
-"Obwohl Easel ein ausgezeichneter Stand-alone Theme ist, kann es verstärkt "
-"werden in der Brauchbarkeit mit den zugehörigen Plugins, die gebaut wurden, "
-"um seine Funktionalität zu nutzen."
+"Obwohl Easel ein ausgezeichnetes eigenständiges Theme ist, kann es mit den "
+"dazugehörigen Plugins in der Brauchbarkeit verbessert werden, die geschaffen "
+"wurden, um seine Funktionalität zu nutzen."
 
 #: options.php:47
 msgid "Easel Settings RESET!"
@@ -697,15 +811,15 @@ msgstr "Debugger"
 
 #: options.php:241
 msgid "Created, Developed and maintained by"
-msgstr "Kreiert, entwickelt und betreut von"
+msgstr "Kreiert, entwickelt und gepflegt von"
 
 #: options.php:242
 msgid ""
-"If you like the Easel theme, please donate.  It will help in developing new "
+"If you like the Easel theme, please donate. It will help in developing new "
 "features and versions."
 msgstr ""
-"Wenn du das Easel-Theme magst, dann spende bitte. Es hilft dem Autoren "
-"dabei, neue Features und Versionen zu entwickeln."
+"Wenn du das Easel-Theme magst, spende bitte. Es wird bei der Entwicklung "
+"neuer Funktionen und Versionen helfen."
 
 #: options.php:256
 msgid "Reset All Settings"
@@ -746,7 +860,7 @@ msgstr ""
 #: options/debug.php:36 options/general.php:392 options/layout.php:62
 #: options/menubar.php:141
 msgid "Save Settings"
-msgstr "Einstellungen sichern"
+msgstr "Einstellungen speichern"
 
 #: options/debug.php:48
 msgid ""
@@ -833,7 +947,7 @@ msgstr "Inhaltsbreite"
 
 #: options/general.php:64
 msgid "Media and images width on posts and pages?"
-msgstr "Medien und Bilder Breite in Beiträgen und Seiten?"
+msgstr "Breite von Medien und Bilder in Beiträgen und Seiten?"
 
 #: options/general.php:69
 msgid ""
@@ -989,10 +1103,6 @@ msgstr ""
 "Wenn aktiv, wird in den Beitrags Datums Informationen angezeigt, wann ein "
 "Artikel noch mal geändert wurde."
 
-#: options/general.php:205
-msgid "Comments"
-msgstr "Kommentare"
-
 #: options/general.php:209
 msgid "Disable the comment notes?"
 msgstr "Deaktiviere die Kommentar Notizen?"
@@ -1025,7 +1135,7 @@ msgstr "Aktiviere Kommentare auf der Homepage?"
 #: options/general.php:232
 msgid ""
 "Checkmarking this option will make it so that the post(s) on the home page "
-"will also display the comments under them, This will ONLY work if you have "
+"will also display the comments under them. This will ONLY work if you have "
 "it set to only display 1 post on the home page. The post count and this must "
 "be set to work."
 msgstr ""
@@ -1198,7 +1308,7 @@ msgstr ""
 
 #: options/layout.php:32
 msgid "Choose Your Website Layout"
-msgstr "Wähle dein Webseitenlayout"
+msgstr "Wähle dein Websitenlayout"
 
 #: options/layout.php:34
 msgid "3 Column &mdash; Standard"
@@ -1474,7 +1584,7 @@ msgstr "Geplante Beiträge"
 
 #: widgets/translator.php:14
 msgid "Translate your site with Google."
-msgstr "Übersetze deine Seite mit Google."
+msgstr "Übersetze deine Website mit Google."
 
 #: widgets/translator.php:15
 msgid "Google Translator"
