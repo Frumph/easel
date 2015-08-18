@@ -4,7 +4,7 @@ Widget Name: Dogecoins
 Description: Accept Dogecoins button with input box for wallet_id
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net/
-Version: 1.05
+Version: 1.1
 */
 
 /*
@@ -19,12 +19,16 @@ function easel_enqueue_dogecoin_js() {
 */
 class easel_dogecoins_widget extends WP_Widget {
 
-	function easel_dogecoins_widget($skip_widget_init = false) {
-		if (!$skip_widget_init) {
-			$widget_ops = array('classname' => __CLASS__, 'description' => __('An accept Dogecoins button.','easel') );
-			$this->WP_Widget(__CLASS__, __('Dogecoins Button','easel'), $widget_ops);
-		}
-	}
+	/**
+     * Register widget with WordPress.
+     */
+    function __construct() {
+        parent::__construct(
+            __CLASS__, // Base ID
+            __( 'Easel - Dogecoins Button', 'easel' ), // Name
+            array( 'classname' => __CLASS__, 'description' => __( 'An accept Dogecoins button.', 'easel' ), )
+        );
+    }
 
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
@@ -67,4 +71,7 @@ class easel_dogecoins_widget extends WP_Widget {
 	}
 }
 
-register_widget('easel_dogecoins_widget');
+add_action( 'widgets_init', function(){
+    register_widget('easel_dogecoins_widget');
+});
+

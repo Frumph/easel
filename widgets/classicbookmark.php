@@ -4,7 +4,7 @@ Widget Name: (classic) Bookmark
 Description: Adds a bookmark set of icons to save the page your own.
 Author: Tyler Martin, Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
-Version: 1.02
+Version: 1.1
 */
 
 function easel_classic_bookmark() { 
@@ -108,12 +108,18 @@ global $post, $wp_query; ?>
 
 class widget_easel_classic_bookmark extends WP_Widget {
 	
-	function widget_easel_classic_bookmark() {
-		$widget_ops = array('classname' => __CLASS__, 'description' => __( 'Creates a set of buttons that let the user return to the page they tagged.', 'easel' ) );
-		$this->WP_Widget(__CLASS__, __( 'Classic Bookmark', 'easel' ), $widget_ops);
+	/**
+	 * Register widget with WordPress.
+	 */
+	public function __construct() {
+		parent::__construct(
+				__CLASS__, // Base ID
+				__( 'Easel - Classic Bookmark', 'easel' ), // Name
+				array( 'description' => __( 'Creates a set of buttons that let the user return to the page they tagged.', 'easel' ), ) // Args
+		);
 	}
 	
-	function widget($args, $instance) {
+	public function widget($args, $instance) {
 		global $post, $wp_query;
 		extract($args, EXTR_SKIP);
 		echo $before_widget;
@@ -123,13 +129,13 @@ class widget_easel_classic_bookmark extends WP_Widget {
 		echo $after_widget;
 	}
 	
-	function update($new_instance, $old_instance) {
+	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		return $instance;
 	}
 	
-	function form($instance) {
+	public function form($instance) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
 		$title = strip_tags($instance['title']);
 		?>
@@ -137,6 +143,6 @@ class widget_easel_classic_bookmark extends WP_Widget {
 		<?php
 	}
 }
-register_widget('widget_easel_classic_bookmark');
-
-?>
+add_action( 'widgets_init', function(){
+	register_widget('widget_easel_classic_bookmark');
+});

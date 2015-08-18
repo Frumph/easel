@@ -3,17 +3,21 @@
 Widget Name: google translator
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net/
-Version: 1.1
+Version: 1.3
 
 */
 
 class easel_google_translate_widget extends WP_Widget {
 
-	function easel_google_translate_widget($skip_widget_init = false) {
-		if (!$skip_widget_init) {
-			$widget_ops = array('classname' => __CLASS__, 'description' => __( 'Translate your site with Google.', 'easel' ) );
-			$this->WP_Widget(__CLASS__, __( 'Google Translator', 'easel' ), $widget_ops);
-		}
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			__CLASS__, // Base ID
+			__( 'Easel - Google Translator', 'easel' ), // Name
+			array( 'classname' => __CLASS__, 'description' => __( 'Translate your site with Google.', 'easel' ), )
+		);
 	}
 	
 	function widget($args, $instance) {
@@ -43,7 +47,7 @@ class easel_google_translate_widget extends WP_Widget {
 		<?php
 	}
 }
-register_widget('easel_google_translate_widget');
 
-
-?>
+add_action( 'widgets_init', function(){
+	register_widget('easel_google_translate_widget');
+});

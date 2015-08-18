@@ -4,16 +4,20 @@ Widget Name: Scheduled Posts
 Description: Display a list of posts that are due to be scheduled.
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net/
-Version: 1.1
+Version: 1.2
 */
 
 class easel_scheduled_posts_widget extends WP_Widget {
 	
-	function easel_scheduled_posts_widget($skip_widget_init = false) {
-		if (!$skip_widget_init) {
-			$widget_ops = array('classname' => __CLASS__, 'description' => __( 'Display a list of posts that are scheduled to be published.', 'easel' ) );
-			$this->WP_Widget(__CLASS__, __( 'Scheduled Posts', 'easel' ), $widget_ops);
-		}
+/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			__CLASS__, // Base ID
+			__( 'Easel - Scheduled Posts', 'easel' ), // Name
+			array( 'classname' => __CLASS__, 'description' => __( 'Display a list of posts that are scheduled to be published.', 'easel' ), )
+		);
 	}
 	
 	function widget($args, $instance) {
@@ -50,6 +54,6 @@ class easel_scheduled_posts_widget extends WP_Widget {
 		<?php
 	}
 }
-register_widget('easel_scheduled_posts_widget');
-
-?>
+add_action( 'widgets_init', function(){
+	register_widget('easel_scheduled_posts_widget');
+});

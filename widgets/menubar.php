@@ -4,7 +4,7 @@ Widget Name: Menubar Widget (wordpress 3.0 required)
 Widget URI: http://frumph.net/
 Description: Display a calendar of this months posts.
 Author: Philip M. Hofer (Frumph)
-Version: 1.09
+Version: 1.1
 Author URI: http://frumph.net/
 
 */
@@ -43,11 +43,15 @@ function easel_menubar() {
 
 class easel_menubar_widget extends WP_Widget {
 	
-	function easel_menubar_widget($skip_widget_init = false) {
-		if (!$skip_widget_init) {
-			$widget_ops = array('classname' => __CLASS__, 'description' => __( 'Displays a menubar.', 'easel' ) );
-			$this->WP_Widget(__CLASS__, __( 'Easel Menubar', 'easel' ), $widget_ops);
-		}
+/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			__CLASS__, // Base ID
+			__( 'Easel - Menubar', 'easel' ), // Name
+			array( 'classname' => __CLASS__, 'description' => __( 'Displays a menubar.', 'easel' ), )
+		);
 	}
 	
 	function widget($args, $instance) {
@@ -76,7 +80,6 @@ class easel_menubar_widget extends WP_Widget {
 	}
 }
 
-register_widget('easel_menubar_widget');
-
-
-?>
+add_action( 'widgets_init', function(){
+	register_widget('easel_menubar_widget');
+});
