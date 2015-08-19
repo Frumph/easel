@@ -31,13 +31,9 @@ foreach (glob(easel_themeinfo('themepath') . '/functions/*.php') as $funcfile) {
 }
 
 // Load all the widgets.
-function easel_widgets_init() {
-    foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
-	   get_template_part('widgets/'.basename($widgefile,'.php'));
-    }
+foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
+	get_template_part('widgets/'.basename($widgefile,'.php'));
 }
-
-add_action( 'widgets_init', 'easel_widgets_init' );
 
 function easel_setup() {
 	load_theme_textdomain('easel', get_template_directory().'/lang');
