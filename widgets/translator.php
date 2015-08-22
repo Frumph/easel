@@ -4,9 +4,11 @@ Widget Name: google translator
 Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net/
 Version: 1.3
-
 */
 
+/**
+ * Adds Google Translator widget.
+ */
 class easel_google_translate_widget extends WP_Widget {
 
 	/**
@@ -16,15 +18,23 @@ class easel_google_translate_widget extends WP_Widget {
 		parent::__construct(
 			__CLASS__, // Base ID
 			__( 'Easel - Google Translator', 'easel' ), // Name
-			array( 'classname' => __CLASS__, 'description' => __( 'Translate your site with Google.', 'easel' ), )
+			array( 'classname' => __CLASS__, 'description' => __( 'Translate your site with Google.', 'easel' ), ) // Args
 		);
 	}
 	
-	function widget($args, $instance) {
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget($args, $instance) {
 		global $post;
-		extract($args, EXTR_SKIP); 
+		extract($args, EXTR_SKIP);
 		echo $before_widget;
-		$title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']); 
+		$title = empty($instance['title']) ? '' : apply_filters('widget_title', $instance['title']);
 		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; }; ?>
 		<center>
 			<div id="google_translate_element"></div>
@@ -33,13 +43,30 @@ class easel_google_translate_widget extends WP_Widget {
 		echo $after_widget;
 	}
 	
-	function update($new_instance, $old_instance) {
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		return $instance;
 	}
 	
-	function form($instance) {
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form($instance) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '') );
 		$title = strip_tags($instance['title']);
 		?>
@@ -48,6 +75,7 @@ class easel_google_translate_widget extends WP_Widget {
 	}
 }
 
+// register Google Translator widget
 add_action( 'widgets_init', function(){
 	register_widget('easel_google_translate_widget');
 });
