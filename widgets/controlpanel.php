@@ -6,20 +6,24 @@ Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net/
 Version: 1.1
 */
-class easel_control_panel_widget extends WP_Widget {
 
 /**
+ * Adds Control Panel widget.
+ */
+class easel_control_panel_widget extends WP_Widget {
+
+	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
 			__CLASS__, // Base ID
 			__( 'Easel - Control Panel', 'easel' ), // Name
-			array( 'classname' => __CLASS__, 'description' => __( 'Login/Logoff menu with register/lost password links if not logged on. (use only if registrations are enabled).', 'easel' ), )
+			array( 'classname' => __CLASS__, 'description' => __( 'Login/Logoff menu with register/lost password links if not logged on. (use only if registrations are enabled).', 'easel' ), ) // Args
 		);
 	}
 	
-	function easel_show_control_panel() { 
+	function easel_show_control_panel() {
 		global $user_login;
 		if (!is_user_logged_in()) { ?>
 			<?php 
@@ -45,10 +49,17 @@ class easel_control_panel_widget extends WP_Widget {
 			</ul>
 		<?php } ?>
 		<?php
-	} 	
+	}
 		
-
-	function widget($args, $instance) {
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
 		Protect();
 		echo $before_widget;
@@ -59,13 +70,30 @@ class easel_control_panel_widget extends WP_Widget {
 		UnProtect();
 	}
 	
-	function update($new_instance, $old_instance) {
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		return $instance;
 	}
 	
-	function form($instance) {
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form($instance) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
 		$title = strip_tags($instance['title']);
 		?>
@@ -74,6 +102,7 @@ class easel_control_panel_widget extends WP_Widget {
 	}
 }
 
+// register Control Panel widget
 add_action( 'widgets_init', function(){
 	register_widget('easel_control_panel_widget');
 });
