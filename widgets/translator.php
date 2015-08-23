@@ -78,6 +78,8 @@ class easel_google_translate_widget extends WP_Widget {
 }
 
 // register Google Translator widget
-add_action( 'widgets_init', function(){
+function easel_google_translate_widget_init() {
 	register_widget('easel_google_translate_widget');
-});
+}
+
+add_action( 'widgets_init', 'easel_google_translate_widget_init');

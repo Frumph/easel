@@ -103,6 +103,8 @@ class easel_control_panel_widget extends WP_Widget {
 }
 
 // register Control Panel widget
-add_action( 'widgets_init', function(){
+function easel_control_panel_widget_init() {
 	register_widget('easel_control_panel_widget');
-});
+}
+
+add_action( 'widgets_init', 'easel_control_panel_widget_init');

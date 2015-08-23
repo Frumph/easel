@@ -107,6 +107,8 @@ class easel_menubar_widget extends WP_Widget {
 }
 
 // register Menubar widget
-add_action( 'widgets_init', function(){
+function easel_menubar_widget_init() {
 	register_widget('easel_menubar_widget');
-});
+}
+
+add_action( 'widgets_init', 'easel_menubar_widget_init');

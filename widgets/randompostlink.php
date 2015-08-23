@@ -63,15 +63,15 @@ class easel_random_post_link_widget extends WP_Widget {
 	}
 	
 	/**
-	* Sanitize widget form values as they are saved.
-	*
-	* @see WP_Widget::update()
-	*
-	* @param array $new_instance Values just sent to be saved.
-	* @param array $old_instance Previously saved values from database.
-	*
-	* @return array Updated safe values to be saved.
-	*/
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
 	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
@@ -95,6 +95,8 @@ class easel_random_post_link_widget extends WP_Widget {
 }
 
 // register Random Post widget
-add_action( 'widgets_init', function(){
+function easel_random_post_link_widget_init() {
 	register_widget('easel_random_post_link_widget');
-});
+}
+
+add_action( 'widgets_init', 'easel_random_post_link_widget_init');

@@ -249,7 +249,7 @@ class easel_calendar_widget extends WP_Widget {
         parent::__construct(
             __CLASS__, // Base ID
             __( 'Easel - Calendar', 'easel ), // Name
-            array( 'classname' => __CLASS__, 'description' => __( 'Display a calendar showing this months posts. (this calendar does not drop lines if there is no title given.)', 'easel' ), )
+            array( 'classname' => __CLASS__, 'description' => __( 'Display a calendar showing this months posts. (this calendar does not drop lines if there is no title given.)', 'easel' ), ) // Args
         );
     }
 
@@ -287,7 +287,7 @@ class easel_calendar_widget extends WP_Widget {
 					</div>
 				<?php } ?>
 			<?php
-				easel_get_calendar(true, true, 'post'); 
+				easel_get_calendar(true, true, 'post');
 			?>
 			</div>
 			<div id="wp-calendar-foot"></div>
@@ -338,6 +338,8 @@ class easel_calendar_widget extends WP_Widget {
 	}
 }
 
-add_action( 'widgets_init', function(){
-    register_widget('easel_calendar_widget');
-});
+function easel_calendar_widget_init() {
+	register_widget('easel_calendar_widget');
+}
+
+add_action( 'widgets_init', 'easel_calendar_widget_init');

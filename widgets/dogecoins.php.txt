@@ -26,7 +26,7 @@ class easel_dogecoins_widget extends WP_Widget {
         parent::__construct(
             __CLASS__, // Base ID
             __( 'Easel - Dogecoins Button', 'easel' ), // Name
-            array( 'classname' => __CLASS__, 'description' => __( 'An accept Dogecoins button.', 'easel' ), )
+            array( 'classname' => __CLASS__, 'description' => __( 'An accept Dogecoins button.', 'easel' ), ) // Args
         );
     }
 
@@ -71,7 +71,8 @@ class easel_dogecoins_widget extends WP_Widget {
 	}
 }
 
-add_action( 'widgets_init', function(){
-    register_widget('easel_dogecoins_widget');
-});
+function easel_dogecoins_widget_init() {
+	register_widget('easel_dogecoins_widget');
+}
 
+add_action( 'widgets_init', 'easel_dogecoins_widget_init');

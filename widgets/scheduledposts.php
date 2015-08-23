@@ -85,6 +85,8 @@ class easel_scheduled_posts_widget extends WP_Widget {
 }
 
 // register Scheduled Posts widget
-add_action( 'widgets_init', function(){
+function easel_scheduled_posts_widget_init() {
 	register_widget('easel_scheduled_posts_widget');
-});
+}
+
+add_action( 'widgets_init', 'easel_scheduled_posts_widget_init');

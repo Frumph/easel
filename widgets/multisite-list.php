@@ -7,13 +7,12 @@ Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net/
 Version: 1.1
 */
-if (function_exists('is_multisite')) {
-	if (is_multisite()) {
+if (function_exists('is_multisite')) && if (is_multisite()) {
 		
 		/**
 		 * Adds Site List widget.
 		 */
-		class widget_multisite_sitelist extends WP_Widget {
+		class comicpress_multisite_sitelist_widget extends WP_Widget {
 			
 			/**
 			 * Register widget with WordPress.
@@ -84,9 +83,11 @@ if (function_exists('is_multisite')) {
 				 <?php
 			  }
 		}
+		
 	// register Site List widget
-	add_action( 'widgets_init', function(){
-			register_widget('widget_multisite_sitelist');
-		});	
+	function easel_multisite_sitelist_widget_init() {
+		register_widget('easel_multisite_sitelist_widget');
 	}
+	
+	add_action( 'widgets_init', 'easelpress_multisite_sitelist_widget_init');
 }
