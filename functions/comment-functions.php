@@ -125,7 +125,7 @@ function easel_comments_callback($comment, $args, $depth) {
 			
 			<div class="comment-meta-data">
 						
-				<span class="comment-time">
+				<span class="comment-time" title="<?php comment_date('l, F jS Y, g:ia'); ?>">
 					<?php
 					/* translators: date and time in comments */
 					printf(__( '%1$s, %2$s', 'easel' ), get_comment_date(), get_comment_time()); ?>
