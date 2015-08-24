@@ -122,15 +122,15 @@ function easel_comments_callback($comment, $args, $depth) {
 			<div class="comment-author vcard">
 				<?php easel_comment_author(); ?>
 			</div>
-	
+			
 			<div class="comment-meta-data">
 						
-				<span class="comment-time" title="<?php comment_date(__( 'l, F jS Y, g:ia', 'easel' )); ?>">
-					<?php 
+				<span class="comment-time">
+					<?php
 					/* translators: date and time in comments */
 					printf(__( '%1$s, %2$s', 'easel' ), get_comment_date(), get_comment_time()); ?>
-				</span> 
-		
+				</span>
+				
 				<span class="comment-permalink">
 					<span class="separator">|</span> <a href="#comment-<?php echo str_replace('&', '&amp;', get_comment_ID()); ?>" title="<?php _e( 'Permalink to comment', 'easel' ); ?>"><?php _e( '#', 'easel' ); ?></a>
 				</span>
