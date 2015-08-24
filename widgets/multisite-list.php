@@ -12,7 +12,7 @@ if (function_exists('is_multisite') && is_multisite()) {
 		/**
 		 * Adds Site List widget.
 		 */
-		class comicpress_multisite_sitelist_widget extends WP_Widget {
+		class easel_multisite_sitelist_widget extends WP_Widget {
 			
 			/**
 			 * Register widget with WordPress.
@@ -89,5 +89,5 @@ if (function_exists('is_multisite') && is_multisite()) {
 		register_widget('easel_multisite_sitelist_widget');
 	}
 	
-	add_action( 'widgets_init', 'easelpress_multisite_sitelist_widget_init');
+	add_action( 'widgets_init', 'easel_multisite_sitelist_widget_init');
 }
