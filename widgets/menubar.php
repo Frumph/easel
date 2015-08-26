@@ -9,7 +9,7 @@ Author URI: http://frumph.net/
 */
 
 function easel_menubar() {
-	if (file_exists(easel_themeinfo('stylepath') . '/custom-menubar.php')) {
+	if (file_exists(get_stylesheet_directory() . '/custom-menubar.php')) {
 		get_template_part('custom-menubar');
 	} else { ?>
 		<div id="menubar-wrapper">
@@ -37,7 +37,7 @@ function easel_menubar() {
 			</div>
 			<div class="clear"></div>
 		</div>
-	<?php } 
+	<?php }
 }
 
 /**

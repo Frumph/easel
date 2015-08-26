@@ -26,12 +26,12 @@ if (class_exists('MultiPostThumbnails')) {
 }
 
 // These autoload
-foreach (glob(easel_themeinfo('themepath') . '/functions/*.php') as $funcfile) {
+foreach (glob(get_template_directory() . '/functions/*.php') as $funcfile) {
 	get_template_part('functions/'.basename($funcfile,'.php'));
 }
 
 // Load all the widgets.
-foreach (glob(easel_themeinfo('themepath')  . '/widgets/*.php') as $widgefile) {
+foreach (glob(get_template_directory()  . '/widgets/*.php') as $widgefile) {
 	get_template_part('widgets/'.basename($widgefile,'.php'));
 }
 
@@ -66,8 +66,8 @@ function easel_enqueue_theme_scripts() {
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');
 		if (!easel_themeinfo('disable_jquery_menu_code')) {
-			wp_enqueue_script('ddsmoothmenu_js', easel_themeinfo('themeurl').'/js/ddsmoothmenu.js'); 
-			wp_enqueue_script('menubar_js', easel_themeinfo('themeurl').'/js/menubar.js');
+			wp_enqueue_script('ddsmoothmenu_js', get_template_directory_uri().'/js/ddsmoothmenu.js');
+			wp_enqueue_script('menubar_js', get_template_directory_uri().'/js/menubar.js');
 		}
 		if (!easel_themeinfo('disable_scroll_to_top')) {
 			wp_enqueue_script('easel_scroll', easel_themeinfo('themeurl').'/js/scroll.js', null, null, true);
@@ -77,8 +77,8 @@ function easel_enqueue_theme_scripts() {
 			wp_enqueue_script('google-translate-settings', get_template_directory_uri() . '/js/googletranslate.js');
 		}
 		if (easel_themeinfo('enable_avatar_trick') && !$is_IE) {
-			wp_enqueue_script('themetricks_historic1', easel_themeinfo('themeurl').'/js/cvi_text_lib.js', null, null, true);
-			wp_enqueue_script('themetricks_historic2', easel_themeinfo('themeurl').'/js/instant.js', null, null, true);
+			wp_enqueue_script('themetricks_historic1', get_template_directory_uri().'/js/cvi_text_lib.js', null, null, true);
+			wp_enqueue_script('themetricks_historic2', get_template_directory_uri().'/js/instant.js', null, null, true);
 		}
 	}
 }
@@ -365,18 +365,8 @@ function easel_themeinfo($whichinfo = null) {
 	if (empty($easel_themeinfo) || $whichinfo == 'reset') {
 		$easel_themeinfo = array();
 		$easel_options = easel_load_options();
-		$easel_coreinfo = wp_upload_dir();
 		$easel_addinfo = array(
-			'upload_path' => get_option('upload_path'),
 			'version' => '4.1',
-			'themepath' => get_template_directory(),
-			'themeurl' => get_template_directory_uri(), 
-			'stylepath' => get_stylesheet_directory(), 
-			'styleurl' => get_stylesheet_directory_uri(),
-			'uploadpath' => $easel_coreinfo['basedir'],
-			'uploadurl' => $easel_coreinfo['baseurl'],
-			'home' => untrailingslashit(home_url()),  
-			'siteurl' => untrailingslashit(site_url()),
 			'excerpt_length' => '40'
 		);
 		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);

@@ -49,8 +49,8 @@
 			</td>
 		<tr>
 			<td>
-			<strong>Site URL</strong>:(siteurl) <?php echo easel_themeinfo('siteurl'); ?><br />
-			<strong>Blog URL</strong>:(home) <?php echo easel_themeinfo('home'); ?><br />
+			<strong>Site URL</strong>:(siteurl) <?php echo site_url(); ?><br />
+			<strong>Blog URL</strong>:(home) <?php echo home_url(); ?><br />
 			<br />
 <table class="widefat">
 <?php 

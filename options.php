@@ -20,7 +20,7 @@ function easel_admin_print_styles() {
 	wp_admin_css('css/global');
 	wp_admin_css('css/colors');
 	wp_admin_css('css/ie');
-	wp_enqueue_style('easel-options-style', easel_themeinfo('themeurl') . '/options/options.css');
+	wp_enqueue_style('easel-options-style', get_template_directory_uri() . '/options/options.css');
 }
 
 function easel_admin_page_head() { ?>
@@ -29,7 +29,7 @@ function easel_admin_page_head() { ?>
 
 function easel_admin_options() { ?>
 <div class="wrap">
-	<div id="eadmin-headericon" style="background: url('<?php echo easel_themeinfo('themeurl') ?>/images/easel.png') no-repeat;"></div>
+	<div id="eadmin-headericon" style="background: url('<?php echo get_template_directory_uri() ?>/images/easel.png') no-repeat;"></div>
 	<p class="alignleft">
 		<h2><?php _e( 'Easel Options', 'easel' ); ?></h2>
 		<?php _e( 'Easel is a modular theme that has an abundance of hooks and actions placed in it for additional usability.', 'easel' ); ?><br />
@@ -37,8 +37,7 @@ function easel_admin_options() { ?>
 	</p>
 	<div class="clear"></div>
 	<?php
-	$tab = (easel_themeinfo('first_run')) ? $tab = 'help' : $tab = '';
-	if (isset($_GET['tab'])) $tab = wp_filter_nohtml_kses($_GET['tab']);
+	if (isset($_GET['tab'])) { $tab = wp_filter_nohtml_kses($_GET['tab']); } else { $tab = ''; };
 
 	if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'easel_reset') {
 		delete_option('easel-options');
@@ -48,6 +47,7 @@ function easel_admin_options() { ?>
 	<?php } 
 	if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'easel_reset_customize') {
 		remove_theme_mod('easel-customize');
+		delete_option('theme_mods_easel');
 		global $easel_themeinfo; $easel_themeinfo = '';
 	?>
 		<div id="message" class="updated"><p><strong><?php _e( 'Easel Customizer Colors RESET!', 'easel' ); ?></strong></p></div>
@@ -59,7 +59,6 @@ function easel_admin_options() { ?>
 	if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-options') ) {
 		
 		if ($_REQUEST['action'] == 'easel_save_help') {
-			$easel_options['first_run'] = false;
 			$tab = 'layout';
 			update_option('easel-options', $easel_options);
 		}
@@ -187,7 +186,7 @@ function easel_admin_options() { ?>
 		<?php }
 	} 
 	$version = easel_themeinfo('version');
-	$easel_options = get_option('easel-options');
+	$easel_options = get_option('easel_load_options');
 	?>
 	<div id="poststuff" class="metabox-holder">
 		<div id="eadmin">
@@ -208,7 +207,7 @@ function easel_admin_options() { ?>
 		</div>
 
 		<div id="easel-options-pages">
-		  <?php	foreach (glob(easel_themeinfo('themepath') . '/options/*.php') as $file) { include($file); } ?>
+		  <?php	foreach (glob(get_template_directory() . '/options/*.php') as $file) { include($file); } ?>
 		</div>
 	</div>
 	<script type="text/javascript">
