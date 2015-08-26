@@ -70,7 +70,7 @@ function easel_enqueue_theme_scripts() {
 			wp_enqueue_script('menubar_js', get_template_directory_uri().'/js/menubar.js');
 		}
 		if (!easel_themeinfo('disable_scroll_to_top')) {
-			wp_enqueue_script('easel_scroll', easel_themeinfo('themeurl').'/js/scroll.js', null, null, true);
+			wp_enqueue_script('easel_scroll', get_template_directory_uri().'/js/scroll.js', null, null, true);
 		}
 		if (is_active_widget('easel_google_translate_widget', false, 'easel_google_translate_widget', true)) {
 			wp_enqueue_script('google-translate', 'http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit', null, null, true);
@@ -383,7 +383,7 @@ function easel_themeinfo($whichinfo = null) {
 
 // Dashboard Menu Options - Only run in the wp-admin area
 if (is_admin()) {
-	@require_once(easel_themeinfo('themepath').'/options.php');
+	@require_once(get_template_directory().'/options.php');
     /* translators: theme discription for wp-admin */
     $bogus_translation = __( 'Publish a WebComic with the Easel theme and the Comic Easel plugin.', 'easel' );
 }
