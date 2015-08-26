@@ -369,7 +369,7 @@ function easel_themeinfo($whichinfo = null) {
 			'version' => '4.1',
 			'excerpt_length' => '40'
 		);
-		$easel_themeinfo = array_merge($easel_coreinfo, $easel_addinfo);
+		$easel_themeinfo = array_merge($easel_themeinfo, $easel_addinfo);
 		$easel_themeinfo = array_merge($easel_themeinfo, $easel_options);
 		if (!isset($easel_themeinfo['layout']) || empty($easel_themeinfo['layout']) || ($easel_themeinfo['layout'] == 'standard')) $easel_themeinfo['layout'] = '3c';
 	}
