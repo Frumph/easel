@@ -1,4 +1,0 @@
-easel
-=====
-
-WordPress theme
