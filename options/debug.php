@@ -20,7 +20,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th scope="row"><label for="force_active_connection_close"><?php _e( 'Force MySQL to close the current active connection after page load?', 'easel '); ?></label></th>
+				<th scope="row"><label for="force_active_connection_close"><?php _e( 'Force MySQL to close the current active connection after page load?', 'easel' ); ?></label></th>
 				<td>
 					<input id="force_active_connection_close" name="force_active_connection_close" type="checkbox" value="1" <?php checked(true, $easel_options['force_active_connection_close']); ?> />		
 				</td>

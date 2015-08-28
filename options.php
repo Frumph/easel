@@ -192,7 +192,7 @@ function easel_admin_options() { ?>
 		<div id="eadmin">
 		  <?php
 		  	$tab_info = array(
-				'layout' => __( 'Layout', 'easel '),
+				'layout' => __( 'Layout', 'easel' ),
 		  		'general' => __( 'General', 'easel' ),
 				'menubar' => __( 'Menubar', 'easel' ),
 				'debug' => __( 'Debug', 'easel' )
