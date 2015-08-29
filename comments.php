@@ -42,23 +42,23 @@ if ( post_password_required() ) { ?>
             } else {
                 wp_list_comments(array('type' => 'comment', 'avatar_size' => 64));
             }
-        ?>	
+        ?>
 		</ol>
-	<?php 
+	<?php
 	if (get_comment_pages_count() > 1 && get_option( 'page_comments' )) {
 		if (easel_themeinfo('enable_numbered_pagination')) {
-			$pagelinks = paginate_comments_links(array('echo' => 0)); 
+			$pagelinks = paginate_comments_links(array('echo' => 0));
 			if (!empty($pagelinks)) {
 				$pagelinks = str_replace('<a', '<li><a', $pagelinks);
-				$pagelinks = str_replace('</a>', '</a></li>', $pagelinks); 
-				$pagelinks = str_replace('<span', '<li', $pagelinks); 
+				$pagelinks = str_replace('</a>', '</a></li>', $pagelinks);
+				$pagelinks = str_replace('<span', '<li', $pagelinks);
 				$pagelinks = str_replace('</span>', '</li>', $pagelinks); ?>
 			<div id="wp-paginav">
 				<div id="paginav">				
 					<?php echo '<ul><li class="paginav-extend">' . __( 'Comment Pages', 'easel' ) . '</li>' . $pagelinks . '</ul>'; ?>
 					</div>
 				<div class="clear"></div>
-			</div>					
+			</div>
 			<?php } ?>
 
 		<?php } else { ?>
@@ -75,7 +75,7 @@ if ( post_password_required() ) { ?>
  ?>
 <div class="comment-wrapper-respond">
 	<?php
-    $fields = array('author' => '<p class="comment-form-author">' . '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30" />' . ' <label for="author"><small>' . __( '*NAME', 'easel' ) . '</small></label></p>', 'email' => '<p class="comment-form-email">' . '<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30" /> <label for="email">' . __( '*EMAIL', 'easel' ) . '<small> &mdash; <a href="http://gravatar.com">' . __( 'Get a Gravatar', 'easel' ) . '</a></small></label></p>', 'url' => '<p class="comment-form-url">' . '<input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /> <label for="url">' . __( 'Website URL', 'easel' ) . '</label></p>', );
+    $fields = array('author' => '<p class="comment-form-author">' . '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30" />' . ' <label for="author"><small>' . __( '*NAME', 'easel' ) . '</small></label></p>', 'email' => '<p class="comment-form-email">' . '<input id="email" name="email" type="text" value="' . esc_attr($commenter['comment_author_email']) . '" size="30" /> <label for="email">' . __( '*EMAIL', 'easel' ) . '<small> &mdash; <a href="https://gravatar.com">' . __( 'Get a Gravatar', 'easel' ) . '</a></small></label></p>', 'url' => '<p class="comment-form-url">' . '<input id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /> <label for="url">' . __( 'Website URL', 'easel' ) . '</label></p>', );
     $args = array('fields' => apply_filters('comment_form_default_fields', $fields), 'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" class="comment-textarea"></textarea></p>', 'comment_notes_after' => easel_themeinfo('disable_comment_note') ? '' : '<p class="comment-note"><strong><small>' . __( 'NOTE &mdash; You can use these HTML tags and attributes: ', 'easel' ) . '</small></strong><br /><small><code>' . allowed_tags() . '</code></small></p>', 'title_reply' => __( 'Comment &not;', 'easel' ), 'title_reply_to' => __( 'Reply to %s &not;', 'easel' ), 'cancel_reply_link' => __( 'Cancel reply', 'easel' ), 'label_submit' => __( 'Post Comment', 'easel' ));
     comment_form($args);
 	?>
