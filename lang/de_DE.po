@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Easel Dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-18 21:00+0200\n"
-"PO-Revision-Date: 2015-08-18 21:04+0200\n"
+"POT-Creation-Date: 2015-09-13 18:13+0200\n"
+"PO-Revision-Date: 2015-09-13 18:13+0200\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -35,7 +35,7 @@ msgstr "oder probiere eine Suche:"
 msgid "Permanent Link:"
 msgstr "Permalink:"
 
-#: archive-year.php:43 content-page.php:20 functions/displaypost.php:266
+#: archive-year.php:43 content-page.php:20 functions/displaypost.php:267
 msgid "Edit this page."
 msgstr "Diese Seite bearbeiten."
 
@@ -103,7 +103,7 @@ msgstr "Facebook :"
 msgid "Google+ :"
 msgstr "Google+ :"
 
-#: author.php:55
+#: author.php:52
 msgid "Posts by"
 msgstr "Beiträge von"
 
@@ -182,7 +182,7 @@ msgstr "Sende Kommentar"
 msgid "Comments are closed."
 msgstr "Kommentare sind geschlossen."
 
-#: content-aside.php:6 content-link.php:11 content.php:41
+#: content-aside.php:6 content-link.php:11 content.php:44
 msgid "Edit this post."
 msgstr "Diesen Beitrag bearbeiten."
 
@@ -190,36 +190,36 @@ msgstr "Diesen Beitrag bearbeiten."
 msgid "Edit this comic."
 msgstr "Diesen Comic bearbeiten."
 
-#: functions.php:58
+#: functions.php:54
 msgid "Primary"
 msgstr "Primär"
 
-#: functions.php:59 functions.php:119 functions/customize.php:108
-#: functions/customize.php:120 options/general.php:291
+#: functions.php:55 functions.php:115 functions/customize.php:108
+#: functions/customize.php:120 options/general.php:324
 msgid "Footer"
 msgstr "Footer"
 
-#: functions.php:112
+#: functions.php:108
 msgid "Left Sidebar"
 msgstr "Linke Sidebar"
 
-#: functions.php:112
+#: functions.php:108
 msgid "The sidebar that appears to the left of the content."
 msgstr "Diese Sidebar erscheint links der Inhalte."
 
-#: functions.php:113
+#: functions.php:109
 msgid "Right Sidebar"
 msgstr "Rechte Sidebar"
 
-#: functions.php:113
+#: functions.php:109
 msgid "The sidebar that appears to the right of the content."
 msgstr "Diese Sidebar erscheint rechts der Inhalte."
 
-#: functions.php:114
+#: functions.php:110
 msgid "Above Header"
 msgstr "Über dem Header"
 
-#: functions.php:114
+#: functions.php:110
 msgid ""
 "This sidebar appears to above all of the site information.  This sidebar is "
 "not encased in CSS, you will need to create CSS for it."
@@ -227,43 +227,43 @@ msgstr ""
 "Diese Sidebar erscheint über allem, vor den den Seiteninformationen. Diese "
 "Sidebar ist nicht im CSS eingeschlossen, Du musst das CSS dafür anlegen."
 
-#: functions.php:115 functions/customize.php:94
+#: functions.php:111 functions/customize.php:94
 msgid "Header"
 msgstr "Header"
 
-#: functions.php:115
+#: functions.php:111
 msgid "This sidebar appears inside the #header block."
 msgstr "Diese Sidebar erscheint innerhalb des #header Blocks."
 
-#: functions.php:116 functions/customize.php:95 options.php:198
+#: functions.php:112 functions/customize.php:95 options.php:198
 #: options/menubar.php:10
 msgid "Menubar"
 msgstr "Menüleiste"
 
-#: functions.php:116
+#: functions.php:112
 msgid "This sidebar is under the header and above the content-wrapper block"
 msgstr ""
 "Diese Sidebar erscheint unter dem Header und über dem content-wrapper Block"
 
-#: functions.php:117
+#: functions.php:113
 msgid "Over Blog"
 msgstr "Über dem Blog"
 
-#: functions.php:117
+#: functions.php:113
 msgid "This sidebar appears over the blog within the #column .narrowcolumn"
 msgstr ""
 "Diese Sidebar erscheint über dem Blog innerhalb von #column .narrowcolumn"
 
-#: functions.php:118
+#: functions.php:114
 msgid "Under Blog"
 msgstr "Unter dem Blog"
 
-#: functions.php:118
+#: functions.php:114
 msgid "This sidebar appears under the blog within the #column .narrowocolumn"
 msgstr ""
 "Diese Sidebar erscheint unter dem Blog innerhalb von #column .narrowcolumn"
 
-#: functions.php:119
+#: functions.php:115
 msgid ""
 "This sidebar is at the bottom of the page and is the center of the 3 footer "
 "sidebars."
@@ -271,146 +271,146 @@ msgstr ""
 "Diese Sidebar ist am unteren Rand von der Seite und ist die Mitte von den 3 "
 "Footer Sidebars."
 
-#: functions.php:120
+#: functions.php:116
 msgid "Footer Left"
 msgstr "Footer Links"
 
-#: functions.php:120
+#: functions.php:116
 msgid "This sidebar is at the bottom of the page, the left one."
 msgstr "Diese Sidebar ist am unteren Rand von der Seite, die Linke. "
 
-#: functions.php:121
+#: functions.php:117
 msgid "Footer Right"
 msgstr "Footer Rechts"
 
-#: functions.php:121
+#: functions.php:117
 msgid "This sidebar is at the bottom of the page, the right one."
 msgstr "Diese Sidebar ist am unteren Rand von der Seite, die Rechte."
 
-#: functions.php:124
+#: functions.php:120
 msgid "Jetpack Mobile Sidebar"
 msgstr "Jetpack Mobile Sidebar"
 
-#: functions.php:168
+#: functions.php:164
 msgid " [&hellip;]"
 msgstr " [&hellip;]"
 
-#: functions.php:168 functions/displaypost.php:213
+#: functions.php:164 functions/displaypost.php:213
 msgid "&darr; Read the rest of this entry..."
 msgstr "&darr; Lese den Rest dieses Eintrags ..."
 
-#: functions.php:239
+#: functions.php:235
 msgid "my DeviantART"
 msgstr "mein DeviantART"
 
-#: functions.php:239 options/menubar.php:115
+#: functions.php:235 options/menubar.php:115
 msgid "DeviantART"
 msgstr "DeviantART"
 
-#: functions.php:240
+#: functions.php:236
 msgid "Examine my Tumblr"
 msgstr "Überprüfe mein Tumblr"
 
-#: functions.php:240 options/menubar.php:109
+#: functions.php:236 options/menubar.php:109
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: functions.php:241
+#: functions.php:237
 msgid "Friend on Facebook"
 msgstr "Freund auf Facebook"
 
-#: functions.php:241 options/menubar.php:77
+#: functions.php:237 options/menubar.php:77
 msgid "Facebook"
 msgstr "Facebook"
 
-#: functions.php:242
+#: functions.php:238
 msgid "Make use of MySpace"
 msgstr "Mache Gebrauch von MySpace"
 
-#: functions.php:242 options/menubar.php:121
+#: functions.php:238 options/menubar.php:121
 msgid "MySpace"
 msgstr "MySpace"
 
-#: functions.php:243
+#: functions.php:239
 msgid "Look at my LinkedIn"
 msgstr "Betrachte mein LinkedIn"
 
-#: functions.php:243 options/menubar.php:85
+#: functions.php:239 options/menubar.php:85
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: functions.php:244
+#: functions.php:240
 msgid "Follow me on Twitter"
 msgstr "Folge mir auf Twitter"
 
-#: functions.php:244 options/menubar.php:75
+#: functions.php:240 options/menubar.php:75
 msgid "Twitter"
 msgstr "Twitter"
 
-#: functions.php:245
+#: functions.php:241
 msgid "Gaze at my Flickr"
 msgstr "Besuche mich bei Flickr"
 
-#: functions.php:245 options/menubar.php:103
+#: functions.php:241 options/menubar.php:103
 msgid "Flickr"
 msgstr "Flickr"
 
-#: functions.php:246
+#: functions.php:242
 msgid "Email me"
 msgstr "Maile mir"
 
-#: functions.php:246
+#: functions.php:242
 msgid "Email"
 msgstr "Email"
 
-#: functions.php:247
+#: functions.php:243
 msgid "Circle me on Google+"
 msgstr "Circle mich auf Google+"
 
-#: functions.php:247 options/menubar.php:79
+#: functions.php:243 options/menubar.php:79
 msgid "Google+"
 msgstr "Google+"
 
-#: functions.php:248
+#: functions.php:244
 msgid "Peruse my Pinterests"
 msgstr "Durchstöbere mein Pinterests"
 
-#: functions.php:248 options/menubar.php:91
+#: functions.php:244 options/menubar.php:91
 msgid "pinterest"
 msgstr "Pinterest"
 
-#: functions.php:249
+#: functions.php:245
 msgid "My Channel on YouTube"
 msgstr "Mein Channel auf YouTube"
 
-#: functions.php:249 options/menubar.php:97
+#: functions.php:245 options/menubar.php:97
 msgid "YouTube"
 msgstr "YouTube"
 
-#: functions.php:250
+#: functions.php:246
 msgid "RSS Feed"
 msgstr "RSS-Feed"
 
-#: functions.php:250 options/general.php:333
+#: functions.php:246 options/general.php:366
 msgid "RSS"
 msgstr "RSS"
 
-#: functions.php:271 functions/breadcrumbs.php:11 functions/wp-pagenavi.php:165
+#: functions.php:267 functions/breadcrumbs.php:11 functions/wp-pagenavi.php:165
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: functions.php:279
+#: functions.php:275
 #, php-format
 msgid "Search Results: %s"
 msgstr "Suchergebnisse: %s"
 
-#: functions.php:283
+#: functions.php:279
 #, php-format
 msgid "Page: %s"
 msgstr "Seite: %s"
 
 #. translators: theme discription for wp-admin
-#: functions.php:402
+#: functions.php:391
 msgid "Publish a WebComic with the Easel theme and the Comic Easel plugin."
 msgstr ""
 "Publiziere ein Webcomic mit dem Easel Theme und dem Comic Easel Plugin."
@@ -447,10 +447,6 @@ msgstr "Fehler 404"
 #: functions/breadcrumbs.php:114
 msgid "Page"
 msgstr "Seite"
-
-#: functions/comment-functions.php:128
-msgid "l, F jS Y, g:ia"
-msgstr "l, F jS Y, g:ia"
 
 #. translators: date and time in comments
 #: functions/comment-functions.php:131
@@ -694,7 +690,7 @@ msgstr "Kommentar&nbsp;"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: functions/displaypost.php:176 options/general.php:205
+#: functions/displaypost.php:176 options/general.php:238
 msgid "Comments"
 msgstr "Kommentare"
 
@@ -705,6 +701,33 @@ msgstr "&lsaquo; Vorheriger"
 #: functions/displaypost.php:193
 msgid "Next &rsaquo;"
 msgstr "Nächster &rsaquo;"
+
+#: functions/moods.php:26
+msgid "Moods"
+msgstr "Moods"
+
+#: functions/moods.php:53
+msgid ""
+"Available Moods, you can set which mood images to use in the easel Options."
+msgstr ""
+"Verfügbare Moods, du kannst in Easel Optionen einstellen, welche "
+"Stimmungsbilder verwendet sollen."
+
+#: functions/moods.php:60 options/general.php:218 options/general.php:287
+msgid "none"
+msgstr "keins"
+
+#: functions/moods.php:74
+msgid " moods are available."
+msgstr " Moods sind verfügbar."
+
+#: functions/moods.php:75
+msgid "Using Moods from directory: "
+msgstr "Verwende Moods vom Verzeichnis: "
+
+#: functions/moods.php:76
+msgid "Current Mood: "
+msgstr "Derzeitiger Mood:"
 
 #: functions/page-options.php:23
 msgid "Page Options"
@@ -784,7 +807,7 @@ msgstr ""
 "dazugehörigen Plugins in der Brauchbarkeit verbessert werden, die geschaffen "
 "wurden, um seine Funktionalität zu nutzen."
 
-#: options.php:47
+#: options.php:46
 msgid "Easel Settings RESET!"
 msgstr "Easel Einstellungen ZURÜCKGESETZT!"
 
@@ -856,7 +879,7 @@ msgstr ""
 "schliessen &mdash; nicht empfohlen und sollte nur aktiviert werden, wenn Du "
 "danach gefragt wirst."
 
-#: options/debug.php:36 options/general.php:392 options/layout.php:62
+#: options/debug.php:36 options/general.php:425 options/layout.php:62
 #: options/menubar.php:141
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
@@ -1102,11 +1125,30 @@ msgstr ""
 "Wenn aktiv, wird in den Beitrags Datums Informationen angezeigt, wann ein "
 "Artikel noch mal geändert wurde."
 
-#: options/general.php:209
+#: options/general.php:216
+msgid "Moods Directory"
+msgstr "Moods Verzeichnis"
+
+#: options/general.php:230
+msgid ""
+"Choose a directory to get the post moods from. Set this to <strong>none</"
+"strong> to turn off use. Mood directories are found in your theme directory/"
+"images/moods/* . To create your own custom moods just create a directory "
+"under images/moods/ and place ONLY image files inside of it. The name of the "
+"image file represents what the mood is."
+msgstr ""
+"Wähle ein Verzeichnis, wo die Moods für Beiträge sich befinden. "
+"Einstellung<strong>keins</strong> schaltet die Funktion aus. Das Moods "
+"Verzeichnis findest du in deinem Theme Verzeichnis /images/moods/* . Zum "
+"Erstellen  deiner eigenen Moods, erstelle ein Verzeichnis unter Images/moods "
+"und füge dort NUR Bilddateien ein. Der Name der Bilddatei repräsentiert den "
+"Moods Namen."
+
+#: options/general.php:242
 msgid "Disable the comment notes?"
 msgstr "Deaktiviere die Kommentar Notizen?"
 
-#: options/general.php:214
+#: options/general.php:247
 msgid ""
 "Disabling this will remove the note text that displays with more options for "
 "adding to comments (html)."
@@ -1114,11 +1156,11 @@ msgstr ""
 "Deaktivierung, entfernt die Anzeige des Hinweistextes mit mehr Optionen "
 "(html) zum hinzufügen zu den Kommentaren.  "
 
-#: options/general.php:218
+#: options/general.php:251
 msgid "Disable Comment Javascript?"
 msgstr "Deaktiviere Kommentar Javascript?"
 
-#: options/general.php:223
+#: options/general.php:256
 msgid ""
 "Checkmark this if you want the comment form to not use javascript to appear "
 "directly under who is being replied to. (increases pageviews/hits)"
@@ -1127,11 +1169,11 @@ msgstr ""
 "kein Javascript direkt unter dem Antwortenden zu nutzen (erhöht Pageviews "
 "und Hits)"
 
-#: options/general.php:227
+#: options/general.php:260
 msgid "Enable Comments on Home Page?"
 msgstr "Aktiviere Kommentare auf der Homepage?"
 
-#: options/general.php:232
+#: options/general.php:265
 msgid ""
 "Checkmarking this option will make it so that the post(s) on the home page "
 "will also display the comments under them. This will ONLY work if you have "
@@ -1143,15 +1185,11 @@ msgstr ""
 "wenn Du eingestellt hast, zeige nur 1 Beitrag auf der Homepage. Die Anzahl "
 "der Beiträge und dies muss arbeiten."
 
-#: options/general.php:252
+#: options/general.php:285
 msgid "Avatar Directory"
 msgstr "Avatar Verzeichnis"
 
-#: options/general.php:254
-msgid "none"
-msgstr "keins"
-
-#: options/general.php:266
+#: options/general.php:299
 msgid ""
 "Choose a directory to get the avatars for default gravatars if someone does "
 "not have one. You will have to make these images yourself, or download them "
@@ -1166,15 +1204,15 @@ msgstr ""
 "hier aus. Diese Einstellung auf <strong>keins</strong> deaktiviert die "
 "Verwendung von speziellen Avatar Sets."
 
-#: options/general.php:274
+#: options/general.php:307
 msgid "Navigation"
 msgstr "Navigation"
 
-#: options/general.php:278
+#: options/general.php:311
 msgid "Enable numbered pagination?"
 msgstr "Aktiviere Seitennummerierung?"
 
-#: options/general.php:283
+#: options/general.php:316
 msgid ""
 "Previous Entries and Next Entries buttons are replaced by a bar of numbered "
 "pages. Numbered pagination appears on the Home page, the author(s) page, the "
@@ -1187,11 +1225,11 @@ msgstr ""
 "wenn es mehr als die eingestellte Anzahl der Kommentare pro Seite sind. "
 "Benutzt die selbe Optik wie die Menüleiste."
 
-#: options/general.php:295
+#: options/general.php:328
 msgid "Disable the default text in the footer?"
 msgstr "Deaktiviere den Standardtext im Footer?"
 
-#: options/general.php:300
+#: options/general.php:333
 msgid ""
 "Default text in the footer will not display. Enable this if you do not want "
 "any text in the footer. If you wish to add you own custom content, you may "
@@ -1201,21 +1239,21 @@ msgstr ""
 "Footer Text eingeben möchtest, kannst du das via Design &#10132; Widgets "
 "&#10132; Footer tun."
 
-#: options/general.php:304
+#: options/general.php:337
 msgid "Disable the scroll to top link in the footer?"
 msgstr "Deaktiviere den Nach-Oben-Link im Footer?"
 
-#: options/general.php:309
+#: options/general.php:342
 msgid "When this link is clicked on long pages it will scroll back to the top."
 msgstr ""
 "Wenn dieser Link angeklickt wird kannst Du auf langen Seiten zurück zum "
 "Seitenanfang springen."
 
-#: options/general.php:313
+#: options/general.php:346
 msgid "&copy; Copyright Name"
 msgstr "&copy; Copyright Name"
 
-#: options/general.php:317
+#: options/general.php:350
 msgid ""
 "Set the name to which this site is &copy; Copyright to. Leave blank to have "
 "the site name."
@@ -1223,11 +1261,11 @@ msgstr ""
 "Name festlegen, auf den das &copy; Copyright dieser Seite läuft. Leer "
 "lassen, um den Namen der Website zu verwenden."
 
-#: options/general.php:321
+#: options/general.php:354
 msgid "&copy; Copyright Holder URL"
 msgstr "&copy; Copyright Inhaber URL"
 
-#: options/general.php:325
+#: options/general.php:358
 msgid ""
 "Set the URL to the owner of the &copy; Copyright if different then this "
 "website. Leave blank for sites link."
@@ -1235,25 +1273,25 @@ msgstr ""
 "Setze die URL von dem Besitzer des &copy; Copyrights von dieser Website. "
 "Leer lassen für Webseitenlink."
 
-#: options/general.php:337
+#: options/general.php:370
 msgid "Enable the post thumbnails in the RSS feed?"
 msgstr "Aktiviere die Beitrags Vorschaubilder in dem RSS-Feed?"
 
-#: options/general.php:342
+#: options/general.php:375
 msgid "If enabled will show the post thumbnail of the post in the RSS feed."
 msgstr ""
 "Wenn aktiviert, wird das Beitrags Vorschaubild von dem Beitrag in dem RSS-"
 "Feed gezeigt."
 
-#: options/general.php:349
+#: options/general.php:382
 msgid "Archive & Search"
 msgstr "Archiv & Suche"
 
-#: options/general.php:353
+#: options/general.php:386
 msgid "Display archive results as a list of links?"
 msgstr "Zeige Archivergebnisse als eine Liste von Links?"
 
-#: options/general.php:358
+#: options/general.php:391
 msgid ""
 "Enabling this will make the archive pages by date/category/term display as a "
 "list of links instead of full posts."
@@ -1261,19 +1299,19 @@ msgstr ""
 "Wenn aktiviert, werden keine Artikel angezeigt, sondern nur die Titel "
 "derselben aufgelistet."
 
-#: options/general.php:363
+#: options/general.php:396
 msgid "Excerpt or Full Content in archive and search?"
 msgstr "Auszug oder vollständiger Inhalt in Archiv und Suche?"
 
-#: options/general.php:365
+#: options/general.php:398
 msgid "Excerpt"
 msgstr "Auszug"
 
-#: options/general.php:366
+#: options/general.php:399
 msgid "Full Content"
 msgstr "Ganzer Inhalt"
 
-#: options/general.php:370
+#: options/general.php:403
 msgid ""
 "If Display archives results as list is disabled, decide how much is seen in "
 "the archive display."
@@ -1281,19 +1319,19 @@ msgstr ""
 "Wenn die Anzeige der Archiv Ergebnisse als Liste deaktiviert ist, "
 "entscheide, wie viele in der Archivanzeige  zu sehen sein sollen."
 
-#: options/general.php:375
+#: options/general.php:408
 msgid "Archive Display Order"
 msgstr "Archiv Darstellungsreihenfolge"
 
-#: options/general.php:377
+#: options/general.php:410
 msgid "Oldest to Newest &mdash; Ascending"
 msgstr "Alt nach Neu &mdash; Aufsteigend"
 
-#: options/general.php:378
+#: options/general.php:411
 msgid "Newest to Oldest &mdash; Descending"
 msgstr "Neu nach Alt &mdash; Absteigend"
 
-#: options/general.php:382
+#: options/general.php:415
 msgid ""
 "Sets the display order of your archives. Newest to Oldest will display your "
 "posts starting with the most recent. Oldest to Newest will start with the "
@@ -1499,17 +1537,17 @@ msgstr ""
 "Erstellt ein kleines Button-Set, das die Besucher zu getaggten Seiten "
 "zurückführen kann."
 
-#: widgets/classicbookmark.php:142 widgets/controlpanel.php:72
-#: widgets/menubar.php:78 widgets/randompostlink.php:65
-#: widgets/scheduledposts.php:53 widgets/translator.php:46
+#: widgets/classicbookmark.php:167 widgets/controlpanel.php:100
+#: widgets/menubar.php:104 widgets/randompostlink.php:92
+#: widgets/scheduledposts.php:82 widgets/translator.php:75
 msgid "Title:"
 msgstr "Titel:"
 
-#: widgets/controlpanel.php:17
+#: widgets/controlpanel.php:21
 msgid "Easel - Control Panel"
 msgstr "Easel - Kontrollzentrum"
 
-#: widgets/controlpanel.php:18
+#: widgets/controlpanel.php:22
 msgid ""
 "Login/Logoff menu with register/lost password links if not logged on. (use "
 "only if registrations are enabled)."
@@ -1517,86 +1555,86 @@ msgstr ""
 "Login/Logout-Menü mit Registrieren-/Passwortverlust-Links anzeigen, wenn man "
 "nicht eingeloggt ist. (Nur benutzen, wenn auch Registrierungen erlaubt sind)."
 
-#: widgets/controlpanel.php:27
+#: widgets/controlpanel.php:31
 msgid "Username"
 msgstr "Benutzername"
 
-#: widgets/controlpanel.php:28
+#: widgets/controlpanel.php:32
 msgid "Password"
 msgstr "Passwort"
 
-#: widgets/controlpanel.php:34 widgets/controlpanel.php:36
+#: widgets/controlpanel.php:38 widgets/controlpanel.php:40
 msgid "Register"
 msgstr "Registrieren"
 
-#: widgets/controlpanel.php:38
+#: widgets/controlpanel.php:42
 msgid "Recover password"
 msgstr "Passwort wiederherstellen"
 
-#: widgets/controlpanel.php:42
+#: widgets/controlpanel.php:46
 msgid "Logout"
 msgstr "Abmelden"
 
-#: widgets/controlpanel.php:44
+#: widgets/controlpanel.php:48
 msgid "Profile"
 msgstr "Profil"
 
-#: widgets/controlpanel.php:55
+#: widgets/controlpanel.php:66
 msgid "Control Panel"
 msgstr "Kontrollzentrum"
 
-#: widgets/menubar.php:52
+#: widgets/menubar.php:54
 msgid "Easel - Menubar"
 msgstr "Easel - Menüleiste"
 
-#: widgets/menubar.php:53
+#: widgets/menubar.php:55
 msgid "Displays a menubar."
 msgstr "Zeigt eine Menüleiste."
 
-#: widgets/multisite-list.php:20
+#: widgets/multisite-list.php:23
 msgid "Easel - Site List"
 msgstr "Easel - Seitenliste"
 
-#: widgets/multisite-list.php:21
+#: widgets/multisite-list.php:24
 msgid ""
 "Display Site List of all sites that have recently updated on this Multisite."
 msgstr ""
 "Zeigt eine Seitenliste aller Seiten, die auf dieser Multisite zuetzt "
 "aktualisiert wurden."
 
-#: widgets/multisite-list.php:31
+#: widgets/multisite-list.php:41
 msgid "Hosted Site List"
 msgstr "Liste gehosteter Seiten"
 
-#: widgets/randompostlink.php:38
+#: widgets/randompostlink.php:41
 msgid "Easel - Random Post Link"
 msgstr "Easel - Zufällige Beitragslinks"
 
-#: widgets/randompostlink.php:39
+#: widgets/randompostlink.php:42
 msgid "Displays a link to click that triggers going to a random blog post."
 msgstr "Erstellt einen Link, der einen zufälligen Blogbeitrag anzeigt."
 
-#: widgets/randompostlink.php:50
+#: widgets/randompostlink.php:60
 msgid "Random Post"
 msgstr "Zufälliger Beitrag"
 
-#: widgets/scheduledposts.php:18
+#: widgets/scheduledposts.php:22
 msgid "Easel - Scheduled Posts"
 msgstr "Easel - Geplante Beiträge"
 
-#: widgets/scheduledposts.php:19
+#: widgets/scheduledposts.php:23
 msgid "Display a list of posts that are scheduled to be published."
 msgstr ""
 "Zeigt eine Liste von Beiträgen, die zur Veröffentlichung terminiert sind."
 
-#: widgets/scheduledposts.php:27
+#: widgets/scheduledposts.php:39
 msgid "Scheduled Posts"
 msgstr "Geplante Beiträge"
 
-#: widgets/translator.php:18
+#: widgets/translator.php:22
 msgid "Easel - Google Translator"
 msgstr "Easel - Google Übersetzer"
 
-#: widgets/translator.php:19
+#: widgets/translator.php:23
 msgid "Translate your site with Google."
 msgstr "Übersetze deine Website mit Google."
