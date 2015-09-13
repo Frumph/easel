@@ -58,6 +58,14 @@ class easel_Customize {
 					'high' => 'High Society'
 				)
 			));
+			
+		$wp_customize->add_setting( 'easel-customize-detach-footer', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'easel_sanitize_checkbox'));
+		$wp_customize->add_control( 'easel-customize-detach-footer-control', array(
+				'settings' => 'easel-customize-detach-footer',
+				'label'    => __( 'Detach the footer to below the main content? (Already appears detached on some schemes *but isn\'t)', 'easel' ),
+				'section'  => 'easel-scheme-options',
+				'type'     => 'checkbox'
+			));
 
 		$wp_customize->add_setting( 'easel-customize-checkbox-rounded', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'easel_sanitize_checkbox'));
 		$wp_customize->add_control( 'easel-customize-checkbox-rounded-control', array(
