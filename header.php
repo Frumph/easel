@@ -12,18 +12,17 @@
 <?php easel_get_sidebar('above-header'); ?>
 <div id="page-wrap">
 	<div id="page">
-		<div id="header">
+		<header id="header">
 			<div class="header-info">
 				<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name') ?></a></h1>
 				<div class="description"><?php bloginfo('description') ?></div>
 			</div>
 			<?php easel_get_sidebar('header'); ?>
 			<div class="clear"></div>
-		</div>
+		</header>
 
 <?php 
 if (!easel_themeinfo('disable_default_menubar') && function_exists('easel_menubar')) easel_menubar();
 if (easel_themeinfo('enable_breadcrumbs')) easel_breadcrumbs();
 easel_get_sidebar('menubar');
 get_template_part('layout', 'head');
-?>

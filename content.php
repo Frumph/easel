@@ -2,7 +2,7 @@
 if (!easel_is_bbpress()) easel_display_blog_navigation();
 if (!is_home() && !is_archive() && !is_search()) { easel_display_post_thumbnail('large'); ?><div class="clear"></div><?php } 
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="post-content">
 		<?php if (is_home() || is_archive() || is_search()) easel_display_post_thumbnail('thumbnail'); ?>
 		<?php if (!easel_is_bbpress()) easel_display_author_gravatar(); ?>
@@ -45,4 +45,4 @@ if (!is_home() && !is_archive() && !is_search()) { easel_display_post_thumbnail(
 		<div class="clear"></div>
 	</div>
 	<div class="clear"></div>
-</div>
+</article>
