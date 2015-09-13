@@ -11,7 +11,6 @@ if (!is_home() && !is_archive() && !is_search()) { easel_display_post_thumbnail(
 				easel_display_post_title();
 				if (!easel_is_bbpress()) easel_display_post_calendar();
 				if (is_sticky()) { ?><div class="sticky-image">Featured Post</div><?php }
-				/* Integrate of the deprecated function easel_show_mood_in_post */
 				if (function_exists('easel_show_mood_in_post')) easel_show_mood_in_post(); 
 			?>
 			<div class="post-text">

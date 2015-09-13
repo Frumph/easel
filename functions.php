@@ -351,6 +351,9 @@ function easel_load_options() {
 			'enable_jetpack_infinite_scrolling' => false,
 			'content_width' => 500,
 			'content_width_disabled_sidebars' => 700,
+			'add_pw_async_code_to_head' => false,
+			'over-blog-sidebar-all-posts' => false,
+			'moods_directory' => 'none'
 		) as $field => $value) {
 			$easel_options[$field] = $value;
 		}

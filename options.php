@@ -163,6 +163,7 @@ function easel_admin_options() { ?>
 			}
 
 			foreach (array(
+				'moods_directory',
 				'avatar_directory',
 				'home_post_count',
 				'copyright_name',
