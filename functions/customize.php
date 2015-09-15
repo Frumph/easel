@@ -23,7 +23,7 @@ class easel_Customize {
  * 
  * Note: To enable instant preview, we have to actually write a bit of custom
  * javascript. See live_preview() for more.
- *  
+ * 
  * @see add_action('customize_register',$func)
  * @param \WP_Customize_Manager $wp_customize
  * @link http://ottopress.com/2012/how-to-leverage-the-theme-customizer-in-your-own-themes/
@@ -31,7 +31,7 @@ class easel_Customize {
  */
 
 	public $css_array = Array();
-
+	
 	public static function register($wp_customize) {
 		
 		$wp_customize->remove_section('colors');
@@ -42,7 +42,6 @@ class easel_Customize {
 		$wp_customize->add_section('easel-text-colors' , array('title' => __( 'Text Colors', 'easel' ), 'priority' => 30, 'capability' => 'edit_theme_options'));
 		$wp_customize->add_section('easel-link-colors' , array('title' => __( 'Link Colors', 'easel' ), 'priority' => 40, 'capability' => 'edit_theme_options'));
 		$wp_customize->add_section('easel-logo-options', array('title' => __( 'Logo', 'easel' ), 'priority' => 50, 'capability' => 'edit_theme_options'));
-
 		$wp_customize->add_setting( 'easel-customize-select-scheme', array('default' => 'none', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
 		$wp_customize->add_control( 'easel-customize-select-scheme-control' , array(
 				'label' => __( 'Choose a default scheme.', 'easel' ),
@@ -114,7 +113,7 @@ class easel_Customize {
 			array('slug' => 'bypostauthor_background', 'description' => '.bypostauthor', 'section' => 'colors', 'label' => __( 'Comments Made By Post Author', 'easel' ), 'default' => ''),
 			array('slug' => 'bypostauthor_meta_data_background', 'description' => '.bypostauthor .comment-meta-data', 'section' => 'colors', 'label' => __( 'Info. Line Of Post Author', 'easel' ), 'default' => ''),
 			array('slug' => 'footer_background', 'description' => '#footer', 'section' => 'colors', 'label' => __( 'Footer', 'easel' ), 'default' => ''),
-			// Text Colors 
+			// Text Colors
 			array('slug' => 'content_text_color', 'description' => 'body', 'section' => 'easel-text-colors', 'label' => __( 'Sitewide Textcolor', 'easel' ), 'default' => ''),
 			array('slug' => 'header_textcolor', 'description' => '#header', 'section' => 'easel-text-colors', 'label' => '', 'default' => ''),
 			array('slug' => 'header_description_textcolor', 'description' => '.header-info .description', 'section' => 'easel-text-colors', 'label' => __( 'Site Tagline', 'easel' ), 'default' => ''),
@@ -157,7 +156,7 @@ class easel_Customize {
 			$css_array[] = array('slug' => 'comic_nav_acolor', 'description' => '.comic-nav a:link, .comic-nav a:visited', 'section' => 'easel-link-colors', 'label' => __( 'Default Navigation Link', 'easel' ), 'default' => '');
 			$css_array[] = array('slug' => 'comic_nav_hcolor', 'description' => '.comic-nav a:hover', 'section' => 'easel-link-colors', 'label' => __( 'Default Navigation Hover', 'easel' ), 'default' => '');
 		}
-
+		
 		$priority_value = 11;
 		foreach ($css_array as $setinfo) {
 			$setinfo_register_name = 'easel-customize['.$setinfo['slug'].']';
@@ -166,20 +165,19 @@ class easel_Customize {
 			$wp_customize->add_control(
 					new WP_Customize_Color_Control(
 						$wp_customize,
-						$setinfo['slug'], 
+						$setinfo['slug'],
 						array('label' => $setinfo['label'], 'description' => $setinfo['description'], 'section' => $setinfo['section'], 'settings' => $setinfo_register_name, 'priority' => $priority_value)
 						)
 					);
 			$priority_value++;
 //			$wp_customize->get_setting($setinfo['slug'])->transport = 'postMessage';
 		}
-      
-	
+      	
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	}
-
+	
 	/**
 	 * This will output the custom WordPress settings to the live theme's WP head.
 	 * 
@@ -242,8 +240,8 @@ class easel_Customize {
 			array('slug' => 'footer_hcolor', 'element' => '#footer a:hover', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'footer_copyright_acolor', 'element' => '.copyright-info a', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'footer_copyright_hcolor', 'element' => '.copyright-info a:hover, .blognav a:hover, #paginav a:hover', 'style' => 'color', 'default' => '',  'important' => false),
-			);
-			
+		);
+		
 		if (function_exists('ceo_pluginfo')) {
 			$settings_array[] = array('slug' => 'comic_wrap_background', 'element' => '#comic-wrap', 'style' => 'background-color', 'default' => '',  'important' => true);
 			$settings_array[] = array('slug' => 'comic_wrap_textcolor', 'element' => '#comic-wrap', 'style' => 'color', 'default' => '',  'important' => true);
@@ -251,10 +249,9 @@ class easel_Customize {
 			$settings_array[] = array('slug' => 'comic_nav_textcolor', 'element' => '.comic-nav', 'style' => 'color', 'default' => '',  'important' => true);
 			$settings_array[] = array('slug' => 'comic_nav_acolor', 'element' => '.comic-nav a:link, .comic-nav a:visited', 'style' => 'color', 'default' => '#FFFFFF',  'important' => true);
 			$settings_array[] = array('slug' => 'comic_nav_hcolor', 'element' => '.comic-nav a:hover', 'style' => 'color', 'default' => '#F00',  'important' => true);
-			
 		}
       ?>
-<!--Customizer CSS--> 
+<!--Customizer CSS-->
 <style type="text/css">
 <?php
 	$customize = get_theme_mod('easel-customize');
@@ -291,15 +288,14 @@ class easel_Customize {
     * @since MyTheme 1.0
     */
 	public static function live_preview() {
-		wp_enqueue_script( 
+		wp_enqueue_script(
 			'easel-themecustomizer', // Give the script a unique ID
 			get_template_directory_uri() . '/js/theme-customizer.js', // Define the path to the JS file
 			array(  'jquery', 'customize-preview' ), // Define dependencies
-			'', // Define a version (optional) 
+			'', // Define a version (optional)
 			true // Specify whether to put in footer (leave this true)
 		);
 	}
-
 }
 
 // Setup the Theme Customizer settings and controls...
