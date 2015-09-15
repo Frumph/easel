@@ -10,9 +10,9 @@ if ( post_password_required() ) { ?>
     }
 ?>
 <div id="comment-wrapper">
-<?php if (comments_open() && (get_comments_number() > 0)) { ?> 
+<?php if (comments_open()) { ?>
 	<div class="commentsrsslink"><?php post_comments_feed_link(__( 'Comments RSS', 'easel' )); ?></div>
-	<h3 id="comments"><?php comments_number(__( 'Discussion &not;', 'easel' ), __( 'Discussion &not;', 'easel' ), __( 'Discussion (%) &not;', 'easel' )); ?></h3>
+	<h4 id="comments"><?php comments_number(__( 'Discussion &not;', 'easel' ), __( 'Discussion &not;', 'easel' ), __( 'Discussion (%) &not;', 'easel' )); ?></h4>
 <?php }
         if ( isset($comments_by_type['pings']) && (!isset($wp_query->query_vars['cpage']) || ((int)$wp_query->query_vars['cpage'] < 2))&& (count($comments_by_type['pings']) > 0)) {
  ?>
@@ -21,12 +21,14 @@ if ( post_password_required() ) { ?>
 			<li>
 				<ul>
 					<?php
-                    if (function_exists('easel_comments_callback')) {
-                        wp_list_comments(array('type' => 'pings', 'callback' => 'easel_comments_callback', 'end-callback' => 'easel_comments_end_callback', 'avatar_size' => 32));
-                    } else {
-                        wp_list_comments(array('type' => 'pings', 'avatar_size' => 64));
-                    }
-                ?>	
+						$comment_args = array(
+							'type' => 'pings',
+							'avatar_size' => 32,
+							'callback' => 'easel_comments_callback',
+							'end-callback' => 'easel_comments_end_callback',
+						);
+                        wp_list_comments($comment_args);
+					?>
 				</ul>
 			</li>
 			</ol>
@@ -37,11 +39,14 @@ if ( post_password_required() ) { ?>
  ?>
 		<ol class="commentlist">
 		<?php
-            if (function_exists('easel_comments_callback')) {
-                wp_list_comments(array('type' => 'comment', 'reply_text' => __( 'Reply &not;', 'easel' ), 'callback' => 'easel_comments_callback', 'end-callback' => 'easel_comments_end_callback', 'avatar_size' => 64));
-            } else {
-                wp_list_comments(array('type' => 'comment', 'avatar_size' => 64));
-            }
+            $comment_args = array(
+				'type' => 'comment',
+				'reply_text' => __( 'Reply &not;', 'easel' ),
+				'callback' => 'easel_comments_callback',
+				'end-callback' => 'easel_comments_end_callback',
+				'avatar_size' => 64
+			);
+			wp_list_comments($comment_args);
         ?>
 		</ol>
 	<?php
@@ -54,7 +59,7 @@ if ( post_password_required() ) { ?>
 				$pagelinks = str_replace('<span', '<li', $pagelinks);
 				$pagelinks = str_replace('</span>', '</li>', $pagelinks); ?>
 			<div id="wp-paginav">
-				<div id="paginav">				
+				<div id="paginav">
 					<?php echo '<ul><li class="paginav-extend">' . __( 'Comment Pages', 'easel' ) . '</li>' . $pagelinks . '</ul>'; ?>
 					</div>
 				<div class="clear"></div>
