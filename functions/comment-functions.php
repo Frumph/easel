@@ -69,7 +69,7 @@ function easel_comment_author() {
 	* Bug with bbPress 0.9 series and WP 2.5 (no later testing)
 	* 'Anonymous' should be localized according to WP, not the theme
 	*/
-	if(($comment->user_id > 0) && !$author) :
+	if(is_object($comment) && ($comment->user_id > 0) && !$author) :
 		$user = get_userdata($comment->user_id);
 		if($user->display_name)
 			$author = $user->display_name;
@@ -149,7 +149,7 @@ function easel_comments_callback($comment, $args, $depth) {
 					
 				<?php edit_comment_link('<span class="comment-edit">'.__( 'Edit', 'easel' ).'</span>',' <span class="separator">|</span> ',''); ?> 
 				
-				<?php if($comment->comment_approved == '0') : ?>
+				<?php if ($comment->comment_approved == '0') : ?>
 				<div class="comment-moderated"><?php _e( 'Your comment is awaiting moderation.', 'easel' ); ?></div>
 				<?php endif; ?>
 			
@@ -181,8 +181,5 @@ function easel_comments_end_callback() {
 
 function list_pings($comment, $args, $depth) {       
 	$GLOBALS['comment'] = $comment; ?>
-		<li id="comment-<?php comment_ID(); ?>">
-		<?php easel_comment_author(); ?></li>
+		<li id="comment-<?php comment_ID(); ?>"><?php easel_comment_author(); ?></li>
 <?php } 
-
-?>
