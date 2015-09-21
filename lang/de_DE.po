@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Easel Dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-17 11:25+0200\n"
-"PO-Revision-Date: 2015-09-17 11:29+0200\n"
+"POT-Creation-Date: 2015-09-21 11:11+0200\n"
+"PO-Revision-Date: 2015-09-21 11:12+0200\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -31,79 +31,86 @@ msgstr "Klicke hier, um die Startseite aufzurufen"
 msgid "or try a search:"
 msgstr "oder probiere eine Suche:"
 
-#: archive-year.php:38 archive.php:67 search.php:18
-msgid "Permanent Link:"
-msgstr "Permalink:"
-
-#: archive-year.php:43 content-page.php:20 functions/displaypost.php:267
-msgid "Edit this page."
-msgstr "Diese Seite bearbeiten."
-
-#: archive.php:20 archive.php:24 archive.php:26 archive.php:28 archive.php:35
-#: archive.php:37 archive.php:40
+#: archive.php:22 archive.php:26 archive.php:28 archive.php:30 archive.php:41
+#: archive.php:43 archive.php:46
 msgid "Archive for "
 msgstr "Archiv für "
 
-#: archive.php:22
+#: archive.php:24
 msgid "Posts Tagged "
 msgstr "Beiträge getaggt "
 
-#: archive.php:30
+#: archive.php:32
 msgid "Author Archive "
 msgstr "Autorenarchiv "
 
-#: archive.php:32
+#: archive.php:34
 msgid "Archives"
 msgstr "Archive"
 
-#: archive.php:42
+#: archive.php:48
 msgid "Archive is unable to be found."
 msgstr "Archiv ist nicht zu finden."
 
-#: archive.php:44
+#: archive.php:50
 msgid "No Archive Found."
 msgstr "Kein Archiv gefunden."
 
-#: archive.php:47 archive.php:85 search.php:9
+#: archive.php:54
+#, php-format
+msgid "%d comic."
+msgid_plural "%d comics."
+msgstr[0] "%d Comic."
+msgstr[1] "%d Comics."
+
+#: archive.php:56 archive.php:95 search.php:9
 #, php-format
 msgid "%d result."
 msgid_plural "%d results."
 msgstr[0] "%d Resultat."
 msgstr[1] "%d Resultate."
 
-#: archive.php:56
+#: archive.php:66
 msgid "No Thumbnail or Featured Image Found"
 msgstr "Kein Vorschaubild oder Ausgewähltes Bild gefunden"
 
-#: author.php:11
+#: archive.php:77 search.php:18
+msgid "Permanent Link:"
+msgstr "Permalink:"
+
+#: author.php:23
 msgid "No such author."
 msgstr "Dieser Autor existiert nicht."
 
-#: author.php:34
-msgid "Registered on "
-msgstr "Registriert am "
+#: author.php:48
+msgid "Registered on"
+msgstr "Registriert am"
 
-#: author.php:39 functions.php:242
+#: author.php:52
+msgid "Posts #"
+msgstr "Beiträge #"
+
+#: author.php:61 functions.php:242
 msgid "Email"
 msgstr "Email"
 
-#: author.php:47
+#: author.php:67
 msgid "Website"
 msgstr "Website"
 
-#: author.php:52 functions.php:240 options/menubar.php:75
+#: author.php:72 functions.php:240 options/menubar.php:75
 msgid "Twitter"
 msgstr "Twitter"
 
-#: author.php:57 functions.php:237 options/menubar.php:77
+#: author.php:77 functions.php:237 options/menubar.php:77
 msgid "Facebook"
 msgstr "Facebook"
 
-#: author.php:62 functions.php:243 options/menubar.php:79
+#: author.php:82 functions.php:243 options/menubar.php:79
 msgid "Google+"
 msgstr "Google+"
 
-#: author.php:76
+#: author.php:96
 msgid "Posts by"
 msgstr "Beiträge von"
 
@@ -189,6 +196,10 @@ msgstr "Diesen Beitrag bearbeiten."
 #: content-comic.php:38
 msgid "Edit this comic."
 msgstr "Diesen Comic bearbeiten."
+
+#: content-page.php:20 functions/displaypost.php:267
+msgid "Edit this page."
+msgstr "Diese Seite bearbeiten."
 
 #: functions.php:54
 msgid "Primary"
@@ -1630,3 +1641,6 @@ msgstr "Easel - Google Übersetzer"
 #: widgets/translator.php:23
 msgid "Translate your site with Google."
 msgstr "Übersetze deine Website mit Google."
+
+#~ msgid "Registered on "
+#~ msgstr "Registriert am "
