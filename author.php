@@ -65,23 +65,27 @@ if(get_query_var('author_name') ) {
 					<?php if (!empty($curauth->user_url)) { ?>
 						<tr>
 							<td class="user-contacts-serv"><?php _e( 'Website', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a><?php } ?></td>
-						</tr>	
-					<?php if (!empty($curauth->twitter)) { ?>
+							<td class="user-contacts-url"><a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a></td>
+						</tr>
+					<?php }
+						if (!empty($curauth->twitter)) { ?>
 						<tr>
 							<td class="user-contacts-serv"><?php _e( 'Twitter', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="<?php echo $curauth->twitter; ?>" target="_blank"><?php echo $curauth->twitter; ?></a><?php } ?></td>
+							<td class="user-contacts-url"><a href="<?php echo $curauth->twitter; ?>" target="_blank"><?php echo $curauth->twitter; ?></a></td>
 						</tr>
-					<?php if (!empty($curauth->facebook)) { ?>
+					<?php }
+						if (!empty($curauth->facebook)) { ?>
 						<tr>
 							<td class="user-contacts-serv"><?php _e( 'Facebook', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="<?php echo $curauth->facebook; ?>" target="_blank"><?php echo $curauth->facebook; ?></a><?php } ?></td>
+							<td class="user-contacts-url"><a href="<?php echo $curauth->facebook; ?>" target="_blank"><?php echo $curauth->facebook; ?></a></td>
 						</tr>
-					<?php if (!empty($curauth->googleplus)) { ?>
+					<?php }
+						if (!empty($curauth->googleplus)) { ?>
 						<tr>
 							<td class="user-contacts-serv"><?php _e( 'Google+', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="<?php echo $curauth->googleplus; ?>" target="_blank" rel="me"><?php echo $curauth->googleplus; ?></a><?php } ?></td>
+							<td class="user-contacts-url"><a href="<?php echo $curauth->googleplus; ?>" target="_blank" rel="me"><?php echo $curauth->googleplus; ?></a></td>
 						</tr>
+					<?php } ?>
 					</table>
 				</div>
 				<?php if (!empty($curauth->description)) { ?>
