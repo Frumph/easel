@@ -47,7 +47,7 @@ if(get_query_var('author_name') ) {
 						<tr>
 						<td class="user-info-name"><?php _e( 'Registered on', 'easel' ); ?></td>
 						<td class="user-info-value"><?php echo date_i18n(get_option('date_format'), strtotime($curauth->user_registered)); ?></td>
-						</tr>
+						</tr> 
 						<tr>
 						<td class="user-info-name"><?php _e( 'Posts #', 'easel' ); ?></td>
 						<td class="user-info-value"><?php $author_id = get_the_author_meta('ID'); echo count_user_posts( $author_id ); ?></td>
