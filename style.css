@@ -1979,7 +1979,7 @@ body.layout-2cr.scheme-ceasel #sidebar-footer {
     display: block;
 }
 
-body.scheme-ceasel #sidebar-footer-left .widget, body.scheme-ceasel #sidebar-footer .widget, body.scheme-ceasel  #sidebar-footer-right .widget {
+body.scheme-ceasel #sidebar-footer-left .widget, body.scheme-ceasel #sidebar-footer .widget, body.scheme-ceasel #sidebar-footer-right .widget {
     padding: 0;
     width: 100%;
 }
@@ -1988,7 +1988,7 @@ body.scheme-ceasel .widget-content .tagcloud {
     padding: 5px;
 }
 
-body.scheme-ceasel .sidebar .widget_search, body.scheme-ceasel .sidebar .ceo_comic_archive_dropdown_widget {
+body.scheme-ceasel .sidebar .widget_search, body.scheme-ceasel .sidebar .ceo_comic_archive_dropdown_widget, body.scheme-ceasel .sidebar .ceo_comic_list_dropdown_widget {
     border: 0 !important;
     background: none!important;
 }
