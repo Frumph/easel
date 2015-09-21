@@ -21,7 +21,7 @@ add_action('add_meta_boxes', 'easel_add_moods_into_posts');
 function easel_add_moods_into_posts() {
 	global $post;
 	if (!empty($post) && ($post->post_type == 'comic' || $post->post_type == 'post')) {
-		add_meta_box('easel_showmood_edit_post', __('Moods', 'comiceasel'), 'easel_showmood_edit_post', 'post', 'normal', 'low');
+		add_meta_box('easel_showmood_edit_post', __( 'Moods', 'easel' ), 'easel_showmood_edit_post', 'post', 'normal', 'low');
 	}
 }
 
@@ -48,7 +48,7 @@ function easel_showmood_edit_post() {
 	$moods_directory = easel_themeinfo('moods_directory');
 	if (!empty($moods_directory) && $moods_directory != 'none') { ?>
 		<div class="inside" style="overflow: hidden">
-		<?php _e('Available Moods, you can set which mood images to use in the easel Options.','easel'); ?><br />
+		<?php _e( 'Available Moods, you can set which mood images to use in the easel Options.', 'easel' ); ?><br />
 		<br />
 		<?php 
 		
@@ -69,9 +69,9 @@ function easel_showmood_edit_post() {
 		} else {
 			$moods_uri = get_stylesheet_directory_uri();
 		}
-		echo $count .__(' moods are available.','easel').'<br />
-				'.__('Using Moods from directory: ','easel').$moods_directory.'<br />
-				'.__('Current Mood: ','easel').$mood.'<br /><br />';
+		echo $count .__( ' moods are available.', 'easel' ).'<br />
+				'.__( 'Using Moods from directory: ', 'easel' ).$moods_directory.'<br />
+				'.__( 'Current Mood: ', 'easel' ).$mood.'<br /><br />';
 		if (!empty($results)) { ?>
 			<div style="float:left; margin-top: 70px; text-align: center; width: 68px; overflow: hidden;"> 
 			<label for="postmood-none" style="cursor:pointer;">		
