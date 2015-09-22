@@ -264,9 +264,9 @@ function easel_clean_filename($filename) {
 function easel_filter_wp_title( $title ) {
 	global $wp_query, $s, $paged, $page;
 	if (!is_feed()) {
-		$sep = __( '&raquo;', 'easel' );
-		$new_title = get_bloginfo('name').' ';
-		$bloginfo_description = get_bloginfo('description');	
+		$sep = __( '&nbsp;&raquo;&nbsp;', 'easel' );
+		$new_title = get_bloginfo('name').$sep;
+		$bloginfo_description = get_bloginfo('description').$sep;
 		if ((is_home () || is_front_page()) && !empty($bloginfo_description) && !$paged && !$page) {
 			$new_title .= $sep.' '.$bloginfo_description;
 		} elseif (is_single() || is_page()) { 

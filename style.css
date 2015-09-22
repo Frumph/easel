@@ -1638,7 +1638,7 @@ table#wp-calendar td {
 
 /* customizer rounded posts */
 
-body.rounded-posts .uentry, body.rounded-posts #comment-wrapper, body.rounded-posts #wp-paginav, body.rounded-posts #pagenav {
+body.rounded-posts .uentry, body.rounded-posts #comment-wrapper, body.rounded-posts #wp-paginav, body.rounded-posts #pagenav, body.rounded-posts .location-info {
     border-radius: 10px;
     box-shadow: inset 1px 2px 2px #000;
 }
