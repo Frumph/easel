@@ -9,6 +9,11 @@ Rene Wolf @ kniebremser - Contributor
 
 Easel is a configurable theme, layouts to colors.
 
+== Requires ==
+
+WordPress: 4.3
+PHP:       5.4
+
 == Changelog ==
 
 = 4.3 =
