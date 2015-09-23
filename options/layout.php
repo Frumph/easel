@@ -48,13 +48,13 @@
 							<option class="level-0" value="2clwext" <?php if ($easel_options['layout'] == '2clwext') { ?>selected="selected" <?php } ?>><?php _e( '2 Column Wide Extended &mdash; Sidebar on Left (1200px)', 'easel' ); ?></option>
 							<option class="level-0" value="2crwext" <?php if ($easel_options['layout'] == '2crwext') { ?>selected="selected" <?php } ?>><?php _e( '2 Column Wide Extended &mdash; Sidebar on Right (1200px)', 'easel' ); ?></option>
 							
-							
+							<?php if (function_exists('ceo_pluginfo')) { ?>
 							<option class="level-0" value="3clgn" <?php if ($easel_options['layout'] == '3clgn') { ?>selected="selected" <?php } ?>><?php _e( '3 Column &mdash; Sidebar on Left, Sidebar on right under comic (980px)', 'easel' ); ?></option>
 							<option class="level-0" value="3crgn" <?php if ($easel_options['layout'] == '3crgn') { ?>selected="selected" <?php } ?>><?php _e( '3 Column &mdash; Sidebar on Right, Sidebar on left under comic (980px)', 'easel' ); ?></option>							
 							
 							<option class="level-0" value="3clgnext" <?php if ($easel_options['layout'] == '3clgnext') { ?>selected="selected" <?php } ?>><?php _e( '3 Column &mdash; Sidebar on Left, Sidebar on right under comic (1200px)', 'easel' ); ?></option>
 							<option class="level-0" value="3crgnext" <?php if ($easel_options['layout'] == '3crgnext') { ?>selected="selected" <?php } ?>><?php _e( '3 Column &mdash; Sidebar on Right, Sidebar on left under comic (1200px)', 'easel' ); ?></option>							
-							
+							<?php } ?>
 						</select>
 						<br />
 					</th>
