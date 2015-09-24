@@ -78,7 +78,7 @@ function easel_body_class($classes = array()) {
 	
 	if (easel_sidebars_disabled()) $classes[] = 'wide';
 	
-	$layout = easel_themeinfo('layout');
+	$layout = get_theme_mod('easel-customize-select-layout', '3c');
 	if (empty($layout)) $layout = '3c';
 	$classes[] = 'layout-'.$layout;
 

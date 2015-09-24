@@ -42,34 +42,102 @@ class easel_Customize {
 		$wp_customize->add_section('easel-text-colors' , array('title' => __( 'Text Colors', 'easel' ), 'priority' => 30, 'capability' => 'edit_theme_options'));
 		$wp_customize->add_section('easel-link-colors' , array('title' => __( 'Link Colors', 'easel' ), 'priority' => 40, 'capability' => 'edit_theme_options'));
 		$wp_customize->add_section('easel-logo-options', array('title' => __( 'Logo', 'easel' ), 'priority' => 50, 'capability' => 'edit_theme_options'));
+
+		$wp_customize->add_setting( 'easel-customize-select-layout', array('default' => '3c', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
+		
+		$choices = array(
+			'3c' => __( '3 Column (default)', 'easel' ),
+			'3cl' => __( '3 Column, both sidebars on left', 'easel' ),
+			'3cr' => __( '3 Column, both sidebars on right', 'easel' ),
+			'2cl' => __( '2 Column, sidebar on left', 'easel' ),
+			'2cr' => __( '2 Column, sidebar on right', 'easel' )
+		);
+		
+		if (function_exists('ceo_pluginfo')) {
+			$choices['3clgn'] = __( '3 Column, Graphic Novel style, main sidebar on left', 'easel' );
+			$choices['3crgn'] = __( '3 Column, Graphic Novel style, main sidebar on right', 'easel' );
+		}
+
+		$wp_customize->add_control( 'easel-customize-select-layout-control' , array(
+				'label' => __( 'Choose a layout', 'easel' ),
+				'settings' => 'easel-customize-select-layout',
+				'section' => 'easel-scheme-options',
+				'type' => 'select',
+				'choices' => $choices
+			));
+
 		$wp_customize->add_setting( 'easel-customize-select-scheme', array('default' => 'none', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
 		$wp_customize->add_control( 'easel-customize-select-scheme-control' , array(
-				'label' => __( 'Choose a default scheme.', 'easel' ),
+				'label' => __( 'Choose a scheme', 'easel' ),
 				'settings' => 'easel-customize-select-scheme',
 				'section' => 'easel-scheme-options',
 				'type' => 'select',
 				'choices' => array(
-					'none' => 'No Scheme',
-					'boxed' => 'Boxed',
-					'sandy' => 'Sandy',
-					'mecha' => 'Mecha',
-					'ceasel' => 'CEasel',
-					'high' => 'High Society'
+					'none' => __( 'No Scheme', 'easel' ),
+					'boxed' => __( 'Boxed', 'easel' ),
+					'sandy' => __( 'Sandy', 'easel' ),
+					'mecha' => __( 'Mecha', 'easel' ),
+					'ceasel' => __( 'CEasel', 'easel' ),
+					'high' => __( 'High Society', 'easel' )
 				)
 			));
-			
+
+		$wp_customize->add_setting( 'easel-customize-range-site-width', array('default' => '980', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
+		$wp_customize->add_control( 'easel-customize-range-site-width-control' , array(
+				'label' => __( 'Site Width', 'easel' ),
+				'description' => __( 'Minimum value is 720px, maximum is 1600px width - Currently saved at: ', 'easel' ).get_theme_mod('easel-customize-range-site-width', 980).'px',
+				'settings' => 'easel-customize-range-site-width',
+				'section' => 'easel-scheme-options',
+				'type' => 'range',
+				'input_attrs' => array(
+					'min' => 780,
+					'max' => 1600,
+					'step' => 2,
+				),
+		));
+		
+		$wp_customize->add_setting( 'easel-customize-range-left-sidebar-width', array('default' => '200', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
+		$wp_customize->add_control( 'easel-customize-range-left-sidebar-width-control' , array(
+				'label' => __( 'Left Sidebar Width', 'easel' ),
+				'description' => __( 'Minimum value is 200px, maximum is 400px width - Currently saved at: ', 'easel' ).get_theme_mod('easel-customize-range-left-sidebar-width', 200).'px',
+				'settings' => 'easel-customize-range-left-sidebar-width',
+				'section' => 'easel-scheme-options',
+				'type' => 'range',
+				'input_attrs' => array(
+					'min' => 200,
+					'max' => 400,
+					'step' => 2,
+				),
+		));
+		
+		$wp_customize->add_setting( 'easel-customize-range-right-sidebar-width', array('default' => '200', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
+		$wp_customize->add_control( 'easel-customize-range-right-sidebar-width-control' , array(
+				'label' => __( 'Right Sidebar Width', 'easel' ),
+				'description' => __( 'Minimum value is 200px, maximum is 400px width - Currently saved at: ', 'easel' ).get_theme_mod('easel-customize-range-right-sidebar-width', 200).'px',
+				'settings' => 'easel-customize-range-right-sidebar-width',
+				'section' => 'easel-scheme-options',
+				'type' => 'range',
+				'input_attrs' => array(
+					'min' => 200,
+					'max' => 400,
+					'step' => 2,
+				),
+		));
+
 		$wp_customize->add_setting( 'easel-customize-detach-footer', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'easel_sanitize_checkbox'));
 		$wp_customize->add_control( 'easel-customize-detach-footer-control', array(
 				'settings' => 'easel-customize-detach-footer',
-				'label'    => __( 'Detach the footer to below the main content? (Already appears detached on some schemes *but isn\'t)', 'easel' ),
-				'section'  => 'easel-scheme-options',
-				'type'     => 'checkbox'
+				'label' => __( 'Detach Footer', 'easel' ),
+				'description' => __( 'Detach the footer to below the main content? (Already appears detached on some schemes *but isn\'t)', 'easel' ),
+				'section' => 'easel-scheme-options',
+				'type' => 'checkbox'
 			));
 
 		$wp_customize->add_setting( 'easel-customize-checkbox-rounded', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'easel_sanitize_checkbox'));
 		$wp_customize->add_control( 'easel-customize-checkbox-rounded-control', array(
 				'settings' => 'easel-customize-checkbox-rounded',
-				'label'    => __( 'Rounded corners on Post/Page Navigation Sections', 'easel' ),
+				'label'=> __( 'Rounded corners', 'easel' ),
+				'description'    => __( 'Rounded corners on Post/Page Navigation Sections', 'easel' ),
 				'section'  => 'easel-scheme-options',
 				'type'     => 'checkbox'
 			));
@@ -77,7 +145,8 @@ class easel_Customize {
 		$wp_customize->add_setting( 'easel-customize-checkbox-header-hotspot', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'easel_sanitize_checkbox'));
 		$wp_customize->add_control( 'easel-customize-checkbox-header-hotspot-control', array(
 					'settings' => 'easel-customize-checkbox-header-hotspot',
-					'label'    => __( 'Make the header title and description become a clickable hotspot for the entire header? (If you do the logo will not display right)', 'easel' ),
+					'label' => __( 'Clickable Header Image', 'easel' ),
+					'description' => __( 'Make the header title and description become a clickable hotspot for the entire header? (If you do the logo will not display right)', 'easel' ),
 					'section'  => 'header_image',
 					'type'     => 'checkbox'
 					));
@@ -89,7 +158,8 @@ class easel_Customize {
 			$wp_customize->add_setting( 'easel-customize-comic-in-column', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'sanitize_callback' => 'easel_sanitize_checkbox'));
 			$wp_customize->add_control( 'easel-customize-comic-in-column-control', array(
 						'settings' => 'easel-customize-comic-in-column',
-						'label'    => __( 'Put the Comic in the content column?', 'easel' ),
+						'label'    => __( 'Comic in content column?', 'easel' ),
+						'description' => __('Put the comic into the content column?  This must be done for the Graphic Novel Layouts.', 'easel'),
 						'section'  => 'easel-scheme-options',
 						'type'     => 'checkbox'
 						));
@@ -172,12 +242,13 @@ class easel_Customize {
 			$priority_value++;
 //			$wp_customize->get_setting($setinfo['slug'])->transport = 'postMessage';
 		}
-      	
+      
+	
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	}
-	
+
 	/**
 	 * This will output the custom WordPress settings to the live theme's WP head.
 	 * 
@@ -240,8 +311,8 @@ class easel_Customize {
 			array('slug' => 'footer_hcolor', 'element' => '#footer a:hover', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'footer_copyright_acolor', 'element' => '.copyright-info a', 'style' => 'color', 'default' => '',  'important' => false),
 			array('slug' => 'footer_copyright_hcolor', 'element' => '.copyright-info a:hover, .blognav a:hover, #paginav a:hover', 'style' => 'color', 'default' => '',  'important' => false),
-		);
-		
+			);
+			
 		if (function_exists('ceo_pluginfo')) {
 			$settings_array[] = array('slug' => 'comic_wrap_background', 'element' => '#comic-wrap', 'style' => 'background-color', 'default' => '',  'important' => true);
 			$settings_array[] = array('slug' => 'comic_wrap_textcolor', 'element' => '#comic-wrap', 'style' => 'color', 'default' => '',  'important' => true);
@@ -249,28 +320,41 @@ class easel_Customize {
 			$settings_array[] = array('slug' => 'comic_nav_textcolor', 'element' => '.comic-nav', 'style' => 'color', 'default' => '',  'important' => true);
 			$settings_array[] = array('slug' => 'comic_nav_acolor', 'element' => '.comic-nav a:link, .comic-nav a:visited', 'style' => 'color', 'default' => '#FFFFFF',  'important' => true);
 			$settings_array[] = array('slug' => 'comic_nav_hcolor', 'element' => '.comic-nav a:hover', 'style' => 'color', 'default' => '#F00',  'important' => true);
+			
 		}
       ?>
 <!--Customizer CSS-->
 <style type="text/css">
 <?php
 	$customize = get_theme_mod('easel-customize');
-//	var_dump($customize);
+	$page_width = intval(get_theme_mod('easel-customize-range-site-width', 980));
+	$comic_width = intval($page_width)+40;
+	$scheme = get_theme_mod('easel-customize-select-scheme', 'none');
+	$left_sidebar_width = get_theme_mod('easel-customize-range-left-sidebar-width', 200);
+	$right_sidebar_width = get_theme_mod('easel-customize-range-right-sidebar-width', 200);
+	$style_output = '';
+	if ($scheme !== 'sandy') {
+		$style_output = "\t#page { width: ".$page_width."px; }\r\n";
+	} else {
+		$style_output = "\t#header, #menubar-wrapper, #breadcrumb-wrapper, #subcontent-wrapper, #footer, #footer-sidebar-wrapper { width: ".$page_width."px; }\r\n";
+		$style_output .= "\t#comic-wrap { width: ".$comic_width."px }\r\n";
+	}
+	$style_output .= "\t#sidebar-right { min-width: ".$right_sidebar_width."px; max-width: ".$right_sidebar_width."px; }\r\n";
+	$style_output .= "\t#sidebar-left { min-width: ".$left_sidebar_width."px; max-width: ".$left_sidebar_width."px; }\r\n";
 	foreach ($settings_array as $setting) {
 		$content = $setting['default'];
 		if (isset($customize[$setting['slug']])) $content = $customize[$setting['slug']];
 		$important = ($setting['important']) ? '!important' : '';
-		if (!empty($content) && $content) $style_output .= $setting['element'].' { '.$setting['style'].': '.$content.$important.'; } ';
+		if (!empty($content) && $content) $style_output .= "\t".$setting['element'].' { '.$setting['style'].': '.$content.$important."; }\r\n";
 	}
 	if (isset($customize['logo']) && !empty($customize['logo'])) {
-		$style_output .= '.header-info { display: inline-block; float: left; padding: 0; }';
-		$style_output .= '.header-info h1 { margin: 0; padding: 0; background: url("'.$customize['logo'].'") top left no-repeat; background-size: contain; display: cover; }';
-		$style_output .= '.header-info h1 a { padding: 0; margin: 0; height: 120px; width: 180px; text-indent: -9999px; white-space: nowrap; overflow: hidden; display: block;}';
-		$style_output .= '.header-info .description { display: none!important; }';
+		$style_output .= "\t.header-info { display: inline-block; float: left; padding: 0; }\r\n";
+		$style_output .= "\t.header-info h1 { margin: 0; padding: 0; background: url(\"".$customize['logo']."\") top left no-repeat; background-size: contain; display: cover; }\r\n";
+		$style_output .= "\t.header-info h1 a { padding: 0; margin: 0; height: 120px; width: 180px; text-indent: -9999px; white-space: nowrap; overflow: hidden; display: block;}\r\n";
+		$style_output .= "\t.header-info .description { display: none!important; }\r\n";
 	}
 	echo $style_output;
 ?>
-
 </style>
 <!--/Customizer CSS-->
       <?php
@@ -296,6 +380,7 @@ class easel_Customize {
 			true // Specify whether to put in footer (leave this true)
 		);
 	}
+
 }
 
 // Setup the Theme Customizer settings and controls...

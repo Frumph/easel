@@ -172,7 +172,7 @@ function easel_close_up_shop() {
 if (!function_exists('easel_is_layout')) {
 	function easel_is_layout($choices) {
 		$choices = explode(",", $choices);
-		if (in_array(easel_themeinfo('layout'), $choices)) return true;
+		if (in_array(get_theme_mod('easel-customize-select-layout','3c'), $choices)) return true;
 		return false;
 	}
 }

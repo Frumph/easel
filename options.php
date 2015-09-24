@@ -58,31 +58,6 @@ function easel_admin_options() { ?>
 	$easel_options = get_option('easel-options');
 	if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-options') ) {
 		
-		if ($_REQUEST['action'] == 'easel_save_help') {
-			$tab = 'layout';
-			update_option('easel-options', $easel_options);
-		}
-		
-		if ($_REQUEST['action'] == 'easel_save_layout') {
-			foreach (array(
-				'layout',
-				'scheme'
-					) as $key) {
-							if (isset($_REQUEST[$key])) 
-								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
-			}
-			
-			foreach (array(
-				'disable_default_design'
-			) as $key) {
-				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
-				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
-			}
-			
-			$tab = 'layout';
-			update_option('easel-options', $easel_options);
-		}
-		
 		if ($_REQUEST['action'] == 'easel_save_debug') {
 			foreach (array(
 				'enable_debug_footer_code',
@@ -157,6 +132,7 @@ function easel_admin_options() { ?>
 			'display_archive_as_links',
 			'enable_last_modified_in_posts',
 			'disable_posted_at_time_in_posts'
+
 				) as $key) {
 					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
@@ -193,7 +169,7 @@ function easel_admin_options() { ?>
 		<div id="eadmin">
 		  <?php
 		  	$tab_info = array(
-				'layout' => __( 'Layout', 'easel' ),
+				'splash' => __( 'Introduction', 'easel' ),
 		  		'general' => __( 'General', 'easel' ),
 				'menubar' => __( 'Menubar', 'easel' ),
 				'debug' => __( 'Debug', 'easel' )

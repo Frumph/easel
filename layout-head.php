@@ -6,7 +6,7 @@
 	<div id="subcontent-wrapper">
 <?php
 if (!easel_is_signup() && !easel_sidebars_disabled()) {
-		if (easel_is_layout('2cl,2clw,3c,3cl,3clgn')) easel_get_sidebar('left');
+		if (easel_is_layout('2cl,3c,3cl,3clgn')) easel_get_sidebar('left');
 		if (easel_is_layout('3cl')) easel_get_sidebar('right');
 }
 ?>
@@ -18,6 +18,11 @@ if (!easel_is_signup() && !easel_sidebars_disabled()) {
 				}
 			?>
 			<div id="content" class="narrowcolumn">
-				<?php do_action('comic-blog-area'); ?>
 				<?php do_action('easel-narrowcolumn-area'); ?>
-				<?php if (is_home() && !easel_sidebars_disabled()) easel_get_sidebar('over-blog'); ?>
+				<?php
+					if (!easel_sidebars_disabled()) {
+						if (!is_front_page() && !easel_themeinfo('over-blog-sidebar-all-posts')) return;
+							easel_get_sidebar('over-blog');
+					}
+				?>
+				<?php do_action('comic-blog-area'); ?>
