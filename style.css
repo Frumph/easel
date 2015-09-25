@@ -7,6 +7,7 @@ Author: Philip M. Hofer (Frumph)
 Author URI: http://frumph.net
 Tags: two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, custom-background, custom-header, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready, flexible-header, featured-images
 Version: 4.2.9.2 Beta
+Relaese: Beta
 Text Domain: easel
 License: GNU General Public License, v3 (or newer)
 License URI: http://www.opensource.org/licenses/gpl-3.0.html
@@ -191,6 +192,11 @@ h4, h4 a {
 
 #page, #header, #menubar-wrapper, #breadcrumb-wrapper, #subcontent-wrapper, #footer {
     margin: 0 auto;
+    height: auto;
+    margin-left: auto; 
+    margin-right: auto;
+    display: block;
+    max-width: 100%;
 }
 
 /* Header */
@@ -224,10 +230,13 @@ h4, h4 a {
 	height: 25px;
 	background-color: #000;
 	color: #fff;
+	display: block;
+	max-width: 100%;
 }
 
 .menu-container {
-	width: 100%;
+	max-width: 100%;
+	display: block;
 	margin-left: 5px;
 }
 
@@ -237,9 +246,11 @@ h4, h4 a {
 }
 
 .menunav a:link, .menunav a:visited {
+	color: #fff;
 }
 
 .menunav a:hover {
+	color: #f00;
 }
 
 .menunav-search {
@@ -412,18 +423,29 @@ a.menunav-rss {
     width: 100%;
 }
 
+#content {
+	display: table-cell;
+	vertical-align: top;
+   overflow: hidden;
+}
+
+article {
+	display: block;
+	max-width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+	div#sidebar-left, div#sidebar-right {
+		display: none;
+	}
+}
+
 .spacer {
 	max-width: 100%;
 }
 
 .spacer img {
 	max-width: 100%;
-}
-
-#content {
-	display: table-cell;
-	vertical-align: top;
-    overflow: hidden;
 }
 
 .uentry, #comment-wrapper, #wp-paginav, #pagenav {
@@ -518,7 +540,6 @@ a.post-edit-link {
     line-height: 100%;
     padding: 0 2px 0 0;
 }
-
 
 .post-calendar-date .calendar-date span {
     height: 16px;
@@ -857,7 +878,7 @@ h2.widget-title, h2.widget-title a {
 #footer-sidebar-wrapper {
     display: table;
     table-layout: fixed;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 #sidebar-footer-left, #sidebar-footer, #sidebar-footer-right {
@@ -1984,7 +2005,6 @@ body.layout-2cl.scheme-high #header, body.layout-2cr.scheme-high #header, body.l
 body.scheme-high.cnc #comic-wrap {
     width: auto !important;
 }
-
 
 body.scheme-high #page-wrap {
     background: url('images/background-high-page-wrap.jpg') top repeat-x;
