@@ -28,9 +28,6 @@ function easel_menubar() {
 					</div>
 					<?php } ?>
 					<?php do_action('easel-menubar-menunav'); ?>
-					<?php if (easel_themeinfo('enable_rss_in_menubar') && !easel_themeinfo('menubar_social_icons')) { ?>
-						<a href="<?php bloginfo('rss2_url') ?>" title="RSS Feed" class="menunav-rss">RSS</a>
-					<?php } ?>
 					<?php do_action('easel-menubar-mini-navigation'); ?>
 				</div>
 				<div class="clear"></div>

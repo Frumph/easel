@@ -18,15 +18,15 @@ function eaeel_sanitize_checkbox( $input ) {
 class easel_Customize {
 
 	/**
- 	* This hooks into 'customize_register' (available as of WP 3.4) and allows
-	* you to add new sections and controls to the Theme Customize screen.
+	* This hooks into 'customize_register' (available as of WP 3.4) and allows
+ 	* you to add new sections and controls to the Theme Customize screen.
  	* 
  	* Note: To enable instant preview, we have to actually write a bit of custom
-	* javascript. See live_preview() for more.
+ 	* javascript. See live_preview() for more.
  	* 
- 	* @see add_action('customize_register',$func)
+	* @see add_action('customize_register',$func)
  	* @param \WP_Customize_Manager $wp_customize
- 	* @link http://ottopress.com/2012/how-to-leverage-the-theme-customizer-in-your-own-themes/
+	* @link http://ottopress.com/2012/how-to-leverage-the-theme-customizer-in-your-own-themes/
  	* @since Easel
  	*/
 
@@ -81,7 +81,7 @@ class easel_Customize {
 					'high' => __( 'High Society', 'easel' )
 				)
 			));
-
+			
 		$wp_customize->add_setting( 'easel-customize-range-site-width', array('default' => '980', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
 		$wp_customize->add_control( 'easel-customize-range-site-width-control' , array(
 				'label' => __( 'Site Width', 'easel' ),
@@ -328,17 +328,50 @@ class easel_Customize {
 <?php
 	$customize = get_theme_mod('easel-customize');
 	$page_width = intval(get_theme_mod('easel-customize-range-site-width', 980));
+	$layout = get_theme_mod('easel-customize-select-layout', '3c');
 	$comic_width = intval($page_width)+40;
 	$scheme = get_theme_mod('easel-customize-select-scheme', 'none');
-	$left_sidebar_width = get_theme_mod('easel-customize-range-left-sidebar-width', 200);
-	$right_sidebar_width = get_theme_mod('easel-customize-range-right-sidebar-width', 200);
+	$left_sidebar_width = get_theme_mod('easel-customize-range-left-sidebar-width', 200)+4;
+	$right_sidebar_width = get_theme_mod('easel-customize-range-right-sidebar-width', 200)+4;
 	$style_output = '';
 	if ($scheme !== 'sandy') {
-		$style_output = "\t#page { width: ".$page_width."px; }\r\n";
+		$style_output .= "\t#page { width: ".$page_width."px; }\r\n";
+		
 	} else {
-		$style_output = "\t#header, #menubar-wrapper, #breadcrumb-wrapper, #subcontent-wrapper, #footer, #footer-sidebar-wrapper { width: ".$page_width."px; }\r\n";
+		$style_output .= "\t#header, #menubar-wrapper, #breadcrumb-wrapper, #subcontent-wrapper, #footer, #footer-sidebar-wrapper { width: ".$page_width."px; }\r\n";
 		$style_output .= "\t#comic-wrap { width: ".$comic_width."px }\r\n";
 	}
+	$content = '';
+	$content_width = '';
+	switch ($layout) {
+		case '2cl':
+			$content_width = $page_width - ($left_sidebar_width+14);
+			break;
+		case '2cr':
+			$content_width = $page_width - ($right_sidebar_width+14);
+			break;
+		case '3clgn':
+			$content_width = $page_width - ($left_sidebar_width+14);
+			$inside_content_width = $content_width - ($right_sidebar_width+12);
+			break;
+		case '3crgn':
+			$content_width = $page_width - ($right_sidebar_width+14);
+			$inside_content_width = $content_width - ($left_sidebar_width+12);
+			break;
+		case '3c':
+		case '3cl':
+		case '3cr':
+		default: 
+			$content_width = $page_width - ($left_sidebar_width + $right_sidebar_width+22);
+			break;
+		
+	}
+	$style_output .= "\t#content-column { width: ".$content_width."px; }\r\n";
+	if (!empty($inside_content_width)) {
+		$style_output .= "\t#content { width: ".$inside_content_width."px; }\r\n";
+	}
+	
+	
 	$style_output .= "\t#sidebar-right { min-width: ".$right_sidebar_width."px; max-width: ".$right_sidebar_width."px; }\r\n";
 	$style_output .= "\t#sidebar-left { min-width: ".$left_sidebar_width."px; max-width: ".$left_sidebar_width."px; }\r\n";
 	foreach ($settings_array as $setting) {
