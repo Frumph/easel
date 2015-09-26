@@ -65,7 +65,7 @@ class easel_Customize {
 				'type' => 'select',
 				'choices' => $choices
 			));
-
+		
 		$wp_customize->add_setting( 'easel-customize-select-scheme', array('default' => 'none', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
 		$wp_customize->add_control( 'easel-customize-select-scheme-control' , array(
 				'label' => __( 'Choose a scheme', 'easel' ),
@@ -123,7 +123,7 @@ class easel_Customize {
 					'step' => 2,
 				),
 		));
-
+		
 		$wp_customize->add_setting( 'easel-customize-detach-footer', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'easel_sanitize_checkbox'));
 		$wp_customize->add_control( 'easel-customize-detach-footer-control', array(
 				'settings' => 'easel-customize-detach-footer',
@@ -132,7 +132,7 @@ class easel_Customize {
 				'section' => 'easel-scheme-options',
 				'type' => 'checkbox'
 			));
-
+		
 		$wp_customize->add_setting( 'easel-customize-checkbox-rounded', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'easel_sanitize_checkbox'));
 		$wp_customize->add_control( 'easel-customize-checkbox-rounded-control', array(
 				'settings' => 'easel-customize-checkbox-rounded',
@@ -150,7 +150,7 @@ class easel_Customize {
 					'section'  => 'header_image',
 					'type'     => 'checkbox'
 					));
-
+		
 		$wp_customize->add_setting( 'easel-customize[logo]', array('default' => '', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'esc_url_raw'));
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'easel-customize-logo-image', array('label' => __( 'Logo, 120px height x 160px width', 'easel' ), 'section'  => 'easel-logo-options', 'settings' => 'easel-customize[logo]')));
 		
@@ -262,14 +262,14 @@ class easel_Customize {
 		$style_output = '';
 		$settings_array = array(
 			// background colors
-			array('slug' => 'page_background', 'element' => '#page', 'style' => 'background-color', 'default' => '', 'important' => false),
-			array('slug' => 'header_background', 'element' => '#header', 'style' => 'background-color', 'default' => '',  'important' => false),
-			array('slug' => 'menubar_background', 'element' => '#menubar-wrapper', 'style' => 'background-color', 'default' => '',  'important' => false),
-			array('slug' => 'menubar_submenu_background', 'element' => '.menu ul li ul li a', 'style' => 'background-color', 'default' => '',  'important' => false),
-			array('slug' => 'menubar_mouseover_background', 'element' => '.menu ul li a:hover, .menu ul li a.selected', 'style' => 'background-color', 'default' => '',  'important' => false),
-			array('slug' => 'breadcrumb_background', 'element' => '#breadcrumb-wrapper', 'style' => 'background-color', 'default' => '',  'important' => false),
-			array('slug' => 'content_wrapper_background', 'element' => '#content-wrapper', 'style' => 'background-color', 'default' => '',  'important' => false),
-			array('slug' => 'subcontent_wrapper_background', 'element' => '#subcontent-wrapper', 'style' => 'background-color', 'default' => '',  'important' => false),
+			array('slug' => 'page_background', 'element' => '#page', 'style' => 'background-color', 'default' => '', 'important' => true),
+			array('slug' => 'header_background', 'element' => '#header', 'style' => 'background-color', 'default' => '',  'important' => true),
+			array('slug' => 'menubar_background', 'element' => '#menubar-wrapper', 'style' => 'background-color', 'default' => '',  'important' => true),
+			array('slug' => 'menubar_submenu_background', 'element' => '.menu ul li ul li a', 'style' => 'background-color', 'default' => '',  'important' => true),
+			array('slug' => 'menubar_mouseover_background', 'element' => '.menu ul li a:hover, .menu ul li a.selected', 'style' => 'background-color', 'default' => '',  'important' => true),
+			array('slug' => 'breadcrumb_background', 'element' => '#breadcrumb-wrapper', 'style' => 'background-color', 'default' => '',  'important' => true),
+			array('slug' => 'content_wrapper_background', 'element' => '#content-wrapper', 'style' => 'background-color', 'default' => '',  'important' => true),
+			array('slug' => 'subcontent_wrapper_background', 'element' => '#subcontent-wrapper', 'style' => 'background-color', 'default' => '',  'important' => true),
 			array('slug' => 'narrowcolumn_widecolumn_background', 'element' => '.narrowcolumn, .widecolumn', 'style' => 'background-color', 'default' => '',  'important' => false),
 			array('slug' => 'post_page_navigation_background', 'element' => '.uentry, #comment-wrapper, #wp-paginav, .blognav, #pagenav', 'style' => 'background-color', 'default' => '',  'important' => false),
 			array('slug' => 'post_info_background', 'element' => '.post-info', 'style' => 'background-color', 'default' => '',  'important' => false),
@@ -345,33 +345,38 @@ class easel_Customize {
 	$content_width = '';
 	switch ($layout) {
 		case '2cl':
-			$add_width = 14;
-			if ($scheme == 'CEasel') $add_width = $add_width + 4;
-			$content_width = $page_width - ($left_sidebar_width+$add_width);
+			$add_width = -2;
+			if ($scheme == 'ceasel') $add_width = $add_width + 2;
+			if ($scheme = 'high') $add_width = $add_width + 6;
+			$content_width = $page_width - ($left_sidebar_width + $add_width);
 			break;
 		case '2cr':
-			$add_width = 14;
-			if ($scheme == 'CEasel') $add_width = $add_width + 4;
-			$content_width = $page_width - ($right_sidebar_width+$add_width);
+			$add_width = 4;
+			if ($scheme == 'ceasel') $add_width = $add_width + 4;
+			$content_width = $page_width - ($right_sidebar_width + $add_width);
 			break;
 		case '3clgn':
-			$add_width = 12;
-			if ($scheme == 'CEasel') $add_width = $add_width + 6;
-			$content_width = $page_width - ($left_sidebar_width+$add_width);
-			$inside_content_width = $content_width - ($right_sidebar_width+12);
+			$add_width = 4;
+			if ($scheme == 'ceasel') $add_width = $add_width + 4; 
+			$content_width = $page_width - ($left_sidebar_width + $add_width);
+			$add_inside = 4;
+			if ($scheme == 'high') $add_inside = $add_inside + 4;
+			$inside_content_width = $content_width - ($right_sidebar_width + $add_inside);
 			break;
 		case '3crgn':
-			$add_width = 12;
-			if ($scheme == 'CEasel') $add_width = $add_width + 6;
-			$content_width = $page_width - ($right_sidebar_width+$add_width);
-			$inside_content_width = $content_width - ($left_sidebar_width+12);
+			$add_width = 4;
+			if ($scheme == 'ceasel') $add_width = $add_width + 2;
+			$content_width = $page_width - ($right_sidebar_width + $add_width);
+			$add_inside = 4;
+			if ($scheme == 'high') $add_inside = $add_inside + 4;
+			$inside_content_width = $content_width - ($left_sidebar_width + $add_inside);
 			break;
 		case '3c':
 		case '3cl':
 		case '3cr':
 		default: 
-			$add_width = 22;
-			if ($scheme == 'CEasel') $add_width = $add_width + 4;
+			$add_width = 8;
+			if ($scheme == 'ceasel') $add_width = $add_width +2;
 			$content_width = $page_width - ($left_sidebar_width + $right_sidebar_width + $add_width);
 			break;
 		
@@ -379,12 +384,13 @@ class easel_Customize {
 	$style_output .= "\t#add-width { width: ".$add_width."px; }\r\n";
 	$style_output .= "\t#content-column { width: ".$content_width."px; }\r\n";
 	if (!empty($inside_content_width)) {
-		$style_output .= "\t#content { width: ".$inside_content_width."px; }\r\n";
+		if ($scheme == 'high') {
+			$style_output .= "\t#content { width: ".$inside_content_width."px; padding-right: 4px; }\r\n";
+		} else 
+			$style_output .= "\t#content { width: ".$inside_content_width."px; }\r\n";
 	}
-	
-	
-	$style_output .= "\t#sidebar-right { min-width: ".$right_sidebar_width."px; max-width: ".$right_sidebar_width."px; }\r\n";
-	$style_output .= "\t#sidebar-left { min-width: ".$left_sidebar_width."px; max-width: ".$left_sidebar_width."px; }\r\n";
+	$style_output .= "\t#sidebar-right { width: ".$right_sidebar_width."px; }\r\n";
+	$style_output .= "\t#sidebar-left { width: ".$left_sidebar_width."px; }\r\n";
 	foreach ($settings_array as $setting) {
 		$content = $setting['default'];
 		if (isset($customize[$setting['slug']])) $content = $customize[$setting['slug']];
