@@ -220,7 +220,7 @@ class easel_Customize {
 		// Additions for CE
 		if (function_exists('ceo_pluginfo')) {
 			$css_array[] = array('slug' => 'comic_wrap_background', 'description' => '#comic-wrap', 'section' => 'colors', 'label' => __( 'Comic Area', 'easel' ), 'default' => '');
-			$css_array[] = array('slug' => 'comic_wrap_textcolor', 'description' => '#comic-wrap', 'section' => 'easel-text-colors', 'label' => '');
+			$css_array[] = array('slug' => 'comic_wrap_textcolor', 'description' => '#comic-wrap', 'section' => 'easel-text-colors', 'label' => '', 'default' => '');
 			$css_array[] = array('slug' => 'comic_nav_background', 'description' => 'table#comic-nav-wrapper', 'section' => 'colors', 'label' => __( 'Default Comic Navigation', 'easel' ), 'default' => '');
 			$css_array[] = array('slug' => 'comic_nav_textcolor', 'description' => '.comic-nav', 'section' => 'easel-text-colors', 'label' => __( 'Default Nav Normal Text Color', 'easel' ), 'default' => '');
 			$css_array[] = array('slug' => 'comic_nav_acolor', 'description' => '.comic-nav a:link, .comic-nav a:visited', 'section' => 'easel-link-colors', 'label' => __( 'Default Navigation Link', 'easel' ), 'default' => '');
