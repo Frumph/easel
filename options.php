@@ -131,8 +131,9 @@ function easel_admin_options() { ?>
 			'enable_comments_on_homepage',
 			'display_archive_as_links',
 			'enable_last_modified_in_posts',
-			'disable_posted_at_time_in_posts'
+			'disable_posted_at_time_in_posts',
 
+			'over-blog-sidebar-all-posts'
 				) as $key) {
 					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );

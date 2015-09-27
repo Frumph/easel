@@ -55,7 +55,7 @@ function easel_showmood_edit_post() {
 		$currentmood = get_post_meta( $post->ID, "mood", true );
 		
 		if (empty($currentmood) || $currentmood == '' || $currentmood == null) { 
-			$mood = __('none','easel');
+			$mood = __( 'none', 'easel' );
 		} else {
 			$mood = explode(".", $currentmood);
 			$mood = reset($mood);

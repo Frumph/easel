@@ -335,11 +335,10 @@ class easel_Customize {
 	$right_sidebar_width = get_theme_mod('easel-customize-range-right-sidebar-width', 200)+4;
 	$style_output = '';
 	if (($scheme !== 'sandy') && ($scheme !== 'high')) {
-		$style_output .= "\t#page { width: ".$page_width."px; }\r\n";
-		
+		$style_output .= "\t#page { width: ".$page_width."px; max-width: ".$page_width."px; }\r\n";
 	} else {
-		$style_output .= "\t#header, #menubar-wrapper, #breadcrumb-wrapper, #subcontent-wrapper, #footer, #footer-sidebar-wrapper { width: ".$page_width."px; }\r\n";
-		$style_output .= "\t#comic-wrap { width: ".$comic_width."px }\r\n";
+		$style_output .= "\t#header, #menubar-wrapper, #breadcrumb-wrapper, #subcontent-wrapper, #footer, #footer-sidebar-wrapper { width: ".$page_width."px; max-width: ".$page_width."px; }\r\n";
+		$style_output .= "\t#comic-wrap { width: ".$comic_width."px; max-width: 100%; }\r\n";
 	}
 	$content = '';
 	$content_width = '';
@@ -352,7 +351,7 @@ class easel_Customize {
 			break;
 		case '2cr':
 			$add_width = 4;
-			if ($scheme == 'ceasel') $add_width = $add_width + 4;
+			if ($scheme == 'ceasel') $add_width = $add_width + 2;
 			$content_width = $page_width - ($right_sidebar_width + $add_width);
 			break;
 		case '3clgn':
@@ -382,12 +381,12 @@ class easel_Customize {
 		
 	}
 	$style_output .= "\t#add-width { width: ".$add_width."px; }\r\n";
-	$style_output .= "\t#content-column { width: ".$content_width."px; }\r\n";
+	$style_output .= "\t#content-column { width: ".$content_width."px; max-width: 100%; }\r\n";
 	if (!empty($inside_content_width)) {
 		if ($scheme == 'high') {
-			$style_output .= "\t#content { width: ".$inside_content_width."px; padding-right: 4px; }\r\n";
+			$style_output .= "\t#content { width: ".$inside_content_width."px; padding-right: 4px; max-width: 100%; }\r\n";
 		} else 
-			$style_output .= "\t#content { width: ".$inside_content_width."px; }\r\n";
+			$style_output .= "\t#content { width: ".$inside_content_width."px; max-width: 100%; }\r\n";
 	}
 	$style_output .= "\t#sidebar-right { width: ".$right_sidebar_width."px; }\r\n";
 	$style_output .= "\t#sidebar-left { width: ".$left_sidebar_width."px; }\r\n";

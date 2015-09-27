@@ -29,6 +29,18 @@
 						<?php _e( 'Enabling this option, will DISABLE the blog from appearing on the home page AND any pages set as the blog posts page in the settings &#10132; reading.', 'easel' ); ?>
 					</td>
 				</tr>
+
+				<tr class="alternate">
+					<th scope="row"><label for="over-blog-sidebar-all-posts"><?php _e( 'Allow the sidebar over-blog to appear on all posts?', 'easel' ); ?></label></th>
+					<td>
+						<input id="over-blog-sidebar-all-posts" name="over-blog-sidebar-all-posts" type="checkbox" value="1" <?php checked(true, $easel_options['over-blog-sidebar-all-posts']); ?> />
+					</td>
+					<td>
+						<?php _e( 'Sidebar Over-Blog appears on all posts not just the front page/blog loop when enabled.', 'easel' ); ?>
+					</td>
+				</tr>
+					</td>
+				</tr>
 			</table>
 			
 			
