@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Easel 4.2.9.5 Beta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-04 19:35+0200\n"
-"PO-Revision-Date: 2015-10-04 19:35+0200\n"
+"PO-Revision-Date: 2015-10-04 19:41+0200\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -1681,58 +1681,3 @@ msgstr ""
 #: widgets/scheduledposts.php:39
 msgid "Scheduled Posts"
 msgstr "Geplante Beiträge"
-
-#~ msgid "Email &mdash; use mailto://your@email.com"
-#~ msgstr "Email &mdash; Verwende mailto://deine@emailadresse.de"
-
-#~ msgid ""
-#~ "Technical Support is available on the <a href=\"https://github.com/Frumph/"
-#~ "easel/issues\" target=\"_blank\">github repository</a> or use the Contact "
-#~ "form on <a href=\"http://frumph.net\" target=\"_blank\">Frumph.NET</a>."
-#~ msgstr ""
-#~ "Technische Unterstützung ist verfügbar über das <a href=\"https://github."
-#~ "com/Frumph/easel/issues\"target=\"_blank\">GitHub Repository</a> oder "
-#~ "verwende das Kontaktformular auf <a href=\"http://frumph.net\" target="
-#~ "\"_blank\">Frumph.NET</a>."
-
-#~ msgid "Custom Header"
-#~ msgstr "Benutzerdefinierter Header"
-
-#~ msgid "Custom Header Values"
-#~ msgstr "Benutzerdefinierter Header Werte"
-
-#~ msgid "Width:"
-#~ msgstr "Breite:"
-
-#~ msgid "Height:"
-#~ msgstr "Höhe:"
-
-#~ msgid ""
-#~ "Modify the height and width of the custom header *if* you use Appearance "
-#~ "&#10132; Header."
-#~ msgstr ""
-#~ "Zum Modifizieren der Höhe und Breite von dem benutzerdefinierten Header, "
-#~ "*wenn* Du verwendest Anpassen &#10132; Kopfzeile."
-
-#~ msgid ""
-#~ "3 Column Layouts are 980px width while 2 Column Layouts are 780px width "
-#~ "as default."
-#~ msgstr ""
-#~ "Bei 3 Spaltenlayouts sind 980px Breite Standard, während bei 2 "
-#~ "Spaltenlayouts 780px Breite Standard sind."
-
-#~ msgid ""
-#~ "NOTE: This should only be used if the appearance &#10132; header section "
-#~ "is not displaying your header dimensions correctly."
-#~ msgstr ""
-#~ "HINWEIS: Dieses sollte nur verwendet werden, wenn in dem Abschnitt "
-#~ "Anpassen &#10132; Kopfzeile dein Header nicht korrekt angezeigt wird."
-
-#~ msgid "Tag This Page"
-#~ msgstr "Diese Seite taggen"
-
-#~ msgid "Easel - Google Translator"
-#~ msgstr "Easel - Google Übersetzer"
-
-#~ msgid "Translate your site with Google."
-#~ msgstr "Übersetze deine Website mit Google."
