@@ -75,86 +75,87 @@
 			</table>
 			<table class="widefat">
 				<tr>
-						<td><strong><?php _e( 'Twitter', 'easel' ); ?></strong></td>
-						<td><input type="text" size="60" name="menubar_social_twitter" id="menubar_social_twitter" value="<?php echo $easel_options['menubar_social_twitter']; ?>" /></td>
-					</tr>
-					<tr>				
-						<td><strong><?php _e( 'Facebook', 'easel' ); ?></strong></td>
-						<td><input type="text" size="60" name="menubar_social_facebook" id="menubar_social_facebook" value="<?php echo $easel_options['menubar_social_facebook']; ?>" /></td>
-					</tr>
-					<tr>
-						<td><strong><?php _e( 'Google+', 'easel' ); ?></strong></td>
+					<td><strong><?php _e( 'Twitter', 'easel' ); ?></strong></td>
+					<td><input type="text" size="60" name="menubar_social_twitter" id="menubar_social_twitter" value="<?php echo $easel_options['menubar_social_twitter']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'Facebook', 'easel' ); ?></strong></td>
+					<td><input type="text" size="60" name="menubar_social_facebook" id="menubar_social_facebook" value="<?php echo $easel_options['menubar_social_facebook']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'Google+', 'easel' ); ?></strong></td>
 					<?php
-                    if (!isset($easel_options['menubar_social_googleplus']))
-                        $easel_options['menubar_social_googleplus'] = '';
- 					?>			
-						<td><input type="text" size="60" name="menubar_social_googleplus" id="menubar_social_googleplus" value="<?php echo $easel_options['menubar_social_googleplus']; ?>" /></td>
-					</tr>
-					<tr>
-						<td><strong><?php _e( 'LinkedIn', 'easel' ); ?></strong></td>
-					<?php
-                    if (!isset($easel_options['menubar_social_linkedin']))
-                        $easel_options['menubar_social_linkedin'] = '';
- 					?>				
-						<td><input type="text" size="60" name="menubar_social_linkedin" id="menubar_social_linkedin" value="<?php echo $easel_options['menubar_social_linkedin']; ?>" /></td>
-					</tr>
-					<tr>	
-					 	<td><strong><?php _e( 'pinterest', 'easel' ); ?></strong></td>
-					<?php
-                    if (!isset($easel_options['menubar_social_pinterest']))
-                        $easel_options['menubar_social_pinterest'] = '';
+					if (!isset($easel_options['menubar_social_googleplus']))
+						$easel_options['menubar_social_googleplus'] = '';
  					?>
-						<td><input type="text" size="60" name="menubar_social_pinterest" id="menubar_social_pinterest" value="<?php echo $easel_options['menubar_social_pinterest']; ?>" /></td>
-					</tr>
-					<tr>
-						<td><strong><?php _e( 'YouTube', 'easel' ); ?></strong></td>
+					<td><input type="text" size="60" name="menubar_social_googleplus" id="menubar_social_googleplus" value="<?php echo $easel_options['menubar_social_googleplus']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'LinkedIn', 'easel' ); ?></strong></td>
 					<?php
-                    if (!isset($easel_options['menubar_social_youtube']))
-                        $easel_options['menubar_social_youtube'] = '';
+					if (!isset($easel_options['menubar_social_linkedin']))
+						$easel_options['menubar_social_linkedin'] = '';
 					?>
-						<td><input type="text" size="60" name="menubar_social_youtube" id="menubar_social_youtube" value="<?php echo $easel_options['menubar_social_youtube']; ?>" /></td>
-					</tr>
-					<tr>
-						<td><strong><?php _e( 'Flickr', 'easel' ); ?></strong></td>
+					<td><input type="text" size="60" name="menubar_social_linkedin" id="menubar_social_linkedin" value="<?php echo $easel_options['menubar_social_linkedin']; ?>" /></td>
+				</tr>
+				<tr>
+					 <td><strong><?php _e( 'pinterest', 'easel' ); ?></strong></td>
 					<?php
-                    if (!isset($easel_options['menubar_social_flickr']))
-                        $easel_options['menubar_social_flickr'] = '';
+					if (!isset($easel_options['menubar_social_pinterest']))
+						$easel_options['menubar_social_pinterest'] = '';
  					?>
-						<td><input type="text" size="60" name="menubar_social_flickr" id="menubar_social_flickr" value="<?php echo $easel_options['menubar_social_flickr']; ?>" /></td>
-					</tr>
-					<tr>
-						<td><strong><?php _e( 'Tumblr', 'easel' ); ?></strong></td>
+					<td><input type="text" size="60" name="menubar_social_pinterest" id="menubar_social_pinterest" value="<?php echo $easel_options['menubar_social_pinterest']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'YouTube', 'easel' ); ?></strong></td>
 					<?php
-                    if (!isset($easel_options['menubar_social_tumblr']))
-                        $easel_options['menubar_social_tumblr'] = '';
- 					?>
-						<td><input type="text" size="60" name="menubar_social_tumblr" id="menubar_social_tumblr" value="<?php echo $easel_options['menubar_social_tumblr']; ?>" /></td>
-					</tr>
-					<tr>
-						<td><strong><?php _e( 'DeviantART', 'easel' ); ?></strong></td>
-					<?php
-                    if (!isset($easel_options['menubar_social_deviantart']))
-                        $easel_options['menubar_social_deviantart'] = '';
- 					?>
-						<td><input type="text" size="60" name="menubar_social_deviantart" id="menubar_social_deviantart" value="<?php echo $easel_options['menubar_social_deviantart']; ?>" /></td>
-					</tr>
-					<tr>
-						<td><strong><?php _e( 'MySpace', 'easel' ); ?></strong></td>
-					<?php
-                    if (!isset($easel_options['menubar_social_myspace']))
-                        $easel_options['menubar_social_myspace'] = '';
+					if (!isset($easel_options['menubar_social_youtube']))
+						$easel_options['menubar_social_youtube'] = '';
 					?>
-						<td><input type="text" size="60" name="menubar_social_myspace" id="menubar_social_myspace" value="<?php echo $easel_options['menubar_social_myspace']; ?>" /></td>
-					</tr>
-					<tr>
-						<td><strong><?php _e( 'Email', 'easel' ); ?></strong></td>
+					<td><input type="text" size="60" name="menubar_social_youtube" id="menubar_social_youtube" value="<?php echo $easel_options['menubar_social_youtube']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'Flickr', 'easel' ); ?></strong></td>
 					<?php
-                    if (!isset($easel_options['menubar_social_email']))
-                        $easel_options['menubar_social_email'] = '';
- 					?>
-						<td><input type="text" size="60" name="menubar_social_email" id="menubar_social_email" value="<?php echo $easel_options['menubar_social_email']; ?>" /><br /><?php _e( 'use mailto://your@email.com', 'easel' ); ?></td>
-					</tr>
-				</table>
+					if (!isset($easel_options['menubar_social_flickr']))
+						$easel_options['menubar_social_flickr'] = '';
+					?>
+					<td><input type="text" size="60" name="menubar_social_flickr" id="menubar_social_flickr" value="<?php echo $easel_options['menubar_social_flickr']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'Tumblr', 'easel' ); ?></strong></td>
+					<?php
+					if (!isset($easel_options['menubar_social_tumblr']))
+						$easel_options['menubar_social_tumblr'] = '';
+					?>
+					<td><input type="text" size="60" name="menubar_social_tumblr" id="menubar_social_tumblr" value="<?php echo $easel_options['menubar_social_tumblr']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'DeviantART', 'easel' ); ?></strong></td>
+					<?php
+					if (!isset($easel_options['menubar_social_deviantart']))
+						$easel_options['menubar_social_deviantart'] = '';
+					?>
+					<td><input type="text" size="60" name="menubar_social_deviantart" id="menubar_social_deviantart" value="<?php echo $easel_options['menubar_social_deviantart']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'MySpace', 'easel' ); ?></strong></td>
+					<?php
+					if (!isset($easel_options['menubar_social_myspace']))
+						$easel_options['menubar_social_myspace'] = '';
+					?>
+					<td><input type="text" size="60" name="menubar_social_myspace" id="menubar_social_myspace" value="<?php echo $easel_options['menubar_social_myspace']; ?>" /></td>
+				</tr>
+				<tr>
+					<td><strong><?php _e( 'Email', 'easel' ); ?></strong></td>
+					<?php
+					if (!isset($easel_options['menubar_social_email']))
+						$easel_options['menubar_social_email'] = '';
+					?>
+					<td><input type="text" size="60" name="menubar_social_email" id="menubar_social_email" value="<?php echo $easel_options['menubar_social_email']; ?>" /><br /><?php _e( 'use mailto://your@email.com', 'easel' ); ?></td>
+				</tr>
+			</table>
+			<br />
 		</div>
 
 		<div class="easel-options-save">

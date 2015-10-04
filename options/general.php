@@ -87,17 +87,17 @@
 					<tr>
 						<th colspan="3"><?php _e( 'RSS', 'easel' ); ?></th>
 					</tr>
-				</thead>			
+				</thead>
 				<tr class="alternate">
 					<th scope="row"><label for="enable_post_thumbnail_rss"><?php _e( 'Enable the post thumbnails in the RSS feed?', 'easel' ); ?></label></th>
 					<td>
-						<input id="enable_post_thumbnail_rss" name="enable_post_thumbnail_rss" type="checkbox" value="1" <?php checked(true, $easel_options['enable_post_thumbnail_rss']); ?> />		
+						<input id="enable_post_thumbnail_rss" name="enable_post_thumbnail_rss" type="checkbox" value="1" <?php checked(true, $easel_options['enable_post_thumbnail_rss']); ?> />
 					</td>
 					<td>
 						<?php _e( 'If enabled will show the post thumbnail of the post in the RSS feed.', 'easel' ); ?>
 					</td>
 				</tr>
-			</table>		
+			</table>
 			<br />
 		</div>
 
