@@ -16,12 +16,12 @@ global $post, $wp_query; ?>
 				/* Bookmark Config Settings */
 
 				var cl = 31;
-				var imgTag = '<?php echo get_template_directory_uri(); ?>/images/1.gif';		//add tag image.
-				var imgClearOff = '<?php echo get_template_directory_uri(); ?>/images/3a.gif';	//no comic tagged, clear not possible
-				var imgGotoOff = '<?php echo get_template_directory_uri(); ?>/images/2a.gif';	//no comic tagged, goto not possible
-				var imgClearOn = '<?php echo get_template_directory_uri(); ?>/images/3.gif';	//clear a tag, shows when comic previously tagged
-				var imgGotoOn = '<?php echo get_template_directory_uri(); ?>/images/2.gif';	//shows when a comic is tagged  
-				var imgInfo = '<?php echo get_template_directory_uri(); ?>/images/4.gif';  	//img that displays the help
+				var imgTag = '<?php echo get_template_directory_uri(); ?>/images/bookmarks/default/tagpage.gif';		//add tag comic
+				var imgClearOff = '<?php echo get_template_directory_uri(); ?>/images/bookmarks/default/clearno.gif';	//no comic tagged, clear not possible
+				var imgGotoOff = '<?php echo get_template_directory_uri(); ?>/images/bookmarks/default/gototagno.gif';	//no comic tagged, goto not possible
+				var imgClearOn = '<?php echo get_template_directory_uri(); ?>/images/bookmarks/default/clear.gif';		//clear a tag, shows when comic previously tagged
+				var imgGotoOn = '<?php echo get_template_directory_uri(); ?>/images/bookmarks/default/gototag.gif';		//shows when a comic is tagged
+				var imgInfo = '<?php echo get_template_directory_uri(); ?>/images/bookmarks/default/info.gif';  		//img that displays the help
 				var comicDir = '/'; 		//alter this if you run multiple comics in different directories on your site.
 
 				/* Now write out the applicable links */
@@ -36,11 +36,11 @@ global $post, $wp_query; ?>
 						gt = imgGotoOn;
 						ct = imgClearOn;
 					}
-					document.write('<div id="bmh" style="width: 173px; margin: 15px 0 0 0; padding: 5px; position: absolute; color: #eee; font-size: 11px; background-color:#222; border: 1px solid #ccc; visibility: hidden;"><strong>BOOKMARK<\/strong><br />Click "Tag Page" to bookmark a page. When you return to the site, click "Goto Tag" to continue where you left off.<\/div>');
-					document.write('<a href="#" onClick="bmhome();return false;"><img src="'+imgTag+'" alt="<?php __( 'Tag This Page', 'easel' ); ?>" border="0"><\/a>');
+					document.write('<div id="bmh"><strong><?php _e( 'BOOKMARK', 'easel' ); ?><\/strong><br /><?php _e( 'Click "Tag Page" to bookmark a page. When you return to the site, click "Goto Tag" to continue where you left off.', 'easel' ); ?><\/div>');
+					document.write('<a href="#" onClick="bmhome();return false;"><img src="'+imgTag+'" alt="Tag This Page" border="0"><\/a>');
 					document.write('<a href="#" onClick="gto();return false;"><img src="'+gt+'" alt="Goto Tag" border="0" id="gtc"><\/a>');
 					document.write('<a href="#" onClick="bmc();return false;"><img src="'+ct+'" alt="Clear Tag" border="0" id="rmc"><\/a>');
-					document.write('<a href="#" onMouseOver="document.getElementById(\'bmh\').style.visibility=\'visible\';" onMouseOut="document.getElementById(\'bmh\').style.visibility=\'hidden\';" onClick="return false;"><img src="'+imgInfo+'" alt="" border="0" \/><\/a>');
+					document.write('<a href="#" onMouseOver="document.getElementById(\'bmh\').style.visibility=\'visible\';" onMouseOut="document.getElementById(\'bmh\').style.visibility=\'hidden\';" onClick="return false;"><img src="'+imgInfo+'" alt="Info" border="0" \/><\/a>');
 				}
 
 				/* Below are our functions for this little script */
