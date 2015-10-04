@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Easel 4.2.9.4 Beta\n"
+"Project-Id-Version: Easel 4.2.9.5 Beta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-27 18:38+0200\n"
-"PO-Revision-Date: 2015-09-27 18:38+0200\n"
+"POT-Creation-Date: 2015-10-04 19:35+0200\n"
+"PO-Revision-Date: 2015-10-04 19:35+0200\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -90,7 +90,7 @@ msgstr "Registriert am"
 msgid "Posts #"
 msgstr "Beiträge #"
 
-#: author.php:61 functions.php:241
+#: author.php:61 functions.php:241 options/menubar.php:150
 msgid "Email"
 msgstr "Email"
 
@@ -98,15 +98,15 @@ msgstr "Email"
 msgid "Website"
 msgstr "Website"
 
-#: author.php:73 functions.php:239 options/menubar.php:75
+#: author.php:73 functions.php:239 options/menubar.php:78
 msgid "Twitter"
 msgstr "Twitter"
 
-#: author.php:79 functions.php:236 options/menubar.php:77
+#: author.php:79 functions.php:236 options/menubar.php:82
 msgid "Facebook"
 msgstr "Facebook"
 
-#: author.php:85 functions.php:242 options/menubar.php:79
+#: author.php:85 functions.php:242 options/menubar.php:86
 msgid "Google+"
 msgstr "Google+"
 
@@ -205,32 +205,32 @@ msgstr "Diese Seite bearbeiten."
 msgid "Primary"
 msgstr "Primär"
 
-#: functions.php:54 functions.php:114 functions/customize.php:185
-#: functions/customize.php:197 options/general.php:336
+#: functions.php:54 functions.php:110 functions/customize.php:185
+#: functions/customize.php:197 options/general.php:46
 msgid "Footer"
 msgstr "Footer"
 
-#: functions.php:107
+#: functions.php:103
 msgid "Left Sidebar"
 msgstr "Linke Sidebar"
 
-#: functions.php:107
+#: functions.php:103
 msgid "The sidebar that appears to the left of the content."
 msgstr "Diese Sidebar erscheint links der Inhalte."
 
-#: functions.php:108
+#: functions.php:104
 msgid "Right Sidebar"
 msgstr "Rechte Sidebar"
 
-#: functions.php:108
+#: functions.php:104
 msgid "The sidebar that appears to the right of the content."
 msgstr "Diese Sidebar erscheint rechts der Inhalte."
 
-#: functions.php:109
+#: functions.php:105
 msgid "Above Header"
 msgstr "Über dem Header"
 
-#: functions.php:109
+#: functions.php:105
 msgid ""
 "This sidebar appears to above all of the site information.  This sidebar is "
 "not encased in CSS, you will need to create CSS for it."
@@ -238,43 +238,43 @@ msgstr ""
 "Diese Sidebar erscheint über allem, vor den den Seiteninformationen. Diese "
 "Sidebar ist nicht im CSS eingeschlossen, Du musst das CSS dafür anlegen."
 
-#: functions.php:110 functions/customize.php:171
+#: functions.php:106 functions/customize.php:171
 msgid "Header"
 msgstr "Header"
 
-#: functions.php:110
+#: functions.php:106
 msgid "This sidebar appears inside the #header block."
 msgstr "Diese Sidebar erscheint innerhalb des #header Blocks."
 
-#: functions.php:111 functions/customize.php:172 options.php:175
+#: functions.php:107 functions/customize.php:172 options.php:224
 #: options/menubar.php:10
 msgid "Menubar"
 msgstr "Menüleiste"
 
-#: functions.php:111
+#: functions.php:107
 msgid "This sidebar is under the header and above the content-wrapper block"
 msgstr ""
 "Diese Sidebar erscheint unter dem Header und über dem content-wrapper Block"
 
-#: functions.php:112
+#: functions.php:108
 msgid "Over Blog"
 msgstr "Über dem Blog"
 
-#: functions.php:112
+#: functions.php:108
 msgid "This sidebar appears over the blog within the #column .narrowcolumn"
 msgstr ""
 "Diese Sidebar erscheint über dem Blog innerhalb von #column .narrowcolumn"
 
-#: functions.php:113
+#: functions.php:109
 msgid "Under Blog"
 msgstr "Unter dem Blog"
 
-#: functions.php:113
+#: functions.php:109
 msgid "This sidebar appears under the blog within the #column .narrowocolumn"
 msgstr ""
 "Diese Sidebar erscheint unter dem Blog innerhalb von #column .narrowcolumn"
 
-#: functions.php:114
+#: functions.php:110
 msgid ""
 "This sidebar is at the bottom of the page and is the center of the 3 footer "
 "sidebars."
@@ -282,31 +282,31 @@ msgstr ""
 "Diese Sidebar ist am unteren Rand von der Seite und ist die Mitte von den 3 "
 "Footer Sidebars."
 
-#: functions.php:115
+#: functions.php:111
 msgid "Footer Left"
 msgstr "Footer Links"
 
-#: functions.php:115
+#: functions.php:111
 msgid "This sidebar is at the bottom of the page, the left one."
 msgstr "Diese Sidebar ist am unteren Rand von der Seite, die Linke. "
 
-#: functions.php:116
+#: functions.php:112
 msgid "Footer Right"
 msgstr "Footer Rechts"
 
-#: functions.php:116
+#: functions.php:112
 msgid "This sidebar is at the bottom of the page, the right one."
 msgstr "Diese Sidebar ist am unteren Rand von der Seite, die Rechte."
 
-#: functions.php:119
+#: functions.php:115
 msgid "Jetpack Mobile Sidebar"
 msgstr "Jetpack Mobile Sidebar"
 
-#: functions.php:163
+#: functions.php:159
 msgid " [&hellip;]"
 msgstr " [&hellip;]"
 
-#: functions.php:163 functions/displaypost.php:213
+#: functions.php:159 functions/displaypost.php:213
 msgid "&darr; Read the rest of this entry..."
 msgstr "&darr; Lese den Rest dieses Eintrags ..."
 
@@ -314,7 +314,7 @@ msgstr "&darr; Lese den Rest dieses Eintrags ..."
 msgid "my DeviantART"
 msgstr "mein DeviantART"
 
-#: functions.php:234 options/menubar.php:115
+#: functions.php:234 options/menubar.php:134
 msgid "DeviantART"
 msgstr "DeviantART"
 
@@ -322,7 +322,7 @@ msgstr "DeviantART"
 msgid "Examine my Tumblr"
 msgstr "Überprüfe mein Tumblr"
 
-#: functions.php:235 options/menubar.php:109
+#: functions.php:235 options/menubar.php:126
 msgid "Tumblr"
 msgstr "Tumblr"
 
@@ -334,7 +334,7 @@ msgstr "Freund auf Facebook"
 msgid "Make use of MySpace"
 msgstr "Mache Gebrauch von MySpace"
 
-#: functions.php:237 options/menubar.php:121
+#: functions.php:237 options/menubar.php:142
 msgid "MySpace"
 msgstr "MySpace"
 
@@ -342,7 +342,7 @@ msgstr "MySpace"
 msgid "Look at my LinkedIn"
 msgstr "Betrachte mein LinkedIn"
 
-#: functions.php:238 options/menubar.php:85
+#: functions.php:238 options/menubar.php:94
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -354,7 +354,7 @@ msgstr "Folge mir auf Twitter"
 msgid "Gaze at my Flickr"
 msgstr "Besuche mich bei Flickr"
 
-#: functions.php:240 options/menubar.php:103
+#: functions.php:240 options/menubar.php:118
 msgid "Flickr"
 msgstr "Flickr"
 
@@ -370,7 +370,7 @@ msgstr "Circle mich auf Google+"
 msgid "Peruse my Pinterests"
 msgstr "Durchstöbere mein Pinterests"
 
-#: functions.php:243 options/menubar.php:91
+#: functions.php:243 options/menubar.php:102
 msgid "pinterest"
 msgstr "Pinterest"
 
@@ -378,7 +378,7 @@ msgstr "Pinterest"
 msgid "My Channel on YouTube"
 msgstr "Mein Channel auf YouTube"
 
-#: functions.php:244 options/menubar.php:97
+#: functions.php:244 options/menubar.php:110
 msgid "YouTube"
 msgstr "YouTube"
 
@@ -386,12 +386,12 @@ msgstr "YouTube"
 msgid "RSS Feed"
 msgstr "RSS-Feed"
 
-#: functions.php:245 options/general.php:378
+#: functions.php:245 options/general.php:88
 msgid "RSS"
 msgstr "RSS"
 
 #. translators: theme discription for wp-admin
-#: functions.php:368
+#: functions.php:375
 msgid "Publish a WebComic with the Easel theme and the Comic Easel plugin."
 msgstr ""
 "Publiziere ein Webcomic mit dem Easel Theme und dem Comic Easel Plugin."
@@ -783,7 +783,7 @@ msgstr "Kommentar&nbsp;"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: functions/displaypost.php:176 options/general.php:250
+#: functions/displaypost.php:176 options.php:226 options/comments.php:10
 msgid "Comments"
 msgstr "Kommentare"
 
@@ -806,7 +806,7 @@ msgstr ""
 "Verfügbare Moods, du kannst in Easel Optionen einstellen, welche "
 "Stimmungsbilder verwendet sollen."
 
-#: functions/moods.php:58 options/general.php:230 options/general.php:299
+#: functions/moods.php:58 options/comments.php:59 options/postspages.php:121
 msgid "none"
 msgstr "keins"
 
@@ -868,7 +868,7 @@ msgstr "Klicke für Originalgröße."
 
 #: image.php:52
 msgid "Edit this attachment."
-msgstr "Bearbeite diesen Anhang."
+msgstr "Diesen Anhang bearbeiten."
 
 #: image.php:58
 msgid "Sorry, no image matched your criteria."
@@ -908,27 +908,35 @@ msgstr "Easel Einstellungen ZURÜCKGESETZT!"
 msgid "Easel Customizer Colors RESET!"
 msgstr "Easel angepasste Farben ZURÜCKGESETZT!"
 
-#: options.php:162
+#: options.php:211
 msgid "Easel Settings SAVED!"
 msgstr "Easel Einstellungen GESPEICHERT!"
 
-#: options.php:173
+#: options.php:222
 msgid "Introduction"
 msgstr "Einführung"
 
-#: options.php:174 options/general.php:10
+#: options.php:223 options/general.php:10
 msgid "General"
 msgstr "Allgemein"
 
-#: options.php:176 options/debug.php:10
+#: options.php:225
+msgid "Posts & Pages"
+msgstr "Beiträge & Seiten"
+
+#: options.php:227 options/archivesearch.php:10
+msgid "Archive & Search"
+msgstr "Archiv & Suche"
+
+#: options.php:228 options/debug.php:10
 msgid "Debug"
 msgstr "Debugger"
 
-#: options.php:218
+#: options.php:270
 msgid "Created, Developed and maintained by"
 msgstr "Kreiert, entwickelt und gepflegt von"
 
-#: options.php:219
+#: options.php:271
 msgid ""
 "If you like the Easel theme, please donate. It will help in developing new "
 "features and versions."
@@ -936,13 +944,155 @@ msgstr ""
 "Wenn du das Easel-Theme magst, spende bitte. Es wird bei der Entwicklung "
 "neuer Funktionen und Versionen helfen."
 
-#: options.php:233
+#: options.php:285
 msgid "Reset All Settings"
 msgstr "Alle Einstellungen zurücksetzen"
 
-#: options.php:240
+#: options.php:292
 msgid "Reset Customizer Colors"
 msgstr "Angepasste Farben zurücksetzen"
+
+#: options/archivesearch.php:14
+msgid "Display archive results as a list of links?"
+msgstr "Zeige Archivergebnisse als eine Liste von Links?"
+
+#: options/archivesearch.php:19
+msgid ""
+"Enabling this will make the archive pages by date/category/term display as a "
+"list of links instead of full posts."
+msgstr ""
+"Wenn aktiviert, werden keine Artikel angezeigt, sondern nur die Titel "
+"derselben aufgelistet."
+
+#: options/archivesearch.php:24
+msgid "Excerpt or Full Content in archive and search?"
+msgstr "Auszug oder vollständiger Inhalt in Archiv und Suche?"
+
+#: options/archivesearch.php:26
+msgid "Excerpt"
+msgstr "Auszug"
+
+#: options/archivesearch.php:27
+msgid "Full Content"
+msgstr "Ganzer Inhalt"
+
+#: options/archivesearch.php:31
+msgid ""
+"If Display archives results as list is disabled, decide how much is seen in "
+"the archive display."
+msgstr ""
+"Wenn die Anzeige der Archiv Ergebnisse als Liste deaktiviert ist, "
+"entscheide, wie viele in der Archivanzeige  zu sehen sein sollen."
+
+#: options/archivesearch.php:36
+msgid "Archive Display Order"
+msgstr "Archiv Darstellungsreihenfolge"
+
+#: options/archivesearch.php:38
+msgid "Oldest to Newest &mdash; Ascending"
+msgstr "Alt nach Neu &mdash; Aufsteigend"
+
+#: options/archivesearch.php:39
+msgid "Newest to Oldest &mdash; Descending"
+msgstr "Neu nach Alt &mdash; Absteigend"
+
+#: options/archivesearch.php:43
+msgid ""
+"Sets the display order of your archives. Newest to Oldest will display your "
+"posts starting with the most recent. Oldest to Newest will start with the "
+"first entry in the category, tag, or date range (e.g. Selecting May 20XX "
+"will start with May 1, not May 31st.)"
+msgstr ""
+"Hier stellst du die Anzeigen-Reihenfolge der Archive ein. Neueste nach "
+"älteste zeigt den aktuellsten Artikel ganz oben. Älteste nach neueste "
+"beginnt mit dem ersten Eintrag in einer Kategorie, Tag, oder Datumsbereich "
+"(z.B wähle Mai 20XX wird starten mit 1.Mai, nicht 31.Mai.)"
+
+#: options/archivesearch.php:51
+msgid "Navigation"
+msgstr "Navigation"
+
+#: options/archivesearch.php:55
+msgid "Enable numbered pagination?"
+msgstr "Aktiviere Seitennummerierung?"
+
+#: options/archivesearch.php:60
+msgid ""
+"Previous Entries and Next Entries buttons are replaced by a bar of numbered "
+"pages. Numbered pagination appears on the Home page, the author(s) page, the "
+"blog template, and comments/single when there are more then the set number "
+"of comments per page. Uses the same styling as the Menubar."
+msgstr ""
+"Vorherige und nächste Beiträge Buttons werden durch einen Balken mit "
+"nummerierten Seiten ersetzt.  Nummerierte Seitenzahlen erscheinen auf der "
+"Startseite, der Autor(en) Seite, der Blog-Vorlage, und Kommentare/Single, "
+"wenn es mehr als die eingestellte Anzahl der Kommentare pro Seite sind. "
+"Benutzt die selbe Optik wie die Menüleiste."
+
+#: options/archivesearch.php:70 options/comments.php:81 options/debug.php:36
+#: options/general.php:107 options/menubar.php:163 options/postspages.php:194
+msgid "Save Settings"
+msgstr "Einstellungen speichern"
+
+#: options/comments.php:14
+msgid "Disable the comment notes?"
+msgstr "Deaktiviere die Kommentar Notizen?"
+
+#: options/comments.php:19
+msgid ""
+"Disabling this will remove the note text that displays with more options for "
+"adding to comments (html)."
+msgstr ""
+"Deaktivierung, entfernt die Anzeige des Hinweistextes mit mehr Optionen "
+"(html) zum hinzufügen zu den Kommentaren.  "
+
+#: options/comments.php:23
+msgid "Disable Comment Javascript?"
+msgstr "Deaktiviere Kommentar Javascript?"
+
+#: options/comments.php:28
+msgid ""
+"Checkmark this if you want the comment form to not use javascript to appear "
+"directly under who is being replied to. (increases pageviews/hits)"
+msgstr ""
+"Markiere die Checkbox, wenn Du das Kommentarformular dazu zwingen möchtest, "
+"kein Javascript direkt unter dem Antwortenden zu nutzen (erhöht Pageviews "
+"und Hits)"
+
+#: options/comments.php:32
+msgid "Enable Comments on Home Page?"
+msgstr "Aktiviere Kommentare auf der Homepage?"
+
+#: options/comments.php:37
+msgid ""
+"Checkmarking this option will make it so that the post(s) on the home page "
+"will also display the comments under them. This will ONLY work if you have "
+"it set to only display 1 post on the home page. The post count and this must "
+"be set to work."
+msgstr ""
+"Markieren der Checkbox, führt dazu das in den Beiträgen auf deiner Homepage "
+"die Kommentare unter diesen angezeigt werden. Dies wird NUR funktionieren, "
+"wenn Du eingestellt hast, zeige nur 1 Beitrag auf der Homepage. Die Anzahl "
+"der Beiträge und dies muss arbeiten."
+
+#: options/comments.php:57
+msgid "Avatar Directory"
+msgstr "Avatar Verzeichnis"
+
+#: options/comments.php:71
+msgid ""
+"Choose a directory to get the avatars for default gravatars if someone does "
+"not have one. You will have to make these images yourself, or download them "
+"from avatar providers. Then make a new directory on your site server to "
+"upload them to and select that directory here. Setting this to <strong>none</"
+"strong> will disable it from using any special avatar sets."
+msgstr ""
+"Wähle ein Verzeichnis für die Avatare für Standardavatare aus, wenn jemand "
+"keinen Gravatar hat. Du musst diese Bilder selber erstellen, oder von einem "
+"Avatar Anbieter herunterladen. Dann legst Du ein neues Verzeichnis auf "
+"deinem Websiten Server an, um sie hoch zu laden und wählst das Verzeichnis "
+"hier aus. Diese Einstellung auf <strong>keins</strong> deaktiviert die "
+"Verwendung von speziellen Avatar Sets."
 
 #: options/debug.php:14
 msgid "Enable the debug page load/memory usage at the bottom of each page?"
@@ -972,21 +1122,6 @@ msgstr ""
 "schliessen &mdash; nicht empfohlen und sollte nur aktiviert werden, wenn Du "
 "danach gefragt wirst."
 
-#: options/debug.php:36 options/general.php:437 options/menubar.php:141
-msgid "Save Settings"
-msgstr "Einstellungen speichern"
-
-#: options/debug.php:48
-msgid ""
-"Technical Support is available on the <a href=\"https://github.com/Frumph/"
-"easel/issues\" target=\"_blank\">github repository</a> or use the Contact "
-"form on <a href=\"http://frumph.net\" target=\"_blank\">Frumph.NET</a>."
-msgstr ""
-"Technische Unterstützung ist verfügbar über das <a href=\"https://github.com/"
-"Frumph/easel/issues\"target=\"_blank\">GitHub Repository</a> oder verwende "
-"das Kontaktformular auf <a href=\"http://frumph.net\" target=\"_blank"
-"\">Frumph.NET</a>."
-
 #: options/general.php:15
 msgid "How many blog posts would you like to display on the home page?"
 msgstr "Wie viele Blog Beiträge sollen auf der Hauptseite angezeigt werden?"
@@ -1015,11 +1150,11 @@ msgstr ""
 "Homepage UND alle Seiten werden als Blogbeitragsseiten eingestellt, in den "
 "Einstellungen &#10132; Lesen."
 
-#: options/general.php:34
+#: options/general.php:33
 msgid "Allow the sidebar over-blog to appear on all posts?"
 msgstr "Erlaube der Sidebar Über-Blog über allen Beiträgen zu erscheinen?"
 
-#: options/general.php:39
+#: options/general.php:38
 msgid ""
 "Sidebar Over-Blog appears on all posts not just the front page/blog loop "
 "when enabled."
@@ -1028,312 +1163,10 @@ msgstr ""
 "Titelseite / Blog Schleife wenn aktiviert."
 
 #: options/general.php:50
-msgid "Custom Header"
-msgstr "Benutzerdefinierter Header"
-
-#: options/general.php:54
-msgid "Custom Header Values"
-msgstr "Benutzerdefinierter Header Werte"
-
-#: options/general.php:56
-msgid "Width:"
-msgstr "Breite:"
-
-#: options/general.php:57
-msgid "Height:"
-msgstr "Höhe:"
-
-#: options/general.php:58
-msgid ""
-"Modify the height and width of the custom header *if* you use Appearance "
-"&#10132; Header."
-msgstr ""
-"Zum Modifizieren der Höhe und Breite von dem benutzerdefinierten Header, "
-"*wenn* Du verwendest Anpassen &#10132; Kopfzeile."
-
-#: options/general.php:59
-msgid ""
-"3 Column Layouts are 980px width while 2 Column Layouts are 780px width as "
-"default."
-msgstr ""
-"Bei 3 Spaltenlayouts sind 980px Breite Standard, während bei 2 "
-"Spaltenlayouts 780px Breite Standard sind."
-
-#: options/general.php:60
-msgid ""
-"NOTE: This should only be used if the appearance &#10132; header section is "
-"not displaying your header dimensions correctly."
-msgstr ""
-"HINWEIS: Dieses sollte nur verwendet werden, wenn in dem Abschnitt Anpassen "
-"&#10132; Kopfzeile dein Header nicht korrekt angezeigt wird."
-
-#: options/general.php:68
-msgid "Content Width"
-msgstr "Inhaltsbreite"
-
-#: options/general.php:76
-msgid "Media and images width on posts and pages?"
-msgstr "Breite von Medien und Bilder in Beiträgen und Seiten?"
-
-#: options/general.php:81
-msgid ""
-"This sets a specific width for WordPress to use for media content within "
-"your posts and pages. Default = 500"
-msgstr ""
-"Dies legt eine bestimmte Breite für Wordpress fest, bei Verwendung von "
-"Medieninhalten in Deinen Beiträgen und Seiten. Standard = 500"
-
-#: options/general.php:89
-msgid "Media and images width when sidebars are disabled on pages?"
-msgstr "Medien und Bilder Breite, wenn Sidebar's auf Seiten deaktiviert sind?"
-
-#: options/general.php:94
-msgid "When the sidebars are disabled on pages? Default = 700"
-msgstr "Wenn die Seitenleisten auf Seiten deaktiviert sind? Standard = 700"
-
-#: options/general.php:102
-msgid "Pages"
-msgstr "Seiten"
-
-#: options/general.php:106
-msgid "Disable the titles on pages?"
-msgstr "Deaktiviere die Titel auf Seiten?"
-
-#: options/general.php:111
-msgid ""
-"Page titles will be turned off. If you disable the titles no pages you can "
-"still add a post-image in the page editor."
-msgstr ""
-"Seitentitel werden deaktiviert. Wenn du die Titel auf Seiten deaktivierst, "
-"kannst du im Seiteneditor ein Beitragsbild hinzufügen."
-
-#: options/general.php:119
-msgid "Posts"
-msgstr "Beiträge"
-
-#: options/general.php:123
-msgid "Disable the titles on posts?"
-msgstr "Deaktiviere die Titel in Beiträgen?"
-
-#: options/general.php:128
-msgid ""
-"Post titles will be turned off. If you disable the titles on posts can still "
-"add a post-image in the post editor."
-msgstr ""
-"Beitragstitel werden deaktiviert. Wenn du die Titel in Beiträgen "
-"deaktivierst, kannst du im Beitragseditor ein Beitragsbild hinzufügen."
-
-#: options/general.php:132
-msgid "Add graphic calendar to blog posts?"
-msgstr "Füge Kalendergrafik zu Blogbeiträgen hinzu?"
-
-#: options/general.php:137
-msgid ""
-"Enabling this option will display a calendar image on your blog posts. The "
-"graphic calendar is an image that has the date of the blog post overlayed on "
-"top of it."
-msgstr ""
-"Bei Aktivierung dieser Option, wird ein Kalenderbild bei deinen Blogbeitägen "
-"angezeigt. Die Kalendergrafik ist ein Bild, welches durch das Datum des "
-"Blogbeitrages überlagert wird."
-
-#: options/general.php:141
-msgid "Enable Author Gravatar?"
-msgstr "Aktiviere Autoren Gravatar?"
-
-#: options/general.php:146
-msgid ""
-"Enabling this option will show a gravatar of the post author based on the "
-"author email address. Gravatars are associated by your email address and you "
-"can create them at"
-msgstr ""
-"Bei Aktivierung dieser Option, wird ein Gravatar vom Beitragsautor "
-"angezeigt, basierend auf der Email Adresse des Autors. Gravatare werden mit "
-"der Email Adresse assoziiert. Du kannst Gravatare erstellen auf"
-
-#: options/general.php:150
-msgid "Enable Avatar Mod?"
-msgstr "Aktiviere Avator Modus?"
-
-#: options/general.php:155
-msgid ""
-"With this enabled, the avatar's that are displayed will be jquery modified "
-"to look like polaroids randomly tilted."
-msgstr ""
-"Wenn aktiviert, werden die dargestellten Avatare durch jQuery etwas "
-"modifiziert und sehen dann wie zufällig benannte Polaroids aus."
-
-#: options/general.php:159
-msgid "Disable display of <strong>tags</strong> in posts?"
-msgstr "Deaktiviere Anzeige von <strong>Tags</strong> in Beiträgen?"
-
-#: options/general.php:164
-msgid "Checkmarking this will make it so that tags will not appear in posts."
-msgstr "Durch markieren der Checkbox werden keine Tags in Beiträgen angezeigt."
-
-#: options/general.php:168
-msgid "Disable display of <strong>categories</strong> in posts?"
-msgstr "Deaktiviere Anzeige von <strong>Kategorien</strong> Beiträgen?"
-
-#: options/general.php:173
-msgid ""
-"Checkmarking this will make it so that categories will not appear in posts."
-msgstr ""
-"Durch markieren der Checkbox werden keine Kategorien in Beiträgen angezeigt."
-
-#: options/general.php:177
-msgid "Disable display of <strong>by Author</strong> in post information?"
-msgstr "Deaktiviere Anzeige von <strong>Autor</strong> in Beitragsinformation?"
-
-#: options/general.php:182
-msgid ""
-"Checkmarking this will make it so that the by Author information will not "
-"appear in posts."
-msgstr ""
-"Durch markieren der Checkbox werden keine Autoreninformation in Beiträgen "
-"angezeigt."
-
-#: options/general.php:186
-msgid "Disable display of the posted on date in posts?"
-msgstr "Deaktiviere die Anzeige vom Datum des Postens in Beiträgen?"
-
-#: options/general.php:191
-msgid ""
-"Checkmarking this will make it so that posted on date information will not "
-"appear in posts."
-msgstr ""
-"Markieren der Checkbox, führt dazu das keine Informationen über das Datum "
-"des Postens angezeigt werden in den Beiträgen."
-
-#: options/general.php:195
-msgid "Disable the display of the posted at time in posts?"
-msgstr "Deaktiviere die Anzeige der Uhrzeit des Postens in Beiträgen?"
-
-#: options/general.php:200
-msgid ""
-"Checkmarking this will make it so that the information about what time the "
-"post was made will not show."
-msgstr ""
-"Markieren der Checkbox, führt dazu das keine Informationen über die Uhrzeit "
-"des Postens angezeigt werden in den Beiträgen."
-
-#: options/general.php:204
-msgid "Enable the display of last modified information in posts?"
-msgstr "Aktiviere die Anzeige der letzten Änderung in Beiträgen?"
-
-#: options/general.php:209
-msgid ""
-"Checkmarking this will make it so that it will show when the last time that "
-"the post was modified in the post date information."
-msgstr ""
-"Wenn aktiv, wird in den Beitrags Datums Informationen angezeigt, wann ein "
-"Artikel noch mal geändert wurde."
-
-#: options/general.php:228
-msgid "Moods Directory"
-msgstr "Moods Verzeichnis"
-
-#: options/general.php:242
-msgid ""
-"Choose a directory to get the post moods from. Set this to <strong>none</"
-"strong> to turn off use. Mood directories are found in your theme directory/"
-"images/moods/* . To create your own custom moods just create a directory "
-"under images/moods/ and place ONLY image files inside of it. The name of the "
-"image file represents what the mood is."
-msgstr ""
-"Wähle ein Verzeichnis, wo die Moods für Beiträge sich befinden. "
-"Einstellung<strong>keins</strong> schaltet die Funktion aus. Das Moods "
-"Verzeichnis findest du in deinem Theme Verzeichnis /images/moods/* . Zum "
-"Erstellen  deiner eigenen Moods, erstelle ein Verzeichnis unter Images/moods "
-"und füge dort NUR Bilddateien ein. Der Name der Bilddatei repräsentiert den "
-"Moods Namen."
-
-#: options/general.php:254
-msgid "Disable the comment notes?"
-msgstr "Deaktiviere die Kommentar Notizen?"
-
-#: options/general.php:259
-msgid ""
-"Disabling this will remove the note text that displays with more options for "
-"adding to comments (html)."
-msgstr ""
-"Deaktivierung, entfernt die Anzeige des Hinweistextes mit mehr Optionen "
-"(html) zum hinzufügen zu den Kommentaren.  "
-
-#: options/general.php:263
-msgid "Disable Comment Javascript?"
-msgstr "Deaktiviere Kommentar Javascript?"
-
-#: options/general.php:268
-msgid ""
-"Checkmark this if you want the comment form to not use javascript to appear "
-"directly under who is being replied to. (increases pageviews/hits)"
-msgstr ""
-"Markiere die Checkbox, wenn Du das Kommentarformular dazu zwingen möchtest, "
-"kein Javascript direkt unter dem Antwortenden zu nutzen (erhöht Pageviews "
-"und Hits)"
-
-#: options/general.php:272
-msgid "Enable Comments on Home Page?"
-msgstr "Aktiviere Kommentare auf der Homepage?"
-
-#: options/general.php:277
-msgid ""
-"Checkmarking this option will make it so that the post(s) on the home page "
-"will also display the comments under them. This will ONLY work if you have "
-"it set to only display 1 post on the home page. The post count and this must "
-"be set to work."
-msgstr ""
-"Markieren der Checkbox, führt dazu das in den Beiträgen auf deiner Homepage "
-"die Kommentare unter diesen angezeigt werden. Dies wird NUR funktionieren, "
-"wenn Du eingestellt hast, zeige nur 1 Beitrag auf der Homepage. Die Anzahl "
-"der Beiträge und dies muss arbeiten."
-
-#: options/general.php:297
-msgid "Avatar Directory"
-msgstr "Avatar Verzeichnis"
-
-#: options/general.php:311
-msgid ""
-"Choose a directory to get the avatars for default gravatars if someone does "
-"not have one. You will have to make these images yourself, or download them "
-"from avatar providers. Then make a new directory on your site server to "
-"upload them to and select that directory here. Setting this to <strong>none</"
-"strong> will disable it from using any special avatar sets."
-msgstr ""
-"Wähle ein Verzeichnis für die Avatare für Standardavatare aus, wenn jemand "
-"keinen Gravatar hat. Du musst diese Bilder selber erstellen, oder von einem "
-"Avatar Anbieter herunterladen. Dann legst Du ein neues Verzeichnis auf "
-"deinem Websiten Server an, um sie hoch zu laden und wählst das Verzeichnis "
-"hier aus. Diese Einstellung auf <strong>keins</strong> deaktiviert die "
-"Verwendung von speziellen Avatar Sets."
-
-#: options/general.php:319
-msgid "Navigation"
-msgstr "Navigation"
-
-#: options/general.php:323
-msgid "Enable numbered pagination?"
-msgstr "Aktiviere Seitennummerierung?"
-
-#: options/general.php:328
-msgid ""
-"Previous Entries and Next Entries buttons are replaced by a bar of numbered "
-"pages. Numbered pagination appears on the Home page, the author(s) page, the "
-"blog template, and comments/single when there are more then the set number "
-"of comments per page. Uses the same styling as the Menubar."
-msgstr ""
-"Vorherige und nächste Beiträge Buttons werden durch einen Balken mit "
-"nummerierten Seiten ersetzt.  Nummerierte Seitenzahlen erscheinen auf der "
-"Startseite, der Autor(en) Seite, der Blog-Vorlage, und Kommentare/Single, "
-"wenn es mehr als die eingestellte Anzahl der Kommentare pro Seite sind. "
-"Benutzt die selbe Optik wie die Menüleiste."
-
-#: options/general.php:340
 msgid "Disable the default text in the footer?"
 msgstr "Deaktiviere den Standardtext im Footer?"
 
-#: options/general.php:345
+#: options/general.php:55
 msgid ""
 "Default text in the footer will not display. Enable this if you do not want "
 "any text in the footer. If you wish to add you own custom content, you may "
@@ -1343,21 +1176,21 @@ msgstr ""
 "Footer Text eingeben möchtest, kannst du das via Design &#10132; Widgets "
 "&#10132; Footer tun."
 
-#: options/general.php:349
+#: options/general.php:59
 msgid "Disable the scroll to top link in the footer?"
 msgstr "Deaktiviere den Nach-Oben-Link im Footer?"
 
-#: options/general.php:354
+#: options/general.php:64
 msgid "When this link is clicked on long pages it will scroll back to the top."
 msgstr ""
 "Wenn dieser Link angeklickt wird kannst Du auf langen Seiten zurück zum "
 "Seitenanfang springen."
 
-#: options/general.php:358
+#: options/general.php:68
 msgid "&copy; Copyright Name"
 msgstr "&copy; Copyright Name"
 
-#: options/general.php:362
+#: options/general.php:72
 msgid ""
 "Set the name to which this site is &copy; Copyright to. Leave blank to have "
 "the site name."
@@ -1365,11 +1198,11 @@ msgstr ""
 "Name festlegen, auf den das &copy; Copyright dieser Seite läuft. Leer "
 "lassen, um den Namen der Website zu verwenden."
 
-#: options/general.php:366
+#: options/general.php:76
 msgid "&copy; Copyright Holder URL"
 msgstr "&copy; Copyright Inhaber URL"
 
-#: options/general.php:370
+#: options/general.php:80
 msgid ""
 "Set the URL to the owner of the &copy; Copyright if different then this "
 "website. Leave blank for sites link."
@@ -1377,75 +1210,15 @@ msgstr ""
 "Setze die URL von dem Besitzer des &copy; Copyrights von dieser Website. "
 "Leer lassen für Webseitenlink."
 
-#: options/general.php:382
+#: options/general.php:92
 msgid "Enable the post thumbnails in the RSS feed?"
 msgstr "Aktiviere die Beitrags Vorschaubilder in dem RSS-Feed?"
 
-#: options/general.php:387
+#: options/general.php:97
 msgid "If enabled will show the post thumbnail of the post in the RSS feed."
 msgstr ""
 "Wenn aktiviert, wird das Beitrags Vorschaubild von dem Beitrag in dem RSS-"
 "Feed gezeigt."
-
-#: options/general.php:394
-msgid "Archive & Search"
-msgstr "Archiv & Suche"
-
-#: options/general.php:398
-msgid "Display archive results as a list of links?"
-msgstr "Zeige Archivergebnisse als eine Liste von Links?"
-
-#: options/general.php:403
-msgid ""
-"Enabling this will make the archive pages by date/category/term display as a "
-"list of links instead of full posts."
-msgstr ""
-"Wenn aktiviert, werden keine Artikel angezeigt, sondern nur die Titel "
-"derselben aufgelistet."
-
-#: options/general.php:408
-msgid "Excerpt or Full Content in archive and search?"
-msgstr "Auszug oder vollständiger Inhalt in Archiv und Suche?"
-
-#: options/general.php:410
-msgid "Excerpt"
-msgstr "Auszug"
-
-#: options/general.php:411
-msgid "Full Content"
-msgstr "Ganzer Inhalt"
-
-#: options/general.php:415
-msgid ""
-"If Display archives results as list is disabled, decide how much is seen in "
-"the archive display."
-msgstr ""
-"Wenn die Anzeige der Archiv Ergebnisse als Liste deaktiviert ist, "
-"entscheide, wie viele in der Archivanzeige  zu sehen sein sollen."
-
-#: options/general.php:420
-msgid "Archive Display Order"
-msgstr "Archiv Darstellungsreihenfolge"
-
-#: options/general.php:422
-msgid "Oldest to Newest &mdash; Ascending"
-msgstr "Alt nach Neu &mdash; Aufsteigend"
-
-#: options/general.php:423
-msgid "Newest to Oldest &mdash; Descending"
-msgstr "Neu nach Alt &mdash; Absteigend"
-
-#: options/general.php:427
-msgid ""
-"Sets the display order of your archives. Newest to Oldest will display your "
-"posts starting with the most recent. Oldest to Newest will start with the "
-"first entry in the category, tag, or date range (e.g. Selecting May 20XX "
-"will start with May 1, not May 31st.)"
-msgstr ""
-"Hier stellst du die Anzeigen-Reihenfolge der Archive ein. Neueste nach "
-"älteste zeigt den aktuellsten Artikel ganz oben. Älteste nach neueste "
-"beginnt mit dem ersten Eintrag in einer Kategorie, Tag, oder Datumsbereich "
-"(z.B wähle Mai 20XX wird starten mit 1.Mai, nicht 31.Mai.)"
 
 #: options/menubar.php:14
 msgid "Disable default Menubar?"
@@ -1489,11 +1262,11 @@ msgstr ""
 "ddsmoother Menücode laden möchtest. (Ohne diesen Code kannst du allerdings "
 "auch keine Dropdowns erzeugen.)"
 
-#: options/menubar.php:51
+#: options/menubar.php:50
 msgid "Enable Breadcrumbs?"
 msgstr "Aktiviere Breadcrumbs?"
 
-#: options/menubar.php:56
+#: options/menubar.php:55
 msgid ""
 "This will create a pathable breathcrumbs beneith the menubar underneith the "
 "default menubar location."
@@ -1501,15 +1274,15 @@ msgstr ""
 "Erstellt nachvollziehbare Breadcrumbs in Nähe der Menüleiste, direkt unter "
 "der Standardmenübar Position."
 
-#: options/menubar.php:64
+#: options/menubar.php:63
 msgid "Menubar &mdash; Social Icons"
 msgstr "Menüleiste &mdash; Social Icons"
 
-#: options/menubar.php:68
+#: options/menubar.php:67
 msgid "Enable Social Icons in Menubar?"
 msgstr "Aktiviere Social Icons in der Menüleiste?"
 
-#: options/menubar.php:73
+#: options/menubar.php:72
 msgid ""
 "Adds additional social icons in the menubar on in the menunav area. Put the "
 "entire http:// url in the input box that leads to your account on those "
@@ -1520,9 +1293,190 @@ msgstr ""
 "URL inklusive http:// zu dem jeweiligen Profil ein. Wenn du das Feld leer "
 "lässt, wird kein betreffendes Icon angezeigt."
 
-#: options/menubar.php:127
-msgid "Email &mdash; use mailto://your@email.com"
-msgstr "Email &mdash; Verwende mailto://deine@emailadresse.de"
+#: options/menubar.php:155
+msgid "use mailto://your@email.com"
+msgstr "verwende mailto://your@email.com"
+
+#: options/postspages.php:10
+msgid "Posts"
+msgstr "Beiträge"
+
+#: options/postspages.php:14
+msgid "Disable the titles on posts?"
+msgstr "Deaktiviere die Titel in Beiträgen?"
+
+#: options/postspages.php:19
+msgid ""
+"Post titles will be turned off. If you disable the titles on posts can still "
+"add a post-image in the post editor."
+msgstr ""
+"Beitragstitel werden deaktiviert. Wenn du die Titel in Beiträgen "
+"deaktivierst, kannst du im Beitragseditor ein Beitragsbild hinzufügen."
+
+#: options/postspages.php:23
+msgid "Add graphic calendar to blog posts?"
+msgstr "Füge Kalendergrafik zu Blogbeiträgen hinzu?"
+
+#: options/postspages.php:28
+msgid ""
+"Enabling this option will display a calendar image on your blog posts. The "
+"graphic calendar is an image that has the date of the blog post overlayed on "
+"top of it."
+msgstr ""
+"Bei Aktivierung dieser Option, wird ein Kalenderbild bei deinen Blogbeitägen "
+"angezeigt. Die Kalendergrafik ist ein Bild, welches durch das Datum des "
+"Blogbeitrages überlagert wird."
+
+#: options/postspages.php:32
+msgid "Enable Author Gravatar?"
+msgstr "Aktiviere Autoren Gravatar?"
+
+#: options/postspages.php:37
+msgid ""
+"Enabling this option will show a gravatar of the post author based on the "
+"author email address. Gravatars are associated by your email address and you "
+"can create them at"
+msgstr ""
+"Bei Aktivierung dieser Option, wird ein Gravatar vom Beitragsautor "
+"angezeigt, basierend auf der Email Adresse des Autors. Gravatare werden mit "
+"der Email Adresse assoziiert. Du kannst Gravatare erstellen auf"
+
+#: options/postspages.php:41
+msgid "Enable Avatar Mod?"
+msgstr "Aktiviere Avator Modus?"
+
+#: options/postspages.php:46
+msgid ""
+"With this enabled, the avatar's that are displayed will be jquery modified "
+"to look like polaroids randomly tilted."
+msgstr ""
+"Wenn aktiviert, werden die dargestellten Avatare durch jQuery etwas "
+"modifiziert und sehen dann wie zufällig benannte Polaroids aus."
+
+#: options/postspages.php:50
+msgid "Disable display of <strong>tags</strong> in posts?"
+msgstr "Deaktiviere Anzeige von <strong>Tags</strong> in Beiträgen?"
+
+#: options/postspages.php:55
+msgid "Checkmarking this will make it so that tags will not appear in posts."
+msgstr "Durch markieren der Checkbox werden keine Tags in Beiträgen angezeigt."
+
+#: options/postspages.php:59
+msgid "Disable display of <strong>categories</strong> in posts?"
+msgstr "Deaktiviere Anzeige von <strong>Kategorien</strong> Beiträgen?"
+
+#: options/postspages.php:64
+msgid ""
+"Checkmarking this will make it so that categories will not appear in posts."
+msgstr ""
+"Durch markieren der Checkbox werden keine Kategorien in Beiträgen angezeigt."
+
+#: options/postspages.php:68
+msgid "Disable display of <strong>by Author</strong> in post information?"
+msgstr "Deaktiviere Anzeige von <strong>Autor</strong> in Beitragsinformation?"
+
+#: options/postspages.php:73
+msgid ""
+"Checkmarking this will make it so that the by Author information will not "
+"appear in posts."
+msgstr ""
+"Durch markieren der Checkbox werden keine Autoreninformation in Beiträgen "
+"angezeigt."
+
+#: options/postspages.php:77
+msgid "Disable display of the posted on date in posts?"
+msgstr "Deaktiviere die Anzeige vom Datum des Postens in Beiträgen?"
+
+#: options/postspages.php:82
+msgid ""
+"Checkmarking this will make it so that posted on date information will not "
+"appear in posts."
+msgstr ""
+"Markieren der Checkbox, führt dazu das keine Informationen über das Datum "
+"des Postens angezeigt werden in den Beiträgen."
+
+#: options/postspages.php:86
+msgid "Disable the display of the posted at time in posts?"
+msgstr "Deaktiviere die Anzeige der Uhrzeit des Postens in Beiträgen?"
+
+#: options/postspages.php:91
+msgid ""
+"Checkmarking this will make it so that the information about what time the "
+"post was made will not show."
+msgstr ""
+"Markieren der Checkbox, führt dazu das keine Informationen über die Uhrzeit "
+"des Postens angezeigt werden in den Beiträgen."
+
+#: options/postspages.php:95
+msgid "Enable the display of last modified information in posts?"
+msgstr "Aktiviere die Anzeige der letzten Änderung in Beiträgen?"
+
+#: options/postspages.php:100
+msgid ""
+"Checkmarking this will make it so that it will show when the last time that "
+"the post was modified in the post date information."
+msgstr ""
+"Wenn aktiv, wird in den Beitrags Datums Informationen angezeigt, wann ein "
+"Artikel noch mal geändert wurde."
+
+#: options/postspages.php:119
+msgid "Moods Directory"
+msgstr "Moods Verzeichnis"
+
+#: options/postspages.php:133
+msgid ""
+"Choose a directory to get the post moods from. Set this to <strong>none</"
+"strong> to turn off use. Mood directories are found in your theme directory/"
+"images/moods/* . To create your own custom moods just create a directory "
+"under images/moods/ and place ONLY image files inside of it. The name of the "
+"image file represents what the mood is."
+msgstr ""
+"Wähle ein Verzeichnis, wo die Moods für Beiträge sich befinden. Einstellung "
+"<strong>keins</strong> schaltet die Funktion aus. Das Moods Verzeichnis "
+"findest du in deinem Theme Verzeichnis /images/moods/* . Zum Erstellen  "
+"deiner eigenen Moods, erstelle ein Verzeichnis unter Images/moods und füge "
+"dort NUR Bilddateien ein. Der Name der Bilddatei repräsentiert den Moods "
+"Namen."
+
+#: options/postspages.php:141
+msgid "Pages"
+msgstr "Seiten"
+
+#: options/postspages.php:145
+msgid "Disable the titles on pages?"
+msgstr "Deaktiviere die Titel auf Seiten?"
+
+#: options/postspages.php:150
+msgid ""
+"Page titles will be turned off. If you disable the titles no pages you can "
+"still add a post-image in the page editor."
+msgstr ""
+"Seitentitel werden deaktiviert. Wenn du die Titel auf Seiten deaktivierst, "
+"kannst du im Seiteneditor ein Beitragsbild hinzufügen."
+
+#: options/postspages.php:158
+msgid "Content Width"
+msgstr "Inhaltsbreite"
+
+#: options/postspages.php:166
+msgid "Media and images width on posts and pages?"
+msgstr "Breite von Medien und Bilder in Beiträgen und Seiten?"
+
+#: options/postspages.php:171
+msgid ""
+"This sets a specific width for WordPress to use for media content within "
+"your posts and pages. Default = 500"
+msgstr ""
+"Dies legt eine bestimmte Breite für Wordpress fest, bei Verwendung von "
+"Medieninhalten in Deinen Beiträgen und Seiten. Standard = 500"
+
+#: options/postspages.php:179
+msgid "Media and images width when sidebars are disabled on pages?"
+msgstr "Medien und Bilder Breite, wenn Sidebar's auf Seiten deaktiviert sind?"
+
+#: options/postspages.php:184
+msgid "When the sidebars are disabled on pages? Default = 700"
+msgstr "Wenn die Seitenleisten auf Seiten deaktiviert sind? Standard = 700"
 
 #: options/splash.php:4
 msgid ""
@@ -1610,9 +1564,18 @@ msgstr "Letzte Szene:"
 msgid "First Scene:"
 msgstr "Erste Szene:"
 
-#: widgets/classicbookmark.php:40
-msgid "Tag This Page"
-msgstr "Diese Seite taggen"
+#: widgets/classicbookmark.php:39
+msgid "BOOKMARK"
+msgstr "Lesezeichen"
+
+#: widgets/classicbookmark.php:39
+msgid ""
+"Click \"Tag Page\" to bookmark a page. When you return to the site, click "
+"\"Goto Tag\" to continue where you left off."
+msgstr ""
+"Klicke \"Tag Page\" zum bookmarken einer Seite. Wenn Du auf die Website "
+"zurück kehrst, klicke auf \"Goto Tag\", um fortzufahren, wo Du aufgehörst "
+"hast."
 
 #: widgets/classicbookmark.php:117
 msgid "Easel - Classic Bookmark"
@@ -1627,7 +1590,7 @@ msgstr ""
 
 #: widgets/classicbookmark.php:167 widgets/controlpanel.php:100
 #: widgets/menubar.php:101 widgets/randompostlink.php:92
-#: widgets/scheduledposts.php:82 widgets/translator.php:75
+#: widgets/scheduledposts.php:82
 msgid "Title:"
 msgstr "Titel:"
 
@@ -1719,10 +1682,57 @@ msgstr ""
 msgid "Scheduled Posts"
 msgstr "Geplante Beiträge"
 
-#: widgets/translator.php:22
-msgid "Easel - Google Translator"
-msgstr "Easel - Google Übersetzer"
+#~ msgid "Email &mdash; use mailto://your@email.com"
+#~ msgstr "Email &mdash; Verwende mailto://deine@emailadresse.de"
 
-#: widgets/translator.php:23
-msgid "Translate your site with Google."
-msgstr "Übersetze deine Website mit Google."
+#~ msgid ""
+#~ "Technical Support is available on the <a href=\"https://github.com/Frumph/"
+#~ "easel/issues\" target=\"_blank\">github repository</a> or use the Contact "
+#~ "form on <a href=\"http://frumph.net\" target=\"_blank\">Frumph.NET</a>."
+#~ msgstr ""
+#~ "Technische Unterstützung ist verfügbar über das <a href=\"https://github."
+#~ "com/Frumph/easel/issues\"target=\"_blank\">GitHub Repository</a> oder "
+#~ "verwende das Kontaktformular auf <a href=\"http://frumph.net\" target="
+#~ "\"_blank\">Frumph.NET</a>."
+
+#~ msgid "Custom Header"
+#~ msgstr "Benutzerdefinierter Header"
+
+#~ msgid "Custom Header Values"
+#~ msgstr "Benutzerdefinierter Header Werte"
+
+#~ msgid "Width:"
+#~ msgstr "Breite:"
+
+#~ msgid "Height:"
+#~ msgstr "Höhe:"
+
+#~ msgid ""
+#~ "Modify the height and width of the custom header *if* you use Appearance "
+#~ "&#10132; Header."
+#~ msgstr ""
+#~ "Zum Modifizieren der Höhe und Breite von dem benutzerdefinierten Header, "
+#~ "*wenn* Du verwendest Anpassen &#10132; Kopfzeile."
+
+#~ msgid ""
+#~ "3 Column Layouts are 980px width while 2 Column Layouts are 780px width "
+#~ "as default."
+#~ msgstr ""
+#~ "Bei 3 Spaltenlayouts sind 980px Breite Standard, während bei 2 "
+#~ "Spaltenlayouts 780px Breite Standard sind."
+
+#~ msgid ""
+#~ "NOTE: This should only be used if the appearance &#10132; header section "
+#~ "is not displaying your header dimensions correctly."
+#~ msgstr ""
+#~ "HINWEIS: Dieses sollte nur verwendet werden, wenn in dem Abschnitt "
+#~ "Anpassen &#10132; Kopfzeile dein Header nicht korrekt angezeigt wird."
+
+#~ msgid "Tag This Page"
+#~ msgstr "Diese Seite taggen"
+
+#~ msgid "Easel - Google Translator"
+#~ msgstr "Easel - Google Übersetzer"
+
+#~ msgid "Translate your site with Google."
+#~ msgstr "Übersetze deine Website mit Google."

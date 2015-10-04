@@ -39,34 +39,23 @@
 				<div class="clear"></div>
 			</div>
 		</div>
-		
 		</form>
 		
-		<table class="widefat" style="width: 100%">
-		<tr>
-			<td colspan="5">
-				<?php _e( 'Technical Support is available on the <a href="https://github.com/Frumph/easel/issues" target="_blank">github repository</a> or use the Contact form on <a href="http://frumph.net" target="_blank">Frumph.NET</a>.', 'easel' ); ?>
-			</td>
-		<tr>
-			<td>
-			<strong>Site URL</strong>:(siteurl) <?php echo site_url(); ?><br />
-			<strong>Blog URL</strong>:(home) <?php echo home_url(); ?><br />
-			<br />
-<table class="widefat">
-<?php 
-$variable_dump = easel_themeinfo(); 
-if (is_array($variable_dump)) {
-	while (list($key, $value) = each($variable_dump)) { ?>
-	<tr>
-		<td> <?php var_dump($key); ?></td>
-		<td> <?php var_dump($value); ?></td>
-	</tr>
-	<?php }
-        }
-    ?>
-</table>
-			</td>
-		</tr>
+		<table class="widefat">
+		<!--
+			<?php 
+			// hidden with <!-- from displaying, but not hidden from view-source
+			$variable_dump = easel_themeinfo(); 
+			if (is_array($variable_dump)) {
+				while (list($key, $value) = each($variable_dump)) { ?>
+				<tr>
+					<td style= "width: 330px;"><?php var_dump($key); ?></td>
+					<td> <?php var_dump($value); ?></td>
+				</tr>
+			<?php }
+        	}
+    		?>
+    	// -->
 		</table>
 	</div>
 </div>

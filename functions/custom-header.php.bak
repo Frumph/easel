@@ -3,9 +3,9 @@
 $custom_header_args = array(
 			'default-text-color' => 'B00',
 			'flex-width' => true,
-			'width' => get_theme_mod('easel-customize-range-site-width', '980'),
+			'width' => easel_themeinfo('custom_image_header_width'),
 			'flex-height' => true,
-			'height' => '110',
+			'height' => easel_themeinfo('custom_image_header_height'),
 			'header-text' => false,
 			'wp-head-callback' => 'easel_header_style',
 			'admin-head-callback' => 'easel_admin_header_style',

@@ -58,18 +58,32 @@ function easel_admin_options() { ?>
 	$easel_options = get_option('easel-options');
 	if ( isset($_POST['_wpnonce']) && wp_verify_nonce($_POST['_wpnonce'], 'update-options') ) {
 		
-		if ($_REQUEST['action'] == 'easel_save_debug') {
+		if ($_REQUEST['action'] == 'easel_save_general') {
+
 			foreach (array(
-				'enable_debug_footer_code',
-				'force_active_connection_close'
-			) as $key) {
-				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
-				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			'disable_scroll_to_top',  // general
+			'enable_post_thumbnail_rss',  // general
+			'disable_footer_text', // general
+			'disable_blog_on_homepage', // general
+//			'add_pw_async_code_to_head',  // general
+			'over-blog-sidebar-all-posts'  // general
+				) as $key) {
+					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
+					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+
+			foreach (array(
+				'home_post_count',  // general
+				'copyright_name',  // general
+				'copyright_url'  // general
+						) as $key) {
+							if (isset($_REQUEST[$key])) 
+								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
 			}
 			$tab = 'debug';
 			update_option('easel-options', $easel_options);
 		}
-		
+
 		if ($_REQUEST['action'] == 'easel_save_menubar') {
 
 			foreach (array(
@@ -108,56 +122,91 @@ function easel_admin_options() { ?>
 			update_option('easel-options', $easel_options);
 		}
 		
-		if ($_REQUEST['action'] == 'easel_save_general') {
+		if ($_REQUEST['action'] == 'easel_save_postspages') {
 
 			foreach (array(
-			'disable_scroll_to_top',
-			'enable_sidebar_css',
-			'enable_avatar_trick',
-			'disable_comment_note',
-			'disable_comment_javascript',
-			'enable_numbered_pagination',
-			'enable_post_thumbnail_rss',
-			'disable_footer_text',
-			'disable_page_titles',
-			'disable_post_titles',
-			'enable_post_calendar',
-			'enable_post_author_gravatar',
-			'disable_categories_in_posts',
-			'disable_tags_in_posts',
-			'disable_author_info_in_posts',
-			'disable_date_info_in_posts',
-			'disable_blog_on_homepage',
-			'enable_comments_on_homepage',
-			'display_archive_as_links',
-			'enable_last_modified_in_posts',
-			'disable_posted_at_time_in_posts',
-
-			'over-blog-sidebar-all-posts'
+			'enable_avatar_trick', // postspages
+			'disable_page_titles',  // postspages
+			'disable_post_titles',  // postspages
+			'enable_post_calendar',  // postspages
+			'enable_post_author_gravatar',  // postspages
+			'disable_categories_in_posts',  // postspages
+			'disable_tags_in_posts',  // postspages
+			'disable_author_info_in_posts',  // postspages
+			'disable_date_info_in_posts',  // postspages
+			'enable_last_modified_in_posts',  // postspages
+			'disable_posted_at_time_in_posts', // postspages
 				) as $key) {
 					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
 					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
 			}
 
 			foreach (array(
-				'moods_directory',
-				'avatar_directory',
-				'home_post_count',
-				'copyright_name',
-				'copyright_url',
-				'custom_image_header_width',
-				'custom_image_header_height',
-				'archive_display_order',
-				'excerpt_or_content_in_archive',
-				'content_width',
-				'content_width_disabled_sidebars'
+				'moods_directory',  // postspages
+				'content_width',  // postspages
+				'content_width_disabled_sidebars'  // postspages
 						) as $key) {
 							if (isset($_REQUEST[$key])) 
 								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
 			}
-			$tab = 'general';
+			$tab = 'postspages';
 			update_option('easel-options', $easel_options);
 		}
+		
+		if ($_REQUEST['action'] == 'easel_save_comments') {
+
+			foreach (array(
+			'disable_comment_note',  // comments
+			'disable_comment_javascript',  // commments
+			'enable_comments_on_homepage', // comments
+				) as $key) {
+					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
+					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+
+			foreach (array(
+				'avatar_directory'  // comments 
+						) as $key) {
+							if (isset($_REQUEST[$key])) 
+								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
+			}
+			$tab = 'comments';
+			update_option('easel-options', $easel_options);
+		}
+		
+		if ($_REQUEST['action'] == 'easel_save_archivesearch') {
+
+			foreach (array(
+			'display_archive_as_links',  // archivesearch
+			'enable_numbered_pagination'  // postspages
+				) as $key) {
+					if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
+					$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+
+			foreach (array(
+				'archive_display_order',  // archivesearch
+				'excerpt_or_content_in_archive'  // archivesearch
+						) as $key) {
+							if (isset($_REQUEST[$key])) 
+								$easel_options[$key] = wp_filter_nohtml_kses($_REQUEST[$key]);
+			}
+			$tab = 'archivesearch';
+			update_option('easel-options', $easel_options);
+		}
+				
+		if ($_REQUEST['action'] == 'easel_save_debug') {
+			foreach (array(
+				'enable_debug_footer_code',
+				'force_active_connection_close'
+			) as $key) {
+				if (!isset($_REQUEST[$key])) $_REQUEST[$key] = 0;
+				$easel_options[$key] = (bool)( $_REQUEST[$key] == 1 ? true : false );
+			}
+			$tab = 'debug';
+			update_option('easel-options', $easel_options);
+		}
+		
 		if ($tab) { ?>
 			<div id="message" class="updated"><p><strong><?php _e( 'Easel Settings SAVED!', 'easel' ); ?></strong></p></div>
 			<script>function hidemessage() { document.getElementById('message').style.display = 'none'; }</script>
@@ -172,7 +221,10 @@ function easel_admin_options() { ?>
 		  	$tab_info = array(
 				'splash' => __( 'Introduction', 'easel' ),
 		  		'general' => __( 'General', 'easel' ),
-				'menubar' => __( 'Menubar', 'easel' ),
+		  		'menubar' => __( 'Menubar', 'easel' ),
+		  		'postspages' => __( 'Posts & Pages', 'easel' ),
+				'comments' => __( 'Comments', 'easel' ),
+				'archivesearch' => __( 'Archive & Search', 'easel' ),
 				'debug' => __( 'Debug', 'easel' )
 		  	);
 

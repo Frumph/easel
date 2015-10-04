@@ -327,9 +327,33 @@ class easel_Customize {
 <style type="text/css">
 <?php
 	$customize = get_theme_mod('easel-customize');
-	$page_width = intval(get_theme_mod('easel-customize-range-site-width', 980));
+
+// get defaults here:
+	$default_width = 980;
+	$easel_options = easel_load_options();
+// if the theme mod returns no value for a selected layout at all but cp_options exists
+	if (isset($easel_options['layout']) && !intval(get_theme_mod('easel-customize-select-layout', 0))) {
+		switch ($comicpress_options['layout']) {
+			case '2cl':
+			case '2cr':
+				$default_width = 780;
+				break;
+			case '3c':
+			case '3cl':
+			case '3cr':
+			case '3clw':
+			case '3crw':
+			case '3clgn':
+			case '3crgn':
+			default:
+				$default_width = 980;
+				break;
+		}
+	}
+
+	$page_width = intval(get_theme_mod('easel-customize-range-site-width', $default_width));
 	$layout = get_theme_mod('easel-customize-select-layout', '3c');
-	$comic_width = intval($page_width) +40;
+	$comic_width = intval($page_width) + 40;
 	$scheme = get_theme_mod('easel-customize-select-scheme', 'none');
 	$left_sidebar_width = get_theme_mod('easel-customize-range-left-sidebar-width', 200)+4;
 	$right_sidebar_width = get_theme_mod('easel-customize-range-right-sidebar-width', 200)+4;
