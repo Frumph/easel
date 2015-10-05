@@ -241,18 +241,26 @@ add_action( 'update_option_gmt_offset', 'easel_delete_get_calendar_cache' );
 
 
 class easel_calendar_widget extends WP_Widget {
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			__CLASS__, // Base ID
+			__( 'Easel - Posts Calendar', 'easel' ), // Name
+			array( 'classname' => __CLASS__, 'description' => __( 'Display a calendar showing this months posts. (this calendar does not drop lines if there is no title given.)', 'easel' ), ) //Args
+		);
+	}
 	
 	/**
-     * Register widget with WordPress.
-     */
-    function __construct() {
-        parent::__construct(
-            __CLASS__, // Base ID
-            __( 'Easel - Calendar', 'easel ), // Name
-            array( 'classname' => __CLASS__, 'description' => __( 'Display a calendar showing this months posts. (this calendar does not drop lines if there is no title given.)', 'easel' ), ) // Args
-        );
-    }
-
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
 	function widget($args, $instance) {
 		global $post, $wp_query;
 		extract($args, EXTR_SKIP);
@@ -295,7 +303,17 @@ class easel_calendar_widget extends WP_Widget {
 
 		echo $after_widget;
 	}
-
+	
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
 	function update($new_instance, $old_instance = array()) {
 		$instance = array();
 		foreach (array('thumbnail', 'small', 'medium', 'large', 'link') as $field) {
@@ -304,7 +322,14 @@ class easel_calendar_widget extends WP_Widget {
 
 		return $instance;
 	}
-
+	
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
 	function form($instance) {
 		$instance = wp_parse_args( (array) $instance, array( 'thumbnail' => '', 'small' => '', 'medium' => '', 'large' => '', 'link' => '') );
 
@@ -338,6 +363,7 @@ class easel_calendar_widget extends WP_Widget {
 	}
 }
 
+// register Calendar widget
 function easel_calendar_widget_init() {
 	register_widget('easel_calendar_widget');
 }

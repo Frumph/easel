@@ -87,7 +87,7 @@ function easel_pre_parser($query) {
 //		$query->set('category__in', '8');
 		$query->set('posts_per_page', easel_themeinfo('home_post_count'));
 	}
-	if (($query->is_archive() || $query->is_search() || is_post_type_archive())  && !$query->is_feed() && $query->is_main_query()) {	
+	if (($query->is_archive() || $query->is_search() || is_post_type_archive())  && !$query->is_feed() && $query->is_main_query()) {
 		$archive_display_order = easel_themeinfo('archive_display_order');
 		if (empty($archive_display_order)) $archive_display_order = 'desc';
 		$query->set('order', $archive_display_order);
@@ -156,7 +156,7 @@ function easel_excerpt_length($length) {
 
 if (!function_exists('easel_auto_excerpt_more')) {
 	function easel_auto_excerpt_more( $more ) {
-		return __( ' [&hellip;]', 'easel' ) . ' <a class="more-link" href="'. get_permalink() . '">' . __( '&darr; Read the rest of this entry...', 'easel' ) . '</a>';
+		return __( '[&hellip;]', 'easel' ) . ' <a class="more-link" href="'. get_permalink() . '">' . __( '&darr; Read the rest of this entry...', 'easel' ) . '</a>';
 	}
 }
 
@@ -168,11 +168,10 @@ if (!function_exists('easel_is_layout')) {
 	function easel_is_layout($choices) {
 		$choices = explode(",", $choices);
 		$easel_options = easel_load_options();
-		if (isset($easel_options['layout']) && !intval(get_theme_mod('easel-customize-select-layout', 0))) {		
+		if (isset($easel_options['layout']) && !get_theme_mod('easel-customize-select-layout', false)) {
 			if (in_array($easel_options['layout'], $choices)) return true;
-		elseif (in_array(get_theme_mod('easel-customize-select-layout', '3c'), $choices)) return true;
+		} elseif (in_array(get_theme_mod('easel-customize-select-layout', '3c'), $choices)) return true;
 		return false;
-		}
 	}
 }
 
@@ -213,7 +212,7 @@ function easel_sidebars_disabled() {
 
 global $content_width;
 if (!isset($content_width)) {
-	$content_width = easel_themeinfo('content_width');		
+	$content_width = easel_themeinfo('content_width');
 	if (!$content_width) $content_width = 500;
 }
 
@@ -234,7 +233,7 @@ if (!function_exists('easel_display_social_icons')) {
 		if (!empty($deviantart)) $output .= '<a href="'.$deviantart.'" target="_blank" title="'.__( 'my DeviantART', 'easel' ).'" class="menunav-social menunav-deviantart">'.__( 'DeviantART', 'easel' ).'</a>'."\r\n";
 		if (!empty($tumblr)) $output .= '<a href="'.$tumblr.'" target="_blank" title="'.__( 'Examine my Tumblr', 'easel' ).'" class="menunav-social menunav-tumblr">'.__( 'Tumblr', 'easel' ).'</a>'."\r\n";
 		if (!empty($facebook)) $output .= '<a href="'.$facebook.'" target="_blank" title="'.__( 'Friend on Facebook', 'easel' ).'" class="menunav-social menunav-facebook">'.__( 'Facebook', 'easel' ).'</a>'."\r\n";
-		if (!empty($myspace)) $output .= '<a href="'.$myspace.'" target="_blank" title="'.__( 'Make use of MySpace', 'easel' ).'" class="menunav-social menunav-myspace">'.__( 'MySpace', 'easel' ).'</a>'."\r\n";		
+		if (!empty($myspace)) $output .= '<a href="'.$myspace.'" target="_blank" title="'.__( 'Make use of MySpace', 'easel' ).'" class="menunav-social menunav-myspace">'.__( 'MySpace', 'easel' ).'</a>'."\r\n";
 		if (!empty($linkedin)) $output .= '<a href="'.$linkedin.'" target="_blank" title="'.__( 'Look at my LinkedIn', 'easel' ).'" class="menunav-social menunav-linkedin">'.__( 'LinkedIn', 'easel' ).'</a>'."\r\n";
 		if (!empty($twitter)) $output .= '<a href="'.$twitter.'" target="_blank" title="'.__( 'Follow me on Twitter', 'easel' ).'" class="menunav-social menunav-twitter">'.__( 'Twitter', 'easel' ).'</a>'."\r\n";
 		if (!empty($flickr)) $output .= '<a href="'.$flickr.'" target="_blank" title="'.__( 'Gaze at my Flickr', 'easel' ).'" class="menunav-social menunav-flickr">'.__( 'Flickr', 'easel' ).'</a>'."\r\n";		
