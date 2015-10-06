@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Easel 4.2.9.5 Beta\n"
+"Project-Id-Version: Easel 4.3 Beta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 10:27+0200\n"
-"PO-Revision-Date: 2015-10-05 10:28+0200\n"
+"POT-Creation-Date: 2015-10-06 12:40+0200\n"
+"PO-Revision-Date: 2015-10-06 12:47+0200\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -33,16 +33,16 @@ msgstr "oder probiere eine Suche:"
 
 #: archive.php:22 archive.php:26 archive.php:28 archive.php:30 archive.php:44
 #: archive.php:46 archive.php:49
-msgid "Archive for "
-msgstr "Archiv für "
+msgid "Archive for"
+msgstr "Archiv für"
 
 #: archive.php:24
-msgid "Posts Tagged "
+msgid "Posts Tagged"
 msgstr "Beiträge getaggt "
 
 #: archive.php:32
-msgid "Author Archive "
-msgstr "Autorenarchiv "
+msgid "Author Archive"
+msgstr "Autorenarchiv"
 
 #: archive.php:34
 msgid "Archives"
@@ -165,8 +165,8 @@ msgid "Website URL"
 msgstr "Website URL"
 
 #: comments.php:84
-msgid "NOTE &mdash; You can use these HTML tags and attributes: "
-msgstr "HINWEIS &mdash; Du kannst diese HTML-Tags und Attribute verwenden: "
+msgid "NOTE &mdash; You can use these HTML tags and attributes:"
+msgstr "HINWEIS &mdash; Du kannst diese HTML-Tags und Attribute verwenden:"
 
 #: comments.php:84
 msgid "Comment &not;"
@@ -576,20 +576,20 @@ msgid "Site Width"
 msgstr "Seitenbreite"
 
 #: functions/customize.php:88
-msgid "Minimum value is 720px, maximum is 1600px width - Currently saved at: "
+msgid "Minimum value is 720px, maximum is 1600px width - Currently saved at:"
 msgstr ""
-"Minimalwert ist 720px, Maximalwert ist 1600 Breite - Derzeitig gespeichert "
-"ist: "
+"Minimalwert ist 720px, Maximalwert ist 1600px Breite - Derzeitig gespeichert "
+"ist:"
 
 #: functions/customize.php:101
 msgid "Left Sidebar Width"
 msgstr "Linke Sidebar Breite"
 
 #: functions/customize.php:102 functions/customize.php:116
-msgid "Minimum value is 200px, maximum is 400px width - Currently saved at: "
+msgid "Minimum value is 200px, maximum is 400px width - Currently saved at:"
 msgstr ""
 "Minimalwert ist 200px, Maximalwert ist 400px Breite - derzeitig gespeichert "
-"ist: "
+"ist:"
 
 #: functions/customize.php:115
 msgid "Right Sidebar Width"
@@ -768,12 +768,12 @@ msgid "at"
 msgstr "um"
 
 #: functions/displaypost.php:155
-msgid "Posted In: "
-msgstr "Veröffentlicht In:"
+msgid "Posted In:"
+msgstr "Veröffentlicht in:"
 
 #: functions/displaypost.php:165
-msgid "&#9492; Tags: "
-msgstr "&#9492; Tags: "
+msgid "&#9492; Tags:&nbsp;"
+msgstr "&#9492; Tags:&nbsp;"
 
 #: functions/displaypost.php:176
 msgid "Comment&nbsp;"
@@ -815,11 +815,11 @@ msgid " moods are available."
 msgstr " Moods sind verfügbar."
 
 #: functions/moods.php:73
-msgid "Using Moods from directory: "
-msgstr "Verwende Moods vom Verzeichnis: "
+msgid "Using Moods from directory:"
+msgstr "Verwende Moods vom Verzeichnis:"
 
 #: functions/moods.php:74
-msgid "Current Mood: "
+msgid "Current Mood:"
 msgstr "Derzeitiger Mood:"
 
 #: functions/page-options.php:23
@@ -1478,11 +1478,11 @@ msgstr "Medien und Bilder Breite, wenn Sidebar's auf Seiten deaktiviert sind?"
 msgid "When the sidebars are disabled on pages? Default = 700"
 msgstr "Wenn die Seitenleisten auf Seiten deaktiviert sind? Standard = 700"
 
-#: options/splash.php:6
+#: options/splash.php:7
 msgid "Notices"
 msgstr "Hinweise"
 
-#: options/splash.php:11
+#: options/splash.php:12
 msgid ""
 "Schema, layout, site width and colors can be modified in the "
 "<strong>Appearance &#10132; Customize</strong> section of the wp-admin."
@@ -1491,18 +1491,18 @@ msgstr ""
 "Du modifizieren in <strong>Design &#10132; Anpassen</strong> Bereich von wp-"
 "admin."
 
-#: options/splash.php:19
+#: options/splash.php:20
 msgid "Technical Support"
 msgstr "Technische Unterstützung"
 
-#: options/splash.php:24
+#: options/splash.php:25
 msgid ""
 "You can contact me for technical support at any of the following locations:"
 msgstr ""
 "Du kannst mich für technischen Support unter einem der folgenden Orte "
 "erreichen:"
 
-#: options/splash.php:25
+#: options/splash.php:26
 msgid "(best chances to reach me at the top going down to the least chance)"
 msgstr ""
 "(Beste Chancen, mich zu erreichen, versuche es von oben nach unten zur "
@@ -1775,13 +1775,3 @@ msgstr ""
 #: widgets/scheduledposts.php:39
 msgid "Scheduled Posts"
 msgstr "Geplante Beiträge"
-
-#~ msgid " [&hellip;]"
-#~ msgstr " [&hellip;]"
-
-#~ msgid ""
-#~ "Schemes, layout and Site Width along with other customizations can be "
-#~ "modified in the appearance &#10132; customize section of the wp-admin."
-#~ msgstr ""
-#~ "Schemas, Layout und Webseiten Beite zusammen mit anderen Anpassungen "
-#~ "kannst du verändern im Bereich Design &#10132;  Anpassen von wp-admin."

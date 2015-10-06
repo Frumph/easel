@@ -1,5 +1,6 @@
 <div id="easel-splash">
 	<?php wp_nonce_field('update-options') ?>
+		<div class="comicpress-options">
 			<table class="widefat">
 				<thead>
 					<tr>
@@ -26,9 +27,6 @@
 					</td>
 				</tr>
 			</table>
-			<br />
-		</div>
-</div>
 			<br />
 		</div>
 </div>
