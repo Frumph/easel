@@ -370,6 +370,6 @@ function easel_themeinfo($whichinfo = null) {
 // Dashboard Menu Options - Only run in the wp-admin area
 if (is_admin()) {
 	@require_once(get_template_directory().'/options.php');
-    /* translators: theme discription for wp-admin */
-    $bogus_translation = __( 'Publish a WebComic with the Easel theme and the Comic Easel plugin.', 'easel' );
+	/* translators: theme discription for wp-admin */
+	$bogus_translation = __( 'Publish a WebComic with the Easel theme and the Comic Easel plugin.', 'easel' );
 }

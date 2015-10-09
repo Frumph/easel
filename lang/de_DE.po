@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Easel 4.3 Beta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-06 12:40+0200\n"
-"PO-Revision-Date: 2015-10-06 12:47+0200\n"
+"PO-Revision-Date: 2015-10-09 18:54+0200\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -697,7 +697,7 @@ msgstr "Info. Linie von dem Beitragsautor"
 
 #: functions/customize.php:187
 msgid "Sitewide Textcolor"
-msgstr "Seitenbreite Textfarbe"
+msgstr "Seitenweite Textfarben"
 
 #: functions/customize.php:189
 msgid "Site Tagline"
@@ -1172,7 +1172,7 @@ msgid ""
 "any text in the footer. If you wish to add you own custom content, you may "
 "do so via Appearance &#10132; Widgets &#10132; Footer."
 msgstr ""
-"Wenn aktiv, wird im Footer kein Text angezeigt. Wenn du deinen eigenen "
+"Wenn aktiviert, wird im Footer kein Text angezeigt. Wenn du deinen eigenen "
 "Footer Text eingeben möchtest, kannst du das via Design &#10132; Widgets "
 "&#10132; Footer tun."
 
@@ -1416,8 +1416,8 @@ msgid ""
 "Checkmarking this will make it so that it will show when the last time that "
 "the post was modified in the post date information."
 msgstr ""
-"Wenn aktiv, wird in den Beitrags Datums Informationen angezeigt, wann ein "
-"Artikel noch mal geändert wurde."
+"Wenn aktiviert, wird in den Beitrags Datums Informationen angezeigt, wann "
+"ein Artikel noch mal geändert wurde."
 
 #: options/postspages.php:119
 msgid "Moods Directory"
