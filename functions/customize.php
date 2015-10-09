@@ -113,6 +113,7 @@ class easel_Customize {
 		$wp_customize->add_setting( 'easel-customize-range-right-sidebar-width', array('default' => '200', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
 		$wp_customize->add_control( 'easel-customize-range-right-sidebar-width-control' , array(
 				'label' => __( 'Right Sidebar Width', 'easel' ),
+				'description' => __( 'Minimum value is 160px, maximum is 400px width - Currently saved at:', 'easel' ).' '.get_theme_mod('easel-customize-range-right-sidebar-width', 200).'px',
 				'settings' => 'easel-customize-range-right-sidebar-width',
 				'section' => 'easel-scheme-options',
 				'type' => 'range',
