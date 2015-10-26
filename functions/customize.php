@@ -15,6 +15,65 @@ function eaeel_sanitize_checkbox( $input ) {
 	}
 }
 
+/*	CUSTOM RANGE SLIDERS WITH VALUE BUBBLE
+
+	Extends WP_Customize_Control with two new range slider controls
+	adding either a <span> or an <input> after the range slider to
+	show the current value.  The <span> version is read-only, but
+	the <input> version allows entering the value directly, which
+	is sync'd to range slider and validated against any min/max
+	set for the range slider.  Except on IE9 or lower, which shows
+	range sliders as text fields and does not obey min/max params.
+	
+	CSS is in theme /css/options.css
+	< IE 10 exclusion in /js/no_IE_range.js
+*/
+if (class_exists('WP_Customize_Control')) {
+	/*	These extensions both use inline javascript so you don't have to enqueue a script just for them */
+	class WP_Customize_Range_Control extends WP_Customize_Control {
+		/*	Range Slider with READ ONLY output bubble after */
+		public function render_content() {
+			?>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label); ?></span>
+				<span class="description customize-control-description"><?php echo esc_html( $this->description); ?></span>
+				<input class="custorange" type="range" id="input-<?php echo esc_html( $this->id ); ?>" <?php $this->link(); ?> value="<?php echo esc_html( $this->value() ); ?>" <?php $this->input_attrs(); ?> onmousemove="if(this.focus){this.nextElementSibling.innerHTML=this.value;}" ontouchmove="if(this.focus){this.nextElementSibling.innerHTML=this.value;}">
+				<span class="range-value"><?php echo esc_html( $this->value() ); ?></span>
+			</label>
+			<?php	
+		}
+	}
+	class WP_Customize_RangeAndText_Control extends WP_Customize_Control {
+		/* 	Range Slider with Input Bubble */
+		public function render_content() {
+			$min = ''; $max = '';
+			$attrs = $this->input_attrs;
+			foreach ($attrs as $key=>$val) {
+				if ($key=='min') { $min = $val;}
+				if ($key=='max') { $max = $val;}
+			}
+			?>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label); ?></span>
+				<span class="description customize-control-description"><?php echo esc_html( $this->description); ?></span>
+				<input class="custorange" type="range" id="input-<?php echo esc_html( $this->id ); ?>" <?php $this->link(); ?> value="<?php echo esc_html( $this->value() ); ?>" <?php $this->input_attrs(); ?> onmousemove="if(this.focus){this.nextElementSibling.firstElementChild.value=this.value;}" ontouchmove="if(this.focus){this.nextElementSibling.firstElementChild.value=this.value;}">
+				<span class="range-value">
+				<input type="text" class="range-value" value="<?php echo esc_html( $this->value() ); ?>" onchange="var min='<?php echo $min; ?>';var max='<?php echo $max; ?>';
+				if(this.focus){
+					if(min!=''&&this.value<parseInt(min)){
+						this.value = parseInt(min);
+					} else if (max!=''&&this.value>parseInt(max)) {
+						this.value = parseInt(max);
+					} else {};
+					this.parentNode.previousElementSibling.value=this.value
+				};
+				"></span>
+			</label>
+			<?php
+		}
+	}
+}
+
 class easel_Customize {
 
 	/**
@@ -83,7 +142,7 @@ class easel_Customize {
 			));
 			
 		$wp_customize->add_setting( 'easel-customize-range-site-width', array('default' => '980', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
-		$wp_customize->add_control( 'easel-customize-range-site-width-control' , array(
+		$wp_customize->add_control( new WP_Customize_RangeAndText_Control( $wp_customize, 'easel-customize-range-site-width', array(
 				'label' => __( 'Site Width', 'easel' ),
 				'description' => __( 'Minimum value is 720px, maximum is 1600px width - Currently saved at:', 'easel' ).' '.get_theme_mod('easel-customize-range-site-width', 980).'px',
 				'settings' => 'easel-customize-range-site-width',
@@ -94,10 +153,10 @@ class easel_Customize {
 					'max' => 1600,
 					'step' => 2,
 				),
-		));
+		)));
 		
 		$wp_customize->add_setting( 'easel-customize-range-left-sidebar-width', array('default' => '200', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
-		$wp_customize->add_control( 'easel-customize-range-left-sidebar-width-control' , array(
+		$wp_customize->add_control( new WP_Customize_Range_Control( $wp_customize, 'easel-customize-range-left-sidebar-width-control' , array(
 				'label' => __( 'Left Sidebar Width', 'easel' ),
 				'description' => __( 'Minimum value is 160px, maximum is 400px width - Currently saved at:', 'easel' ).' '.get_theme_mod('easel-customize-range-left-sidebar-width', 200).'px',
 				'settings' => 'easel-customize-range-left-sidebar-width',
@@ -108,10 +167,10 @@ class easel_Customize {
 					'max' => 400,
 					'step' => 2,
 				),
-		));
+		)));
 		
 		$wp_customize->add_setting( 'easel-customize-range-right-sidebar-width', array('default' => '200', 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'wp_filter_nohtml_kses'));
-		$wp_customize->add_control( 'easel-customize-range-right-sidebar-width-control' , array(
+		$wp_customize->add_control( new WP_Customize_Range_Control( $wp_customize, 'easel-customize-range-right-sidebar-width-control' , array(
 				'label' => __( 'Right Sidebar Width', 'easel' ),
 				'description' => __( 'Minimum value is 160px, maximum is 400px width - Currently saved at:', 'easel' ).' '.get_theme_mod('easel-customize-range-right-sidebar-width', 200).'px',
 				'settings' => 'easel-customize-range-right-sidebar-width',
@@ -122,7 +181,7 @@ class easel_Customize {
 					'max' => 400,
 					'step' => 2,
 				),
-		));
+		)));
 		
 		$wp_customize->add_setting( 'easel-customize-detach-footer', array('default' => false, 'type' => 'theme_mod', 'capability' => 'edit_theme_options', 'transport' => 'refresh', 'sanitize_callback' => 'easel_sanitize_checkbox'));
 		$wp_customize->add_control( 'easel-customize-detach-footer-control', array(
@@ -185,19 +244,19 @@ class easel_Customize {
 			array('slug' => 'footer_background', 'description' => '#footer', 'section' => 'colors', 'label' => __( 'Footer', 'easel' ), 'default' => ''),
 			// Text Colors
 			array('slug' => 'content_text_color', 'description' => 'body', 'section' => 'easel-text-colors', 'label' => __( 'Sitewide Textcolor', 'easel' ), 'default' => ''),
-			array('slug' => 'header_textcolor', 'description' => '#header', 'section' => 'easel-text-colors', 'label' => '', 'default' => ''),
-			array('slug' => 'header_description_textcolor', 'description' => '.header-info .description', 'section' => 'easel-text-colors', 'label' => __( 'Site Tagline', 'easel' ), 'default' => ''),
-			array('slug' => 'breadcrumb_textcolor', 'description' => '#breadcrumb-wrapper', 'section' => 'easel-text-colors', 'label' => '', 'default' => ''),
+			array('slug' => 'header_textcolor', 'description' => '#header', 'section' => 'easel-text-colors', 'label' => __( 'Header', 'easel' ), 'default' => ''),
+			array('slug' => 'header_description_textcolor', 'description' => '.header-info .description', 'section' => 'easel-text-colors', 'label' => __( 'Site Description', 'easel' ), 'default' => ''),
+			array('slug' => 'breadcrumb_textcolor', 'description' => '#breadcrumb-wrapper', 'section' => 'easel-text-colors', 'label' => __( 'Breadcrumbs', 'easel' ), 'default' => ''),
 			array('slug' => 'lrsidebar_widgettitle_textcolor', 'description' => 'h2.widget-title', 'section' => 'easel-text-colors', 'label' => __( 'Widget Titles', 'easel' ), 'default' => ''),
-			array('slug' => 'lrsidebar_textcolor', 'description' => '.sidebar', 'section' => 'easel-text-colors', 'label' => __( 'Sidebar Textcolor', 'easel' ), 'default' => ''),
+			array('slug' => 'lrsidebar_textcolor', 'description' => '.sidebar', 'section' => 'easel-text-colors', 'label' => __( 'Sidebar', 'easel' ), 'default' => ''),
 			array('slug' => 'posttitle_textcolor', 'description' => 'h2.post-title', 'section' => 'easel-text-colors', 'label' => __( 'Non-Link Post Titles', 'easel' ), 'default' => ''),
 			array('slug' => 'pagetitle_textcolor', 'description' => 'h2.page-title', 'section' => 'easel-text-colors', 'label' => __( 'Page Titles', 'easel' ), 'default' => ''),
-			array('slug' => 'postinfo_textcolor', 'description' => '.post-info', 'section' => 'easel-text-colors', 'label' => '', 'default' => ''),
+			array('slug' => 'postinfo_textcolor', 'description' => '.post-info', 'section' => 'easel-text-colors', 'label' => __( 'Top Section of a Post', 'easel' ), 'default' => ''),
 			array('slug' => 'post_page_navigation_textcolor', 'description' => '.uentry, #comment-wrapper, #wp-paginav', 'section' => 'easel-text-colors', 'label' => __( 'Post/Page Comments', 'easel' ), 'default' => ''),
 			array('slug' => 'footer_textcolor', 'description' => '#footer', 'section' => 'easel-text-colors', 'label' => __( 'Footer', 'easel' ), 'default' => ''),
 			array('slug' => 'footer_copyright_textcolor', 'description' => '.copyright-info', 'section' => 'easel-text-colors', 'label' => __( 'Copyright', 'easel' ), 'default' => ''),
 			// Link Colors
-			array('slug' => 'content_link_acolor', 'description' => 'body a:link', 'section' => 'easel-link-colors', 'label' => '', 'default' => ''),
+			array('slug' => 'content_link_acolor', 'description' => 'body a:link', 'section' => 'easel-link-colors', 'label' => __( 'Sitewide Linkcolor', 'easel' ), 'default' => ''),
 			array('slug' => 'content_link_vcolor', 'description' => 'body a:visited', 'section' => 'easel-link-colors', 'label' => '', 'default' => ''),
 			array('slug' => 'content_link_hcolor', 'description' => 'body a:hover', 'section' => 'easel-link-colors', 'label' => '', 'default' => ''),
 			array('slug' => 'header_title_acolor', 'description' => '#header h1 a', 'section' => 'easel-link-colors', 'label' => '', 'default' => ''),
@@ -475,3 +534,13 @@ function easel_customize_body_class($classes = array()){
 	if (function_exists('ceo_pluginfo') && get_theme_mod('easel-customize-comic-in-column', false)) $classes[] = 'cnc';
 	return $classes;
 }
+
+function controls_stylesheet() {
+	wp_enqueue_style('easel-options-style', get_template_directory_uri() . '/options/options.css');
+}
+add_action( 'admin_enqueue_scripts', 'controls_stylesheet' );
+
+function no_IE_range(){
+	wp_enqueue_script('no_IE_range', get_template_directory_uri() . '/js/no_IE_range.js');
+}
+add_action( 'admin_enqueue_scripts', 'no_IE_range');
