@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Easel 4.3 Beta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-12 19:02+0200\n"
-"PO-Revision-Date: 2015-10-12 19:36+0200\n"
+"POT-Creation-Date: 2015-10-26 16:38+0100\n"
+"PO-Revision-Date: 2015-10-26 16:40+0100\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
@@ -396,42 +396,51 @@ msgid "Publish a WebComic with the Easel theme and the Comic Easel plugin."
 msgstr ""
 "Publiziere ein Webcomic mit dem Easel Theme und dem Comic Easel Plugin."
 
-#: functions/breadcrumbs.php:11 functions/wp-pagenavi.php:165
-msgid "&raquo;"
-msgstr "&raquo;"
-
 #. translators: home link for breadcrumps
-#: functions/breadcrumbs.php:13
+#: functions/breadcrumbs.php:12
 msgid "Home"
 msgstr "Zurück"
 
-#: functions/breadcrumbs.php:35
-msgid "Archive by category"
-msgstr "Archiv der Kategorie"
+#. translators: text for a category page for breadcrumps
+#: functions/breadcrumbs.php:14
+#, php-format
+msgid "Archive by Category \"%s\""
+msgstr "Archiv der Kategorie \"%s\""
 
-#: functions/breadcrumbs.php:67
-msgid "No Results"
-msgstr "Kein Ergebnisse"
+#. translators: text for a search results page for breadcrumps
+#: functions/breadcrumbs.php:16
+#, php-format
+msgid "Search Results for \"%s\" Query"
+msgstr "Suchergebnisse für \"%s\" Anfrage"
 
-#: functions/breadcrumbs.php:97
-msgid "Search results for"
-msgstr "Suchergebnisse für"
+#. translators: text for a tag page for breadcrumps
+#: functions/breadcrumbs.php:18
+#, php-format
+msgid "Posts Tagged \"%s\""
+msgstr "Beiträge Tagged\"%s\""
 
-#: functions/breadcrumbs.php:100
-msgid "Posts tagged"
-msgstr "Beiträge getaggt"
+#. translators: text for an author page for breadcrumps
+#: functions/breadcrumbs.php:20
+#, php-format
+msgid "Articles Posted by %s"
+msgstr "Beiträge veröffentlicht von %s"
 
-#: functions/breadcrumbs.php:105
-msgid "Articles posted by"
-msgstr "Artikel geschrieben von"
-
-#: functions/breadcrumbs.php:108
+#. translators: text for the 404 page for breadcrumps
+#: functions/breadcrumbs.php:22
 msgid "Error 404"
 msgstr "Fehler 404"
 
-#: functions/breadcrumbs.php:114
-msgid "Page"
-msgstr "Seite"
+#. translators: text 'Page N' for breadcrumps
+#: functions/breadcrumbs.php:24
+#, php-format
+msgid "Page %s"
+msgstr "Seite %s"
+
+#. translators: text 'Comment Page N' for breadcrumps
+#: functions/breadcrumbs.php:26
+#, php-format
+msgid "Comment Page %s"
+msgstr "Kommentarseite %s"
 
 #. translators: date and time in comments
 #: functions/comment-functions.php:131
@@ -852,6 +861,10 @@ msgstr "&laquo; Erste"
 #: functions/wp-pagenavi.php:164
 msgid "Last &raquo;"
 msgstr "Letzte &raquo;"
+
+#: functions/wp-pagenavi.php:165
+msgid "&raquo;"
+msgstr "&raquo;"
 
 #: functions/wp-pagenavi.php:166
 msgid "&laquo;"
