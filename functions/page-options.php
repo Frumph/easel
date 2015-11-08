@@ -9,10 +9,11 @@ function easel_page_editor_options($post) {
 		$disable_sidebars = get_post_meta($post->ID, 'disable-sidebars', true);
 	?>
 	<table>
-		<td valign="top">
+		<tr>
+			<td valign="top">
 			<input id="easel_sidebar_remove" name="easel_sidebar_remove" type="checkbox" value="1"<?php echo $disable_sidebars ? ' checked="checked"' : ''; ?> /> Disable Sidebars
-		</td>
-	</tr>
+			</td>
+		</tr>
 	</table>
 </div>
 <?php
