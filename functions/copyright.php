@@ -14,7 +14,7 @@ if (!function_exists('easel_copyright_text')) {
 		if (!easel_themeinfo('disable_scroll_to_top')) { 
 			$output .= "<span class=\"footer-uptotop\">";
 				$output .= "<span class=\"footer-pipe\">|</span> ";
-				$output .= "<a href=\"#outside\" onclick=\"scrollup(); return false;\">".__( 'Back to Top &uarr;', 'easel' )."</a>";
+				$output .= "<a href=\"\" onclick=\"scrollup(); return false;\">".__( 'Back to Top &uarr;', 'easel' )."</a>";
 			$output .="</span>\r\n";
 		}
 		$output .= "</p>\r\n";
