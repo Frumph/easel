@@ -45,56 +45,87 @@ if(get_query_var('author_name') ) {
 					<?php if (current_user_can('manage_options')) { ?>
 					<table class="user-info">
 						<tr>
-						<td class="user-info-name"><?php _e( 'Registered on', 'easel' ); ?></td>
-						<td class="user-info-value"><?php echo date_i18n(get_option('date_format'), strtotime($curauth->user_registered)); ?></td>
+							<td class="user-info-name">
+								<?php _e( 'Registered on', 'easel' ); ?>
+							</td>
+							<td class="user-info-value">
+								<?php echo date_i18n(get_option('date_format'), strtotime($curauth->user_registered)); ?>
+							</td>
 						</tr>
 						<tr>
-						<td class="user-info-name"><?php _e( 'Posts #', 'easel' ); ?></td>
-						<td class="user-info-value"><?php $author_id = get_the_author_meta('ID'); echo count_user_posts( $author_id ); ?></td>
+							<td class="user-info-name">
+								<?php _e( 'Posts #', 'easel' ); ?>
+							</td>
+							<td class="user-info-value">
+								<?php $author_id = get_the_author_meta('ID'); echo count_user_posts( $author_id ); ?>
+							</td>
 						</tr>
 					</table>
 					<?php } ?>
 					<br />
 					<table class="user-contacts">
-					<?php if (current_user_can('manage_options')) { ?>
+						<?php if (current_user_can('manage_options')) { ?>
 						<tr>
-							<td class="user-contacts-serv"><?php _e( 'Email', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="mailto://<?php echo $curauth->user_email; ?>" target="_blank"><?php echo $curauth->user_email; ?></a></td>
+							<td class="user-contacts-serv">
+								<?php _e( 'Email', 'easel' ); ?>
+							</td>
+							<td class="user-contacts-url">
+								<a href="mailto://<?php echo $curauth->user_email; ?>" target="_blank"><?php echo $curauth->user_email; ?></a>
+							</td>
 						</tr>
-					<?php } ?>
-					<?php if (!empty($curauth->user_url)) { ?>
+						<?php }
+						if (!empty($curauth->user_url)) { ?>
 						<tr>
-							<td class="user-contacts-serv"><?php _e( 'Website', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a></td>
+							<td class="user-contacts-serv">
+								<?php _e( 'Website', 'easel' ); ?>
+							</td>
+							<td class="user-contacts-url">
+								<a href="<?php echo $curauth->user_url; ?>" target="_blank"><?php echo $curauth->user_url; ?></a>
+							</td>
 						</tr>
-					<?php }
+						<?php }
 						if (!empty($curauth->twitter)) { ?>
 						<tr>
-							<td class="user-contacts-serv"><?php _e( 'Twitter', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="<?php echo $curauth->twitter; ?>" target="_blank"><?php echo $curauth->twitter; ?></a></td>
+							<td class="user-contacts-serv">
+								<?php _e( 'Twitter', 'easel' ); ?>
+							</td>
+							<td class="user-contacts-url">
+								<a href="<?php echo $curauth->twitter; ?>" target="_blank"><?php echo $curauth->twitter; ?></a>
+							</td>
 						</tr>
-					<?php }
+						<?php }
 						if (!empty($curauth->facebook)) { ?>
 						<tr>
-							<td class="user-contacts-serv"><?php _e( 'Facebook', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="<?php echo $curauth->facebook; ?>" target="_blank"><?php echo $curauth->facebook; ?></a></td>
+							<td class="user-contacts-serv">
+								<?php _e( 'Facebook', 'easel' ); ?>
+							</td>
+							<td class="user-contacts-url">
+								<a href="<?php echo $curauth->facebook; ?>" target="_blank"><?php echo $curauth->facebook; ?></a>
+							</td>
 						</tr>
-					<?php }
+						<?php }
 						if (!empty($curauth->googleplus)) { ?>
 						<tr>
-							<td class="user-contacts-serv"><?php _e( 'Google+', 'easel' ); ?></td>
-							<td class="user-contacts-url"><a href="<?php echo $curauth->googleplus; ?>" target="_blank" rel="me"><?php echo $curauth->googleplus; ?></a></td>
+							<td class="user-contacts-serv">
+								<?php _e( 'Google+', 'easel' ); ?>
+							</td>
+							<td class="user-contacts-url">
+								<a href="<?php echo $curauth->googleplus; ?>" target="_blank" rel="me"><?php echo $curauth->googleplus; ?></a>
+							</td>
 						</tr>
-					<?php } ?>
+						<?php } ?>
 					</table>
 				</div>
+				
 				<?php if (!empty($curauth->description)) { ?>
 				<div class="userpage-desc">
 					<?php echo $curauth->description; ?>
 				</div>
 				<?php } ?>
+				
 			</div>
 			<div class="clear"></div>
+			
 			<?php if (have_posts()) { ?>
 			<div class="userpage-posts">
 				<h3><?php _e( 'Posts by', 'easel' ); ?> <?php echo $authorname; ?> &not;</h3>
@@ -102,8 +133,12 @@ if(get_query_var('author_name') ) {
 				<table class="author-posts">
 				<?php while (have_posts()) : the_post(); ?>
 					<tr>
-						<td class="author-archive-date" align="right"><?php the_time('M j, Y') ?></td>
-						<td class="author-archive-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></td>
+						<td class="author-archive-date" align="right">
+							<?php the_time('M j, Y') ?>
+						</td>
+						<td class="author-archive-title">
+							<a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+						</td>
 					</tr>
 				<?php endwhile; ?>
 				</table>
