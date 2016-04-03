@@ -60,7 +60,7 @@ if (!function_exists('easel_display_post_title')) {
 if (!function_exists('easel_display_post_thumbnail')) {
 	function easel_display_post_thumbnail($size = 'thumbnail') {
 		global $post, $wp_query;
-		if ($post->post_type !== 'comic') {
+		if ($post->post_type == 'post') {
 			$post_thumbnail = '';
 			$link = get_post_meta( $post->ID, 'link', true );
 			if (empty($link)) $link = get_permalink();

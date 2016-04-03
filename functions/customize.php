@@ -109,7 +109,8 @@ class easel_Customize {
 			'3cl' => __( '3 Column, both sidebars on left', 'easel' ),
 			'3cr' => __( '3 Column, both sidebars on right', 'easel' ),
 			'2cl' => __( '2 Column, sidebar on left', 'easel' ),
-			'2cr' => __( '2 Column, sidebar on right', 'easel' )
+			'2cr' => __( '2 Column, sidebar on right', 'easel' ),
+			'ncl' => __( 'No Columns, no L/R sidebars', 'easel'),
 		);
 		
 		if (function_exists('ceo_pluginfo')) {
@@ -395,6 +396,7 @@ class easel_Customize {
 		switch ($comicpress_options['layout']) {
 			case '2cl':
 			case '2cr':
+			case 'ncl':
 				$default_width = 780;
 				break;
 			case '3c':
@@ -428,6 +430,10 @@ class easel_Customize {
 	$content = '';
 	$content_width = '';
 	switch ($layout) {
+		case 'ncl':
+			$add_width = 0;
+			$content_width = $page_width + $add_width;
+			break;
 		case '2cl':
 			$add_width = 2;
 			if ($scheme == 'ceasel') $add_width = $add_width + 2;
