@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Easel 4.3 Beta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-03 16:29+0200\n"
-"PO-Revision-Date: 2016-04-03 16:30+0200\n"
+"PO-Revision-Date: 2016-04-13 18:43+0200\n"
 "Last-Translator: Kniebremser <kniebremser@fluchtsportler.de>\n"
 "Language-Team: Fluchtsportler.de <kniebremser@fluchtsportler.de>\n"
 "Language: de_DE\n"
@@ -1620,15 +1620,15 @@ msgstr "Zeige Beiträge für %1$s %2$s"
 
 #: widgets/calendar.php:251
 msgid "Easel - Posts Calendar"
-msgstr "Easel - Posts Kalender"
+msgstr "Easel - Beitragskalender"
 
 #: widgets/calendar.php:252
 msgid ""
 "Display a calendar showing this months posts. (this calendar does not drop "
 "lines if there is no title given.)"
 msgstr ""
-"Zeigt einen Kalender mit diesen Monats Beiträgen. (Dieser Kalender gibt "
-"keine Ankerlinien, wenn es keinen Titel gibt.)"
+"Zeigt einen Kalender mit den Beiträgen von diesem Monat. (Dieser Kalender "
+"gibt keine Ankerlinien, wenn es keinen Titel gibt.)"
 
 #: widgets/calendar.php:282
 msgid "DOWNLOAD"
