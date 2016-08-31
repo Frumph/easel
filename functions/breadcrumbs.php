@@ -11,21 +11,21 @@ function easel_breadcrumbs() {
 
 	/* === OPTIONS === */
 	/* translators: home link for breadcrumps */
-	$text['home']     = __( 'Home', 'comicpress' ) ;
+	$text['home']     = __( 'Home', 'easel' ) ;
 	/* translators: text for a category page for breadcrumps */
-	$text['category'] = __( 'Archive by Category "%s"', 'comicpress' ) ;
+	$text['category'] = __( 'Archive by Category "%s"', 'easel' ) ;
 	/* translators: text for a search results page for breadcrumps */
-	$text['search']   = __( 'Search Results for "%s" Query', 'comicpress' ) ;
+	$text['search']   = __( 'Search Results for "%s" Query', 'easel' ) ;
 	/* translators: text for a tag page for breadcrumps */
-	$text['tag']      = __( 'Posts Tagged "%s"', 'comicpress' ) ;
+	$text['tag']      = __( 'Posts Tagged "%s"', 'easel' ) ;
 	/* translators: text for an author page for breadcrumps */
-	$text['author']   = __( 'Articles Posted by %s', 'comicpress' ) ;
+	$text['author']   = __( 'Articles Posted by %s', 'easel' ) ;
 	/* translators: text for the 404 page for breadcrumps */
-	$text['404']      = __( 'Error 404', 'comicpress' ) ;
+	$text['404']      = __( 'Error 404', 'easel' ) ;
 	/* translators: text 'Page N' for breadcrumps */
-	$text['page']     = __( 'Page %s', 'comicpress' ) ;
+	$text['page']     = __( 'Page %s', 'easel' ) ;
 	/* translators: text 'Comment Page N' for breadcrumps */
-	$text['cpage']    = __( 'Comment Page %s', 'comicpress' ) ;
+	$text['cpage']    = __( 'Comment Page %s', 'easel' ) ;
 
 	$wrap_before    = '<div class="breadcrumbs">'; // the opening wrapper tag
 	$wrap_after     = '</div><!-- .breadcrumbs -->'; // the closing wrapper tag
@@ -52,7 +52,7 @@ function easel_breadcrumbs() {
 	$link_in_after  = '</span>';
 	$link           = $link_before . '<a href="%1$s"' . $link_attr . '>' . $link_in_before . '%2$s' . $link_in_after . '</a>' . $link_after;
 	$frontpage_id   = get_option('page_on_front');
-	$parent_id      = $post->post_parent;
+	$parent_id      = (!empty($post)) ? $post->post_parent : false;
 	$sep            = ' ' . $sep_before . $sep . $sep_after . ' ';
 
 	if (is_home() || is_front_page()) {

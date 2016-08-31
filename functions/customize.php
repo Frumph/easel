@@ -393,7 +393,7 @@ class easel_Customize {
 	$easel_options = easel_load_options();
 // if the theme mod returns no value for a selected layout at all but cp_options exists
 	if (isset($easel_options['layout']) && !intval(get_theme_mod('easel-customize-select-layout', 0))) {
-		switch ($comicpress_options['layout']) {
+		switch ($easel_options['layout']) {
 			case '2cl':
 			case '2cr':
 			case 'ncl':

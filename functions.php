@@ -352,7 +352,7 @@ function easel_themeinfo($whichinfo = null) {
 		$easel_themeinfo = array();
 		$easel_options = easel_load_options();
 		$easel_addinfo = array(
-			'version' => '4.3.0.4 Beta',
+			'version' => '4.4.0 Beta',
 			'excerpt_length' => '40'
 		);
 		$easel_themeinfo = array_merge($easel_themeinfo, $easel_addinfo);

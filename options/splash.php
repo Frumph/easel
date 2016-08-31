@@ -1,7 +1,7 @@
 <div id="easel-splash">
 	<?php wp_nonce_field('update-options') ?>
 	
-	<div class="comicpress-options">
+	<div class="easel-options">
 		
 		<table class="widefat">
 			<thead>

@@ -18,7 +18,7 @@ if (have_posts()) {
 		$withcomment = 0;
 		get_template_part('content', get_post_format());
 	endwhile;
-	comicpress_pagination();
+	easel_pagination();
 }
 
 wp_reset_postdata();

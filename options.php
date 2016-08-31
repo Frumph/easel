@@ -226,7 +226,7 @@ function easel_admin_options() { ?>
 				'debug' => __( 'Debug', 'easel' )
 		  	);
 
-		  	if (empty($tab)) { $tab = array_shift(array_keys($tab_info)); }
+		  	if (empty($tab)) { $tab = 'splash'; }
 
 		  	foreach($tab_info as $tab_id => $label) { ?>
 		  		<div id="easel-tab-<?php echo $tab_id ?>" class="easel-tab <?php echo ($tab == $tab_id) ? 'on' : 'off'; ?>"><span><?php echo $label; ?></span></div>
