@@ -122,8 +122,8 @@ if (easel_themeinfo('enable_numbered_pagination')) {
 							echo '<li><a href="'.esc_url(get_pagenum_link($max_page)).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
 						}
 						break;
-					case 2;
-						echo '<form action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="get">'."\n";
+					case 2:
+						echo '<form action="'.htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401).'" method="get">'."\n";
 						echo '<select size="1" onchange="document.location.href = this.options[this.selectedIndex].value;">'."\n";
 						for($i = 1; $i  <= $max_page; $i++) {
 							$page_num = $i;
