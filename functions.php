@@ -6,8 +6,6 @@ add_filter('excerpt_length', 'easel_excerpt_length');
 if (easel_themeinfo('enable_debug_footer_code'))
 	add_action('easel-page-foot', 'easel_debug_page_foot_code');
 add_filter('excerpt_more', 'easel_auto_excerpt_more');
-if (easel_themeinfo('force_active_connection_close')) 
-	add_action('shutdown_action_hook','easel_close_up_shop');
 if (easel_themeinfo('menubar_social_icons')) 
 	add_action('easel-menubar-menunav', 'easel_display_social_icons');
 
@@ -158,10 +156,6 @@ if (!function_exists('easel_auto_excerpt_more')) {
 	function easel_auto_excerpt_more( $more ) {
 		return __( '[&hellip;]', 'easel' ) . ' <a class="more-link" href="'. get_permalink() . '">' . __( '&darr; Read the rest of this entry...', 'easel' ) . '</a>';
 	}
-}
-
-function easel_close_up_shop() {
-	@mysql_close();
 }
 
 if (!function_exists('easel_is_layout')) {

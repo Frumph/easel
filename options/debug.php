@@ -59,7 +59,7 @@
 			// hidden with <!-- from displaying, but not hidden from view-source
 			$variable_dump = easel_themeinfo(); 
 			if (is_array($variable_dump)) {
-				while (list($key, $value) = each($variable_dump)) { ?>
+				foreach ($variable_dump as $key => $value) { ?>
 				<tr>
 					<td style= "width: 330px;">
 						<?php var_dump($key); ?>
