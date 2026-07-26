@@ -20,8 +20,8 @@
  *    it removes every tag and leaves quotes ALONE. Tests turn on that second half -- a
  *    stub that also escaped quotes would make unescaped attribute output look safe.
  *  - The nonce functions are a test-driven seam rather than a reimplementation, because
- *    the CSRF tests need to make verification both pass and fail, and need to prove it
- *    was attempted at all. See the block below for the contract.
+ *    the tests that cover request handling need to make verification both pass and fail,
+ *    and need to prove it was attempted at all. See the block below for the contract.
  *  - current_user_can() defaults to FALSE, so a missing capability check shows up as a
  *    failing test rather than as a silent pass.
  *  - apply_filters() passes through by default but is overridable, because the filters
@@ -196,6 +196,19 @@ if ( ! function_exists( 'sanitize_html_class' ) ) {
 	}
 }
 
+/**
+ * functions/customize.php names this as the sanitize_callback for every colour setting, so
+ * it has to exist for a test that asks whether the named callbacks are callable.
+ */
+if ( ! function_exists( 'sanitize_hex_color' ) ) {
+	function sanitize_hex_color( $color ) {
+		if ( '' === $color || null === $color ) {
+			return '';
+		}
+		return preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', (string) $color ) ? $color : null;
+	}
+}
+
 if ( ! function_exists( 'sanitize_key' ) ) {
 	function sanitize_key( $key ) {
 		return preg_replace( '/[^a-z0-9_\-]/', '', strtolower( (string) $key ) );
@@ -218,7 +231,7 @@ if ( ! function_exists( 'wp_unslash' ) ) {
 }
 
 /* -------------------------------------------------------------------------- *
- * Nonces — the seam the CSRF tests hang on.
+ * Nonces — the seam the request-handling tests hang on.
  *
  * Not a reimplementation: a real nonce depends on the user, the session token and the
  * clock, none of which exist here, and reproducing the hash would prove nothing anyway.
@@ -226,8 +239,8 @@ if ( ! function_exists( 'wp_unslash' ) ) {
  *
  *   Control    Easel_Test_State::$valid_nonces holds "action|nonce" keys. A test that
  *              wants verification to succeed calls Easel_TestCase::allowNonce(); a test
- *              that wants to model an attacker simply does not, and wp_verify_nonce()
- *              returns false the way it does for a forged request.
+ *              that wants the failing branch simply does not, and wp_verify_nonce()
+ *              returns false the way it does for a request with no valid token.
  *   Visibility every call is appended to Easel_Test_State::$nonce_checks, so a test can
  *              assert that a save handler CHECKED at all. That matters more than the
  *              verdict: a handler with no nonce check passes any test that only looks at
@@ -854,6 +867,123 @@ if ( ! class_exists( 'WP_Error' ) ) {
 if ( ! function_exists( 'is_wp_error' ) ) {
 	function is_wp_error( $thing ) {
 		return $thing instanceof WP_Error;
+	}
+}
+
+/* -------------------------------------------------------------------------- *
+ * Customizer
+ *
+ * functions/customize.php only defines its two range controls when WP_Customize_Control
+ * already exists, so the base class has to be here before that file is loaded. The three
+ * classes are shells: the theme instantiates them inside register() and the recorder below
+ * simply stores whatever it is handed, so no rendering ever happens in a test.
+ * -------------------------------------------------------------------------- */
+
+if ( ! class_exists( 'WP_Customize_Control' ) ) {
+	class WP_Customize_Control {
+		// The properties WordPress declares that this theme actually passes through to a
+		// control constructor. Declared rather than left dynamic so that PHP 8.2 does not
+		// deprecate the assignment loop below.
+		public $manager;
+		public $id;
+		public $label       = '';
+		public $description = '';
+		public $section     = '';
+		public $settings    = '';
+		public $type        = 'text';
+		public $priority    = 10;
+		public $capability;
+		public $choices     = array();
+		public $input_attrs = array();
+
+		public function __construct( $manager = null, $id = '', $args = array() ) {
+			$this->manager = $manager;
+			$this->id      = $id;
+			foreach ( $args as $key => $value ) {
+				$this->$key = $value;
+			}
+		}
+
+		public function link( $setting_key = 'default' ) {
+			return '';
+		}
+
+		public function value( $setting_key = 'default' ) {
+			return '';
+		}
+
+		public function input_attrs() {
+			return '';
+		}
+	}
+
+	class WP_Customize_Color_Control extends WP_Customize_Control {
+		public $type = 'color';
+	}
+
+	class WP_Customize_Image_Control extends WP_Customize_Control {
+		public $type = 'image';
+	}
+}
+
+/**
+ * Stands in for $wp_customize and writes down every registration instead of performing it.
+ *
+ * easel_Customize::register() is a long list of add_setting()/add_control() calls, and the
+ * interesting questions about it are all questions about the arguments -- does every
+ * setting declare a sanitize_callback, does the named callback exist, is a numeric setting
+ * sanitised as a number. Recording the calls answers all of those without a Customizer.
+ */
+class Easel_Customize_Recorder {
+	/** @var array<string,array> section id => args */
+	public $sections = array();
+	/** @var array<string,array> setting id => args */
+	public $settings = array();
+	/** @var array list of array( $id_or_control, $args ) */
+	public $controls = array();
+	/** @var string[] ids passed to remove_section() */
+	public $removed_sections = array();
+	/** @var array<string,object> ids handed out by get_setting() */
+	private $setting_objects = array();
+
+	public function add_section( $id, $args = array() ) {
+		$this->sections[ $id ] = $args;
+	}
+
+	public function add_setting( $id, $args = array() ) {
+		$this->settings[ $id ] = $args;
+	}
+
+	public function add_control( $id, $args = array() ) {
+		$this->controls[] = array( $id, $args );
+	}
+
+	public function remove_section( $id ) {
+		$this->removed_sections[] = $id;
+		unset( $this->sections[ $id ] );
+	}
+
+	/**
+	 * The theme reaches for core's own 'blogname'/'blogdescription' settings to change
+	 * their transport, so this has to answer with an object for ids nobody registered.
+	 */
+	public function get_setting( $id ) {
+		if ( ! isset( $this->setting_objects[ $id ] ) ) {
+			$setting            = new stdClass();
+			$setting->id        = $id;
+			$setting->transport = 'refresh';
+			$this->setting_objects[ $id ] = $setting;
+		}
+		return $this->setting_objects[ $id ];
+	}
+
+	/** setting id => the sanitize_callback it was registered with, or null if it has none. */
+	public function sanitizeCallbacks() {
+		$out = array();
+		foreach ( $this->settings as $id => $args ) {
+			$out[ $id ] = isset( $args['sanitize_callback'] ) ? $args['sanitize_callback'] : null;
+		}
+		return $out;
 	}
 }
 

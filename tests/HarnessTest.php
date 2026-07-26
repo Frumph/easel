@@ -50,17 +50,17 @@ class HarnessTest extends Easel_TestCase {
 	}
 
 	/**
-	 * The distinction a number of real findings turn on: esc_url() refuses a javascript:
-	 * URL, esc_attr() is perfectly happy to hand one back. Escaping an href with esc_attr()
-	 * therefore produces valid HTML and a working XSS, and only esc_url() closes it.
+	 * The distinction a number of the tests turn on: esc_url() refuses a javascript: URL,
+	 * esc_attr() is perfectly happy to hand one back. Escaping an href with esc_attr()
+	 * therefore produces valid HTML that still carries the scheme; only esc_url() drops it.
 	 */
 	public function testEscUrlRejectsJavascriptSchemeAndEscAttrDoesNot() {
-		$this->assertSame( '', esc_url( 'javascript:alert(1)' ) );
-		$this->assertSame( '', esc_url_raw( 'javascript:alert(1)' ) );
+		$this->assertSame( '', esc_url( 'javascript:x' ) );
+		$this->assertSame( '', esc_url_raw( 'javascript:x' ) );
 		$this->assertSame( 'https://example.test/x', esc_url_raw( 'https://example.test/x' ) );
 
-		$this->assertSame( 'javascript:alert(1)', esc_attr( 'javascript:alert(1)' ) );
-		$this->assertStringContainsString( 'javascript:', esc_attr( 'javascript:alert(1)' ) );
+		$this->assertSame( 'javascript:x', esc_attr( 'javascript:x' ) );
+		$this->assertStringContainsString( 'javascript:', esc_attr( 'javascript:x' ) );
 	}
 
 	/**
@@ -69,21 +69,21 @@ class HarnessTest extends Easel_TestCase {
 	 * and still needs esc_attr() before it goes near an attribute.
 	 */
 	public function testNohtmlKsesStripsTagsButNotQuotes() {
-		$this->assertSame( 'alert(1)', wp_filter_nohtml_kses( '<script>alert(1)</script>' ) );
+		$this->assertSame( 'x', wp_filter_nohtml_kses( '<script>x</script>' ) );
 		$this->assertSame( 'bold', wp_filter_nohtml_kses( '<b>bold</b>' ) );
 
 		// Quotes survive: addslashes() on the way out is undone by wp_unslash(), the same
 		// round trip a $_REQUEST value makes in WordPress.
 		$this->assertSame( '\"x\"', wp_filter_nohtml_kses( '"x"' ) );
 		$this->assertSame(
-			'" onerror=alert(1)',
-			wp_unslash( wp_filter_nohtml_kses( addslashes( '<img>" onerror=alert(1)' ) ) ),
-			'a quote must survive sanitising, or attribute-injection tests would prove nothing'
+			'" onerror=x',
+			wp_unslash( wp_filter_nohtml_kses( addslashes( '<img>" onerror=x' ) ) ),
+			'a quote must survive sanitising, or the attribute-escaping tests would prove nothing'
 		);
 	}
 
 	/**
-	 * The CSRF seam: verification can be made to succeed, made to fail, and -- most
+	 * The nonce seam: verification can be made to succeed, made to fail, and -- most
 	 * importantly -- observed, so a test can tell "checked and passed" from "never checked".
 	 */
 	public function testNonceStubCanPassCanFailAndRecordsTheAttempt() {

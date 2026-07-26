@@ -52,7 +52,7 @@ abstract class Easel_TestCase extends TestCase {
 				if ( null === $body ) {
 					throw new RuntimeException( "Could not find function $name() in functions.php" );
 				}
-				$code .= preg_replace( '/^function\s+' . $name . '\s*\(/', 'function easel_test_real_' . $name . '(', $body ) . "\n";
+				$code .= preg_replace( '/^\s*function\s+' . $name . '\s*\(/', 'function easel_test_real_' . $name . '(', $body ) . "\n";
 			}
 			eval( $code );
 		}
@@ -63,10 +63,32 @@ abstract class Easel_TestCase extends TestCase {
 	}
 
 	/**
-	 * Return the source text of a top-level function declaration, braces matched.
+	 * Lift one function out of a theme file and define it, under its own name, verbatim.
+	 *
+	 * Same trick as loadRealThemeInfo() and for the same reason: functions.php cannot be
+	 * require'd, but several of the functions in it are worth exercising directly. Because
+	 * the file is never loaded the real name is free, so nothing has to be renamed here.
+	 */
+	protected static function loadThemeFunction( $name, $relative = 'functions.php' ) {
+		if ( function_exists( $name ) ) {
+			return;
+		}
+		$source = file_get_contents( EASEL_THEME_DIR . '/' . $relative );
+		$body   = self::extractFunction( $source, $name );
+		if ( null === $body ) {
+			throw new RuntimeException( "Could not find function $name() in $relative" );
+		}
+		eval( $body );
+	}
+
+	/**
+	 * Return the source text of a function declaration, braces matched.
+	 *
+	 * Leading whitespace is allowed because some of the theme's functions sit inside an
+	 * `if (!function_exists(...))` guard and are therefore indented.
 	 */
 	private static function extractFunction( $source, $name ) {
-		if ( ! preg_match( '/^function\s+' . preg_quote( $name, '/' ) . '\s*\(/m', $source, $m, PREG_OFFSET_CAPTURE ) ) {
+		if ( ! preg_match( '/^[ \t]*function\s+' . preg_quote( $name, '/' ) . '\s*\(/m', $source, $m, PREG_OFFSET_CAPTURE ) ) {
 			return null;
 		}
 		$start = $m[0][1];
@@ -83,6 +105,56 @@ abstract class Easel_TestCase extends TestCase {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Run $callable with its output buffered and PHP's diagnostics intercepted.
+	 *
+	 * Returns array( 'output' => string, 'diagnostics' => array of errno/message pairs ).
+	 *
+	 * Some of the code under test emits notices, warnings or deprecations as it runs, and
+	 * that emission is exactly what a few of these tests are pinning. The suite runs with
+	 * failOnWarning/failOnNotice/failOnDeprecation, so rather than loosening the config the
+	 * handler is swapped for the duration of the call: the diagnostics are collected and
+	 * returned as ordinary data, which a test can then assert on precisely. Returning true
+	 * from the handler stops PHP passing the event on to PHPUnit's own handler.
+	 */
+	protected function runCapturing( callable $callable ) {
+		$diagnostics = array();
+		ob_start();
+		set_error_handler(
+			function ( $errno, $errstr ) use ( &$diagnostics ) {
+				$diagnostics[] = array(
+					'errno'   => $errno,
+					'message' => $errstr,
+				);
+				return true;
+			}
+		);
+		try {
+			$callable();
+		} finally {
+			restore_error_handler();
+			$output = ob_get_clean();
+		}
+		return array(
+			'output'      => $output,
+			'diagnostics' => $diagnostics,
+		);
+	}
+
+	/**
+	 * The subset of runCapturing()'s diagnostics whose message contains $needle.
+	 */
+	protected static function diagnosticsMatching( array $diagnostics, $needle ) {
+		return array_values(
+			array_filter(
+				$diagnostics,
+				function ( $entry ) use ( $needle ) {
+					return false !== strpos( $entry['message'], $needle );
+				}
+			)
+		);
 	}
 
 	/**
